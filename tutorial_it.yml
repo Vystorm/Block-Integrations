@@ -1,0 +1,164 @@
+# Italiano — UTF-8. Keep keys, placeholders and formatting tokens unchanged.
+title: BlockIntegrations
+permission: blockintegrations.use
+pages:
+- title: Iniziare
+  text: |
+    BlockIntegrations costruisce funzioni direttamente fuori da blocchi mondiali. Le combo a sei blocchi, le torri e i forni aggiornabili funzionano indipendentemente l'uno dall'altro.
+
+    1. Costruisci la struttura descritta di seguito completamente.
+    2. Utilizzare il blocco funzione superiore o il movimento descritto.
+    3. Per strutture aggiornabili, sneak + click destro per aprire il menu e pagare per gli aggiornamenti con reale XP points.
+
+    Panoramica del gioco: /vmenu → Edilizia e tecnologia → Blocchi e aggiornamenti (or /bi). Qui trovate le guide per combo, torri e forni; in chat potete anche usare /bi combos, /bi towers e /bi furnaces. Ogni guida ha bisogno del permesso di corrispondenza.
+
+    Tutti i menu di aggiornamento hanno i pulsanti "← Indietro" (to the overview) e "⌂ Menu principale".
+
+    Se una combo o una torre è incompleta, sneak + click destro del mouse sul suo probabile blocco di controllo (with the matching permission) per vedere blocchi mancanti o sbagliati e le loro coordinate. Il controllo legge solo pezzi caricati e non ripara mai nulla.
+- title: Sorter dell'inventario
+  permission: blockintegrations.combos
+  text: |
+    L'ordinatore sposta gli elementi dal vostro inventario principale nei cofani vicini che contengono già lo stesso articolo.
+
+    1. Posizionare una leggera piastra di pressione ponderata (oro) su qualsiasi blocco edificio in rame pieno.
+    2. Metti i cofani vicino e posiziona un oggetto campione di ogni tipo in loro.
+    3. Salto sul piatto: le slot 9–35 sono ordinate; la barra calda, l'armatura e la mano rimangono intatte.
+    4. Sneak + fare clic con il pulsante destro del mouse sulla piastra per aggiornare l'intervallo o il tempo di recupero. L'intervallo di default è 10 blocchi.
+- title: Articolo vuoto
+  permission: blockintegrations.combos
+  text: |
+    Il vuoto tira in oggetti sganciati e preferisce ordinarli in casse.
+
+    1. Posizionare una piastra di pressione pesante ponderata (ron) su qualsiasi blocco edificio in rame pieno.
+    2. Mettere i pettorali pre-scelti nelle vicinanze se gli articoli dovrebbero finire lì.
+    3. Salta sul piatto. Solo se non c'è alcun torace nell'area di ricerca, gli elementi vanno nel vostro inventario principale.
+    4. Sneak + fare clic con il pulsante destro del mouse sulla piastra per aggiornare l'intervallo o il tempo di recupero. Predefinito: 20 blocchi raggio e 20 zecche tempo di recupero.
+- title: Campo di lancio e slime
+  permission: blockintegrations.combos
+  text: |
+    Il lanciatore direzionale ti lancia nella direzione che stai cercando.
+
+    1. Posizionare un blocco sottile su un blocco di pietra rossa e saltare su di esso.
+    2. Per un campo, posare nove blocchi slime come un piatto 3×3 alla stessa altezza; la pietra rossa va solo sotto il blocco centrale.
+    3. Tutti i nove blocchi utilizzano il tempo di potenza e di recupero del centro. Sneak + fare clic con il pulsante destro del mouse su qualsiasi blocco di campo per aprire il menu di aggiornamento condiviso.
+    4. Potere e tempo di recupero possono essere aggiornati. Il potere predefinito 1.70 dà circa 15 blocchi quando si guarda orizzontalmente; il tempo di recupero è 20 zecche.
+- title: Sprint booster
+  permission: blockintegrations.combos
+  text: |
+    Il booster accelera i giocatori di sprinting nella direzione in cui sono effettivamente in esecuzione.
+
+    1. Posizionare il ghiaccio, il ghiaccio imballato o il ghiaccio blu direttamente su un blocco di pietre rosse.
+    2. Sprint sul blocco ghiaccio.
+    3. Sneak + fare clic con il pulsante destro del mouse sul blocco ghiaccio per aggiornare la potenza o il tempo di recupero.
+
+    I predefiniti sono potenza 1.15 e 10 tempi di recupero della zecca. Per impostazione predefinita, il ghiaccio booster non si scioglie.
+- title: Blocco di sollevamento e di guarigione
+  permission: blockintegrations.combos
+  text: |
+    L'ascensore galleggiante e il blocco di guarigione sono strutture di supporto stazionarie.
+
+    1. Alzata a galleggiante: posizionare la terracotta bianca su un blocco edificio in rame su pietra rossa, saltare e toccare la terracotta. Ti lancia dritto e dà Levitazione.
+    2. Potere di aggiornamento, tempo di levitazione o tempo di recupero con sneak + tasto destro del mouse. Base: 5 secondi di Levitazione, 60 zecche tempo di recupero.
+    3. Blocco di guarigione: posizionare un blocco di miele direttamente su redstone.
+    4. Cura i giocatori nella sua aura ogni 3 secondi. Dopo aver subito danni, la guarigione si ferma per almeno 5 secondi. Gamma, quantità di guarigione e tempo di recupero possono essere aggiornati.
+- title: Aggiornamenti Combo e spostamento
+  permission: blockintegrations.combos.upgrade
+  text: |
+    Ogni combo ha solo i suoi percorsi di aggiornamento corrispondenti: gamma di sorter/vacuum e tempo di recupero; potere di lancio/booster e tempo di recupero; potere di sollevamento del galleggiante, durata e tempo di recupero; gamma di blocchi di guarigione, quantità di guarigione e tempo di recupero.
+
+    1. Sneak + fare clic con il pulsante destro del mouse sul blocco funzione.
+    2. Scegliere il percorso nel menu; il prezzo XP viene visualizzato sul pulsante.
+    3. Ci sono fino a 10 livelli. La gamma cresce di 1 blocchi per livello, durata del galleggiamento di 0.5 secondi, e i tempi di recupero si restringono di 5 % per livello, ma mai sotto 5 zecche.
+    4. Interrompere il blocco funzione: l'elemento caduto mantiene i suoi aggiornamenti e li applica quando posizionato di nuovo.
+- title: 'Torri: come sono costruite'
+  permission: blockintegrations.towers
+  text: |
+    Da cima a fondo, ogni torre è costituita da una testa, un blocco di lavoro e una fondazione. All'altezza della fondazione, quattro blocchi di anello si trovano in una croce a nord, sud, est e ovest. La testa è il punto di attacco, menu di aggiornamento e accesso bottino.
+
+    1. Costruisci uno dei tipi esatti qui sotto.
+    2. Sneak + fare clic con il pulsante destro del mouse sulla testa per aprire bottino o aggiornamenti.
+    3. Le torri attaccano solo creature ostili in pezzi caricati.
+    4. creatura gocce e uccidere XP della torre che ha colpito ultimo andare nel suo torace virtuale bottino.
+- title: 'Torri: tipi di avviamento'
+  permission: blockintegrations.towers
+  text: |
+    Queste torri a buon mercato non hanno aggiornamenti.
+
+    1. Zombie Watchtower: testa di zombie → tavolo da artigianato → ciottoli; quattro assi di quercia in una croce all'altezza della fondazione. Attacco di precisione: 2 danni, 8 blocchi gamma, 30 zecche.
+    2. Recruit Tower: testa del giocatore → barile → pietra; quattro blocchi di ciottoli in una croce a altezza fondazione. Attacco di precisione: 3 danni, 9 blocchi gamma, 26 zecche.
+    3. Sneak + fare clic con il pulsante destro del mouse sulla testa per svuotare il baule di bottino.
+- title: 'Torri: arciere e cannone'
+  permission: blockintegrations.towers
+  text: |
+    1. Torre dell'arciere: cranio scheletro → tavolo fletching → qualsiasi blocco edificio in rame pieno; quattro mattoni in pietra in una croce a altezza fondazione. Attacco preciso, base 4 danni, 14 gamma, 20 zecche.
+    2. Cannon Tower: testa inquietante → distributore → altoforno; quattro blocchi obsidian in una croce a altezza fondazione. Danni di area senza distruggere blocchi, base 8 danni, 11 gamma, 40 zecche.
+    3. Sneak + fare clic con il pulsante destro del mouse sulla testa per bottino e per danni, gamma, velocità e aggiornamenti di saccheggio.
+- title: 'Torri: fuoco, picolino, drago'
+  permission: blockintegrations.towers
+  text: |
+    1. Torre di fiamma: teschio con scheletro → blocco magma → nether mattoni; quattro mattoni neri lucidati in una croce. Base 5 danni, 10 gamma, 24 zecche; imposta obiettivi in fuoco per 3 secondi.
+    2. Piglin Gold Tower: testa di maiale → tavolo da lavoro → blocco oro; quattro mattoni in pietra nera lucida. Base 6 danni, gamma 12, 16 zecche; torre di precisione veloce.
+    3. Dragon Tower: testa di drago → ancoraggio → blocco purpur; quattro mattoni di pietra fine. Base 12 danni, 16 gamma, 50 zecche; grande area danni.
+- title: Aggiornamenti della torre e bottino
+  permission: blockintegrations.towers.upgrade
+  text: |
+    1. Sneak + fare clic con il pulsante destro del mouse sulla testa della torre.
+    2. Acquista danni, gamma o velocità fino a livello 10. Looting ha al massimo 3 livelli e può aggiungere oggetti extra per le gocce impilabili adatte.
+    3. "Apri torace bottino" mostra gli articoli; "Scaricare uccidere XP" paga il raccolto XP.
+    4. Quando si rompe la testa della torre, la testa abbandonata mantiene gli aggiornamenti; il contenuto del cofano del bottino è caduto in modo che gli elementi e XP non sono persi.
+- title: Forni aggiornabili
+  permission: blockintegrations.furnaces
+  text: |
+    Sono supportati forni, altoforni e fumatori. Quando si posiziona uno, si diventa il suo proprietario fisso. Sneak + click destro sostiene un vecchio forno senza un proprietario per voi.
+
+    1. Posizionare un forno supportato e usarlo normalmente per fusione.
+    2. Sneak + click destro per il menu di aggiornamento.
+    3. Con Vystorm Competenze installate, anche la fusione a tramoggia dà al proprietario fisso fusione/cottura XP; XP guadagnato mentre offline viene memorizzato e consegnato al login.
+    4. Solo il proprietario può gestirlo; i forni di altri giocatori hanno bisogno di blockintegrations.furnaces.manage-others.
+- title: Gli aggiornamenti e il movimento di Furnace
+  permission: blockintegrations.furnaces.upgrade
+  text: |
+    1. Sneak + click destro per aprire il menu forno e pagare con XP punti reali.
+    2. Fino al livello 10: velocità di fusione, efficienza del carburante, rendimento bonus e multismelt. Ogni livello multismelt elabora un altro elemento di input per ciclo di fusione, limitato dall'ingresso e dallo slot di uscita.
+    3. La spinta XP sale al livello 5 e aumenta il forno di vaniglia immagazzinato XP e la capacità di fusione/cottura XP (Vystorm Skills) di 20 % per livello.
+    4. Prendere fuori raccolto vaniglia XP nel menu con "Ritiro memorizzato XP". Quando rotto, l'elemento forno mantiene i suoi aggiornamenti, proprietario fisso e bonus memorizzato XP.
+- title: Stadi e falò
+  permission: blockintegrations.workstations
+  text: |
+    Accovacciati e fai clic destro su un alambicco, un falò o un falò delle anime per aprire il menu dei miglioramenti. Il giocatore che colloca il blocco ne diventa proprietario. Un vecchio blocco senza proprietario viene assegnato al primo utilizzo di questo menu.
+    Alambicchi: +12% di velocità di preparazione e +10% di efficienza del combustibile per livello. Falò: +12% di velocità di cottura e +2.5 punti percentuali di probabilità di ottenere un alimento cotto aggiuntivo per livello.
+    Impostazioni predefinite: fino al livello 10. Il livello successivo costa 100 volte il quadrato del suo numero in punti XP. Rimani entro otto blocchi. Solo proprietari e amministratori possono acquistare miglioramenti; l’uso normale resta disponibile per tutti.
+    I bonus si applicano alle operazioni avviate successivamente. I blocchi recuperati conservano proprietario e miglioramenti; i falò richiedono Tocco di velluto. Guida in chat: /bi workstations.
+- title: Animazioni torre
+  permission: blockintegrations.towers
+  text: |
+    Ogni torre ha un effetto museruola e un breve percorso animato. I cannoni sparano lungo un arco. Colpi di successo mostrano particelle; colpi di cannone e fiamma anche espandersi in anelli.
+    Tempismo di attacco e danni rimangono invariati. Gli amministratori possono disattivare i cosmetici con towers.visual-effects nel config.yml.
+- title: Trappole di mostri
+  permission: blockintegrations.traps
+  text: |
+    Costruire un 3×3 cornice obsidian (eight blocks). Core: pistone da lanciare, blocco di ferro per punte, blocco di miele per rallentare.
+    Collegare un pulsante alla parte anteriore di un blocco telaio. Pistone e pulsante nella direzione dell'effetto. Pavimenti, pareti e soffitti lavoro.
+    Il primo clic destro registra la trappola. Sneak-right-click per la modalità automatica e 10/15 secondo tempo di recupero. Le impostazioni predefinite del server si applicano solo alle nuove trappole.
+    Pulsante e attivazione automatica condividono un tempo di recupero persistito. Settore: 3×3 prolungare tre blocchi in avanti, con linea di vista. Mostri ostili solo; nessun giocatore o animali domestici.
+    Impostazioni del server: /vsettings server → BlockIntegrations → Trappola. Guida completa: /bi traps.
+- title: Trappole per la pesca
+  permission: blockintegrations.traps
+  text: |
+    Sling trap: blocco slime nella cornice obsidian con esattamente un pulsante anteriore. Pavimenti/ceilings fling away dal pulsante; pareti fling in avanti e in alto.
+    Premere il tasto per sparare; fare clic su Sneak-right per la modalità automatica e 10/15 secondi di recupero. Gli amministratori configurano la potenza di slittamento e sollevano le impostazioni di Traps.
+- title: Aggiornare il male
+  permission: blockintegrations.anvils
+  text: |
+    Fare clic con il pulsante destro del mouse sull'incudine per aprire il menu. In basso a sinistra: aggiornare il male. Centro: usare il male.
+    Efficienza: 5% meno XP livelli per grado (max. 50%). Incantesimi: +1 a berretti normali per grado (max. +5), rimuove Troppo costoso. Durata: nessuna usura dall'uso. Gli aggiornamenti costano XP punti.
+    Prezzo predefinito: 100 volte nuovo rango squadrato. La durata costa 2500 XP punti una volta. La proprietà e gli aggiornamenti sopravvivono all'estrazione mineraria e alla caduta.
+- title: Menù di stand di Brewing
+  permission: blockintegrations.workstations
+  text: |
+    Fare clic con il pulsante destro del mouse apre il menu stand di produzione. In basso a sinistra: stand di produzione di aggiornamento; centro: utilizzare stand di produzione. Shift + tasto destro del mouse apre gli aggiornamenti direttamente. Velocità e efficienza del carburante hanno fino a 10 gradi; il prezzo predefinito è 100 volte il nuovo rango squadrato in XP punti.
+- title: bonus di pozione
+  permission: blockintegrations.workstations
+  text: |
+    Effetto supplementare: 5 gradi a 1% ciascuno, massimo 5%. Forza: 10 gradi a 10% possibilità ciascuno per +1 livello di effetto, massimo 100%. Durata: 10 gradi a 25s ciascuno, massimo +250s; effetti istantanei rimangono istantanei.
+    Prezzo base tempi nuovo rango quadrato: extra 5000, resistenza 10000, durata 1000 XP punti. Un rotolo per bottiglia finito, compresi i rotoli falliti. Extra: livello positivo casuale effetto per 30s più durata bonus.

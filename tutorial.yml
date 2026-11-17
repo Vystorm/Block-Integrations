@@ -1,0 +1,167 @@
+title: 'BlockIntegrations'
+permission: blockintegrations.use
+pages:
+  - title: 'Start und Übersicht'
+    text: |
+      BlockIntegrations baut Funktionen direkt aus Weltblöcken. Die sechs Kombos, Türme und erweiterbaren Öfen funktionieren getrennt voneinander.
+
+      1. Stelle die unten beschriebene Struktur vollständig auf.
+      2. Nutze den oberen Funktionsblock oder die beschriebene Bewegung.
+      3. Öffne bei ausbaubaren Objekten mit Schleichen + Rechtsklick das Menü und bezahle Upgrades mit echten XP-Punkten.
+
+      Übersicht im Spiel: /vmenu → Bauen & Technik → Blöcke und Upgrades (oder /bi). Dort findest du die Anleitungen zu Kombos, Türmen und Öfen; im Chat weiterhin /bi combos, /bi towers und /bi furnaces. Jede Anleitung benötigt die passende Fachberechtigung.
+
+      Alle Upgrade-Menüs haben die Knöpfe „← Zurück“ (zur Übersicht) und „⌂ Hauptmenü“.
+  - title: 'Inventar-Sortierer'
+    permission: blockintegrations.combos
+    text: |
+      Der Sortierer verteilt Gegenstände aus deinem Hauptinventar in vorhandene, passend vorsortierte Kisten.
+
+      1. Setze eine Gold-Druckplatte auf einen beliebigen vollen Kupfer-Baublock.
+      2. Stelle im Umkreis passende Kisten bereit und lege dort je ein Musteritem ab.
+      3. Betritt die Platte: Slots 9–35 werden sortiert; Hotbar, Rüstung und Nebenhand bleiben unberührt.
+      4. Schleiche und rechtsklicke die Platte für Reichweite oder Cooldown. Die Standardreichweite beträgt 10 Blöcke.
+  - title: 'Item-Vakuum'
+    permission: blockintegrations.combos
+    text: |
+      Das Vakuum zieht herumliegende Gegenstände ein und sortiert sie bevorzugt in Kisten.
+
+      1. Setze eine Eisen-Druckplatte auf einen beliebigen vollen Kupfer-Baublock.
+      2. Stelle vorsortierte Kisten in der Nähe auf, wenn die Items dort landen sollen.
+      3. Betritt die Platte. Nur wenn im Suchbereich überhaupt keine Kiste steht, wandern die Items in dein Hauptinventar.
+      4. Schleiche und rechtsklicke die Platte für Reichweite oder Cooldown. Standard: 20 Blöcke Radius und 20 Ticks Cooldown.
+  - title: 'Launcher und Slimefeld'
+    permission: blockintegrations.combos
+    text: |
+      Der Richtungslauncher beschleunigt dich in deine Blickrichtung.
+
+      1. Setze einen Schleimblock auf einen Redstoneblock und springe darauf.
+      2. Für ein Feld lege neun Schleimblöcke als waagerechtes 3×3 auf gleicher Y-Höhe; Redstone liegt nur unter dem mittleren Block.
+      3. Alle neun Blöcke nutzen Stärke und Cooldown der Mitte. Öffne mit Schleichen + Rechtsklick auf einem beliebigen Feldblock das gemeinsame Upgrade-Menü.
+      4. Stärke und Cooldown sind ausbaubar. Standardstärke 1,70 liefert bei waagerechtem Blick etwa 15 Blöcke Reichweite; der Cooldown beträgt 20 Ticks.
+  - title: 'Sprint-Booster'
+    permission: blockintegrations.combos
+    text: |
+      Der Booster beschleunigt sprintende Spieler in ihrer tatsächlichen Laufrichtung.
+
+      1. Setze Eis, Packeis oder Blaueis direkt auf einen Redstoneblock.
+      2. Sprinte über den Eisblock.
+      3. Schleiche und rechtsklicke den Eisblock, um Stärke oder Cooldown auszubauen.
+
+      Standardwerte sind Stärke 1,15 und 10 Ticks Cooldown. Das Standardprofil verhindert, dass Booster-Eis schmilzt.
+  - title: 'Float-Lift und Heilblock'
+    permission: blockintegrations.combos
+    text: |
+      Float-Lift und Heilblock sind stationäre Unterstützungsstrukturen.
+
+      1. Für den Float-Lift: Weiße Terrakotta auf einen vollen Kupfer-Baublock auf Redstone setzen, anspringen und die Terrakotta berühren. Er startet senkrecht und gibt Schwebekraft.
+      2. Baue Stärke, Schwebedauer oder Cooldown per Schleichen + Rechtsklick aus. Basis: 5 Sekunden Schwebekraft, 60 Ticks Cooldown.
+      3. Für den Heilblock: Honigblock direkt auf Redstone setzen.
+      4. Er heilt in seiner Aura alle 3 Sekunden. Nach Schaden pausiert die Heilung mindestens 5 Sekunden. Reichweite, Heilmenge und Cooldown sind ausbaubar.
+  - title: 'Kombo-Upgrades und Transport'
+    permission: blockintegrations.combos.upgrade
+    text: |
+      Jede Kombo hat nur ihre passenden Upgradepfade: Sortierer/Vakuum Reichweite und Cooldown; Launcher/Booster Stärke und Cooldown; Float-Lift Stärke, Dauer und Cooldown; Heilblock Reichweite, Heilmenge und Cooldown.
+
+      1. Schleiche und rechtsklicke den Funktionsblock.
+      2. Wähle im Menü den gewünschten Pfad und bestätige den XP-Preis.
+      3. Es gibt bis zu 10 Stufen. Reichweite wächst je Stufe um 1 Block, Float-Dauer um 0,5 Sekunden und Cooldowns sinken je Stufe um 5 %, aber nie unter 5 Ticks.
+      4. Baue den Funktionsblock ab: Das gedroppte Item enthält seine Upgrades und übernimmt sie beim erneuten Platzieren.
+  - title: 'Türme: Aufbauprinzip'
+    permission: blockintegrations.towers
+    text: |
+      Jeder Turm besteht von oben nach unten aus Kopf, Arbeitsblock und Fundament. Auf Fundamenthöhe stehen zusätzlich vier Ringblöcke kreuzförmig nach Nord, Süd, Ost und West. Der Kopf ist Angriffspunkt, Upgrade-Menü und Lootzugang.
+
+      1. Baue einen der folgenden exakten Typen.
+      2. Schleiche und rechtsklicke den Kopf, um Loot oder Upgrades zu öffnen.
+      3. Der Turm greift nur feindliche Mobs in bereits geladenen Chunks an.
+      4. Mobdrops und Kill-XP des zuletzt treffenden Turms landen in seiner virtuellen Lootkiste.
+  - title: 'Türme: Starttypen'
+    permission: blockintegrations.towers
+    text: |
+      Diese günstigen Türme haben keine Upgrades.
+
+      1. Zombie-Wachturm: Zombiekopf → Werkbank → Bruchstein; auf Fundamenthöhe vier Eichenbretter kreuzförmig. Präzisionsangriff: 2 Schaden, 8 Blöcke Reichweite, 30 Ticks.
+      2. Rekrutenturm: Spielerkopf → Fass → Stein; auf Fundamenthöhe vier Bruchsteinblöcke kreuzförmig. Präzisionsangriff: 3 Schaden, 9 Blöcke Reichweite, 26 Ticks.
+      3. Öffne den Kopf mit Schleichen + Rechtsklick, um die Lootkiste zu leeren.
+  - title: 'Türme: Schütze und Kanone'
+    permission: blockintegrations.towers
+    text: |
+      1. Schützenturm: Skelettschädel → Befiederungstisch → beliebiger voller Kupfer-Baublock; auf Fundamenthöhe vier Steinziegel kreuzförmig. Präzise Angriffe, Basis 4 Schaden, 14 Reichweite, 20 Ticks.
+      2. Kanonenturm: Creeperkopf → Werfer → Hochofen; auf Fundamenthöhe vier Obsidianblöcke kreuzförmig. Flächenschaden ohne Blockzerstörung, Basis 8 Schaden, 11 Reichweite, 40 Ticks.
+      3. Schleiche und rechtsklicke den Kopf für Loot sowie Schaden-, Reichweiten-, Tempo- und Looting-Upgrades.
+  - title: 'Türme: Flamme, Piglin, Drache'
+    permission: blockintegrations.towers
+    text: |
+      1. Flammenturm: Witherskelettschädel → Magmablock → Netherziegel; vier polierte Schwarzsteinziegel im Kreuz. Basis 5 Schaden, 10 Reichweite, 24 Ticks; entzündet Ziele 3 Sekunden.
+      2. Piglin-Goldturm: Piglinkopf → Schmiedetisch → Goldblock; vier polierte Schwarzsteinziegel. Basis 6 Schaden, 12 Reichweite, 16 Ticks; schneller Präzisionsturm.
+      3. Drachenturm: Drachenkopf → Respawn-Anker → Purpurblock; vier Endsteinziegel. Basis 12 Schaden, 16 Reichweite, 50 Ticks; großer Flächenschaden.
+  - title: 'Turm-Upgrades und Loot'
+    permission: blockintegrations.towers.upgrade
+    text: |
+      1. Schleiche und rechtsklicke den Turmkopf.
+      2. Kaufe Schaden, Reichweite oder Tempo bis Stufe 10. Looting hat höchstens 3 Stufen und kann geeignete stapelbare Drops zusätzlich erzeugen.
+      3. Öffne „Lootkiste öffnen“ für Items; „Kill-XP entnehmen“ zahlt gesammelte XP aus.
+      4. Beim Abbau des Turmkopfs bleiben Upgrades im gedroppten Kopf erhalten; die Lootkiste wird als Inhalt gedroppt, damit Items und XP nicht verloren gehen.
+  - title: 'Erweiterbare Öfen'
+    permission: blockintegrations.furnaces
+    text: |
+      Unterstützt werden Ofen, Hochofen und Räucherofen. Beim Platzieren wirst du ihr fester Besitzer. Einen alten besitzerlosen Ofen beansprucht Schleichen + Rechtsklick für dich.
+
+      1. Platziere einen unterstützten Ofen und öffne ihn normal zum Schmelzen.
+      2. Schleiche und rechtsklicke ihn für das Upgrade-Menü.
+      3. Mit Vystorm Skills gibt auch Trichterbetrieb dem festen Besitzer Schmelz-/Koch-XP; offline verdiente XP werden gespeichert und beim Login übertragen.
+      4. Nur Besitzer dürfen ihn verwalten; fremde Öfen benötigen blockintegrations.furnaces.manage-others.
+  - title: 'Ofen-Upgrades und Transport'
+    permission: blockintegrations.furnaces.upgrade
+    text: |
+      1. Öffne per Schleichen + Rechtsklick das Ofenmenü und bezahle echte XP-Punkte.
+      2. Bis Stufe 10: Schmelztempo, Brennstoffeffizienz, Bonusertrag und Multismelt. Multismelt verarbeitet je Stufe ein zusätzliches Input-Item pro Brennvorgang, begrenzt durch Input und Ausgabeslot.
+      3. XP-Boost hat bis Stufe 5 und steigert gespeicherte Vanilla-Ofen-XP sowie Schmelz-/Koch-XP (Vystorm Skills) je Stufe um 20 %.
+      4. Nimm angesammelte Vanilla-XP im Menü über „Gespeicherte XP entnehmen“ heraus. Beim Abbau bleiben Upgrades, fester Besitzer und gespeicherte Zusatz-XP im Ofenitem erhalten.
+
+  - title: 'Braustaende und Lagerfeuer'
+    permission: blockintegrations.workstations
+    text: |
+      Schleichen + Rechtsklick auf Braustand, Lagerfeuer oder Seelenlagerfeuer oeffnet das Upgrade-Menue. Der platzierende Spieler wird Besitzer; alte besitzerlose Bloecke werden beim ersten Oeffnen beansprucht.
+      Braustaende: je Stufe +12% Brautempo und +10% Brennstoffleistung. Lagerfeuer: je Stufe +12% Kochtempo und +2,5 Prozentpunkte Chance auf ein zusaetzliches gekochtes Item.
+      Standard: bis Stufe 10; die naechste Stufe kostet 100 mal Stufe zum Quadrat in XP-Punkten. Bleibe innerhalb von acht Bloecken. Nur Besitzer oder Administratoren koennen Upgrades kaufen. Normale Benutzung bleibt fuer alle offen.
+      Boni gelten fuer neu begonnene Vorgaenge. Passende Blockdrops behalten Besitzer und Upgrades; Lagerfeuer brauchen dafuer Behutsamkeit. Anleitung im Chat: /bi workstations.
+  - title: 'Turmanimationen'
+    permission: blockintegrations.towers
+    text: |
+      Jeder Turm hat einen eigenen Abschusseffekt und eine kurze animierte Schussspur. Kanonen schiessen in einem Bogen. Erfolgreiche Treffer zeigen Partikel; Kanonen und Flammentuerme auch wachsende Ringe.
+      Angriffstempo und Schaden bleiben gleich. Administratoren koennen die Effekte mit towers.visual-effects in config.yml abschalten.
+
+  - title: "Monsterfallen"
+    permission: blockintegrations.traps
+    text: |
+      3×3 bauen: acht Obsidianblöcke als Rahmen. Kern: Kolben zum Werfen, Eisenblock für Stacheln oder Honigblock zum Verlangsamen.
+      Knopf auf die Vorderseite eines Obsidianblocks setzen. Kolben und Knopf zeigen in Wirkungsrichtung. Boden, Wände und Decken sind möglich.
+      Erster Rechtsklick auf den Knopf registriert die Falle. Shift + Rechtsklick öffnet Automatik und 10/15 Sekunden Cooldown. Die Server-Standardwerte gelten nur für neue Fallen.
+      Knopf und Automatik teilen denselben gespeicherten Cooldown. Wirkbereich: 3×3, drei Blöcke nach vorne, freie Sicht erforderlich. Nur feindliche Monster; keine Spieler oder Haustiere.
+      Server-Einstellungen: /vsettings server → BlockIntegrations → Fallen. Vollständige Anleitung: /bi traps.
+
+  - title: "Schleuderfallen"
+    permission: blockintegrations.traps
+    text: |
+      Schleuderfalle: Schleimblock im Obsidianrahmen, genau ein Knopf vorne am Rahmen. Boden/Decke schleudern vom Knopf weg; Wände nach vorne und oben.
+      Knopf zum Auslösen, Shift + Rechtsklick für Automatik und 10/15 Sekunden Cooldown. Schleuderstärke und Schleuderhöhe stellt der Admin unter Fallen ein.
+
+  - title: "Amboss verbessern"
+    permission: blockintegrations.anvils
+    text: |
+      Rechtsklick auf den Amboss öffnet das Menü. Links unten: Amboss verbessern. In der Mitte: Amboss benutzen.
+      Effizienz: 5% weniger XP-Level pro Stufe (max. 50%). Verzauberungen: +1 zum normalen Maximum pro Stufe (max. +5), ohne Zu-teuer-Grenze. Haltbarkeit: kein Verschleiss beim Benutzen. Upgrades kosten XP-Punkte.
+      Standardpreis: 100 mal neue Stufe zum Quadrat. Haltbarkeit einmalig 2500 XP-Punkte. Besitzer und Upgrades bleiben beim Abbau und Fallen erhalten.
+
+  - title: "Braustand-Menü"
+    permission: blockintegrations.workstations
+    text: |
+      Rechtsklick öffnet das Braustand-Menü. Links unten: Braustand verbessern; in der Mitte: Braustand benutzen. Shift + Rechtsklick bleibt als direkter Zugang zu Upgrades verfügbar. Tempo und Brennstoffeffizienz haben bis zu 10 Stufen; Standardpreis 100 mal neue Stufe zum Quadrat in XP-Punkten.
+
+  - title: "Trank-Boni"
+    permission: blockintegrations.workstations
+    text: |
+      Zusatzeffekt: 5 Stufen je 1%, maximal 5%. Stärke: 10 Stufen je 10% Chance auf +1 Effektstufe, maximal 100%. Wirkdauer: 10 Stufen je 25s, maximal +250s; Soforteffekte bleiben sofortig.
+      Preis je neue Stufe zum Quadrat: Zusatz 5000, Stärke 10000, Dauer 1000 XP-Punkte. Ein Wurf pro fertiger Flasche, auch bei Misserfolg. Zusatz: zufälliger positiver Effekt Stufe I für 30s plus Dauerbonus.

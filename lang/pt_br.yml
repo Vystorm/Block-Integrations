@@ -1,0 +1,1135 @@
+# Português (Brasil) — UTF-8. Keep keys, placeholders and formatting tokens unchanged.
+general:
+  no-permission: <red>Você não tem permissão para fazer isso.
+  reloaded: <green>BlockIntegrations foram recarregados.
+  players-only: <red>Este comando só pode ser usado por jogadores.
+  settings-unavailable: <red>Essas configurações não estão disponíveis.
+menu:
+  title: Blocos e upgrades
+  description: Combos de bloco, torres de ataque e fornalhas upgradáveis
+guide:
+  title: Blocos e upgrades
+  body:
+  - Fornos, torres e combinações de blocos são gerenciados diretamente na própria estrutura.
+  - Clique com o botão direito do mouse no bloco correspondente para abrir suas atualizações.
+  - 'Block combos: Sleak + botão direito do mouse no bloco de função superior.'
+  - 'Torres de ataque: furtivo + clique com o botão direito na cabeça da torre.'
+  - 'Fornos upgradáveis: Sleak + clique com o botão direito do mouse na fornalha.'
+  combos:
+    label: Block combos
+    tooltip: Estruturas, melhorias de caminhos e bloqueio de cura
+  towers:
+    label: Torres de ataque
+    tooltip: Torre constrói, melhoras e saquear baú
+  furnaces:
+    label: Fornos modernáveis
+    tooltip: Propriedade, habilidade XP e caminhos de atualização
+  settings:
+    label: ⚙ Configurações do servidor
+    tooltip: Radii, lançadores, combos, torres e fornos
+status:
+  line: '<green>BlockIntegrations <gray>-Torres: <white>{towers} <gray>Ataques: <white>{attacks} <gray>Ciclos: <white>{cycles}
+    <gray>Torre max: <white>{tower_max} <gray>- Furnace max: <white>{furnace_max} <gray>Combos: <white>{combos} <gray>Combo
+    max: <white>{combo_max} <gray>Sorter/vacuum/launcher/booster/float lift/heal block/furnaces ativos'
+  next: '<gray>Próximo: '
+  furnaces: '<gray>Fornalhas melhoradas no servidor: <white>{furnaces}'
+  towers-button: Torres
+  towers-hover: 'Clique: listar todas as torres com sua localização'
+  settings-button: Configurações do servidor
+  settings-hover: 'Clique: abra as configurações'
+chat:
+  upgrades: Atualizações
+  upgrades-hover: 'Clique: abra as atualizações'
+  location: ' <gray>Localização: '
+  too-far:
+    combo: <yellow>Você está muito longe desta combinação de blocos.
+    tower: <yellow>Você está muito longe desta torre.
+    furnace: <yellow>Você está muito longe desta fornalha.
+sorter:
+  success: <green>Ordenado {moved} itens em {chests} baú(s).
+  nothing: <gray>Nenhum baú pré-sortido encontrado por perto.
+sort-locks:
+  hold-item: <gray>Segure um item na mão principal primeiro.
+  item-locked: '<gray>O classificador agora mantém cada item deste tipo: '
+  item-unlocked: '<gray>O classificador pode mover este tipo de item novamente: '
+  items-empty: <gray>Você não tem nenhum tipo de item travado na triagem.
+  items-title: '<gray>Tipos de itens mantidos pelo classificador (todas as variantes, em cada slot):'
+  items-cleared: <gray>Todas as fechaduras tipo item foram limpas.
+  usage: '<yellow>Uso: /bi sortlock list|clear|slot|item|items|clearitems (Números de fendas são as fendas internas do inventário
+    principal 9–35).'
+  invalid: <red>Escolha uma ranhura interna entre 9 e 35, ou use lista/limpa.
+  list-empty: <gray>Nenhuma slot-inventário principal está trancada. Números de fenda usam Minecraft números internos 9-35.
+  list: '<gray>slots de inventário principal bloqueados, Minecraft números internos 9-35: <white>{slots}'
+  locked: <green>A ranhura principal do inventário {slot} está bloqueada da triagem.
+  unlocked: <green>A slot principal {slot} não está mais bloqueada.
+  cleared: <green>Todas as suas travas pessoais foram limpas.
+chest-priority:
+  usage: '<yellow>Uso: /bi chestpriority add|overflow|remove|list|clear. Pelo add/overflow/remove, Olhe para um baú carregado
+    dentro 6 blocks.'
+  look-at-chest: <red>Olhe para um baú carregado dentro de 6 quarteirões primeiro.
+  limit: <red>Você pode economizar no máximo 8 posições preferidas no baú e 1 posição de transbordamento.
+  add: '<green>Adicionado baú preferido: {chest}'
+  overflow: '<green>Coloque o baú transbordante: {chest}'
+  remove: '<green>Preferência do baú removida: {chest}'
+  cleared: <green>Limpei suas prioridades pessoais.
+  list-empty: <gray>Você não tem prioridades pessoais no baú.
+  list: '<gray>O que é isso? <white>{chests}<gray> Overflow (últimos itens correspondentes): <white>{overflow}'
+vacuum:
+  chests: <green>Aspirado {moved} itens caiu em {chests} baú(s).
+  inventory: <green>Aspiraram {moved} itens no seu inventário.
+  nothing: <gray>Nenhum item caiu aspirado.
+upgrade:
+  maxed: <yellow>Este caminho de atualização já está no máximo.
+  offer-changed: <yellow>A oferta de atualização mudou.
+  need-xp: <red>Você precisa de {cost} XP pontos para esta atualização.
+  done: '<green>{upgrade} atualizados para o nível {level}. <gray>Custo: {cost} XP'
+  line: '{upgrade}: {level}/{max} | {value} -> {next} | {cost} XP'
+  line-max: '{upgrade}: {level}/{max} | {value} -> MAX | MAX'
+  button: '{upgrade} ({next}, {cost} XP)'
+machine-diagnostic:
+  header: '<gold>{machine}<gray> Relatório de construção:'
+  unloaded: '<yellow>{machine}: peças em um pedaço descarregado não podem ser inspecionadas ainda.'
+  finding: '<gray>{part}: esperado <white>{expected}<gray>, encontrado <white>{actual}<gray> em <white>{x}, {y}, {z}<gray>.'
+  part:
+    control: Bloco de controle
+    base: base
+    lower-base: base inferior
+    pedestal: pedestal
+    foundation: Fundação
+    ring: Anel
+combo:
+  mine:
+    header: '<gold>Suas combinações de blocos <gray>({count}):'
+    empty: <gray>Você ainda não construiu nenhuma combinação de blocos. /bi combos mostra como.
+    entry-here: <gray>• {name} <gray>{x} {y} {z} {blocks} m de distância
+    entry-elsewhere: <gray>• {name} <gray>| {world} {x} {y} {z}
+    more: <gray>... e {count} mais.
+    hint: <dark_gray>Combos construídos antes de 2.20.0 aparecer aqui depois de usá-los.
+  sorter:
+    name: Separador de Inventário
+    structure: Placa de pressão leve ponderada (ouro) em qualquer bloco de cobre completo
+  vacuum:
+    name: Item Vacuum
+    structure: Placa de pressão pesada ponderada (ferro) em qualquer bloco de construção de cobre
+  launcher:
+    name: Lançador direcional
+    structure: Bloco de lodo em um bloco de pedra vermelha, opcionalmente um 3×3 lodo ao redor do centro
+  booster:
+    name: Sprint Booster
+    structure: Gelo, gelo ou gelo azul em um bloco de pedra vermelha
+  float-launcher:
+    name: Elevador Flutuante
+    structure: Terracota branca em um bloco de cobre em um bloco de pedra vermelha
+  heal:
+    name: Bloco de cura
+    structure: Bloco de mel em um bloco de pedra vermelha
+  harvester:
+    name: Colheitadeira
+    structure: Adubo em um fardo de feno
+  warp-pad:
+    name: Dobra Pad
+    structure: Lodestone em obsidiana chorando
+    unnamed: Pad {x} {y} {z}
+    limit: <red>Você já possui o máximo de <white>{max}</white> Padrões de dobra. <gray>Quebre um dos seus primeiro.
+    disabled: <red>As almofadas de dobra estão desligadas neste servidor.
+    no-access: <red>Você não pode usar esta plataforma de dobra. <gray>Seu dono pode compartilhar com você.
+    no-destinations: <yellow>Nenhuma outra plataforma de dobra que você pode usar está dentro <white>{blocks}</white> blocos
+      neste mundo. <gray>Construa um segundo bloco ou peça a um amigo para compartilhar o deles.
+    gone: <red>Essa plataforma de dobra sumiu ou está incompleta.
+    stand-on-pad: <yellow>Fique na plataforma de dobra para viajar.
+    too-far: <red>Esse bloco está fora de alcance<white>{blocks}</white> Bloqueios). <gray>Aumente a distância deste bloco.
+    cooldown: <yellow>Sua dobra está recarregando. <white>{seconds}</white> S.
+    blocked: <red>{name} está bloqueado. <gray>Os dois quarteirões acima devem ser livres.
+    arrived: <light_purple>Warped para <white>{name}</white>.
+    not-yours: <red>Só o dono desta plataforma de dobra pode fazer isso.
+    usage: '<yellow>Uso: /bi warppads list | share NAME | unshare NAME'
+    dialog:
+      name: '<gray>Nome: <white>{name}'
+      use: <gray>Fique na almofada e fuja para viajar. Dividido com <white>{guests}</white> Jogador(es).
+      rename: Renomear
+      rename-tooltip: Dê a este bloco um nome para o menu de viagem
+    rename:
+      title: Renomeie a plataforma de dobra
+      question: 'Nome novo (cartas, dígitos, espaços):'
+      invalid: <red>Esse nome é vazio ou inválido. <gray>Use até {max} letras, dígitos e espaços.
+      done: <green>Warp Pad renomeado para <white>{name}</white>.
+    travel:
+      title: Dobra Pad
+      body: '<gray>De <white>{name}</white> <gray># Alcance <white>{blocks}</white> Blocos. Escolha seu destino:'
+      button: '{name} ({distance} m)'
+      tooltip: '{owner} | {x} {y} {z}'
+      own: Seu apartamento
+      shared: Compartilhado por {owner}
+    state:
+      active: ativo
+      incomplete: incompleto
+      unloaded: não carregado
+    list:
+      header: '<light_purple>Suas almofadas de dobra <gray>({count}/{max}):'
+      empty: '<gray>Nenhum ainda. Construa um: Lodestone em obsidiano chorando.'
+      entry: <gray>• <white>{name}</white> <gray>Alcance {blocks} blocos {state}
+      guests: '<gray>Compartilhado com: <white>{players}'
+      no-guests: <gray>Não compartilhado com ninguém.
+      hint: '<gray>Compartilhe com um jogador: Sleak + clique com o botão direito → Blocos de dobra, ou /bi warppads share
+        NAME.'
+    share:
+      added: <green>{player} agora podem usar todas as suas almofadas de dobra.
+      removed: <yellow>{player} não podem mais usar suas plataformas de dobra.
+      unchanged: <gray>Nada mudou para {player}.
+      full: <red>Você já compartilha suas almofadas com {max} jogadores.
+      self: <red>Suas próprias almofadas são sempre suas.
+      unknown: <red>Nenhum jogador chamado {player} jogou aqui.
+    menu:
+      shared: '<light_purple>Dobradores: compartilhados'
+      not-shared: '<gray>Dobradores: não compartilhados'
+      lore-shared: |-
+        <gray>{player} podem viajar em seus {pads} dobradores.
+        <yellow>Clique: pegue o acesso de volta
+      lore-not-shared: |-
+        <gray>Deixe {player} viajar em suas {pads} almofadas de dobra.
+        <yellow>Clique: compartilhe
+  xp-collector:
+    name: XP Colecionador
+    structure: Mesa encantadora em um bloco de lápis
+    owner-only: <red>Só o dono deste colecionador XP pode levar o seu XP.
+    empty: <gray>O colecionador XP está vazio.
+    taken: '<green>Você pegou <white>{points}</white> XP pontos. <gray>Esquerda no colecionador: {left}.'
+    dialog:
+      stored: '<gray>Armazenado: <white>{stored}</white> {capacity} XP pontos'
+      take-level: Tome o nível 1
+      take-all: Leve tudo ({stored} XP)
+      owner-only: <gray>Só o dono pode levar os XP armazenados.
+  slime-field:
+    name: Slime Field 3×3
+    info: Atualizações compartilhadas para os nove blocos de lodo. O bloco central mantém as atualizações quando está quebrado.
+  guide:
+    header: <gold><bold>Block combos</bold></gold> <gray>- Atualizações
+    open: <gray>Sneak + botão direito do mouse no bloco de função superior para abrir o menu de atualização.
+    structure: '{name}<gray>: {structure}'
+    paths: <gray>Dependendo da estrutura, alcance, potência, duração do efeito e tempo de recuperação podem ser atualizados
+      até o nível <white>{max}<gray>.
+    float: <gray>O elevador alegórico já dá cinco segundos de Levitação I no nível 0.
+    heal: '<gray>O bloco cura lentamente cura os jogadores dentro de sua aura. Depois de sofrer danos, espera {seconds} segundos,
+      distância mínima: <white>{distance} quarteirões<gray>.'
+    warp: '<gray>Dobra: levante-se na pedra e esgueira-se para escolher um destino. Compartilhe suas almofadas com amigos
+      através do menu do jogador ou /bi warppads.'
+    xp: '<gray>XP colecionadores: coleciona orbes que nenhum jogador está ao lado; pegue o XP em seu menu. Quebrando-o derrama
+      o XP armazenado.'
+  heal-too-close: '<red>O próximo bloco de cura está muito perto. <gray>Distância mínima: <white>{distance} quarteirões<gray>.'
+  claimed: <gray>Este bloco combo ainda não tinha dono e agora pertence a você (está listado em sua página web).
+  claim-denied: <gray>Este bloco ainda não tem dono. Só alguém que pode construir aqui pode assumir, até lá só administradores
+    podem tirar XP ou renomeá-lo.
+  recognized: '<green>{name} reconhecidos. <gray>Sneak + botão direito do mouse no bloco superior para abrir as atualizações. '
+  no-use: <red>Você não pode usar combinações de blocos.
+  no-upgrade: <red>Você não pode atualizar os combos.
+  incomplete: <red>A combinação do bloco não está mais completa.
+  dialog:
+    title: '{name} Upgrades'
+    header: '{name}, nível máximo {max}'
+    line: '{upgrade}: {level}/{max} | {value} | {cost} XP'
+    line-max: '{upgrade}: {level}/{max} | {value} | MAX'
+    button: '{upgrade} ({cost} XP)'
+  value:
+    aura: '{blocks} quarteirões aura'
+    hearts: '{hearts} corações por pulso'
+    heal-cooldown: '{pulse} s pulso / {damage} s após o dano'
+    blocks: '{blocks} quarteirões'
+    velocity: '{value} velocidade'
+    seconds: '{value} segundos'
+    xp: '{points} XP pontos'
+combo-upgrade:
+  range: Distância
+  power: Poder
+  duration: Duração do efeito
+  cooldown: Tempo de recarga
+  distance: Distância
+  capacity: Capacidade
+tower:
+  zombie-starter:
+    name: Torre de Vigilância Zumbi
+  player-starter:
+    name: Torre de Recrutamento
+  archer:
+    name: Torre Archer
+  cannon:
+    name: Torre de canhão
+  flame:
+    name: Torre de Chama
+  piglin:
+    name: Torre de Ouro Piglin
+  dragon:
+    name: Torre do Dragão
+  any-copper: Qualquer bloco de cobre completo
+  guide:
+    header: <gold><bold>BlockIntegrations torres
+    intro: <gray>Construa uma dessas estruturas e coloque a cabeça por último. Sneak + clique com o botão direito da cabeça
+      para abrir as atualizações.
+    structure: '{name}<gray>{core} em {pedestal} em {foundation}, com 4× {ring} em uma cruz ao redor dele{upgrades}'
+    upgradeable: <dark_gray> [combat up to 10, looting up to 3]
+    starter: <green> [cheap starter tower, no upgrades]
+    levels: <gray>As cinco torres normais podem aumentar o dano, alcance e velocidade de ataque até o nível <white>{max} <gray>E
+      saqueando até o nível <white>{looting}<gray>. As duas torres baratas não podem ser melhoradas.
+    loot: <gray>O menu da torre tem um baú de saques para a criatura cair e um botão para retirar a coleta matar XP. As gotas
+      de excesso estão perdidas.
+    ring: '<gray>O anel consiste em quatro blocos na altura da fundação: norte, sul, leste e oeste.'
+  built: '<green>Torre de ataque construída e atribuída a você. <gray>Sneak + clique com o botão direito da cabeça para abri-lo. '
+  open-hover: 'Click: abra a torre'
+  incomplete-structure: <red>Nenhuma estrutura completa da torre reconhecida.
+  no-use: <red>Você não pode usar torres de ataque.
+  no-build: <red>Você não pode construir torres de ataque.
+  no-upgrade-permission: <red>Você não pode atualizar torres.
+  not-complete: <red>A torre não está mais completa.
+  starter-no-upgrades: <yellow>Esta torre barata não tem upgrades.
+  owned-by: <red>Esta torre pertence a {owner}.
+  nobody: Ninguém
+  claimed: <gray>Esta torre ainda não tinha dono e agora pertence a você.
+  limit: '<red>Você já possui {owned} torres (máximo {max}). '
+  my-towers: Minhas torres
+  my-towers-hover: 'Clique: listar suas torres com sua localização'
+  loot-full: '<yellow>Seu cofre de {name} não tem espaço para gotas. Novos ataques param quando ativados; projéteis já em
+    voo ainda podem transbordar. '
+  loot-button: baú solto
+  loot-hover: 'Clique: abra o baú de saques'
+  loot-title: '{name}<dark_gray> # Loot'
+  no-xp: <yellow>Esta torre ainda não recolheu nenhuma morte XP.
+  withdrawn: <green>Você se retirou <yellow>{xp} XP pontos <green>Da torre.
+  list:
+    header: '<gold>Torres: <white>{count}'
+    near-header: '<gold>Torres em 48 quarteirões: <white>{count}<gray> (Mostrando mais próximo {shown})'
+    entry: <gray> · {name} <dark_gray>@ <white>{location}{details}
+    details: ' <dark_gray>| <gray>{owner} <dark_gray>| <gray>D{damage} R{range} S{speed} L{looting} <dark_gray>| {state} <dark_gray>|
+      <gray>XP {xp}'
+  state:
+    unloaded: <dark_gray>não carregado
+    active: <green>ativo
+    incomplete: <red>incompleto
+  remove:
+    look: <yellow>Olhe para a cabeça de uma torre.
+    done: <green>Torre removida; seu saque e XP foram derrubados na cabeça.
+  dialog:
+    title: '{name} Upgrades'
+    header: '{name} Dono: {owner} Mate XP: {xp}'
+    stats: Danos {damage}, alcance {range} blocos Ataca cada {ticks} carrapatos{xp_rule}
+    xp-rule: ' XP apenas com um jogador dentro de {radius} blocos'
+    starter: Torre barata sem atualizações.
+    loot: Abra o baú de saques
+    withdraw: Retirar matar XP
+  value:
+    damage: '{value} danos'
+    range: '{value} quarteirões'
+    speed: '{ticks} tiques'
+    looting-none: Sem bônus
+    looting: 0-{level} itens bônus por pilha drop
+tower-upgrade:
+  damage: Dano
+  range: Distância
+  speed: Velocidade de ataque
+  looting: Arremesso
+furnace:
+  name:
+    furnace: Fornalha
+    blast-furnace: Forno de explosão
+    smoker: Fumador
+  guide:
+    intro:
+    - <gold><bold>Fornos modernáveis
+    - '<gray>Apoiado: <white>Forno, alto-forno e fumante<gray>.'
+    - <gray>O jogador que coloca um se torna seu dono fixo. Fornos existentes são reivindicados com sneatch + botão direito.
+    - <gray>Com Vystorm Skills instaladas, a fundição automática de tremonha dá ao proprietário a habilidade de fundição/cozimento
+      XP e usa as habilidades de fundição do proprietário.
+    - <gray>Vanilla XP coletadas enquanto o forno funciona pode ser retirado no menu da fornalha com "Retirar armazenado XP".
+    paths: '<gray>Atualizar caminhos até o nível {max}: <white>Velocidade de fusão, eficiência de combustível, rendimento
+      de bônus e multi-feitiço<gray>.'
+    outro:
+    - <gray>O impulso XP tem no máximo <white>5 níveis <gray>e aumenta a baunilha armazenada XP, bem como a habilidade de
+      fundição/cozinha XP (Vystorm Skills).
+    - <gray>Cada nível multirremetido processa um item adicional no mesmo ciclo de fundição e concede forno e habilidade XP
+      para ele.
+  placed: '<green>Este {name} agora pertence permanentemente a você. <gray>Sneak + botão direito para abrir as atualizações. '
+  no-use: <red>Você não está autorizado a usar fornos upgradáveis.
+  claimed: <green>Forno reivindicado e permanentemente ligado ao seu perfil de habilidade.
+  owned-by: <red>Esta fornalha pertence permanentemente a <white>{owner}<red>.
+  unknown-owner: Desconhecido
+  gone: <red>O forno não existe mais.
+  no-upgrade-permission: <red>Você não está autorizado a atualizar fornos.
+  maxed: <yellow>Este caminho de atualização do forno já está no máximo.
+  no-owner: <red>Este forno não tem dono fixo.
+  only-owner: <red>Só o proprietário fixo pode retirar os XP armazenados.
+  no-xp: <yellow>Este forno ainda não guardou um ponto de XP.
+  withdraw-failed: <red>O forno XP não poderia ser retirado.
+  withdrawn: <green>Você se retirou <yellow>{xp} XP pontos <green>dos {name}.
+  dialog:
+    title: '{name} Upgrades'
+    header: '{name} Dono: {owner}'
+    withdraw: Retirada armazenada XP ({xp})
+  metrics:
+    pending-skill: '<gray>Habilidade na fornalha XP para este proprietário: <white>{xp}<gray>. Separado da fornalha XP.'
+    observed: '<gray>Observado sobre os últimos {seconds}s: <white>{smelts} fuzis completos, {fuel} itens de combustível consumidos,
+      {outputs} itens de saída processados, {yield} itens de bônus de rendimento ativados.'
+    speed-preview: '<gray>Espera-se multiplicador de velocidade com esta atualização: <white>{current}× → {next}×<gray>.'
+    yield-preview: '<gray>Espera-se uma chance de rendimento com esta atualização: <white>{current} → {next}<gray>.'
+  value:
+    speed: '{value}× velocidade'
+    fuel: '{value}× Hora de queimar'
+    yield: '{value} bônus item chance'
+    multismelt: '{items} itens por ciclo de fundição'
+    xp-boost: '{value}× Forno e habilidade XP'
+furnace-upgrade:
+  speed: Velocidade de fundição
+  fuel: Eficiência do combustível
+  yield: Rendimento de bônus
+  multismelt: Múltiplo cheiro
+  xp-boost: XP impulso
+portable:
+  header: <gold>BlockIntegrations <gray>– {title}
+  level: '<gray>{upgrade}: <white>{level}'
+  owner: '<gray>Dono fixo: <white>{owner}'
+  experience: '<gray>Bônus armazenado XP: <white>{xp}'
+  footer: <dark_gray>Atualizações são aplicadas quando colocadas.
+settings:
+  dialog:
+    title: BlockIntegrations - Servidor
+    body: Mudanças são salvas para config.yml e recarregadas imediatamente.
+  section:
+    blocks:
+      title: Blocos básicos
+      header: BlockIntegrationsBloqueios básicos
+      description: Sorter, vácuo, lançador, impulsionador de velocidade e elevador flutuando
+    combos:
+      title: Block combos
+      header: BlockIntegrationsBlock combos
+      description: Combo upgrades, bloco de cura, almofadas de dobra e XP coletores
+    towers:
+      title: Torres de ataque
+      header: BlockIntegrationsTorres de ataque
+      description: Torres, matar XP e mirar
+    furnaces:
+      title: Fornos modernáveis
+      header: 'BlockIntegrations: Fornos upgradáveis'
+      description: Atualizações de forno e bônus por nível
+    anvils:
+      header: 'BlockIntegrations: bigornas'
+      title: Bigornas
+      description: Avanços de bigornas e preços
+    traps:
+      title: Armadilhas
+      header: BlockIntegrationsArmadilhas
+      description: Activar armadilhas, predefinições, potência de lançamento e danos
+  option:
+    workstations-extra-base-xp-cost:
+      label: 'Preço base da atualização da poção: extra'
+      description: XP pontos multiplicados por nova classificação ao quadrado.
+    workstations-strength-base-xp-cost:
+      label: 'Aumento de poção preço base: força'
+      description: XP pontos multiplicados por nova classificação ao quadrado.
+    workstations-duration-base-xp-cost:
+      label: 'Preço base: duração'
+      description: XP pontos multiplicados por nova classificação ao quadrado.
+    traps-sling-power:
+      label: Poder da lança
+      description: Velocidade da corda horizontal de 0.5 a 3.0.
+    traps-sling-lift:
+      label: Levantem-se
+      description: Impulso vertical de 0.2 para 2.0, para baixo para armadilhas de teto.
+    anvils-enabled:
+      label: Ativar atualizações de bigornas
+      description: Habilite o menu e os bônus.
+    anvils-base-xp-cost:
+      label: Base XP ponto de custo
+      description: Preço multiplicado pela nova classificação ao quadrado.
+    anvils-unbreakable-xp-cost:
+      label: Preço inquebrável
+      description: Preço único em XP pontos.
+    traps-enabled:
+      label: Activar armadilhas
+      description: Permite armadilhas automáticas e manuais de monstros.
+    traps-default-automatic:
+      label: Novas armadilhas automáticas
+      description: Modo inicial para novas armadilhas, configurações existentes são preservadas.
+    traps-default-cooldown-seconds:
+      label: Tempo de recuperação padrão
+      description: 10 ou 15 segundos para novas armadilhas. Armadilhas existentes mantêm suas configurações.
+    traps-throw-power:
+      label: Poder de lançamento
+      description: Velocidade da armadilha, de 0.5 a 3.0.
+    traps-spike-damage:
+      label: Dano do Spike
+      description: Pontos de dano por monstro; 2 pontos é igual a um coração.
+    radius:
+      label: Raio de separação
+      description: Raio de busca ao redor do bloco de cobre, em blocos
+    cooldown-ticks:
+      label: Hora de recuperação da sorte
+      description: Tiques entre duas ativações (20 = 1 s)
+    include-trapped-chests:
+      label: baú preso
+      description: E também em baús presos
+    messages-show-when-nothing-moved:
+      label: 'Sorter: mensagem vazia'
+      description: Mensagem quando nada foi resolvido
+    vacuum-radius:
+      label: Raio de vácuo
+      description: Raio de coleta em blocos
+    vacuum-cooldown-ticks:
+      label: Tempo de recuperação de vácuo
+      description: Tiques entre duas ativações
+    vacuum-messages-show-when-nothing-moved:
+      label: 'Vácuo: mensagem vazia'
+      description: Mensagem quando nada foi pego
+    launcher-velocity:
+      label: Poder do lançador
+      description: Velocidade de lançamento do bloco de lodo
+    launcher-minimum-upward-velocity:
+      label: 'Lançador: elevador mínimo'
+      description: Velocidade mínima para cima
+    launcher-cooldown-ticks:
+      label: Tempo de recuperação do lançador
+      description: Tiques entre dois lançamentos
+    launcher-play-sound:
+      label: Som do lançador
+      description: Som de foguete no lançamento
+    booster-velocity:
+      label: Força de impulso
+      description: Impulso horizontal no gelo
+    booster-cooldown-ticks:
+      label: Tempo de recuperação do impulsionador
+      description: Tiques entre dois impulsos
+    booster-play-sound:
+      label: Som de impulsionador
+      description: Som em impulso
+    booster-prevent-ice-melting:
+      label: Protejam o gelo de reforço
+      description: Gelo em Redstone não derrete
+    float-launcher-velocity:
+      label: Poder de elevação flutuante
+      description: Velocidade de lançamento vertical
+    float-launcher-levitation-duration-ticks:
+      label: 'Elevador flutuante: tempo de levitação'
+      description: Tiques de Levitação (20 = 1 s)
+    float-launcher-levitation-amplifier:
+      label: 'Elevador flutuante: amplificador'
+      description: 0 = Levitação I
+    float-launcher-cooldown-ticks:
+      label: Tempo de recuperação do elevador flutuante
+      description: Tiques entre dois lançamentos
+    float-launcher-play-sound:
+      label: Som de elevação flutuante
+      description: Som no lançamento
+    combos-enabled:
+      label: Atualizações combinadas habilitadas
+      description: Atualize os menus e cure o bloco das combinações
+    combos-upgrades-maximum-level:
+      label: Nível máximo
+      description: Melhor nível de atualização por caminho
+    combos-scaling-cooldown-reduction-per-level:
+      label: Tempo de recuperação por nível
+      description: Redução relativa por nível (0.05 = 5 %)
+    combos-scaling-minimum-cooldown-ticks:
+      label: Tempo mínimo de recuperação
+      description: Limite inferior em carrapatos
+    combos-heal-amount:
+      label: Cura por pulso
+      description: Pontos de saúde (2 = um coração)
+    combos-heal-aura-radius:
+      label: Curar aura
+      description: Raio em blocos
+    combos-heal-pulse-cooldown-ticks:
+      label: Intervalo de cura
+      description: Tiques entre dois pulsos cicatrizam
+    combos-heal-damage-cooldown-ticks:
+      label: Pausa após danos
+      description: Tiques sem cura depois de sofrer danos
+    combos-heal-minimum-distance:
+      label: Distância do bloco de cura
+      description: Distância mínima entre blocos de cura
+    combos-heal-play-particles:
+      label: Partículas curativas
+      description: Partículas ao curar
+    combos-heal-play-sound:
+      label: Som de cura
+      description: Som quando cura
+    combos-warp-pad-enabled:
+      label: Blocos de dobra
+      description: Lodestone em choro teletransporte obsidiana entre almofadas
+    combos-warp-pad-base-distance:
+      label: Alcance de dobra
+      description: Bloqueia uma almofada alcança o nível 0
+    combos-warp-pad-distance-per-level:
+      label: Dobra por nível
+      description: Blocos extras por distância
+    combos-warp-pad-cooldown-ticks:
+      label: Tempo de recuperação da dobra
+      description: Tiques entre duas dobras de um jogador
+    combos-warp-pad-max-per-player:
+      label: Blocos de dobra por jogador
+      description: 0 = ilimitado; administradores estão isentos
+    combos-warp-pad-play-particles:
+      label: Partículas de dobra
+      description: Partículas portais quando dobram
+    combos-xp-collector-enabled:
+      label: XP colecionadores
+      description: Mesa encantadora em Lapis coleta XP orbs
+    combos-xp-collector-radius:
+      label: XP raio de coleta
+      description: Blocos no nível 0
+    combos-xp-collector-capacity:
+      label: XP capacidade de coleta
+      description: Armazenado XP pontos no nível 0
+    combos-xp-collector-capacity-per-level:
+      label: Capacidade por nível
+      description: XP pontos extras por atualização de capacidade
+    combos-xp-collector-player-safe-radius:
+      label: Deixe orbs para os jogadores
+      description: Orbes tão perto de um jogador ficar para o jogador
+    combos-xp-collector-play-particles:
+      label: XP partículas coletoras
+      description: Partículas quando as órbitas são puxadas
+    towers-enabled:
+      label: Torres habilitadas
+      description: Reconheça torres de ataque e deixe-os atacar
+    towers-upgrades-maximum-level:
+      label: Nível máximo
+      description: Nível mais alto para danos, alcance e velocidade
+    towers-max-per-player:
+      label: Torres por jogador
+      description: 0 = ilimitado; administradores estão isentos
+    towers-attack-task-period-ticks:
+      label: Intervalo de ataque
+      description: Tiques entre dois alvos
+    towers-pause-when-loot-full:
+      label: Pausar ataques no baú cheio
+      description: Não comece novos ataques quando cada ranhura de saque está em seu limite de pilha; projéteis já em voo
+        ainda podem criar gotas
+    towers-experience-require-nearby-player:
+      label: Mate XP apenas com um jogador
+      description: XP apenas quando o proprietário ou um membro da cidade está perto
+    towers-experience-player-radius:
+      label: Raio do jogador para XP
+      description: Blocos
+    towers-experience-spawner-mobs:
+      label: XP de criaturas reprodutoras
+      description: criaturas de desovas dar torres XP
+    towers-targeting-line-of-sight:
+      label: Linha de visão necessária
+      description: Não atire através das paredes
+    towers-targeting-ignore-named-mobs:
+      label: Ignore criaturas nomeadas
+      description: Animais de estimação e criaturas de eventos
+    towers-loot-capture-nearby-plugin-drops:
+      label: Capturar as gotas do plugin
+      description: Também colecionar gotas criadas por plugins de criaturas
+    towers-loot-drop-contents-when-broken:
+      label: Jogue o saque quando quebrar
+      description: Artigos armazenados e XP não estão perdidos
+    furnaces-enabled:
+      label: Atualizações de forno habilitadas
+      description: Propriedade, upgrades e habilidade XP de fornos
+    furnaces-upgrades-maximum-level:
+      label: Nível máximo
+      description: O nível mais alto dos caminhos principais
+    furnaces-speed-multiplier-per-level:
+      label: Velocidade por nível
+      description: Velocidade de fusão adicional (0.12 = +12 %)
+    furnaces-fuel-efficiency-per-level:
+      label: Tempo de queima por nível
+      description: Tempo de queima adicional (0.10 = +10 %)
+    furnaces-bonus-yield-chance-per-level:
+      label: Rendimento de bônus por nível
+      description: Possibilidade de um resultado extra (0.025 = 2.5 %)
+    furnaces-xp-boost-per-level:
+      label: XP impulso por nível
+      description: Mais forno e habilidade XP (0.20 = +20 %)
+web:
+  module:
+    title: Blocos e torres
+    description: 'Suas torres, fornos e combinações de blocos: upgrades, saques e guias de construção'
+  button:
+    label: Abra na web
+    tooltip: Abra a página Blocks & Towers no navegador ou sobreposição no jogo
+  unavailable: <yellow>A página não está disponível neste servidor agora.
+  error:
+    unknown: Esta estrutura não existe mais.
+    not-yours: Esta estrutura não pertence a você.
+    offline: Junte-se ao jogo para fazer isso.
+    not-loaded: A área desta estrutura não está carregada agora. Chegue perto e tente de novo.
+    bad-request: Pedido inválido.
+    loot-changed: O baú de saques mudou enquanto isso. A lista foi recarregada.
+    inventory-full: Seu inventário está completo.
+    loot-empty: Não há nada para levar.
+  loot:
+    offline: Junte-se ao jogo para pegar itens. Você ainda pode olhar para o saque.
+    not-loaded: A torre não está carregada ou incompleta, então você só pode olhar para o saque.
+    too-far: Pegar itens funciona em {range} quarteirões da torre (como o botão de saque em bate-papo). Você ainda pode olhar
+      para o saque.
+    taken: '{moved} itens foram para o seu inventário.'
+    taken-partly: '{moved} itens movidos para o seu inventário, que agora está cheio.'
+  guide:
+    view:
+      side: Vista lateral (de cima para baixo)
+      foundation: Camada de fundação de cima
+      slime-field: Opcional 3×3 lodo de cima
+    any-ice: gelo, gelo embalado ou gelo azul
+    tower:
+      style:
+        precision: 'Alvo único: atira na criatura hostil mais próxima.'
+        area: 'Tiros explosivos: também atingiu criaturas hostis ao redor do alvo (65 % danos).'
+        fire: 'Tiros de fogo: também colocar o alvo em fogo.'
+      xp-rule: Matar XP só é coletado enquanto o proprietário ou um membro da cidade está dentro de {radius} quarteirões.
+      limit: Cada jogador pode possuir no máximo {max} torres.
+    combo:
+      sorter: 'Salte na placa: itens do seu inventário principal vão para baús próximos que já contêm o mesmo item.'
+      vacuum: 'Pular para a placa: itens caídos nas proximidades vão para baús combinando, ou em seu inventário quando nenhum
+        baú está perto.'
+      launcher: Pule no bloco de lodo para ser lançado na direção que está olhando.
+      booster: Passe sobre o gelo por uma explosão de velocidade.
+      float-launcher: Pouse na terracota para flutuar para cima com Levitation.
+      heal: Lentamente cura os jogadores dentro de sua aura depois de não terem sofrido danos por um tempo.
+      harvester: Colheitas de trigo maduro, cenouras, batatas, beterraba, verruga, cacau, melões, abóboras, cana de açúcar
+        e bambu ao redor, replanta e enche um baú tocante. Espera enquanto o baú está cheio.
+      warp-pad: Pegue uma de suas outras almofadas no mesmo mundo e se teletransporte lá.
+      xp-collector: Puxa a experiência orbita em torno dele no bloco até que esteja cheio. O dono leva os XP no menu.
+    furnace:
+      speed: Tempo de fundição mais curto.
+      fuel: Cada combustível queima mais.
+      yield: Possibilidade de um resultado extra.
+      multismelt: Processa itens adicionais no mesmo ciclo de fundição.
+      xp-boost: Mais baunilha armazenada XP e mais habilidade de fundição/cozimento XP.
+  ui:
+    tab-mine: Minhas estruturas
+    tab-guide: Guia de construção
+    tab-admin: Todas as estruturas
+    loading: Carregando...
+    refresh: Atualizar
+    error: 'Não foi possível carregar: {message}'
+    offline-note: Você não está no jogo. Atualizações e saques precisam de você online.
+    unloaded-note: Estruturas em áreas que não estão carregadas mostram seus últimos valores conhecidos e não podem ser atualizadas
+      até que a área seja carregada novamente.
+    empty: Você ainda não possui torres, fornos ou combinações de blocos. O guia do prédio mostra como construí-los.
+    towers: Torres de ataque
+    furnaces: Fornos
+    combos: Block combos
+    state-active: Ativo
+    state-incomplete: Incompleto
+    state-unloaded: Não carregado
+    location: '{world} · {x} {y} {z}'
+    owner: 'Proprietário: {owner}'
+    no-owner: Sem dono
+    tower-xp: 'Mate XP armazenados: {xp}'
+    furnace-xp: 'Armazenado XP: {xp}'
+    tower-stats: Danos {damage} · Alcance {range} blocos · ataques a cada {ticks} carrapatos
+    level: Nível {level}/{max}
+    value-next: '{value} → {next}'
+    upgrade-button: Atualização ({cost} XP)
+    upgrading: Atualizando...
+    maxed: Máximo
+    blocked-offline: Junte-se ao jogo para atualizar.
+    blocked-state: Só é possível enquanto a estrutura está completa e sua área está carregada.
+    starter: 'Torre inicial: sem atualizações.'
+    tower-limit: 'Torres: {owned} de {max}'
+    loot-show: Loot bast ({stacks} pilhas)
+    loot-hide: Esconda o baú de saques
+    loot-empty: O baú está vazio.
+    loot-take: Tome
+    loot-take-all: Leve tudo
+    loot-view-only: 'Apenas visualização: {hint}'
+    loot-count: '{amount}× {name}'
+    truncated: Apenas os primeiros {limit} estão listados.
+    in-game-hint: Sneak + botão direito do mouse uma estrutura no jogo para todas as opções (retirar XP, saque baú).
+    focus: Aberto do jogo
+    guide-intro: Como construir cada estrutura, o que faz e o que as atualizações custam. Todos os valores seguem as configurações
+      deste servidor.
+    guide-base: 'Valores base: {damage} danos · {range} blocos · cada {ticks} carrapatos'
+    guide-no-upgrades: Nenhuma atualização (torre de partida barata).
+    guide-blocks: Blocos
+    guide-upgrades: Tabela de atualização
+    guide-level: Nível
+    guide-value: Efeito
+    guide-cost: Custo do próximo nível
+    guide-build: 'Construção: {structure}'
+    guide-furnace-build: Coloque uma fornalha, alto forno ou fumante. Você se torna seu dono fixo, esgueira-se + clique com
+      o botão direito para abrir as atualizações.
+    guide-empty-cell: Qualquer bloco ou ar
+    admin-filter: Filtrar por proprietário, nome, tipo ou mundo
+    admin-kind-all: Todos os tipos
+    admin-search: Pesquisar
+    admin-totals: '{shown} de {total}'
+    admin-hint: Os administradores podem atualizar qualquer estrutura aqui, os custos são pagos com seus próprios XP, exatamente
+      como no jogo.
+    settings-link: Configurações do servidor de BlockIntegrations
+admin:
+  title: BlockIntegrations
+  status: Estado
+  towers-all: Todas as torres
+  towers-of: Torres de um jogador
+  towers-near: Torres perto de mim
+  tower-remove: Remova a torre que eu olho
+  reload: Recarregar
+client:
+  tower-marker: '{name}'
+  tower-marker-xp: '{name} · {xp} XP'
+  loot-full-title: Torre saque baú cheio
+  loot-full-text: '{name}: ataques pausa; projéteis em vôo ainda podem transbordar'
+  loot-open: Abra o saque
+  tooltip-title: 'Portátil: {name}'
+  tooltip-tower: Coloque-o na estrutura correspondente - as atualizações passam
+  tooltip-combo: Coloque-o na configuração correspondente - as atualizações continuam
+  tooltip-furnace: Coloque-o - os upgrades forno carregar mais
+diagnostics:
+  storage-readonly: O armazenamento é ilegível, salvar está desativado para preservar o arquivo original.
+  storage-failed: O último salvamento falhou, as mudanças atuais só podem existir na memória.
+  storage-active: O armazenamento é legível, nenhuma falha de salvamento é gravada.
+tower-controls:
+  status: 'Alvos: {profile}, controle: {mode}. Entrada de pedra vermelha separada: {x}, {y}, {z} (3 blocos a leste da cabeça).'
+  change-profile: Próximo perfil do alvo
+  change-redstone: Próximo modo Redstone
+  share: Gerencie o acesso pessoal
+  share-help: Até 32 UUIDs. Cada botão muda um direito. Grant Use também para abrir o menu da torre. A cidade existente e
+    o acesso administrativo permanecem, os direitos pessoais nunca concedem demolição ou mudanças de propriedade.
+  member: Nome do jogador online ou UUID
+  toggle-right: 'Comutador: {right}'
+  revoke: Remova todos os direitos pessoais
+  invalid-member: Digite um nome online ou válido UUID, no máximo 32 membros podem ser armazenados.
+  right:
+    use: Use / abra o menu
+    loot: Recolha o saque e guarde XP
+    upgrade: Compre atualizações
+  profile:
+    all: Todas as criaturas hostis permitidas
+    undead: Apenas mortos-vivos
+    arthropods: Só os artrópodes
+    raiders: Apenas criaturas invasoras
+    none: Sem alvos
+  redstone:
+    always: Sempre ligado
+    powered: Ligar o sinal
+    unpowered: Ligado sem sinal
+    disabled: Desativado
+workstation:
+  potion-description: 'Efeito extra: 5 postos, +1% chance cada um para um efeito positivo aleatório (I, 30s). Força: 10 fileiras,
+    +10% chance cada para +1 nível de efeito. Duração: 10 fileiras, +25s cada, exclui efeitos instantâneos. Um rolo por garrafa,
+    mais cerveja não pode voltar.'
+  brew-use: Use o carrinho de cerveja
+  brew-upgrade: Atualize o carrinho de cerveja
+  name:
+    brewing_stand: Banco de cerveja
+    campfire: Fogueira de acampamento
+    soul_campfire: A fogueira da alma
+  upgrade:
+    extra: Efeito extra aleatório
+    strength: Força da poção
+    duration: Duração do efeito
+    speed: Velocidade de processamento
+    fuel: Eficiência do combustível de cerveja
+    yield: Resultado extra cozido
+  description: 'Cada nível: +12% velocidade; combustível de cerveja +10%; chance de bônus de fogueira +2.5%. Ingredientes
+    e receitas normais ainda se aplicam.'
+  level: '{upgrade}: nível {level}/{max}'
+  guide-title: Cervejarias e fogueiras
+  guide:
+  - Clique com o botão direito de um carrinho de cerveja ou uma fogueira para abrir suas atualizações. Blocos inexistentes
+    são reivindicados no primeiro uso.
+  - 'Estandes de cerveja: mais rápido cervejeiro e mais operações de cerveja por pó de chama. Fogueiras: cozinhar mais rápido
+    e uma chance para um resultado extra.'
+  - 'Até 10 níveis: 2,2x de velocidade, 2x de combustível e 25% de rendimento de fogueira extra. Cada nível custa 100 × Novo
+    nível ao quadrado XP pontos por padrão.'
+  - Apenas o proprietário ou um administrador autorizado pode atualizar, dentro de 8 blocos. O uso normal permanece disponível
+    para outros jogadores.
+  - Proprietário e upgrades ficam na estação de trabalho. Fogos de acampamento requerem Silk Touch; gotas comuns de carvão/carvão
+    não podem levar atualizações.
+  - Atualizações se aplicam a operações recém iniciadas. Eles não adicionam reembolsos de ingredientes ou mudam receitas de
+    poção.
+  unavailable: A estação de trabalho está indisponível, desativada, muito longe, ou não pode ser salva.
+  not-owner: Esta estação de trabalho pertence a outro jogador.
+  denied: Você não pode atualizar esta estação de trabalho.
+  changed: A oferta de atualização mudou. Reabra o menu da estação de trabalho.
+  need-xp: Você não tem XP pontos suficientes para esta atualização.
+  upgraded: Estação de trabalho atualizada.
+trap:
+  wait-remove: Espere pelo tempo de recuperação atual antes de não registrar.
+  title: Armadilhas
+  status: '{type} · {mode} · Tempo de recuperação {seconds} segundos'
+  auto: Automático
+  manual: Só o botão
+  toggle: Alternar gatilho automático
+  change-cooldown: Troque 10 / 15 segundos
+  remove: Armadilha não registrada
+  limit: No máximo 32 armadilhas por jogador, 2048 por servidor, novo registro é desativado após uma falha de leitura de armazenamento.
+  denied: Esta armadilha pertence a outra pessoa ou está em uma região protegida.
+  registered: 'Armadilha registrada: {mode}, {seconds} segundo tempo de recuperação. Sneak-direita-clique no botão para configurações.'
+  cooldown: Armadilha pronta em {seconds} segundos.
+  no-target: Nenhum monstro elegível ao alcance.
+  guide:
+  - Construa um 3×3 quadros obsidianas (oito blocos) em torno de um pistão (jogo), bloco de ferro (spikes) ou bloco de mel
+    (lento).
+  - 'Armadilha: bloco de lodo na moldura obsidiana com exatamente um botão frontal. Pisos e tetos se afastam do botão, paredes
+    se movem para frente e para cima.'
+  - Aponte o pistão para a direção de lançamento. Monte em pisos, paredes ou tetos.
+  - Coloque um botão na frente de um bloco obsidiana. O primeiro clique direito registra a armadilha com o gatilho automático
+    ativado.
+  - 'Botão: atire manualmente. Botão de sneak-right-click: escolha o modo automático e um 10/15 segundo tempo de recuperação.
+    Ambos os modos compartilham o mesmo tempo de recuperação.'
+  - 'Área: 3×3 de largura, estendendo 3 blocos para frente, com linha de visão. Apenas monstros hostis, sem jogadores ou animais
+    de estimação.'
+  - Spikes lidam com 6 danos por padrão, alcatrão diminui por 5 segundos. Ambos os modos requerem um alvo elegível.
+  - A armação/botão em falta pausa a armadilha. Removendo o núcleo não registra após o tempo de recuperação. Pedaços descarregados
+    ficam descarregados.
+  type:
+    sling: Armadilha de trenó
+    throw: Jogue a armadilha
+    spikes: Armadilha Spike
+    tar: Armadilha de alcatrão
+anvil:
+  title: Anvil
+  use: Use a bigorna
+  upgrade: Aumente a bigorna
+  description: 'Eficiência: 5% menos XP níveis por posto (máx. 50%). Encantos: +1 para tampas normais por patente (máximo
+    +5), remove muito caro. Durabilidade: sem desgaste. Atualizações custam XP pontos.'
+  denied: Você não pode atualizar esta bigorna.
+  unavailable: Anvil indisponível ou atualização não pode ser salva.
+  changed: A oferta mudou. Por favor, reabra.
+  need-xp: Você precisa de mais XP pontos.
+  upgraded: Anvil atualizado.
+  path:
+    efficiency: XP redução de custos
+    enchantments: Boné de encantamento
+    durability: Longitude ilimitada
+commands:
+  blockintegrations:
+    description: 'Combos, torres, fornos e estações de trabalho: guias, menu, dobradores, triagem do baú e status'
+    aliases: []
+    values:
+      guide: guia
+    sub:
+      menu:
+        name: menu
+        aliases: []
+        description: Abra o menu de guia do bloco
+      web:
+        name: web
+        aliases: []
+        description: 'Abra o site BlockIntegrations (guia: o guia de construção)'
+        args:
+          page: guia
+      status:
+        name: status
+        aliases: []
+        description: Torres, ataques, combinações e limites de atualização deste servidor
+      combos:
+        name: combos
+        aliases: []
+        description: Como construir as combinações de blocos
+        sub:
+          mine:
+            name: mine
+            aliases: []
+            description: Seu próprio bloco combina com posição e distância, mais próximo primeiro
+      traps:
+        name: traps
+        aliases: []
+        description: Como construir e usar armadilhas de monstros
+      towers:
+        name: towers
+        aliases: []
+        description: Como construir torres de ataque
+        sub:
+          list:
+            name: list
+            aliases: []
+            description: 'Liste suas torres (Admins: todos, ou um jogador)'
+            args:
+              player: PLAYER
+          near:
+            name: near
+            aliases: []
+            description: Torres dentro de 48 quarteirões, mais próximo primeiro
+          remove:
+            name: remove
+            aliases: []
+            description: Remova a torre que você está olhando
+      furnaces:
+        name: furnaces
+        aliases: []
+        description: Como as fornalhas funcionam
+      workstations:
+        name: workstations
+        aliases: []
+        description: Banco de cerveja e atualizações da fogueira
+      warppads:
+        name: warppads
+        aliases: []
+        description: Suas almofadas de dobra e os jogadores com quem você as divide
+        sub:
+          list:
+            name: list
+            aliases: []
+            description: Liste suas almofadas de dobra e convidados
+          share:
+            name: share
+            aliases: []
+            description: Deixe um jogador usar todas as suas almofadas de dobra
+            args:
+              player: PLAYER
+          unshare:
+            name: unshare
+            aliases: []
+            description: Leve o acesso de um jogador para suas almofadas de dobra de volta
+            args:
+              player: PLAYER
+      sortlock:
+        name: sortlock
+        aliases: []
+        description: Protejam as fendas de estoque (9-35) ou os tipos de itens do classificador
+        args:
+          slot: SLOT
+        sub:
+          list:
+            name: list
+            aliases: []
+            description: Mostrem suas fendas trancadas
+          clear:
+            name: clear
+            aliases: []
+            description: Destranque todos os slots
+          item:
+            name: item
+            aliases: []
+            description: Mantenha ou solte o tipo de item em cada slot
+          items:
+            name: items
+            aliases: []
+            description: Liste seus tipos de itens bloqueados
+          clearitems:
+            name: clearitems
+            aliases: []
+            description: Desbloquear todos os tipos de itens
+      chestpriority:
+        name: chestpriority
+        aliases: []
+        description: O baú se enche primeiro, e o baú transborda
+        sub:
+          add:
+            name: add
+            aliases: []
+            description: Encha o baú que você olhar primeiro
+          overflow:
+            name: overflow
+            aliases: []
+            description: Use o baú que você olhar para sobras
+          remove:
+            name: remove
+            aliases: []
+            description: Tire o baú que você olha da sua lista
+          list:
+            name: list
+            aliases: []
+            description: Mostrem seus baús preferidos
+          clear:
+            name: clear
+            aliases: []
+            description: Esqueça todas as preferências do baú
+      reload:
+        name: reload
+        aliases: []
+        description: Recarregar arquivos de configuração e linguagem
+      dashboard:
+        name: dashboard
+        aliases: []
+        description: "Painel de máquinas"
+harvest-profile:
+  title: Perfis de colheitadeira
+  open: Escolha o perfil da colheita
+  current: 'Perfil atual: {profile}'
+  help: Selecione o que esta máquina colhe. Mudanças se aplicam no próximo passe programado. Só o dono ou um administrador
+    podem mudar o perfil. A seleção sobrevive ao recomeço, quebrando e substituindo o compostor recomeça para todas as plantas.
+  unavailable: Você não pode mudar esta colheitadeira agora. Deve ser completo, habilitado e possuído por você (ou você deve
+    ser um administrador).
+  changed: 'Perfil da colheita: {profile}'
+  names:
+    all: Todas as plantas
+    replanted: Plantações replantadas
+    fruit: Melões e abóboras
+    stalks: Cana de açúcar e bambu
+    paused: Pausado
+  details:
+    all: Colhe todas as plantas apoiadas.
+    replanted: Trigo, cenouras, batatas, beterraba, verruga e cacau, replantar como de costume.
+    fruit: Só melões e abóboras.
+    stalks: Apenas segmentos superiores de cana de açúcar e bambu; mantenha a base.
+    paused: Deixe todas as plantas intactas até você selecionar outro perfil.
+
+groups:
+  button: "⚙ Grupos ({count})"
+  title: "Grupos de máquinas"
+  intro: "Seus grupos de máquinas (até {max}). Escolha um para ver todas as máquinas, pausar colhedoras ou ligar alertas."
+  intro-empty: "Agrupe máquinas que andam juntas – uma fazenda, uma fundição, a defesa da base – e veja o estado delas de relance. Crie um grupo e adicione máquinas pela página de detalhes."
+  row: "{group} ({count})"
+  empty-group: "nenhuma máquina ainda"
+  count: "{count}× {state}"
+  new: "＋ Novo grupo"
+  new-title: "Novo grupo"
+  rename-title: "Renomear grupo"
+  name-hint: "Um nome curto, no máximo {max} caracteres."
+  name: "Nome"
+  save: "Salvar"
+  detail: "{group}: {count} máquina(s)"
+  how-to-add: "Abra uma máquina no painel e use “Adicionar a …”."
+  pause: "⏸ Pausar colhedoras"
+  resume: "▶ Retomar colhedoras"
+  paused: "{count} colhedora(s) pausada(s)."
+  resumed: "{count} colhedora(s) retomada(s) com o perfil anterior."
+  watch-all: "🔔 Alertas para todas"
+  unwatch-all: "🔕 Sem alertas"
+  watched: "Alertas ligados para {count} máquina(s)."
+  unwatched: "Alertas desligados para {count} máquina(s)."
+  rename: "✎ Renomear"
+  delete: "🗑 Apagar grupo"
+  deleted: "Grupo {group} apagado (as máquinas continuam como estão)."
+  add-to: "Adicionar a {group}"
+  remove-from: "Remover de {group}"
+  error-name: "Digite um nome."
+  error-exists: "Você já tem um grupo com esse nome."
+  error-limit: "Você pode ter no máximo {max} grupos."
+  error-unknown: "Esse grupo não existe mais."
+  error-full: "Um grupo comporta no máximo {max} máquinas."
+dashboard:
+  title: "Painel de máquinas"
+  intro: "{count} máquinas próprias. Página {page}. Escolha uma máquina para ver obstáculos e alertas opcionais."
+  row: "{name} ({x}, {y}, {z}): {state}"
+  detail: "{name} em {world} ({x}, {y}, {z}): {state}"
+  alert: "Alerta da máquina: {name} ({x}, {y}, {z}) — {state}"
+  furnace: "Fornalha"
+  previous: "Anterior"
+  next: "Próxima"
+  refresh: "Atualizar"
+  back: "Voltar"
+  watch: "Ativar alertas desta máquina"
+  unwatch: "Desativar alertas desta máquina"
+  limit: "Você pode acompanhar até {count} máquinas."
+  state-unloaded: "Chunk descarregado"
+  state-incomplete: "Estrutura incompleta"
+  state-paused: "Pausada"
+  state-output: "Saída cheia"
+  state-ready: "Pronta"
+  state-idle: "Sem entrada"
+  state-running: "Funcionando"
+  state-fuel: "Sem combustível"
+  state-waiting: "Aguardando progresso"
+  hint-unloaded: "Visite a área; o painel não carrega chunks."
+  hint-incomplete: "Repare a estrutura original."
+  hint-paused: "Verifique o perfil de colheita ou controles da torre."
+  hint-output: "Esvazie o recipiente de saída ou o resultado."
+  hint-ready: "Estrutura pronta; pode exigir ativação ou alvo compatível."
+  hint-idle: "Adicione um item de entrada compatível."
+  hint-running: "O processamento está avançando."
+  hint-fuel: "Adicione combustível adequado."
+  hint-waiting: "Confira receita, combustível e espaço na saída."
+
+blueprint:
+  save: "📋 Salvar como projeto"
+  save-hover: "Guardar esses níveis para copiá-los em outras máquinas do mesmo tipo"
+  saved: "<green>📋 Projeto salvo. Abra outra máquina do mesmo tipo e escolha \"Aplicar projeto\"."
+  apply: "📋 Aplicar projeto ({steps} melhorias, {cost} XP)"
+  apply-hover: "Comprar as melhorias que faltam pelo preço normal; nada é reduzido"
+  applied: "<green>📋 Projeto aplicado: {steps} melhorias por {cost} XP."
+  partial: "<yellow>📋 Projeto parado após {steps} melhorias ({cost} XP): a próxima custa {need} XP."
+  stopped: "<yellow>📋 Projeto parado após {steps} melhorias ({cost} XP)."

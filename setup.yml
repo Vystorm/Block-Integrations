@@ -1,0 +1,184 @@
+{
+  "version": 1,
+  "intro": {
+    "en": "A few quick choices for BlockIntegrations. Everything else stays on its defaults.",
+    "de": "Ein paar schnelle Entscheidungen für BlockIntegrations. Alles andere bleibt auf Standard.",
+    "fr": "Quelques choix rapides pour BlockIntegrations. Le reste garde ses valeurs par défaut.",
+    "it": "Alcune scelte rapide per BlockIntegrations. Il resto resta predefinito.",
+    "pt_br": "Algumas escolhas rápidas para BlockIntegrations. O resto fica no padrão.",
+    "ru": "Несколько быстрых решений для BlockIntegrations. Остальное останется по умолчанию.",
+    "zh_cn": "BlockIntegrations 的几个快速选项，其余保持默认。"
+  },
+  "questions": [
+    {
+      "id": "radius",
+      "text": {
+        "en": "Sorting radius in blocks?",
+        "de": "Sortierradius in Blöcken?",
+        "fr": "Rayon de tri en blocs ?",
+        "it": "Raggio di smistamento in blocchi?",
+        "pt_br": "Raio de organização em blocos?",
+        "ru": "Радиус сортировки в блоках?",
+        "zh_cn": "整理半径（格）？"
+      },
+      "type": "number",
+      "target": "config.yml:radius",
+      "min": 1,
+      "max": 64
+    },
+    {
+      "id": "vacuum",
+      "text": {
+        "en": "Vacuum radius in blocks?",
+        "de": "Staubsauger-Radius in Blöcken?",
+        "fr": "Rayon d’aspiration en blocs ?",
+        "it": "Raggio di aspirazione in blocchi?",
+        "pt_br": "Raio de aspiração em blocos?",
+        "ru": "Радиус пылесоса в блоках?",
+        "zh_cn": "吸取半径（格）？"
+      },
+      "type": "number",
+      "target": "config.yml:vacuum.radius",
+      "min": 1,
+      "max": 64
+    },
+    {
+      "id": "combos",
+      "text": {
+        "en": "Enable block-built machines?",
+        "de": "Maschinen aus Blöcken aktivieren?",
+        "fr": "Activer les machines en blocs ?",
+        "it": "Attivare le macchine di blocchi?",
+        "pt_br": "Ativar máquinas de blocos?",
+        "ru": "Включить машины из блоков?",
+        "zh_cn": "启用方块机器？"
+      },
+      "type": "choice",
+      "recommended": "on",
+      "options": [
+        {
+          "id": "on",
+          "label": {
+            "en": "On",
+            "de": "An",
+            "fr": "Activé",
+            "it": "Attivo",
+            "pt_br": "Ligado",
+            "ru": "Вкл.",
+            "zh_cn": "开启"
+          },
+          "set": {
+            "config.yml:combos.enabled": true
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "de": "Aus",
+            "fr": "Désactivé",
+            "it": "Disattivo",
+            "pt_br": "Desligado",
+            "ru": "Выкл.",
+            "zh_cn": "关闭"
+          },
+          "set": {
+            "config.yml:combos.enabled": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "warp",
+      "text": {
+        "en": "Enable warp pads?",
+        "de": "Warp-Pads aktivieren?",
+        "fr": "Activer les plateformes de téléportation ?",
+        "it": "Attivare le piattaforme di teletrasporto?",
+        "pt_br": "Ativar plataformas de teleporte?",
+        "ru": "Включить телепорт-платформы?",
+        "zh_cn": "启用传送垫？"
+      },
+      "type": "choice",
+      "recommended": "on",
+      "options": [
+        {
+          "id": "on",
+          "label": {
+            "en": "On",
+            "de": "An",
+            "fr": "Activé",
+            "it": "Attivo",
+            "pt_br": "Ligado",
+            "ru": "Вкл.",
+            "zh_cn": "开启"
+          },
+          "set": {
+            "config.yml:combos.warp-pad.enabled": true
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "de": "Aus",
+            "fr": "Désactivé",
+            "it": "Disattivo",
+            "pt_br": "Desligado",
+            "ru": "Выкл.",
+            "zh_cn": "关闭"
+          },
+          "set": {
+            "config.yml:combos.warp-pad.enabled": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "blueprints",
+      "text": {
+        "en": "Allow machine blueprints (copy upgrade levels between machines)?",
+        "de": "Maschinen-Baupläne erlauben (Ausbaustufen zwischen Maschinen kopieren)?",
+        "fr": "Autoriser les plans de machines (copier les niveaux entre machines) ?",
+        "it": "Consentire i progetti delle macchine (copiare i livelli tra macchine)?",
+        "pt_br": "Permitir projetos de máquinas (copiar níveis entre máquinas)?",
+        "ru": "Разрешить чертежи машин (копирование уровней между машинами)?",
+        "zh_cn": "允许机器蓝图（在机器之间复制升级等级）？"
+      },
+      "type": "choice",
+      "recommended": "on",
+      "options": [
+        {
+          "id": "on",
+          "label": {
+            "en": "On",
+            "de": "An",
+            "fr": "Activé",
+            "it": "Attivo",
+            "pt_br": "Ligado",
+            "ru": "Вкл.",
+            "zh_cn": "开启"
+          },
+          "set": {
+            "config.yml:machine-blueprints.enabled": true
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "de": "Aus",
+            "fr": "Désactivé",
+            "it": "Disattivo",
+            "pt_br": "Desligado",
+            "ru": "Выкл.",
+            "zh_cn": "关闭"
+          },
+          "set": {
+            "config.yml:machine-blueprints.enabled": false
+          }
+        }
+      ]
+    }
+  ]
+}

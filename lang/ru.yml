@@ -1,0 +1,1137 @@
+# Русский — UTF-8. Keep keys, placeholders and formatting tokens unchanged.
+general:
+  no-permission: <red>У тебя нет на это разрешения.
+  reloaded: <green>Было перезагружено BlockIntegrations.
+  players-only: <red>Эту команду могут использовать только игроки.
+  settings-unavailable: <red>Эти настройки недоступны.
+menu:
+  title: Блоки и обновления
+  description: Блок комбо, атакующие башни и модернизируемые печи
+guide:
+  title: Блоки и обновления
+  body:
+  - Печи, башни и блок-комбо управляются непосредственно в самой конструкции.
+  - Присядьте и щелкните правой кнопкой мыши соответствующий блок, чтобы открыть его обновления.
+  - 'Блок комбо: sneak + right-click верхний функциональный блок.'
+  - 'Атакуйте башни: проприсесть + щелкните правой кнопкой мыши башню.'
+  - 'Обновляемые печи: sneak + right-click печь.'
+  combos:
+    label: Блок комбо
+    tooltip: Структуры, пути обновления и блок исцеления
+  towers:
+    label: Башни для атак
+    tooltip: Башня строит, модернизирует и сундук
+  furnaces:
+    label: Модернизированные печи
+    tooltip: Владение, мастерство XP и модернизация путей
+  settings:
+    label: ⚙ Настройки сервера
+    tooltip: Радий, пусковые установки, комбо, башни и печи (админ)
+status:
+  line: '<green>BlockIntegrations <gray>- Башни: <white>{towers} <gray>Атаки: <white>{attacks} <gray>Циклы: <white>{cycles}
+    <gray>Башня Макс: <white>{tower_max} <gray>Пушка Макс: <white>{furnace_max} <gray>Комбо: <white>{combos} <gray>Комбо макс:
+    <white>{combo_max} <gray>Сортер/вакуум/пусковой механизм/бустер/плавучий подъемник/заживляющий блок/активные печи'
+  next: '<gray>Следующий: '
+  furnaces: '<gray>Улучшенных печей на сервере: <white>{furnaces}'
+  towers-button: Башни
+  towers-hover: 'Нажмите: список всех башен с их местоположением'
+  settings-button: Настройки сервера
+  settings-hover: 'Click: Откройте настройки'
+chat:
+  upgrades: модернизация
+  upgrades-hover: 'Click: Откройте обновления'
+  location: ' <gray>Местонахождение: '
+  too-far:
+    combo: <yellow>Вы слишком далеко от этого блока.
+    tower: <yellow>Вы слишком далеко от этой башни.
+    furnace: <yellow>Ты слишком далеко от этой печи.
+sorter:
+  success: <green>Сортировал {moved} предметов в {chests} сундук (сундуки).
+  nothing: <gray>Не было найдено поблизости подходящей предварительно сортированной сундуке.
+sort-locks:
+  hold-item: <gray>Сначала держите предмет в главной руке.
+  item-locked: '<gray>Сортировщик теперь хранит все элементы этого типа: '
+  item-unlocked: '<gray>Сортировщик может переместить этот тип элемента снова: '
+  items-empty: <gray>У вас нет типов предметов, заблокированных от сортировки.
+  items-title: '<gray>Типы предметов, хранящиеся в сортировщике (все варианты, в каждом слоте):'
+  items-cleared: <gray>Все замки вашего сортировщика были очищены.
+  usage: '<yellow>использование: /bi sortlock list|clear|slot|item|items|clearitems (Номера слотов являются внутренними слотами
+    основного инвентаря 9–35).'
+  invalid: <red>Выберите внутренний слот для основного инвентаря от 9 до 35 или используйте список/клир.
+  list-empty: <gray>Никакие слоты для основной инвентаря не заблокированы. Номера слотов используют внутреннюю нумерацию Minecraft
+    9-35.
+  list: '<gray>Закрытые слоты для основной инвентаря (внутренние Minecraft номер 9-35): <white>{slots}'
+  locked: <green>Слот {slot} для основной инвентаря теперь заблокирован от сортировки.
+  unlocked: <green>Слот {slot} больше не заблокирован от сортировки.
+  cleared: <green>Все ваши личные сортировочные замки были сняты.
+chest-priority:
+  usage: '<yellow>использование: /bi chestpriority add|overflow|remove|list|clear. Для add/overflow/remove, Посмотрите на
+    заряженную сундук внутри 6 blocks.'
+  look-at-chest: <red>Сначала посмотрите на заряженную сундук в пределах 6 блоков.
+  limit: <red>Вы можете сохранить максимум 8 предпочтительных положений сундука и 1 положение переполнения.
+  add: '<green>Предпочтительная сундук: {chest}'
+  overflow: '<green>Установите переполненную сундук: {chest}'
+  remove: '<green>Снятое предпочтение сундуке: {chest}'
+  cleared: <green>Очистил ваши личные приоритеты.
+  list-empty: <gray>У вас нет личных приоритетов.
+  list: '<gray>Предпочтительные сундуки (в порядке): <white>{chests}<gray> Перелив (последний, только совпадающие элементы):
+    <white>{overflow}'
+vacuum:
+  chests: <green>Вакуумные {moved} сбрасывали предметы в {chests} сундук(ы).
+  inventory: <green>Вакуумные {moved} предметов в вашем инвентаре.
+  nothing: <gray>Никаких совпадающих брошенных предметов не пылесосили.
+upgrade:
+  maxed: <yellow>Этот путь обновления уже максимизирован.
+  offer-changed: <yellow>Предложение по модернизации изменилось.
+  need-xp: <red>Для этого обновления вам нужно {cost} XP баллов.
+  done: '<green>{upgrade} повышен до уровня {level}. <gray>Стоимость: {cost} XP'
+  line: '{upgrade}: {level}/{max} | {value} -> {next} | {cost} XP'
+  line-max: '{upgrade}: {level}/{max} | {value} -> MAX | MAX'
+  button: '{upgrade} ({next}, {cost} XP)'
+machine-diagnostic:
+  header: '<gold>{machine}<gray> Отчет о строительстве:'
+  unloaded: '<yellow>{machine}: детали в незагруженном чанке еще не могут быть проверены.'
+  finding: '<gray>{part}: ожидаемый <white>{expected}<gray>Найдено <white>{actual}<gray> в <white>{x}, {y}, {z}<gray>.'
+  part:
+    control: блок управления
+    base: основание
+    lower-base: нижняя основа
+    pedestal: пьедестал
+    foundation: фундамент
+    ring: кольцо
+combo:
+  mine:
+    header: '<gold>Ваши комбо блоков <gray>({count}):'
+    empty: <gray>Вы еще не построили блок комбо. /bi combos показывает как.
+    entry-here: <gray>• {name} <gray>| {x} {y} {z} | {blocks} м
+    entry-elsewhere: <gray>• {name} <gray>| {world} {x} {y} {z}
+    more: <gray>... и еще {count}.
+    hint: <dark_gray>Комбо, построенные до 2.20.0, появляются здесь, как только вы их используете.
+  sorter:
+    name: Изобретатель Sorter
+    structure: легковесная (золотая) пластина давления на любом полном медном строительном блоке
+  vacuum:
+    name: Пункт Вакуум
+    structure: тяжеловесная (железная) пластина давления на любом полном медном строительном блоке
+  launcher:
+    name: Прямая пусковая установка
+    structure: блок слизи на блоке красного камня; необязательно 3×3 слизевого поля вокруг центра
+  booster:
+    name: Спринтерский бустер
+    structure: лед, упакованный лед или синий лед на блоке из красного камня
+  float-launcher:
+    name: Плавучий лифт
+    structure: белая терракота на медном строительном блоке на блоке из красного камня
+  heal:
+    name: Исцеляющий блок
+    structure: Медовый блок на блоке из красного камня
+  harvester:
+    name: жатва
+    structure: Композитор на сенной булке
+  warp-pad:
+    name: Варп Пад
+    structure: Плачущий обсидиан / Crying Obsidian
+    unnamed: Пад {x} {y} {z}
+    limit: <red>Вы уже владеете максимумом <white>{max}</white> Варп-прокладки. <gray>Сначала сломай одного из своих.
+    disabled: <red>Варп-плейды выключены на этом сервере.
+    no-access: <red>Вам не разрешается использовать эту варп-прокладку. <gray>Владелец может поделиться им с вами.
+    no-destinations: <yellow>Никакая другая варп-площадка, которую вы можете использовать, не находится внутри <white>{blocks}</white>
+      блоков в этом мире. <gray>Постройте второй блок или попросите друга поделиться своим.
+    gone: <red>Эта варп-площадка исчезла или неполная.
+    stand-on-pad: <yellow>Встаньте на варп-прокладку, чтобы путешествовать.
+    too-far: <red>Это место находится вне досягаемости<white>{blocks}</white> блоков). <gray>Увеличьте расстояние до этой
+      площадки.
+    cooldown: '<yellow>Ваш варп заряжается: <white>{seconds}</white> С.'
+    blocked: '<red>{name} блокируется: <gray>Два блока над ним должны быть свободными.'
+    arrived: <light_purple>изогнутый до <white>{name}</white>.
+    not-yours: <red>Сделать это может только владелец этого деформатора.
+    usage: '<yellow>использование: /bi warppads list | share NAME | unshare NAME'
+    dialog:
+      name: '<gray>Имя: <white>{name}'
+      use: <gray>Стоять на прокладке и пробираться путешествовать. совместно с <white>{guests}</white> Игрок(ы).
+      rename: Переименовать
+      rename-tooltip: Дайте этой панели имя для меню путешествия (только владелец)
+    rename:
+      title: Переименовать варп-пад
+      question: 'Новое имя (буквы, цифры, пробелы):'
+      invalid: <red>Это имя пустое или недействительное. <gray>Используйте до {max} букв, цифр и пробелов.
+      done: <green>Warppad переименовали в <white>{name}</white>.
+    travel:
+      title: Варп Пад
+      body: '<gray>из <white>{name}</white> <gray>Достижение <white>{blocks}</white> блоки. Выберите пункт назначения:'
+      button: '{name} ({distance} м)'
+      tooltip: '{owner} | {x} {y} {z}'
+      own: Твоя подушка
+      shared: Доля {owner}
+    state:
+      active: активный
+      incomplete: неполный
+      unloaded: не загруженный
+    list:
+      header: '<light_purple>Твои варп-прокладки <gray>({count}/{max}):'
+      empty: '<gray>Пока нет. Постройте один: лодестоун на плачущем обсидиане.'
+      entry: <gray>• <white>{name}</white> <gray>| достичь {blocks} блоков | {state}
+      guests: '<gray>Совместно с: <white>{players}'
+      no-guests: <gray>Ни с кем не делился.
+      hint: '<gray>Поделиться с игроком: sneak + right-click → Варп-прокладки, или /bi warppads share NAME.'
+    share:
+      added: <green>{player} теперь может использовать все ваши варп-прокладки.
+      removed: <yellow>{player} больше не может использовать варп-прокладки.
+      unchanged: <gray>Ничего не изменилось за {player}.
+      full: <red>Вы уже делитесь своими колодками с {max} игроков.
+      self: <red>Ваши собственные подушки всегда ваши.
+      unknown: <red>Ни один игрок по имени {player} не играл здесь.
+    menu:
+      shared: '<light_purple>Warppads: общий'
+      not-shared: '<gray>Варп-прокладки: не делятся'
+      lore-shared: |-
+        <gray>{player} может перемещаться по вашей варп-платформе {pads}.
+        <yellow>Click: Возврат доступа
+      lore-not-shared: |-
+        <gray>Позвольте {player} путешествовать на вашей варп-платформе {pads}.
+        <yellow>Click: Поделиться
+  xp-collector:
+    name: XP Коллекционер
+    structure: Очаровательный стол на блоке лаписа
+    owner-only: <red>Только владелец этого коллектора XP может взять его XP.
+    empty: <gray>Коллектор XP пуст.
+    taken: '<green>Ты взяла <white>{points}</white> XP баллов. <gray>Осталось в коллекторе: {left}.'
+    dialog:
+      stored: '<gray>Хранится: <white>{stored}</white> / {capacity} XP баллов'
+      take-level: Уровень 1
+      take-all: Всего ({stored} XP)
+      owner-only: <gray>Только владелец может забрать XP.
+  slime-field:
+    name: Слизевое поле 3×3
+    info: Общие обновления для всех девяти блоков слизи. Центральный блок сохраняет обновления, когда он сломан.
+  guide:
+    header: <gold><bold>Блок комбо</bold></gold> <gray>- Обновления
+    open: <gray>Sneak + щелкните правой кнопкой мыши верхний функциональный блок, чтобы открыть меню обновления.
+    structure: '{name}<gray>: {structure}'
+    paths: <gray>В зависимости от структуры, диапазона, мощности, продолжительности эффекта и времени восстановления можно
+      повысить до уровня <white>{max}<gray>.
+    float: <gray>Поплавковый подъемник уже дает пять секунд Левитации I на уровне 0.
+    heal: '<gray>Целебный блок медленно исцеляет игроков внутри своей ауры. После нанесения урона он ждет {seconds} секунд;
+      минимальное расстояние: <white>{distance} блоков<gray>.'
+    warp: '<gray>Варп-пад: встаньте на лодочный камень и прокрадитесь, чтобы выбрать пункт назначения. Поделитесь своими колодками
+      с друзьями через меню игрока или /bi warppads.'
+    xp: '<gray>Коллектор XP: собирает шары, рядом с которыми не стоит игрок; возьмите XP в его меню. Разбивая его, разливается
+      хранящийся XP.'
+  heal-too-close: '<red>Следующий блок заживления слишком близко. <gray>Минимальное расстояние: <white>{distance} блоков<gray>.'
+  claimed: <gray>Этот блок-комбо еще не имел владельца и теперь принадлежит вам (он указан на вашей веб-странице).
+  claim-denied: <gray>У этого блока пока нет владельца. Только тот, кто может построить здесь, может взять его на себя; до
+    тех пор только администраторы могут взять XP или переименовать его.
+  recognized: '<green>Признано {name}. <gray>Sneak + щелкните правой кнопкой мыши верхний блок, чтобы открыть обновления. '
+  no-use: <red>Вам не разрешается использовать блок-комбо.
+  no-upgrade: <red>Вам не разрешается обновлять комбо блоков.
+  incomplete: <red>Блок-комбо больше не является полным.
+  dialog:
+    title: '{name} обновлений'
+    header: '{name} | максимальный уровень {max}'
+    line: '{upgrade}: {level}/{max} | {value} | {cost} XP'
+    line-max: '{upgrade}: {level}/{max} | {value} | MAX'
+    button: '{upgrade} ({cost} XP)'
+  value:
+    aura: '{blocks} блоков ауры'
+    hearts: '{hearts} сердец на пульс'
+    heal-cooldown: '{pulse} с пульсом / {damage} с после повреждения'
+    blocks: '{blocks} блоков'
+    velocity: '{value} скорости'
+    seconds: '{value} секунд'
+    xp: '{points} XP баллов'
+combo-upgrade:
+  range: диапазон
+  power: Власть
+  duration: Продолжительность эффекта
+  cooldown: Перезарядка
+  distance: Расстояние
+  capacity: Вместимость
+tower:
+  zombie-starter:
+    name: Зомби Сторожевая башня
+  player-starter:
+    name: Вербовочная башня
+  archer:
+    name: Башня Арчер
+  cannon:
+    name: Башня пушки
+  flame:
+    name: Пламенная башня
+  piglin:
+    name: Золотая башня Piglin
+  dragon:
+    name: Драконья башня
+  any-copper: Полный медный блок
+  guide:
+    header: <gold><bold>BlockIntegrations башен
+    intro: <gray>Постройте одно из этих сооружений и поместите голову последним. Присядьте + щелкните правой кнопкой мыши,
+      чтобы открыть обновления.
+    structure: '{name}<gray>: {core} на {pedestal} на {foundation}, с 4× {ring} в кресте вокруг него{upgrades}'
+    upgradeable: <dark_gray> [combat up to 10, looting up to 3]
+    starter: <green> [cheap starter tower, no upgrades]
+    levels: <gray>Пять обычных башен могут повысить степень повреждения, дальность и скорость атаки до уровня <white>{max}
+      <gray>Разграбление до уровня <white>{looting}<gray>. Две дешевые стартовые башни не могут быть модернизированы.
+    loot: <gray>В меню башни есть сундук для капель существ и кнопка для снятия собранного убийства XP. Лишние капли теряются.
+    ring: '<gray>Кольцо состоит из четырех блоков на высоте основания: северный, южный, восточный и западный.'
+  built: '<green>Башня атаки построена и назначена вам. <gray>Присядьте + щелкните правой кнопкой мыши, чтобы открыть его. '
+  open-hover: 'Оригинальное название: Open the Tower'
+  incomplete-structure: <red>Полной структуры башни не обнаружено.
+  no-use: <red>Не разрешается использовать атакующие башни.
+  no-build: <red>Вам не разрешается строить атакующие башни.
+  no-upgrade-permission: <red>Не разрешается модернизировать башни.
+  not-complete: <red>Башня больше не является полной.
+  starter-no-upgrades: <yellow>Эта дешевая стартовая башня не имеет обновлений.
+  owned-by: <red>Эта башня принадлежит {owner}.
+  nobody: никто
+  claimed: <gray>Эта башня еще не имела владельца и теперь принадлежит вам.
+  limit: '<red>У вас уже есть {owned} башен (максимум {max}). '
+  my-towers: Мои башни
+  my-towers-hover: 'Нажмите: список ваших башен с их местоположением'
+  loot-full: '<yellow>Ваша сундук {name} не имеет места для капель. Новые атаки останавливаются при включении; снаряды, уже
+    находящиеся в полете, все еще могут переполнять его. '
+  loot-button: сундук
+  loot-hover: 'Оригинальное название: Open the Loot chest'
+  loot-title: '{name}<dark_gray> Лут'
+  no-xp: <yellow>Эта башня еще не собрала XP убитых.
+  withdrawn: <green>Вы ушли <yellow>{xp} XP баллов <green>Из башни.
+  list:
+    header: '<gold>Башни: <white>{count}'
+    near-header: '<gold>Башни в пределах 48 блоков: <white>{count}<gray> (Перенаправлено с {shown})'
+    entry: <gray> · {name} <dark_gray>@ <white>{location}{details}
+    details: ' <dark_gray>| <gray>{owner} <dark_gray>| <gray>D{damage} R{range} S{speed} L{looting} <dark_gray>| {state} <dark_gray>|
+      <gray>XP {xp}'
+  state:
+    unloaded: <dark_gray>не загруженный
+    active: <green>активный
+    incomplete: <red>неполный
+  remove:
+    look: <yellow>Посмотрите на голову башни.
+    done: <green>Башня была убрана, ее добыча и XP были сброшены в голову.
+  dialog:
+    title: '{name} обновлений'
+    header: '{name} | Владелец: {owner} | Убить XP: {xp}'
+    stats: Повреждение {damage} | Диапазон {range} блоков | Нападения каждые {ticks} клещей {xp_rule}
+    xp-rule: ' XP только с игроком в пределах {radius} блоков'
+    starter: Дешевая стартовая башня без обновлений.
+    loot: Открытая сундук
+    withdraw: Уничтожение XP
+  value:
+    damage: '{value} повреждений'
+    range: '{value} блоков'
+    speed: '{ticks} клещей'
+    looting-none: Без бонусов
+    looting: 0-{level} бонусные предметы за каплю стека
+tower-upgrade:
+  damage: Урон
+  range: диапазон
+  speed: Скорость атаки
+  looting: мародёрство
+furnace:
+  name:
+    furnace: Печь
+    blast-furnace: Взрывная печь
+    smoker: курильщик
+  guide:
+    intro:
+    - <gold><bold>Модернизированные печи
+    - '<gray>Поддерживается: <white>печь, доменная печь и курильщик<gray>.'
+    - <gray>Игрок, который помещает один, становится его постоянным владельцем. Существующие печи заявлены с sneak + right-click.
+    - <gray>При установке Vystorm Skills автоматическая плавка на корме для бункеровки дает владельцу навык плавки / приготовления
+      пищи XP и использует способности владельца плавки.
+    - <gray>Vanilla XP, собранная во время работы печи, может быть изъята в меню печи с надписью «Отозвать сохраненный XP».
+    paths: '<gray>Обновление дорожек до уровня {max}: <white>скорость плавки, топливная экономичность, доходность бонусов
+      и мультиплавка<gray>.'
+    outro:
+    - <gray>Максимальное увеличение XP <white>5 уровней <gray>и увеличивает запас ванили XP, а также навыки плавки / приготовления
+      пищи XP (Vystorm Навыки).
+    - <gray>Каждый мультиплавкий уровень обрабатывает один дополнительный элемент в одном и том же цикле плавки и предоставляет
+      печь и навык XP для нее.
+  placed: '<green>Эти {name} теперь навсегда принадлежат вам. <gray>Sneak + правый клик, чтобы открыть обновления. '
+  no-use: <red>Вам не разрешается использовать модернизируемые печи.
+  claimed: <green>Мебель заявлена и постоянно связана с вашим профилем навыков.
+  owned-by: <red>Эта печь постоянно принадлежит <white>{owner}<red>.
+  unknown-owner: Неизвестно
+  gone: <red>Печь больше не существует.
+  no-upgrade-permission: <red>Вам не разрешается модернизировать печи.
+  maxed: <yellow>Этот путь обновления печи уже максимизирован.
+  no-owner: <red>У этой печи нет фиксированного владельца.
+  only-owner: <red>Изымать хранящиеся XP может только фиксированный владелец.
+  no-xp: <yellow>Эта печь еще не сохранила полную точку XP.
+  withdraw-failed: <red>Печь XP снять не удалось.
+  withdrawn: <green>Вы ушли <yellow>{xp} XP баллов <green>Из {name}.
+  dialog:
+    title: '{name} обновлений'
+    header: '{name} | Владелец: {owner}'
+    withdraw: Снято с хранения XP ({xp})
+  metrics:
+    pending-skill: '<gray>Очередь мастерства печи XP для этого владельца (все печи): <white>{xp}<gray>. Отдельно от отводимой
+      печи XP.'
+    observed: '<gray>Наблюдения за последними {seconds} годами: <white>{smelts} завершенных плавок, {fuel} расходуемых топливных
+      элементов, {outputs} обработанных выходных элементов; {yield} срабатывающих бонусных элементов.'
+    speed-preview: '<gray>Ожидаемый множитель скорости с этим обновлением: <white>{current}× → {next}×<gray>.'
+    yield-preview: '<gray>Ожидаемый шанс доходности с этим обновлением: <white>{current} → {next}<gray>.'
+  value:
+    speed: '{value}× скорость'
+    fuel: '{value}× время горения'
+    yield: '{value} бонусов'
+    multismelt: '{items} изделий на цикл плавки'
+    xp-boost: '{value}× Печь и мастерство XP'
+furnace-upgrade:
+  speed: Скорость плавления
+  fuel: Эффективность топлива
+  yield: Бонусная доходность
+  multismelt: многоцветковый
+  xp-boost: XP бустер
+portable:
+  header: <gold>BlockIntegrations <gray>– {title}
+  level: '<gray>{upgrade}: <white>{level}'
+  owner: '<gray>Постоянный владелец: <white>{owner}'
+  experience: '<gray>Бонус XP: <white>{xp}'
+  footer: <dark_gray>Обновления применяются при размещении.
+settings:
+  dialog:
+    title: BlockIntegrations Сервер
+    body: Изменения сохраняются до config.yml и немедленно перезагружаются.
+  section:
+    blocks:
+      title: Основные блоки
+      header: BlockIntegrations Основные блоки
+      description: Сортер, вакуум, пусковая установка, бустер спринта и поплавковый подъемник
+    combos:
+      title: Блок комбо
+      header: 'BlockIntegrations: Блок комбо'
+      description: Модернизация комбо, блок заживления, варп-прокладки и коллектор XP
+    towers:
+      title: Башни для атак
+      header: 'BlockIntegrations: Башни для атак'
+      description: Башни, убить XP и нацелиться
+    furnaces:
+      title: Модернизированные печи
+      header: 'BlockIntegrations: Обновляемые печи'
+      description: Обновления печи и бонусы за уровень
+    anvils:
+      header: BlockIntegrations Наковальни
+      title: Наковальни
+      description: Модернизация наковальни и цены
+    traps:
+      title: Ловушки
+      header: BlockIntegrations - ловушки
+      description: Включите ловушки, дефолты, бросьте энергию и повреждения
+  option:
+    workstations-extra-base-xp-cost:
+      label: 'Базовая цена на опцион: дополнительная'
+      description: XP баллов, умноженных на новые ранги в квадрате.
+    workstations-strength-base-xp-cost:
+      label: 'Повышение базовой цены: сила'
+      description: XP баллов, умноженных на новые ранги в квадрате.
+    workstations-duration-base-xp-cost:
+      label: 'Базовая цена апгрейда: продолжительность'
+      description: XP баллов, умноженных на новые ранги в квадрате.
+    traps-sling-power:
+      label: Сила слинга
+      description: Горизонтальная скорость строповой ловушки от 0.5 до 3.0.
+    traps-sling-lift:
+      label: подъемник
+      description: Вертикальный импульс от 0.2 до 2.0; вниз для потолочных ловушек.
+    anvils-enabled:
+      label: Включить апгрейды наковальни
+      description: Включите меню и бонусы.
+    anvils-base-xp-cost:
+      label: Базовая стоимость XP пунктов
+      description: Цена, умноженная на новый ранг в квадрате.
+    anvils-unbreakable-xp-cost:
+      label: Нерушимая цена
+      description: Разовая цена в XP пунктов.
+    traps-enabled:
+      label: Включить ловушки
+      description: Включает автоматические и ручные ловушки монстров.
+    traps-default-automatic:
+      label: Новые автоматические ловушки
+      description: Начальный режим для новых ловушек; существующие настройки сохранены.
+    traps-default-cooldown-seconds:
+      label: Время восстановления по умолчанию
+      description: 10 или 15 секунды для новых ловушек. Существующие ловушки сохраняют свои настройки.
+    traps-throw-power:
+      label: Бросить силу
+      description: Скорость броска-ловушки, от 0.5 до 3.0.
+    traps-spike-damage:
+      label: Повреждение спайка
+      description: Точки повреждения на монстра; 2 баллов равны одному сердцу.
+    radius:
+      label: радиус сортера
+      description: Радиус поиска вокруг медного блока, в блоках
+    cooldown-ticks:
+      label: Время восстановления Sorter
+      description: Клещи между двумя активациями (20 = 1 с)
+    include-trapped-chests:
+      label: Захваченные сундуки
+      description: Также сортируйте в захваченные сундуки
+    messages-show-when-nothing-moved:
+      label: 'Сортер: пустое сообщение'
+      description: Сообщение, когда ничего не сортируется
+    vacuum-radius:
+      label: Радиус вакуума
+      description: Радиус пикапа в блоках
+    vacuum-cooldown-ticks:
+      label: Время восстановления вакуума
+      description: Тик между двумя активациями
+    vacuum-messages-show-when-nothing-moved:
+      label: 'Вакуум: пустое сообщение'
+      description: Сообщение, когда ничего не было поднято
+    launcher-velocity:
+      label: Сила запуска
+      description: Скорость запуска блока слизи
+    launcher-minimum-upward-velocity:
+      label: 'Пусковая установка: Минимальный лифт'
+      description: Минимальная скорость движения вверх
+    launcher-cooldown-ticks:
+      label: Время восстановления Launcher
+      description: Тик между двумя запусками
+    launcher-play-sound:
+      label: Звук запуска
+      description: Звук ракеты на старте
+    booster-velocity:
+      label: Сила бустера
+      description: Горизонтальный подъем на льду
+    booster-cooldown-ticks:
+      label: Время восстановления бустера
+      description: Клещи между двумя бустерами
+    booster-play-sound:
+      label: Звук бустера
+      description: Звук на подъеме
+    booster-prevent-ice-melting:
+      label: Защита бустерного льда
+      description: Лед на красном камне не тает
+    float-launcher-velocity:
+      label: Подъёмная сила на плаву
+      description: Вертикальная скорость запуска
+    float-launcher-levitation-duration-ticks:
+      label: 'Поплавковый лифт: время левитации'
+      description: Клещи левитации (20 = 1 с)
+    float-launcher-levitation-amplifier:
+      label: 'Поплавковый лифт: усилитель'
+      description: 0 = Левитация I
+    float-launcher-cooldown-ticks:
+      label: Время восстановления подъемника
+      description: Тик между двумя запусками
+    float-launcher-play-sound:
+      label: Плавучий звук лифта
+      description: Звук при запуске
+    combos-enabled:
+      label: Комбинированные обновления включены
+      description: Обновление меню и заживление блока комбо блока
+    combos-upgrades-maximum-level:
+      label: Максимальный уровень
+      description: Самый высокий уровень обновления на пути
+    combos-scaling-cooldown-reduction-per-level:
+      label: Время восстановления на уровне
+      description: Относительное снижение на уровень (0.05 = 5 %)
+    combos-scaling-minimum-cooldown-ticks:
+      label: Минимальное время восстановления
+      description: Нижний предел у клещей
+    combos-heal-amount:
+      label: Исцеление на пульс
+      description: Точки здоровья (2 = одно сердце)
+    combos-heal-aura-radius:
+      label: Исцеление ауры
+      description: Радиус в блоках
+    combos-heal-pulse-cooldown-ticks:
+      label: Интервал исцеления
+      description: Клещи между двумя исцеляющими импульсами
+    combos-heal-damage-cooldown-ticks:
+      label: Пауза после повреждения
+      description: Клещи без заживления после получения повреждений
+    combos-heal-minimum-distance:
+      label: Дистанция блока исцеления
+      description: Минимальное расстояние между лечебными блоками
+    combos-heal-play-particles:
+      label: Исцелять частицы
+      description: Частицы при заживлении
+    combos-heal-play-sound:
+      label: Исцеляющий звук
+      description: Звук при исцелении
+    combos-warp-pad-enabled:
+      label: Варп-прокладки
+      description: Лодестоун о плачущих обсидиановых телепортах между прокладками
+    combos-warp-pad-base-distance:
+      label: Варп-точка
+      description: Блоки колодки достигают уровня 0
+    combos-warp-pad-distance-per-level:
+      label: Варп-достижение уровня
+      description: Дополнительные блоки на расстояние
+    combos-warp-pad-cooldown-ticks:
+      label: Время восстановления
+      description: Клещи между двумя варпами игрока
+    combos-warp-pad-max-per-player:
+      label: Варп-пады на одного игрока
+      description: 0 = неограниченно; администраторы освобождены
+    combos-warp-pad-play-particles:
+      label: Варповые частицы
+      description: Частицы портала при деформации
+    combos-xp-collector-enabled:
+      label: XP коллекционеров
+      description: Очаровательный стол на лаписе собирает XP шаров
+    combos-xp-collector-radius:
+      label: Радиус коллектора XP
+      description: Блоки на уровне 0
+    combos-xp-collector-capacity:
+      label: XP емкость коллектора
+      description: Хранится XP точек на уровне 0
+    combos-xp-collector-capacity-per-level:
+      label: Вместимость на уровне
+      description: XP баллов за повышение мощности
+    combos-xp-collector-player-safe-radius:
+      label: Оставьте шары для игроков
+      description: Шары, близкие к игроку, остаются для игрока
+    combos-xp-collector-play-particles:
+      label: XP коллекторных частиц
+      description: Частицы, когда шары втягиваются
+    towers-enabled:
+      label: Башни разрешены
+      description: Узнать атакующие башни и позволить им атаковать
+    towers-upgrades-maximum-level:
+      label: Максимальный уровень
+      description: Наивысший уровень повреждений, дальности и скорости
+    towers-max-per-player:
+      label: Башни на одного игрока
+      description: 0 = неограниченно; администраторы освобождены
+    towers-attack-task-period-ticks:
+      label: Интервал атаки
+      description: Тик между двумя целевыми проверками
+    towers-pause-when-loot-full:
+      label: Приступы паузы на сундук
+      description: Не начинайте новые атаки, когда каждый слот для добычи находится на пределе стека; снаряды, уже находящиеся
+        в полете, все еще могут создавать капли
+    towers-experience-require-nearby-player:
+      label: Убить XP только с помощью игрока
+      description: XP только в том случае, если владелец или член городского совета находится поблизости
+    towers-experience-player-radius:
+      label: Радиус игрока XP
+      description: Блоки
+    towers-experience-spawner-mobs:
+      label: XP от нерестовых существ
+      description: Существа от нерестов дают башням XP
+    towers-targeting-line-of-sight:
+      label: Требуется линия зрения
+      description: Не стреляйте сквозь стены
+    towers-targeting-ignore-named-mobs:
+      label: Игнорируйте названных существ
+      description: Запасные домашние животные и существа событий
+    towers-loot-capture-nearby-plugin-drops:
+      label: Захват плагина drops
+      description: Также собирайте капли, созданные плагинами существ
+    towers-loot-drop-contents-when-broken:
+      label: Бросай добычу, когда сломан
+      description: Хранимые предметы и XP не теряются
+    furnaces-enabled:
+      label: Обновление печи включено
+      description: Владение, модернизация и мастерство XP печей
+    furnaces-upgrades-maximum-level:
+      label: Максимальный уровень
+      description: Высочайший уровень основных путей
+    furnaces-speed-multiplier-per-level:
+      label: Скорость на уровне
+      description: Дополнительная скорость плавки (0.12 = +12 %)
+    furnaces-fuel-efficiency-per-level:
+      label: Время горения на уровне
+      description: Дополнительное время горения (0.10 = +10 %)
+    furnaces-bonus-yield-chance-per-level:
+      label: Бонусная доходность на уровне
+      description: Шанс получения дополнительного результата (0.025 = 2.5 %)
+    furnaces-xp-boost-per-level:
+      label: XP повышения на уровень
+      description: Больше печи и мастерства XP (0.20 = +20 %)
+web:
+  module:
+    title: Блоки и башни
+    description: 'Ваши башни, печи и комбо блоков: обновления, добыча и строительные руководства'
+  button:
+    label: Открыть в Web
+    tooltip: Откройте страницу Blocks & Towers в браузере или внутриигровом наложении
+  unavailable: <yellow>Веб-страница на этом сервере сейчас недоступна.
+  error:
+    unknown: Эта структура больше не существует.
+    not-yours: Эта структура не принадлежит вам.
+    offline: Присоединяйтесь к игре, чтобы сделать это.
+    not-loaded: Площадь этого сооружения сейчас не загружена. Подойдите к нему и попробуйте еще раз.
+    bad-request: Недействительная просьба.
+    loot-changed: За это время сундук изменилась. Список был перезагружен.
+    inventory-full: Ваш инвентарь полон.
+    loot-empty: Нечего брать.
+  loot:
+    offline: Присоединяйтесь к игре, чтобы взять предметы. Вы все еще можете посмотреть на добычу.
+    not-loaded: Башня не загружена или неполна, поэтому смотреть можно только на добычу.
+    too-far: Взятие предметов работает в пределах {range} блоков башни (например, кнопка добычи в чате). Вы все еще можете
+      посмотреть на добычу.
+    taken: '{moved} предметов были перенесены в ваш инвентарь.'
+    taken-partly: '{moved} предметов перешли в ваш инвентарь, который сейчас полон.'
+  guide:
+    view:
+      side: Вид сбоку (сверху вниз)
+      foundation: Фундаментальный слой сверху
+      slime-field: Факультативный 3×3 слизевого поля сверху
+    any-ice: лед, упакованный лед или синий лед
+    tower:
+      style:
+        precision: 'Одиночная мишень: стреляет ближайшее враждебное существо.'
+        area: 'Взрывные выстрелы: также поражают враждебных существ вокруг цели (65 % урон).'
+        fire: 'Огневые выстрелы: также поджигайте цель.'
+      xp-rule: Убить XP можно только в том случае, если владелец или житель города находится в пределах {radius} квартала.
+      limit: Каждый игрок может владеть не более {max} башен.
+    combo:
+      sorter: 'Прыгайте на тарелку: предметы из вашего основного инвентаря попадают в близлежащие сундуки, которые уже содержат
+        тот же предмет.'
+      vacuum: 'Прыгайте на тарелку: брошенные предметы рядом идут в соответствующие сундуки или в ваш инвентарь, когда нет
+        сундука рядом.'
+      launcher: Прыгайте на блок слизи, который будет запущен в том направлении, в котором вы смотрите.
+      booster: Спринтер над льдом для всплеска скорости.
+      float-launcher: Земля на терракоте, чтобы плыть вверх с Левитация.
+      heal: Медленно исцеляет игроков в своей ауре после того, как они не получали повреждения в течение некоторого времени.
+      harvester: Урожай спелой пшеницы, моркови, картофеля, свеклы, свеклы, какао, дыни, тыквы, сахарного тростника и бамбука
+        вокруг нее, пересаживается и наполняет трогательную сундук. Подождет, пока сундук наполнится.
+      warp-pad: 'Встаньте на него и прокрадитесь: выберите одну из ваших других прокладок (или прокладку, которой поделился
+        с вами друг) в том же мире и телепортируйте туда.'
+      xp-collector: Вытаскивает шары вокруг него в блок, пока он не будет заполнен. Владелец берет XP в меню.
+    furnace:
+      speed: Более короткое время плавки.
+      fuel: Каждый топливный элемент горит дольше.
+      yield: Возможность получения одного дополнительного результата.
+      multismelt: Обрабатывает дополнительные предметы в том же цикле плавки.
+      xp-boost: Больше хранимой ванили XP и больше плавки / приготовления пищи XP.
+  ui:
+    tab-mine: Мои структуры
+    tab-guide: Руководство по строительству
+    tab-admin: Все структуры
+    loading: Загрузка...
+    refresh: освежить
+    error: 'Не удалось загрузить: {message}'
+    offline-note: Ты не в игре. Обновления и добыча нужны вам онлайн.
+    unloaded-note: Структуры в областях, которые не загружены, показывают свои последние известные значения и не могут быть
+      обновлены до тех пор, пока область не будет загружена снова.
+    empty: У вас пока нет башен, печей или блоков. Руководство по строительству показывает, как их строить.
+    towers: Башни для атак
+    furnaces: Печи
+    combos: Блок комбо
+    state-active: Активный
+    state-incomplete: неполный
+    state-unloaded: Не загружается
+    location: '{world} · {x} {y} {z}'
+    owner: 'Владелец: {owner}'
+    no-owner: Нет собственника
+    tower-xp: 'Убить XP: {xp}'
+    furnace-xp: 'Хранится XP: {xp}'
+    tower-stats: Повреждение {damage} · Диапазон {range} блоков · атаки каждые {ticks} клещей
+    level: Уровень {level}/{max}
+    value-next: '{value} → {next}'
+    upgrade-button: Модернизация ({cost} XP)
+    upgrading: Модернизация...
+    maxed: максимум
+    blocked-offline: Присоединяйтесь к игре для обновления.
+    blocked-state: Это возможно только при завершении строительства и загрузке его площади.
+    starter: 'Стартовая башня: никаких обновлений.'
+    tower-limit: 'Башни: {owned} из {max}'
+    loot-show: сундук ({stacks} стеков)
+    loot-hide: Спрячь сундук
+    loot-empty: сундук пуста.
+    loot-take: Взять
+    loot-take-all: Возьмите все
+    loot-view-only: 'Вид только: {hint}'
+    loot-count: '{amount}× {name}'
+    truncated: В списке только первые {limit}.
+    in-game-hint: Присядьте + щелкните правой кнопкой мыши структуру в игре для всех вариантов (сними XP, сундук).
+    focus: Открыто из игры
+    guide-intro: Как построить каждую конструкцию, что она делает и сколько стоит модернизация. Все значения следуют настройкам
+      этого сервера.
+    guide-base: 'Базовые значения: {damage} повреждений · {range} блоков · каждые {ticks} клещей'
+    guide-no-upgrades: Нет обновлений (дешевая стартовая башня).
+    guide-blocks: Блоки
+    guide-upgrades: Обновить стол
+    guide-level: Уровень
+    guide-value: Эффект
+    guide-cost: Стоимость следующего уровня
+    guide-build: 'Постройка: {structure}'
+    guide-furnace-build: Поместите печь, доменную печь или курильщика. Вы становитесь его постоянным владельцем; подкрадывайтесь
+      + щелкните правой кнопкой мыши, чтобы открыть обновления.
+    guide-empty-cell: любой блок или воздух
+    admin-filter: Фильтр по владельцу, имени, типу или миру
+    admin-kind-all: Все виды
+    admin-search: Поиск
+    admin-totals: '{shown} из {total}'
+    admin-hint: Здесь администраторы могут обновить любую структуру; расходы оплачиваются с помощью собственных XP.
+    settings-link: Серверные настройки BlockIntegrations
+admin:
+  title: BlockIntegrations
+  status: Состояние
+  towers-all: Все башни
+  towers-of: Башни игрока
+  towers-near: Башни рядом со мной
+  tower-remove: Уберите башню, на которую я смотрю
+  reload: Перезагрузить
+client:
+  tower-marker: '{name}'
+  tower-marker-xp: '{name} · {xp} XP'
+  loot-full-title: Башня награбленная сундук полная
+  loot-full-text: '{name}: пауза атаки; снаряды в полете все еще могут переполняться'
+  loot-open: Открытая добыча
+  tooltip-title: 'Портативный: {name}'
+  tooltip-tower: Поместите его на соответствующую структуру - обновления переносятся
+  tooltip-combo: Поместите его в соответствующую настройку - обновления переносятся
+  tooltip-furnace: Поместите его - обновления печи переносятся
+diagnostics:
+  storage-readonly: Хранение нечитабельно; сохранение отключено для сохранения исходного файла.
+  storage-failed: Последнее спасение не удалось; текущие изменения могут существовать только в памяти.
+  storage-active: Хранение читабельно; не записывается отказ сохранения.
+tower-controls:
+  status: 'Цели: {profile}; управление: {mode}. Отдельный вход из красного камня: {x}, {y}, {z} (3 блоков к востоку от головы).'
+  change-profile: Следующий целевой профиль
+  change-redstone: Режим Redstone
+  share: Управление личным доступом
+  share-help: До 32 UUID. Каждая кнопка переключает одну правую. Также стоит открыть меню башни. Существующий доступ к городу
+    и администратору остается; личные права никогда не предоставляют снос или изменения собственности.
+  member: Имя игрока онлайн или UUID
+  toggle-right: 'Тоггл: {right}'
+  revoke: Удалить все личные права
+  invalid-member: Введите онлайн-имя или действительное UUID; максимум 32 участник может быть сохранен.
+  right:
+    use: Открытое меню / Open menu
+    loot: Собрать добычу и хранить XP
+    upgrade: Купить обновления
+  profile:
+    all: Разрешены враждебные существа
+    undead: Только мертвые
+    arthropods: Только артроподы
+    raiders: Только грабители
+    none: Никаких целей
+  redstone:
+    always: Всегда
+    powered: Включая сигнал
+    unpowered: без сигнала
+    disabled: Выключено
+workstation:
+  potion-description: 'Дополнительный эффект: 5 рангов, +1% шансов на случайный положительный эффект (I, 30). Сила: 10 рангов,
+    +10% шанс каждый для +1 уровня эффекта. Длительность: 10 рангов, +25 каждый, исключает мгновенные эффекты. Один рулон
+    на бутылку; дальнейшее пивоварение не может перезапустить.'
+  brew-use: Используйте пивоваренный стенд
+  brew-upgrade: Обновить пивоваренный стенд
+  name:
+    brewing_stand: Пивоваренный стенд
+    campfire: Огонь
+    soul_campfire: Огонь души
+  upgrade:
+    extra: Случайный дополнительный эффект
+    strength: Сила трости
+    duration: Продолжительность эффекта
+    speed: Скорость обработки
+    fuel: Топливная эффективность пивоварения
+    yield: Дополнительный приготовленный результат
+  description: 'Каждый уровень: +12% скорость; пивоваренное топливо +10%; шанс на костер +2.5%. Применяются обычные ингредиенты
+    и рецепты.'
+  level: '{upgrade}: уровень {level}/{max}'
+  guide-title: Пивоваренные трибуны и костры
+  guide:
+  - Нажмите правой кнопкой мыши на пивоваренный стенд или на костер, чтобы открыть его модернизацию. Существующие непринадлежащие
+    блоки требуются для первого использования.
+  - 'Заваривание стендов: более быстрое заваривание и больше операций заваривания на порошок пламени. Кампфайры: быстрее приготовление
+    пищи и шанс на один дополнительный результат.'
+  - 'До 10 уровней: 2.2x скорость, 2x пивоваренное топливо и 25% дополнительный костровый выход. Стоимость каждого уровня
+    100 × Новый уровень по умолчанию составляет XP пунктов.'
+  - Обновление может производиться только владельцем или администратором в пределах 8 блоков. Обычное использование остается
+    доступным для других игроков.
+  - Владение и обновления остаются на упавшей рабочей станции. Лагерные пожары требуют шелкового прикосновения; обычные угольные
+    / угольные капли не могут нести модернизацию.
+  - Обновления применяются к недавно начатым операциям. Они не добавляют возврат ингредиентов или не меняют рецепты зелья.
+  unavailable: Рабочая станция недоступна, отключена, слишком далеко или не может быть сохранена.
+  not-owner: Эта рабочая станция принадлежит другому игроку.
+  denied: Вы не можете обновить эту рабочую станцию.
+  changed: Это предложение об обновлении изменилось. Откройте меню рабочей станции.
+  need-xp: Для этого обновления не хватает XP баллов.
+  upgraded: Обновлена рабочая станция.
+trap:
+  wait-remove: Подождите текущего времени восстановления, прежде чем не регистрироваться.
+  title: Ловушки
+  status: '{type} · {mode} · время восстановления {seconds} секунды'
+  auto: Автоматически
+  manual: Только кнопка
+  toggle: Автоматический запуск Toggle
+  change-cooldown: Переключатель 10 / 15 секунды
+  remove: Незарегистрированная ловушка
+  limit: Максимум 32 ловушек на одного игрока, 2048 на сервер; новая регистрация отключена после отказа считывания.
+  denied: Эта ловушка принадлежит кому-то другому или находится в охраняемом районе.
+  registered: 'Ловушка зарегистрирована: {mode}, {seconds} второе время восстановления. Нажмите правой кнопкой для настроек.'
+  cooldown: Ловушка готова за {seconds} секунд.
+  no-target: Никаких подходящих монстров.
+  guide:
+  - Построить 3×3 обсидиановых рам (восемь блоков) вокруг поршня (броска), железного блока (шипы) или медового блока (медленный).
+  - 'Прядильная ловушка: блок слизи в обсидиановой раме с ровно одной передней кнопкой. Полы / потолки отскакивают от кнопки;
+    стены отскакивают вперед и вверх.'
+  - Направьте поршень в направлении запуска. Гора на этажах, стенах или потолках.
+  - Прикрепите кнопку к передней части блока обсидиана. Первый правый клик регистрирует ловушку с включенным автоматическим
+    запуском.
+  - 'Кнопка: огонь вручную. Кнопка щелчка вправо: выберите автоматический режим и время восстановления 10/15. Оба режима имеют
+    одинаковое время восстановления.'
+  - 'Площадь: 3×Ширина 3, протяженностью 3 блоков вперед, с прямой видимости. Только враждебные монстры; никаких игроков или
+    домашних животных.'
+  - Спайки наносят 6 повреждений по умолчанию; смола замедляется на 5 секунду. Оба режима требуют подходящей цели.
+  - Пропавшая рамка/кнопка останавливает ловушку. Удаление ядра не регистрирует его после восстановления. Незагруженные чанки
+    остаются незагруженными.
+  type:
+    sling: Слинг-ловушка
+    throw: Бросать ловушку
+    spikes: Ловушка Спайка
+    tar: Тара ловушка
+anvil:
+  title: Наковальня
+  use: Используйте наковальню
+  upgrade: Обновить наковальню
+  description: 'Эффективность: 5% меньше XP уровней на ранг (максимум). 50%). Очарования: +1 до нормальных шапок за ранг (максимум
+    +5), снимает Слишком дорого. Долговечность: отсутствие износа. Модернизация обошлась в XP пунктов.'
+  denied: Вы не можете обновить эту наковальню.
+  unavailable: Наковальня недоступна или обновление не удалось сохранить.
+  changed: Предложение изменилось. Пожалуйста, откройте.
+  need-xp: Вам нужно больше XP баллов.
+  upgraded: Наковальня модернизирована.
+  path:
+    efficiency: Сокращение расходов на XP
+    enchantments: Очаровательная шапка
+    durability: Неограниченная долговечность
+commands:
+  blockintegrations:
+    description: 'Блок комбо, башни, печи и рабочие станции: гиды, меню, варп-прокладки, сортировка сундуке и статус'
+    aliases: []
+    values:
+      guide: руководство
+    sub:
+      menu:
+        name: menu
+        aliases: []
+        description: Откройте меню гида блока
+      web:
+        name: web
+        aliases: []
+        description: Откройте веб-страницу BlockIntegrations (руководство по строительству)
+        args:
+          page: руководство
+      status:
+        name: status
+        aliases: []
+        description: Башни, атаки, комбо и ограничения обновления этого сервера
+      combos:
+        name: combos
+        aliases: []
+        description: Как построить блок комбо
+        sub:
+          mine:
+            name: mine
+            aliases: []
+            description: Ваш собственный блок комбо с положением и расстоянием, ближайший первый
+      traps:
+        name: traps
+        aliases: []
+        description: Как построить и использовать ловушки монстров
+      towers:
+        name: towers
+        aliases: []
+        description: Как построить атакующие башни
+        sub:
+          list:
+            name: list
+            aliases: []
+            description: 'Список ваших башен (администраторы: все или один игрок)'
+            args:
+              player: PLAYER
+          near:
+            name: near
+            aliases: []
+            description: Башни в пределах 48 блоков, ближайший первый
+          remove:
+            name: remove
+            aliases: []
+            description: Уберите башню, на которую вы смотрите
+      furnaces:
+        name: furnaces
+        aliases: []
+        description: Как работают модернизируемые печи
+      workstations:
+        name: workstations
+        aliases: []
+        description: Обновление стойки и костра
+      warppads:
+        name: warppads
+        aliases: []
+        description: Ваши варп-подушки и игроки, с которыми вы делитесь ими
+        sub:
+          list:
+            name: list
+            aliases: []
+            description: Перечислите свои варп-прокладки и гостей
+          share:
+            name: share
+            aliases: []
+            description: Позвольте игроку использовать все ваши варп-подушки
+            args:
+              player: PLAYER
+          unshare:
+            name: unshare
+            aliases: []
+            description: Получите доступ игрока к вашим варп-плейдам обратно
+            args:
+              player: PLAYER
+      sortlock:
+        name: sortlock
+        aliases: []
+        description: Защита слотов инвентаря (9–35) или типов предметов от сортировщика
+        args:
+          slot: SLOT
+        sub:
+          list:
+            name: list
+            aliases: []
+            description: Покажите свои запертые слоты
+          clear:
+            name: clear
+            aliases: []
+            description: Разблокировать все слоты
+          item:
+            name: item
+            aliases: []
+            description: Сохраните или выпустите удерживаемый тип элемента в каждом слоте
+          items:
+            name: items
+            aliases: []
+            description: Перечислите типы заблокированных элементов
+          clearitems:
+            name: clearitems
+            aliases: []
+            description: Разблокировать все типы элементов
+      chestpriority:
+        name: chestpriority
+        aliases: []
+        description: сундук сортировщик заполняет сначала, и переполненная сундук
+        sub:
+          add:
+            name: add
+            aliases: []
+            description: Наполните сундук, которую вы смотрите сначала
+          overflow:
+            name: overflow
+            aliases: []
+            description: Используйте сундук, на которую вы смотрите, для остатков
+          remove:
+            name: remove
+            aliases: []
+            description: Удалите сундук, на которую вы смотрите из списка
+          list:
+            name: list
+            aliases: []
+            description: Покажите ваши предпочтительные и переполненные сундуки
+          clear:
+            name: clear
+            aliases: []
+            description: Забудьте все предпочтения
+      reload:
+        name: reload
+        aliases: []
+        description: Перезагрузка конфигурационных и языковых файлов
+      dashboard:
+        name: dashboard
+        aliases: []
+        description: "Панель машин"
+harvest-profile:
+  title: Профили Harvester
+  open: Выберите профиль урожая
+  current: 'Текущий профиль: {profile}'
+  help: Выберите, что собирает эта машина. Изменения вносятся в следующий запланированный пропуск. Изменить профиль может
+    только владелец или администратор. Отбор выживает после перезапуска; разрушение и замена компостера сбрасывает его на
+    все растения.
+  unavailable: Вы не можете изменить этот комбайн сейчас. Он должен быть полным, включенным и принадлежать вам (или вы должны
+    быть администратором).
+  changed: 'Профиль урожая: {profile}'
+  names:
+    all: Все растения
+    replanted: Пересаженные культуры
+    fruit: Дыни и тыквы
+    stalks: Сахарный тростник и бамбук
+    paused: Приостановлено
+  details:
+    all: Уборка всех поддерживаемых растений.
+    replanted: Пшеница, морковь, картофель, свекла, нижняя бородавка и какао; пересадить как обычно.
+    fruit: Только выращенные из стебля дыни и тыквы.
+    stalks: Только верхние сегменты сахарного тростника и бамбука; держите основание.
+    paused: Оставьте все растения нетронутыми, пока не выберите другой профиль.
+
+groups:
+  button: "⚙ Группы ({count})"
+  title: "Группы механизмов"
+  intro: "Ваши группы механизмов (до {max}). Выберите группу, чтобы увидеть все её механизмы, приостановить комбайны или настроить оповещения."
+  intro-empty: "Объединяйте механизмы, которые работают вместе – ферму, плавильню, оборону базы – и видьте их состояние с одного взгляда. Создайте группу, затем добавляйте механизмы со страницы подробностей."
+  row: "{group} ({count})"
+  empty-group: "пока нет механизмов"
+  count: "{count}× {state}"
+  new: "＋ Новая группа"
+  new-title: "Новая группа"
+  rename-title: "Переименовать группу"
+  name-hint: "Короткое имя, не более {max} символов."
+  name: "Имя"
+  save: "Сохранить"
+  detail: "{group}: механизмов: {count}"
+  how-to-add: "Откройте механизм в панели и нажмите «Добавить в …»."
+  pause: "⏸ Приостановить комбайны"
+  resume: "▶ Возобновить комбайны"
+  paused: "Приостановлено комбайнов: {count}."
+  resumed: "Возобновлено комбайнов с прежним профилем: {count}."
+  watch-all: "🔔 Оповещения для всех"
+  unwatch-all: "🔕 Без оповещений"
+  watched: "Оповещения включены для механизмов: {count}."
+  unwatched: "Оповещения выключены для механизмов: {count}."
+  rename: "✎ Переименовать"
+  delete: "🗑 Удалить группу"
+  deleted: "Группа {group} удалена (механизмы остались как есть)."
+  add-to: "Добавить в {group}"
+  remove-from: "Убрать из {group}"
+  error-name: "Введите имя."
+  error-exists: "У вас уже есть группа с таким именем."
+  error-limit: "Можно иметь не более {max} групп."
+  error-unknown: "Этой группы больше нет."
+  error-full: "В группе не более {max} механизмов."
+dashboard:
+  title: "Панель машин"
+  intro: "Ваших машин: {count}. Страница {page}. Выберите машину для просмотра препятствий и добровольных уведомлений."
+  row: "{name} ({x}, {y}, {z}): {state}"
+  detail: "{name} в {world} ({x}, {y}, {z}): {state}"
+  alert: "Машина: {name} ({x}, {y}, {z}) — {state}"
+  furnace: "Печь"
+  previous: "Назад"
+  next: "Далее"
+  refresh: "Обновить"
+  back: "Назад"
+  watch: "Включить уведомления этой машины"
+  unwatch: "Выключить уведомления этой машины"
+  limit: "Можно отслеживать не более {count} машин."
+  state-unloaded: "Чанк выгружен"
+  state-incomplete: "Конструкция неполная"
+  state-paused: "Приостановлена"
+  state-output: "Выход заполнен"
+  state-ready: "Готова"
+  state-idle: "Нет сырья"
+  state-running: "Работает"
+  state-fuel: "Нет топлива"
+  state-waiting: "Ожидание прогресса"
+  hint-unloaded: "Посетите область; панель не загружает чанки."
+  hint-incomplete: "Восстановите исходную конструкцию."
+  hint-paused: "Проверьте профиль сбора или управление башней."
+  hint-output: "Освободите выходной контейнер или ячейку результата."
+  hint-ready: "Конструкция готова; может требоваться активация или подходящая цель."
+  hint-idle: "Добавьте подходящее сырьё."
+  hint-running: "Обработка продолжается."
+  hint-fuel: "Добавьте подходящее топливо."
+  hint-waiting: "Проверьте рецепт, топливо и место на выходе."
+
+blueprint:
+  save: "📋 Сохранить как чертёж"
+  save-hover: "Запомнить эти уровни, чтобы перенести их на другие машины того же типа"
+  saved: "<green>📋 Чертёж сохранён. Откройте другую машину того же типа и выберите «Применить чертёж»."
+  apply: "📋 Применить чертёж ({steps} улучш., {cost} XP)"
+  apply-hover: "Купить недостающие улучшения по обычной цене; ничего не понижается"
+  applied: "<green>📋 Чертёж применён: {steps} улучш. за {cost} XP."
+  partial: "<yellow>📋 Чертёж остановлен после {steps} улучш. ({cost} XP): следующее стоит {need} XP."
+  stopped: "<yellow>📋 Чертёж остановлен после {steps} улучш. ({cost} XP)."

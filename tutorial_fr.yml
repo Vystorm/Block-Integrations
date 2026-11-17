@@ -1,0 +1,164 @@
+# Français — UTF-8. Keep keys, placeholders and formatting tokens unchanged.
+title: BlockIntegrations
+permission: blockintegrations.use
+pages:
+- title: Début
+  text: |
+    BlockIntegrations construit des fonctions directement à partir de blocs mondiaux. Les combos à six blocs, les tours et les fours à haut rendement fonctionnent indépendamment les uns des autres.
+
+    1. Construire la structure décrite ci-dessous complètement.
+    2. Utiliser le bloc de fonction supérieur ou le mouvement décrit.
+    3. Pour les structures upgradables, sneak + clic droit pour ouvrir le menu et payer pour les mises à niveau avec réel XP points.
+
+    Aperçu dans le jeu: /vmenu → Construction et technologie → Blocs et mises à jour (or /bi). Vous y trouverez les guides pour combos, tours et fournaises ; dans le chat vous pouvez également utiliser /bi combos, /bi towers et /bi furnaces. Chaque guide a besoin de la permission correspondante.
+
+    Tous les menus de mise à niveau ont les boutons "← Retour" (to the overview) et "⌂ Menu principal".
+
+    Si un combo ou une tour est incomplet, faites un clic droit sur son bloc de commande probable (with the matching permission) pour voir les blocs manquants ou erronés et leurs coordonnées. La vérification ne lit que des morceaux chargés et ne répare jamais rien.
+- title: Trieur d'inventaire
+  permission: blockintegrations.combos
+  text: |
+    Le trieur déplace les articles de votre inventaire principal dans des coffres voisins qui contiennent déjà le même article.
+
+    1. Placer une plaque de pression (or) légère sur tout bloc de construction en cuivre.
+    2. Mettez les coffres à proximité et placez un échantillon de chaque type en eux.
+    3. Sautez sur l'assiette : les fentes 9–35 sont triées ; barre chaude, armure et hors main restent intactes.
+    4. Sneak + clic droit sur la plaque pour mettre à niveau la plage ou le temps de récupération. La plage par défaut est de 10 blocs.
+- title: Sous vide
+  permission: blockintegrations.combos
+  text: |
+    Le vide tire dans les objets laissés tomber et préfère les trier en poitrines.
+
+    1. Placer une plaque de pression (fer) lourde sur n'importe quel bloc de cuivre complet.
+    2. Mettez des coffres pré-triés à proximité si les objets doivent finir là-bas.
+    3. Sautez sur l'assiette. Seulement s'il n'y a pas du tout de coffre dans la zone de recherche, les articles entrent dans votre inventaire principal.
+    4. Sneak + clic droit sur la plaque pour mettre à niveau la plage ou le temps de récupération. Par défaut: 20 blocs rayon et 20 temps de récupération des tiques.
+- title: Lanceur et champ slime
+  permission: blockintegrations.combos
+  text: |
+    Le lanceur directionnel vous lance dans la direction que vous recherchez.
+
+    1. Placez un bloc de boue sur un bloc de pierre rouge et sautez dessus.
+    2. Pour un champ, poser neuf blocs de slime comme un plat 3×3 à la même hauteur; la pierre rouge ne passe que sous le bloc central.
+    3. Les neuf blocs utilisent la puissance et le temps de récupération du centre. Faites un clic droit sur n'importe quel bloc de champ pour ouvrir le menu de mise à niveau partagé.
+    4. La puissance et le temps de récupération peuvent être améliorés. La puissance par défaut 1.70 donne environ 15 blocs en regardant horizontalement; le temps de récupération est de 20 tiques.
+- title: Booster Sprint
+  permission: blockintegrations.combos
+  text: |
+    Le booster accélère le sprint des joueurs dans la direction où ils sont réellement en cours d'exécution.
+
+    1. Placez de la glace, de la glace emballée ou de la glace bleue directement sur un bloc de pierre rouge.
+    2. Sprint sur le bloc de glace.
+    3. Sneak + clic droit sur le bloc de glace pour améliorer la puissance ou le temps de récupération.
+
+    Les valeurs par défaut sont la puissance 1.15 et un temps de récupération de tique 10. Par défaut, la glace booster ne fond pas.
+- title: Bloc de levage et de guérison
+  permission: blockintegrations.combos
+  text: |
+    L'ascenseur à flotteurs et le bloc de guérison sont des structures de soutien fixes.
+
+    1. Ascenseur flottant : placer la terre cuite blanche sur un bloc de construction en cuivre sur la pierre rouge, sauter et toucher la terre cuite. Il vous lance directement et donne Lavitation.
+    2. Améliorez la puissance, le temps de lévitation ou le temps de récupération avec sneak + clic droit. Base: 5 secondes de Levitation, 60 temps de récupération des tiques.
+    3. Bloc de guérison : placer un bloc de miel directement sur la pierre rouge.
+    4. Il guérit les joueurs dans son aura toutes les 3 secondes. Après avoir subi des dommages, la guérison s'arrête pendant au moins 5 secondes. L'étendue, la quantité de guérison et le temps de récupération peuvent être améliorés.
+- title: Améliorations Combo et déménagement
+  permission: blockintegrations.combos.upgrade
+  text: |
+    Chaque combo n'a que ses voies de mise à niveau correspondantes : gamme trieur/vacuum et temps de récupération; puissance de lancement/booster et temps de récupération; puissance de levage flottante, durée et temps de récupération; plage de récupération des blocs, quantité de guérison et temps de récupération.
+
+    1. Faites un clic droit sur le bloc de fonction.
+    2. Choisissez le chemin dans le menu; le prix XP est affiché sur le bouton.
+    3. Il y a jusqu'à 10 niveaux. L'intervalle augmente de 1 blocs par niveau, la durée du flotteur de 0.5 secondes, et les temps de récupération diminuent de 5 % par niveau, mais jamais en dessous de 5 tiques.
+    4. Briser le bloc de fonction : l'élément abandonné garde ses mises à jour et les applique lorsqu'il est à nouveau placé.
+- title: 'Tours: comment elles sont construites'
+  permission: blockintegrations.towers
+  text: |
+    De haut en bas, chaque tour se compose d'une tête, d'un bloc de travail et d'une fondation. À la hauteur de la fondation, quatre blocs d'anneaux se dressent dans une croix au nord, au sud, à l'est et à l'ouest. La tête est le point d'attaque, le menu de mise à niveau et l'accès au butin.
+
+    1. Construisez un des types exacts ci-dessous.
+    2. Faites un clic droit sur la tête pour ouvrir le butin ou les mises à niveau.
+    3. Les tours attaquent seulement des créatures hostiles en morceaux chargés.
+    4. La créature tombe et tue XP de la tour qui a frappé la dernière vont dans sa poitrine de butin virtuel.
+- title: 'Tours: types de démarrage'
+  permission: blockintegrations.towers
+  text: |
+    Ces tours bon marché n'ont aucune mise à niveau.
+
+    1. Zombie Watchtower: tête de zombie → Table d'artisanat → pavé; quatre planches de chêne dans une croix à la hauteur de la fondation. Attaque de précision : 2 dégâts, portée des blocs 8, 30 tiques.
+    2. Tour de recrutement : tête de joueur → baril → pierre; quatre blocs de pavés dans une croix à la hauteur de la fondation. Attaque de précision : 3 dégâts, portée des blocs 9, 26 tiques.
+    3. Faites un clic droit sur la tête pour vider la poitrine du butin.
+- title: 'Tours: archer et canon'
+  permission: blockintegrations.towers
+  text: |
+    1. Archer Tower: crâne squelette → Table de pliage → tout bloc de construction en cuivre complet; quatre briques de pierre dans une croix à hauteur de fondation. Attaques précises, dommages à la base 4, portée 14, tiques 20.
+    2. Tour de canon: tête plus rampante → Distributeur → haut fourneau; quatre blocs obsidiens dans une croix à hauteur de fondation. Dommages superficiels sans destruction de blocs, dommages de base 8, portée 11, tiques 40.
+    3. Sneak + clic droit sur la tête pour le butin et pour les dommages, la portée, la vitesse et les améliorations de pillage.
+- title: 'Tours: flamme, cochon, dragon'
+  permission: blockintegrations.towers
+  text: |
+    1. Tour de la flamme: crâne de squelette plus épais → bloc magma → briques en pierre noire polie dans une croix. Endommagement de la base 5, portée 10, tiques 24; mise en feu de cibles pendant 3 secondes.
+    2. Tour d'or de Piglin: tête de porc → Table de forgeage → bloc d'or; quatre briques de pierre noire polies. Endommagement de la base 6, portée 12, tiques 16; tour de précision rapide.
+    3. Tour Dragon : tête de dragon → ancre de relève → Bloc de purpur; briques de pierre à quatre extrémités. Dégâts de base 12, portée 16, tiques 50; dommages importants.
+- title: Améliorations de la tour et pillage
+  permission: blockintegrations.towers.upgrade
+  text: |
+    1. Sneak + clic droit sur la tête de la tour.
+    2. Acheter les dommages, la portée ou la vitesse jusqu'au niveau 10. Le pillage a au plus 3 niveaux et peut ajouter des éléments supplémentaires aux gouttes empilables appropriées.
+    3. Le "boîte à butin ouvert" montre les objets; "Retirer tuer XP" paie le XP collecté.
+    4. Lorsque vous cassez la tête de la tour, la tête larguée garde les améliorations; le contenu de la poitrine de butin est tombé de sorte que les articles et XP ne sont pas perdus.
+- title: Fours à haut rendement
+  permission: blockintegrations.furnaces
+  text: |
+    Les fours, les hauts fourneaux et les fumeurs sont pris en charge. Quand vous en placez un, vous devenez son propriétaire fixe. Sneak + clic droit revendique un ancien four sans propriétaire pour vous.
+
+    1. Placez un four supporté et utilisez-le normalement pour la fusion.
+    2. Sneak + clic droit pour le menu de mise à niveau.
+    3. Avec Vystorm Compétences installées, même la fusion alimentée par trémie donne au propriétaire fixe la fusion/cuisson XP; XP gagnés alors que hors ligne est stocké et livré sur connexion.
+    4. Seul le propriétaire peut le gérer; les fours d'autres joueurs ont besoin de blockintegrations.furnaces.manage-others.
+- title: Mise à niveau et déménagement de la fournaise
+  permission: blockintegrations.furnaces.upgrade
+  text: |
+    1. Sneak + clic droit pour ouvrir le menu four et payer avec les vrais XP points.
+    2. Jusqu'au niveau 10: vitesse de fusion, rendement énergétique, rendement bonus et fusion multiple. Chaque niveau multismelt traite un élément d'entrée de plus par cycle de fusion, limité par l'entrée et la fente de sortie.
+    3. La stimulation de XP monte au niveau 5 et élève le four à vanille entreposé XP et les compétences de fusion/cuisson XP (Vystorm Compétences) par 20 % par niveau.
+    4. Retirer la vanille collectée XP dans le menu avec "Retirer stocké XP". Lorsqu'il est cassé, l'élément de four conserve ses mises à niveau, propriétaire fixe et stocké bonus XP.
+- title: Brèches et feux de camp
+  permission: blockintegrations.workstations
+  text: |
+    Accroupis-toi et fais un clic droit sur un alambic, un feu de camp ou un feu de camp des âmes pour ouvrir son menu d’amélioration. Le joueur qui pose le bloc en devient propriétaire. Un ancien bloc sans propriétaire est attribué lors de la première ouverture de ce menu.
+    Alambics : +12% de vitesse de préparation et +10% d’efficacité du combustible par niveau. Feux de camp : +12% de vitesse de cuisson et +2.5 points de pourcentage de chance d’obtenir un aliment cuit supplémentaire par niveau.
+    Par défaut : 10 niveaux au maximum. Le niveau suivant coûte 100 fois le carré de son numéro en points XP. Reste à huit blocs ou moins. Seuls le propriétaire et les administrateurs peuvent acheter des améliorations ; l’utilisation normale reste accessible à tous.
+    Les bonus s’appliquent aux opérations démarrées ensuite. Les blocs récupérés conservent leur propriétaire et leurs améliorations ; les feux de camp nécessitent Toucher de soie. Guide dans le chat : /bi workstations.
+- title: Animations tour
+  permission: blockintegrations.towers
+  text: |
+    Chaque tour a son propre effet museau et un court sentier animé. Les canons tirent le long d'un arc. Les coups réussis montrent des particules; les coups de canon et de flamme s'étendent aussi en anneaux.
+    Le timing de l'attaque et les dommages restent inchangés. Les administrateurs peuvent désactiver les cosmétiques avec towers.visual-effects en config.yml.
+- title: Pièges à monstres
+  permission: blockintegrations.traps
+  text: |
+    Construire une 3×3 cadre obsidien (eight blocks). Noyau: piston à lancer, bloc de fer pour pics, bloc de miel à ralentir.
+    Joindre un bouton à l'avant d'un bloc de cadre. Piston et bouton point dans la direction de l'effet. Planchers, murs et plafonds.
+    Le premier clic droit enregistre le piège. Faites un clic-droit pour le mode automatique et 10/15 la deuxième fois. Par défaut, le serveur s'applique uniquement aux nouveaux pièges.
+    Bouton et déclenchement automatique partager un temps de récupération persistant. Domaine: 3×3 allongeant trois blocs vers l'avant, avec ligne de vue. Monstres hostiles seulement; aucun joueur ou animal de compagnie.
+    Paramètres du serveur: /vsettings server → BlockIntegrations → Des pièges. Guide complet: /bi traps.
+- title: Pièges à élingues
+  permission: blockintegrations.traps
+  text: |
+    Piège à élingues : bloc slime dans le cadre obsidien avec exactement un bouton avant. Planchers/plafonds flottant loin du bouton; murs flottant vers l'avant et vers le haut.
+    Appuyez sur le bouton pour mettre le feu; cliquez à droite pour le mode automatique et 10/15 secondes de temps de récupération. Les administrateurs configurent la puissance d'élingage et l'ascenseur dans les réglages de Traps.
+- title: Mettre à niveau l'enclume
+  permission: blockintegrations.anvils
+  text: |
+    Faites un clic droit sur l'enclume pour ouvrir son menu. En bas à gauche : mise à niveau enclen. Centre: utiliser enclume.
+    Efficacité : 5% moins XP niveaux par grade (max. 50%). Enchantements: +1 à des bouchons normaux par rang (max. +5), supprime trop cher. Durabilité: pas d'usure par utilisation. Les améliorations coûtent XP points.
+    Prix par défaut: 100 fois nouveau rang carré. La durabilité coûte 2500 XP points une fois. La propriété et les améliorations survivent à l'exploitation minière et à la chute.
+- title: Menu de stand de brassage
+  permission: blockintegrations.workstations
+  text: |
+    Le clic droit ouvre le menu du stand de brassage. En bas à gauche: mettre à niveau brassage stand; centre: utiliser brassage stand. Maj + clic droit ouvre toujours les mises à jour directement. La vitesse et l'efficacité énergétique ont jusqu'à 10 rangs; le prix par défaut est 100 fois le nouveau rang carré en XP points.
+- title: Primes de potion
+  permission: blockintegrations.workstations
+  text: |
+    Effet supplémentaire : 5 grades au 1% chacun, maximum 5%. Force : 10 grades à 10% chance chacun pour +1 niveau d'effet, maximum 100%. Durée : 10 rangs à 25s chacun, maximum +250s ; les effets instantanés restent instantanés.
+    Prix de base multipliés par un nouveau rang au carré : 5000, effectif 10000, durée 1000 XP points. Un rouleau par bouteille finie, y compris les rouleaux échoués. Extra : effet de niveau I positif aléatoire pour 30s plus bonus de durée.

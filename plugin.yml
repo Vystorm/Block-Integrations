@@ -1,0 +1,82 @@
+name: BlockIntegrations
+version: '${version}'
+main: local.blockintegrations.BlockIntegrations
+api-version: '1.20.6'
+description: Physical sorting, transport, movement, lift, heal, furnace and attack tower structures with tower loot.
+author: Esoren
+depend: [vystorm_core]
+softdepend: [VystormSkills]
+permissions:
+  blockintegrations.*:
+    description: Alle Rechte von BlockIntegrations
+    default: op
+    children:
+      blockintegrations.admin: true
+      blockintegrations.use: true
+      blockintegrations.traps: true
+      blockintegrations.anvils: true
+      blockintegrations.combos: true
+      blockintegrations.combos.upgrade: true
+      blockintegrations.warppads: true
+      blockintegrations.towers: true
+      blockintegrations.towers.upgrade: true
+      blockintegrations.furnaces: true
+      blockintegrations.furnaces.upgrade: true
+      blockintegrations.furnaces.manage-others: true
+      blockintegrations.workstations: true
+      blockintegrations.workstations.upgrade: true
+      blockintegrations.workstations.manage-others: true
+  blockintegrations.admin:
+    description: Verwaltung - Status, Reload, Turmliste/Entfernen für alle Spieler, Server-Einstellungen; enthält fremde Öfen verwalten
+    default: op
+    children:
+      blockintegrations.use: true
+      blockintegrations.traps: true
+      blockintegrations.anvils: true
+      blockintegrations.furnaces.manage-others: true
+      blockintegrations.workstations.manage-others: true
+  blockintegrations.use:
+    description: Sortierer, Vakuum, Werfer, Sprint-Booster, Schwebelift, Heilblock benutzen; /blockintegrations sortlock und chestpriority
+    default: true
+  blockintegrations.combos:
+    description: Block-Kombos öffnen und ansehen (/blockintegrations combos)
+    default: true
+  blockintegrations.combos.upgrade:
+    description: Block-Kombos aufwerten
+    default: true
+  blockintegrations.towers:
+    description: Angriffstürme bauen, benutzen und ansehen (/blockintegrations towers list|near)
+    default: true
+  blockintegrations.towers.upgrade:
+    description: Angriffstürme aufwerten
+    default: true
+  blockintegrations.furnaces:
+    description: Aufwertbare Öfen besitzen und verwalten (/blockintegrations furnaces)
+    default: true
+  blockintegrations.furnaces.upgrade:
+    description: Eigene Öfen aufwerten
+    default: true
+  blockintegrations.furnaces.manage-others:
+    description: Öfen anderer Spieler öffnen und aufwerten
+    default: op
+  blockintegrations.workstations:
+    description: Braustand- und Lagerfeuer-Upgrades ansehen und besitzen
+    default: true
+  blockintegrations.workstations.upgrade:
+    description: Eigene Braustände und Lagerfeuer mit XP aufwerten
+    default: true
+  blockintegrations.workstations.manage-others:
+    description: Werkstationen anderer Spieler aufwerten
+    default: op
+
+  blockintegrations.traps:
+    description: Build, trigger and configure owned monster traps
+    default: true
+
+  blockintegrations.anvils:
+    description: Use and upgrade anvils
+    default: true
+
+  blockintegrations.warppads:
+    description: Warp-Felder benutzen, umbenennen und mit anderen Spielern teilen (/blockintegrations warppads)
+    default: true

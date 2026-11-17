@@ -1,0 +1,1113 @@
+# BlockIntegrations – deutsche Texte (MiniMessage; {platzhalter} werden vom Plugin gefüllt).
+# Diese Datei wird nicht überschrieben. Fehlende Schlüssel fallen auf die mitgelieferte Version bzw. en.yml zurück.
+
+general:
+  no-permission: "<red>Dafür fehlt dir die Berechtigung."
+  reloaded: "<green>BlockIntegrations wurde neu geladen."
+  players-only: "<red>Dieser Befehl ist nur für Spieler."
+  settings-unavailable: "<red>Diese Einstellungen sind nicht verfügbar."
+
+menu:
+  title: "Blöcke und Upgrades"
+  description: "Kombos, Angriffstürme und erweiterbare Öfen"
+
+guide:
+  title: "Blöcke und Upgrades"
+  body:
+    - "Öfen, Türme und Blockkombinationen werden direkt am jeweiligen Aufbau verwaltet."
+    - "Schleiche und rechtsklicke den passenden Block normal, um seine Upgrades zu öffnen."
+    - "Blockkombinationen: Schleichen + Rechtsklick auf den oberen Funktionsblock."
+    - "Angriffstürme: Schleichen + Rechtsklick auf den Turmkopf."
+    - "Erweiterbare Öfen: Schleichen + Rechtsklick auf den Ofen."
+  combos:
+    label: "Blockkombinationen"
+    tooltip: "Aufbauten, Upgrade-Pfade und Heilblock"
+  towers:
+    label: "Angriffstürme"
+    tooltip: "Turmbauten, Upgrades und Lootkiste"
+  furnaces:
+    label: "Erweiterbare Öfen"
+    tooltip: "Besitz, Skill-XP und Upgrade-Pfade"
+  settings:
+    label: "⚙ Server-Einstellungen"
+    tooltip: "Radien, Launcher, Kombos, Türme und Öfen (Admin)"
+
+status:
+  line: "<green>BlockIntegrations <gray>- Türme: <white>{towers} <gray>| Angriffe: <white>{attacks} <gray>| Zyklen: <white>{cycles} <gray>| Turm-Max: <white>{tower_max} <gray>| Ofen-Max: <white>{furnace_max} <gray>| Kombos: <white>{combos} <gray>| Kombo-Max: <white>{combo_max} <gray>| Sortierer/Vakuum/Launcher/Booster/Float-Lift/Heilblock/Öfen aktiv"
+  next: "<gray>Weiter: "
+  furnaces: "<gray>Aufgewertete Öfen auf dem Server: <white>{furnaces}"
+  towers-button: "Türme"
+  towers-hover: "Klicken: alle Türme mit Standort auflisten"
+  settings-button: "Server-Einstellungen"
+  settings-hover: "Klicken: Einstellungen öffnen"
+
+chat:
+  upgrades: "Upgrades"
+  upgrades-hover: "Klicken: Upgrades öffnen"
+  location: " <gray>Standort: "
+  too-far:
+    combo: "<yellow>Du bist zu weit von dieser Blockkombination entfernt."
+    tower: "<yellow>Du bist zu weit von diesem Turm entfernt."
+    furnace: "<yellow>Du bist zu weit von diesem Ofen entfernt."
+
+sorter:
+  success: "<green>{moved} Items in {chests} Kiste(n) einsortiert."
+  nothing: "<gray>Keine passende, vorsortierte Kiste im Umkreis gefunden."
+
+sort-locks:
+  hold-item: "<gray>Halte zuerst einen Gegenstand in deiner Haupthand."
+  item-locked: "<gray>Der Sortierer behält jetzt alle Gegenstände dieses Typs: "
+  item-unlocked: "<gray>Der Sortierer darf diesen Gegenstandstyp wieder einsortieren: "
+  items-empty: "<gray>Du hast keine Gegenstandstypen vom Sortieren ausgeschlossen."
+  items-title: "<gray>Vom Sortierer ausgeschlossene Typen (alle Varianten, in jedem Slot):"
+  items-cleared: "<gray>Alle deine Sortiersperren für Gegenstandstypen wurden gelöscht."
+  usage: "<yellow>Verwendung: /bi sortlock list|clear|slot|item|items|clearitems (interne Hauptinventar-Slots 9–35)."
+  invalid: "<red>Wähle einen internen Hauptinventar-Slot von 9 bis 35 oder nutze list/clear."
+  list-empty: "<gray>Es sind keine Hauptinventar-Slots gesperrt. Die interne Nummerierung ist 9–35."
+  list: "<gray>Gesperrte Hauptinventar-Slots (interne Minecraft-Nummerierung 9–35): <white>{slots}"
+  locked: "<green>Hauptinventar-Slot {slot} ist jetzt vom Sortieren ausgenommen."
+  unlocked: "<green>Hauptinventar-Slot {slot} wird wieder sortiert."
+  cleared: "<green>Alle deine persönlichen Sortiersperren wurden aufgehoben."
+
+chest-priority:
+  usage: "<yellow>Verwendung: /bi chestpriority add|overflow|remove|list|clear. Für add/overflow/remove eine geladene Kiste innerhalb von 6 Blöcken ansehen."
+  look-at-chest: "<red>Sieh zuerst eine geladene Kiste innerhalb von 6 Blöcken an."
+  limit: "<red>Du kannst höchstens 8 bevorzugte Kistenpositionen und 1 Überlaufposition speichern."
+  add: "<green>Bevorzugte Kiste hinzugefügt: {chest}"
+  overflow: "<green>Überlaufkiste festgelegt: {chest}"
+  remove: "<green>Kistenpriorität entfernt: {chest}"
+  cleared: "<green>Deine persönlichen Kistenprioritäten wurden gelöscht."
+  list-empty: "<gray>Du hast keine persönlichen Kistenprioritäten."
+  list: "<gray>Bevorzugte Kisten (Reihenfolge): <white>{chests}<gray> | Überlauf (zuletzt, nur passende Items): <white>{overflow}"
+
+vacuum:
+  chests: "<green>{moved} Bodenitems in {chests} Kiste(n) eingesaugt."
+  inventory: "<green>{moved} Bodenitems in dein Inventar eingesaugt."
+  nothing: "<gray>Keine passenden Bodenitems eingesaugt."
+
+upgrade:
+  maxed: "<yellow>Dieser Upgrade-Pfad ist bereits maximal."
+  offer-changed: "<yellow>Das Upgrade-Angebot hat sich geändert."
+  need-xp: "<red>Du brauchst {cost} XP-Punkte für dieses Upgrade."
+  done: "<green>{upgrade} auf Stufe {level} verbessert. <gray>Kosten: {cost} XP"
+  line: "{upgrade}: {level}/{max} | {value} -> {next} | {cost} XP"
+  line-max: "{upgrade}: {level}/{max} | {value} -> MAX | MAX"
+  button: "{upgrade} ({next}, {cost} XP)"
+
+machine-diagnostic:
+  header: "<gold>{machine}<gray> Bauprüfung:"
+  unloaded: "<yellow>{machine}: Blöcke in einem ungeladenen Chunk können noch nicht geprüft werden."
+  finding: "<gray>• {part}: erwartet <white>{expected}<gray>, gefunden <white>{actual}<gray> bei <white>{x}, {y}, {z}<gray>."
+  part:
+    control: "Steuerblock"
+    base: "Basis"
+    lower-base: "untere Basis"
+    pedestal: "Sockel"
+    foundation: "Fundament"
+    ring: "Ring"
+
+combo:
+  mine:
+    header: "<gold>Deine Block-Kombos <gray>({count}):"
+    empty: "<gray>Du hast noch keine Block-Kombos gebaut. /bi kombos zeigt, wie es geht."
+    entry-here: "<gray>• {name} <gray>| {x} {y} {z} | {blocks} m entfernt"
+    entry-elsewhere: "<gray>• {name} <gray>| {world} {x} {y} {z}"
+    more: "<gray>… und {count} weitere."
+    hint: "<dark_gray>Kombos von vor 2.20.0 erscheinen hier, sobald du sie benutzt hast."
+  sorter:
+    name: "Inventar-Sortierer"
+    structure: "Gold-Druckplatte auf beliebigem vollen Kupfer-Baublock"
+  vacuum:
+    name: "Item-Vakuum"
+    structure: "Eisen-Druckplatte auf beliebigem vollen Kupfer-Baublock"
+  launcher:
+    name: "Richtungslauncher"
+    structure: "Schleimblock auf Redstoneblock; optional 3×3 Slimefeld um die Mitte"
+  booster:
+    name: "Sprint-Booster"
+    structure: "Eis, Packeis oder Blaueis auf Redstoneblock"
+  float-launcher:
+    name: "Float-Lift"
+    structure: "Weiße Terrakotta auf Kupfer-Baublock auf Redstoneblock"
+  heal:
+    name: "Heilblock"
+    structure: "Honigblock auf Redstoneblock"
+  harvester:
+    name: "Erntemaschine"
+    structure: "Komposter auf einem Heuballen"
+  warp-pad:
+    name: "Warp-Feld"
+    structure: "Leitstein auf weinendem Obsidian"
+    unnamed: "Feld {x} {y} {z}"
+    limit: "<red>Du besitzt schon die maximal erlaubten <white>{max}</white> Warp-Felder. <gray>Baue zuerst eines deiner Felder ab."
+    disabled: "<red>Warp-Felder sind auf diesem Server ausgeschaltet."
+    no-access: "<red>Dieses Warp-Feld darfst du nicht benutzen. <gray>Der Besitzer kann es mit dir teilen."
+    no-destinations: "<yellow>In dieser Welt liegt kein anderes Warp-Feld, das du benutzen darfst, innerhalb von <white>{blocks}</white> Blöcken. <gray>Bau ein zweites Feld oder lass dir eines freigeben."
+    gone: "<red>Dieses Warp-Feld gibt es nicht mehr oder es ist unvollständig."
+    stand-on-pad: "<yellow>Stell dich auf das Warp-Feld, um zu reisen."
+    too-far: "<red>Das Ziel ist außer Reichweite (<white>{blocks}</white> Blöcke). <gray>Rüste die Distanz dieses Feldes auf."
+    cooldown: "<yellow>Dein Warp lädt noch: <white>{seconds}</white> s."
+    blocked: "<red>{name} ist versperrt: <gray>die zwei Blöcke darüber müssen frei sein."
+    arrived: "<light_purple>Gewarpt nach <white>{name}</white>."
+    not-yours: "<red>Das darf nur der Besitzer dieses Warp-Feldes."
+    usage: "<yellow>Verwendung: /bi warppads list | share NAME | unshare NAME"
+    dialog:
+      name: "<gray>Name: <white>{name}"
+      use: "<gray>Zum Reisen auf das Feld stellen und schleichen. Geteilt mit <white>{guests}</white> Spieler(n)."
+      rename: "Umbenennen"
+      rename-tooltip: "Gib dem Feld einen Namen für das Reisemenü (nur Besitzer)"
+    rename:
+      title: "Warp-Feld umbenennen"
+      question: "Neuer Name (Buchstaben, Ziffern, Leerzeichen):"
+      invalid: "<red>Der Name ist leer oder ungültig. <gray>Erlaubt sind bis zu {max} Buchstaben, Ziffern und Leerzeichen."
+      done: "<green>Warp-Feld heißt jetzt <white>{name}</white>."
+    travel:
+      title: "Warp-Feld"
+      body: "<gray>Von <white>{name}</white> <gray>| Reichweite <white>{blocks}</white> Blöcke. Wähle dein Ziel:"
+      button: "{name} ({distance} m)"
+      tooltip: "{owner} | {x} {y} {z}"
+      own: "Dein Feld"
+      shared: "Geteilt von {owner}"
+    state:
+      active: "aktiv"
+      incomplete: "unvollständig"
+      unloaded: "nicht geladen"
+    list:
+      header: "<light_purple>Deine Warp-Felder <gray>({count}/{max}):"
+      empty: "<gray>Noch keine. Bau eins: Leitstein auf weinendem Obsidian."
+      entry: "<gray>• <white>{name}</white> <gray>| Reichweite {blocks} Blöcke | {state}"
+      guests: "<gray>Geteilt mit: <white>{players}"
+      no-guests: "<gray>Mit niemandem geteilt."
+      hint: "<gray>Mit einem Spieler teilen: Schleichen + Rechtsklick auf ihn → Warp-Felder, oder /bi warppads share NAME."
+    share:
+      added: "<green>{player} darf jetzt alle deine Warp-Felder benutzen."
+      removed: "<yellow>{player} darf deine Warp-Felder nicht mehr benutzen."
+      unchanged: "<gray>Für {player} hat sich nichts geändert."
+      full: "<red>Du teilst deine Felder bereits mit {max} Spielern."
+      self: "<red>Deine eigenen Felder gehören sowieso dir."
+      unknown: "<red>Ein Spieler namens {player} war noch nie hier."
+    menu:
+      shared: "<light_purple>Warp-Felder: geteilt"
+      not-shared: "<gray>Warp-Felder: nicht geteilt"
+      lore-shared: "<gray>{player} darf mit deinen {pads} Warp-Feld(ern) reisen.\n<yellow>Klick: Zugriff wieder entziehen"
+      lore-not-shared: "<gray>{player} mit deinen {pads} Warp-Feld(ern) reisen lassen.\n<yellow>Klick: teilen"
+  xp-collector:
+    name: "XP-Sammler"
+    structure: "Zaubertisch auf einem Lapislazuliblock"
+    owner-only: "<red>Nur der Besitzer dieses XP-Sammlers kann die XP entnehmen."
+    empty: "<gray>Der XP-Sammler ist leer."
+    taken: "<green>Du hast <white>{points}</white> XP-Punkte entnommen. <gray>Noch im Sammler: {left}."
+    dialog:
+      stored: "<gray>Gespeichert: <white>{stored}</white> / {capacity} XP-Punkte"
+      take-level: "1 Level entnehmen"
+      take-all: "Alles entnehmen ({stored} XP)"
+      owner-only: "<gray>Nur der Besitzer kann die gespeicherten XP entnehmen."
+  slime-field:
+    name: "Slimefeld 3×3"
+    info: "Gemeinsame Upgrades für alle neun Slimeblöcke. Die Mitte trägt die Upgrades beim Abbauen."
+  guide:
+    header: "<gold><bold>Blockkombinationen</bold></gold> <gray>- Upgrades"
+    open: "<gray>Schleichen + Rechtsklick auf den oberen Funktionsblock öffnet das Upgrade-Menü."
+    structure: "{name}<gray>: {structure}"
+    paths: "<gray>Je nach Struktur stehen Reichweite, Leistung, Effektdauer und Abklingzeit bis Stufe <white>{max} <gray>zur Verfügung."
+    float: "<gray>Der Float-Lift besitzt bereits auf Stufe 0 fünf Sekunden Schwebekraft I."
+    heal: "<gray>Der Heilblock heilt Spieler in seiner Aura anfangs langsam. Nach Schaden wartet er {seconds} Sekunden; Mindestabstand: <white>{distance} Blöcke<gray>."
+    warp: "<gray>Warp-Feld: auf den Leitstein stellen und schleichen, dann ein Ziel wählen. Teile deine Felder mit Freunden über das Spielermenü oder /bi warppads."
+    xp: "<gray>XP-Sammler: sammelt Kugeln, neben denen kein Spieler steht; die XP entnimmst du in seinem Menü. Abbauen verschüttet die gespeicherten XP."
+  heal-too-close: "<red>Der nächste Heilblock ist zu nah. <gray>Mindestabstand: <white>{distance} Blöcke<gray>."
+  claimed: "<gray>Diese Blockkombo hatte noch keinen Besitzer und gehört jetzt dir (sie steht auf deiner Webseite)."
+  claim-denied: "<gray>Diese Blockkombo hat noch keinen Besitzer. Übernehmen kann sie nur, wer hier bauen darf; bis dahin können nur Admins XP entnehmen oder sie umbenennen."
+  recognized: "<green>{name} erkannt. <gray>Schleichen + Rechtsklick auf den oberen Block öffnet die Upgrades. "
+  no-use: "<red>Du darfst Blockkombinationen nicht bedienen."
+  no-upgrade: "<red>Du darfst Blockkombinationen nicht aufrüsten."
+  incomplete: "<red>Die Blockkombination ist nicht mehr vollständig."
+  dialog:
+    title: "{name} Upgrades"
+    header: "{name} | maximale Stufe {max}"
+    line: "{upgrade}: {level}/{max} | {value} | {cost} XP"
+    line-max: "{upgrade}: {level}/{max} | {value} | MAX"
+    button: "{upgrade} ({cost} XP)"
+  value:
+    aura: "{blocks} Blöcke Aura"
+    hearts: "{hearts} Herzen pro Puls"
+    heal-cooldown: "{pulse} s Puls / {damage} s nach Schaden"
+    blocks: "{blocks} Blöcke"
+    velocity: "{value} Geschwindigkeit"
+    seconds: "{value} Sekunden"
+    xp: "{points} XP-Punkte"
+
+combo-upgrade:
+  range: "Reichweite"
+  power: "Leistung"
+  duration: "Effektdauer"
+  cooldown: "Abklingzeit"
+  distance: "Distanz"
+  capacity: "Kapazität"
+
+tower:
+  zombie-starter:
+    name: "Zombie-Wachturm"
+  player-starter:
+    name: "Rekrutenturm"
+  archer:
+    name: "Schützenturm"
+  cannon:
+    name: "Kanonenturm"
+  flame:
+    name: "Flammenturm"
+  piglin:
+    name: "Piglin-Goldturm"
+  dragon:
+    name: "Drachenturm"
+  any-copper: "beliebiger voller Kupferblock"
+  guide:
+    header: "<gold><bold>BlockIntegrations-Türme"
+    intro: "<gray>Baue eine der Strukturen und setze den Kopf zuletzt. Schleichen + Rechtsklick auf den Kopf öffnet die Upgrades."
+    structure: "{name}<gray>: {core} auf {pedestal} auf {foundation}, darum kreuzförmig 4× {ring}{upgrades}"
+    upgradeable: "<dark_gray> [Kampf bis 10, Looting bis 3]"
+    starter: "<green> [günstiger Startturm, keine Upgrades]"
+    levels: "<gray>Die fünf regulären Türme besitzen Schaden, Reichweite und Angriffstempo bis Stufe <white>{max} <gray>sowie Looting bis Stufe <white>{looting}<gray>. Die zwei günstigen Starttürme sind nicht aufrüstbar."
+    loot: "<gray>Das Turmmenü enthält eine Lootkiste für Mob-Drops und einen Knopf zum Entnehmen der gesammelten Kill-XP. Überschüssige Drops verfallen."
+    ring: "<gray>Der Ring besteht aus vier Blöcken auf Höhe des Fundaments: Nord, Süd, Ost und West."
+  built: "<green>Angriffsturm gebaut und dir zugeordnet. <gray>Schleichen + Rechtsklick auf den Kopf öffnet ihn. "
+  open-hover: "Klicken: Turm öffnen"
+  incomplete-structure: "<red>Keine vollständige Turmstruktur erkannt."
+  no-use: "<red>Du darfst Angriffstürme nicht bedienen."
+  no-build: "<red>Du darfst keine Angriffstürme bauen."
+  no-upgrade-permission: "<red>Du darfst Türme nicht aufrüsten."
+  not-complete: "<red>Der Turm ist nicht mehr vollständig."
+  starter-no-upgrades: "<yellow>Dieser günstige Startturm besitzt keine Upgrades."
+  owned-by: "<red>Dieser Turm gehört {owner}."
+  nobody: "niemandem"
+  claimed: "<gray>Dieser Turm hatte noch keinen Besitzer und gehört jetzt dir."
+  limit: "<red>Du besitzt bereits {owned} Türme (Maximum {max}). "
+  my-towers: "Meine Türme"
+  my-towers-hover: "Klicken: deine Türme mit Standort auflisten"
+  loot-full: "<yellow>Die Lootkiste deines {name} hat keinen Platz für Beute. Neue Angriffe pausieren bei aktiver Option; bereits fliegende Geschosse können trotzdem Überlauf erzeugen. "
+  loot-button: "Lootkiste"
+  loot-hover: "Klicken: Lootkiste öffnen"
+  loot-title: "{name}<dark_gray> | Loot"
+  no-xp: "<yellow>Dieser Turm hat noch keine Kill-XP gesammelt."
+  withdrawn: "<green>Du hast <yellow>{xp} XP-Punkte <green>aus dem Turm entnommen."
+  list:
+    header: "<gold>Türme: <white>{count}"
+    near-header: "<gold>Türme in 48 Blöcken: <white>{count}<gray> (die nächsten {shown} werden angezeigt)"
+    entry: "<gray> · {name} <dark_gray>@ <white>{location}{details}"
+    details: " <dark_gray>| <gray>{owner} <dark_gray>| <gray>S{damage} R{range} T{speed} L{looting} <dark_gray>| {state} <dark_gray>| <gray>XP {xp}"
+  state:
+    unloaded: "<dark_gray>nicht geladen"
+    active: "<green>aktiv"
+    incomplete: "<red>unvollständig"
+  remove:
+    look: "<yellow>Schau auf den Kopf eines Turms."
+    done: "<green>Turm entfernt; Loot und XP liegen am Kopf."
+  dialog:
+    title: "{name} Upgrades"
+    header: "{name} | Besitzer: {owner} | Kill-XP: {xp}"
+    stats: "Schaden {damage} | Reichweite {range} Blöcke | Angriff alle {ticks} Ticks{xp_rule}"
+    xp-rule: " | XP nur mit Spieler in {radius} Blöcken"
+    starter: "Günstiger Startturm ohne Upgrades."
+    loot: "Lootkiste öffnen"
+    withdraw: "Kill-XP entnehmen"
+  value:
+    damage: "{value} Schaden"
+    range: "{value} Blöcke"
+    speed: "{ticks} Ticks"
+    looting-none: "Kein Bonusloot"
+    looting: "0-{level} Bonusitems je Dropstack"
+
+tower-upgrade:
+  damage: "Schaden"
+  range: "Reichweite"
+  speed: "Angriffstempo"
+  looting: "Looting"
+
+furnace:
+  name:
+    furnace: "Ofen"
+    blast-furnace: "Hochofen"
+    smoker: "Räucherofen"
+  guide:
+    intro:
+      - "<gold><bold>Erweiterbare Skill-Öfen"
+      - "<gray>Unterstützt: <white>Ofen, Hochofen und Räucherofen<gray>."
+      - "<gray>Beim Platzieren wird der Spieler fester Besitzer. Bestehende Öfen werden mit Schleichen + Rechtsklick beansprucht."
+      - "<gray>Automatisches Schmelzen per Trichter gibt dem Besitzer Schmelz-/Koch-XP (Vystorm Skills) und verwendet seine Schmelzfähigkeiten."
+      - "<gray>Angesammelte Vanilla-XP aus Dauerbetrieb können im Ofenmenü über „Gespeicherte XP entnehmen“ entnommen werden."
+    paths: "<gray>Upgrade-Pfade bis Stufe {max}: <white>Schmelztempo, Brennstoffeffizienz, Bonusertrag und Multismelt<gray>."
+    outro:
+      - "<gray>Der XP-Boost besitzt maximal <white>5 Stufen <gray>und erhöht gespeicherte Vanilla- sowie Schmelz-/Koch-XP (Vystorm Skills)."
+      - "<gray>Multismelt verarbeitet pro Stufe ein zusätzliches Item im selben Brennvorgang und vergütet dafür Ofen- sowie Skill-XP."
+  placed: "<green>Dieser {name} gehört jetzt fest dir. <gray>Schleichen + Rechtsklick öffnet die Upgrades. "
+  no-use: "<red>Du darfst erweiterbare Öfen nicht bedienen."
+  claimed: "<green>Ofen beansprucht und fest mit deinem Skill-Profil verbunden."
+  owned-by: "<red>Dieser Ofen gehört fest <white>{owner}<red>."
+  unknown-owner: "Unbekannt"
+  gone: "<red>Der Ofen ist nicht mehr vorhanden."
+  no-upgrade-permission: "<red>Du darfst Öfen nicht aufrüsten."
+  maxed: "<yellow>Dieser Ofen-Upgrade-Pfad ist bereits maximal."
+  no-owner: "<red>Dieser Ofen besitzt keinen festen Besitzer."
+  only-owner: "<red>Nur der feste Besitzer kann die gespeicherten XP entnehmen."
+  no-xp: "<yellow>In diesem Ofen ist noch kein voller XP-Punkt gespeichert."
+  withdraw-failed: "<red>Die Ofen-XP konnten nicht entnommen werden."
+  withdrawn: "<green>Du hast <yellow>{xp} XP-Punkte <green>aus dem {name} entnommen."
+  dialog:
+    title: "{name} Upgrades"
+    header: "{name} | Besitzer: {owner}"
+    withdraw: "Gespeicherte XP entnehmen ({xp})"
+  metrics:
+    pending-skill: "<gray>Vorgemerkte Ofen-Skill-XP dieses Besitzers (alle Öfen): <white>{xp}<gray>. Unabhängig von den entnehmbaren Ofen-XP."
+    observed: "<gray>Beobachtet ungefähr in den letzten {seconds}s: <white>{smelts} abgeschlossene Schmelzvorgänge, {fuel} verbrauchte Brennstoff-Items, {outputs} verarbeitete Ausgabe-Items; {yield} ausgelöste Ertragsbonus-Items."
+    speed-preview: "<gray>Erwarteter Tempo-Multiplikator mit diesem Upgrade: <white>{current}× → {next}×<gray>."
+    yield-preview: "<gray>Erwartete Chance auf Ertragsbonus mit diesem Upgrade: <white>{current} → {next}<gray>."
+  value:
+    speed: "{value}× Tempo"
+    fuel: "{value}× Brenndauer"
+    yield: "{value} Zusatzitem-Chance"
+    multismelt: "{items} Items je Brennvorgang"
+    xp-boost: "{value}× Ofen- & Skill-XP"
+
+furnace-upgrade:
+  speed: "Schmelztempo"
+  fuel: "Brennstoffeffizienz"
+  yield: "Bonusertrag"
+  multismelt: "Multismelt"
+  xp-boost: "XP-Boost"
+
+portable:
+  header: "<gold>BlockIntegrations <gray>– {title}"
+  level: "<gray>{upgrade}: <white>{level}"
+  owner: "<gray>Fester Besitzer: <white>{owner}"
+  experience: "<gray>Gespeicherte Zusatz-XP: <white>{xp}"
+  footer: "<dark_gray>Upgrades werden beim Platzieren übernommen."
+
+settings:
+  dialog:
+    title: "BlockIntegrations – Server"
+    body: "Änderungen werden in config.yml gespeichert und sofort neu geladen."
+  section:
+    blocks:
+      title: "Grundblöcke"
+      header: "BlockIntegrations: Grundblöcke"
+      description: "Sortierer, Vakuum, Launcher, Sprint-Booster und Float-Lift"
+    combos:
+      title: "Blockkombinationen"
+      header: "BlockIntegrations: Blockkombinationen"
+      description: "Kombo-Upgrades, Heilblock, Warp-Felder und XP-Sammler"
+    towers:
+      title: "Angriffstürme"
+      header: "BlockIntegrations: Angriffstürme"
+      description: "Türme, Kill-XP und Zielwahl"
+    furnaces:
+      title: "Erweiterbare Öfen"
+      header: "BlockIntegrations: Erweiterbare Öfen"
+      description: "Ofen-Upgrades und Boni je Stufe"
+    anvils:
+      header: "BlockIntegrations: Ambosse"
+      title: "Ambosse"
+      description: "Amboss-Upgrades und Preise"
+    traps:
+      title: "Fallen"
+      header: "BlockIntegrations: Fallen"
+      description: "Aktivierung, Standardwerte, Wurfstärke und Schaden"
+  option:
+    workstations-extra-base-xp-cost:
+      label: "Trank-Upgrade Basispreis: extra"
+      description: "XP-Punkte mal neue Stufe zum Quadrat."
+    workstations-strength-base-xp-cost:
+      label: "Trank-Upgrade Basispreis: strength"
+      description: "XP-Punkte mal neue Stufe zum Quadrat."
+    workstations-duration-base-xp-cost:
+      label: "Trank-Upgrade Basispreis: duration"
+      description: "XP-Punkte mal neue Stufe zum Quadrat."
+    traps-sling-power:
+      label: "Schleuderstärke"
+      description: "Horizontale Geschwindigkeit der Schleuderfallen; 0,5 bis 3,0."
+    traps-sling-lift:
+      label: "Schleuderhöhe"
+      description: "Vertikaler Impuls von 0,2 bis 2,0; bei Deckenfallen nach unten."
+    anvils-enabled:
+      label: "Amboss-Upgrades aktiv"
+      description: "Menü und Boni aktivieren."
+    anvils-base-xp-cost:
+      label: "Basispreis in XP-Punkten"
+      description: "Preis mal neue Stufe zum Quadrat."
+    anvils-unbreakable-xp-cost:
+      label: "Preis für unbegrenzte Haltbarkeit"
+      description: "Einmaliger Preis in XP-Punkten."
+    traps-enabled:
+      label: "Fallen aktiv"
+      description: "Aktiviert automatische und manuelle Monsterfallen."
+    traps-default-automatic:
+      label: "Neue Fallen automatisch"
+      description: "Startmodus neuer Fallen; bestehende Einstellungen bleiben erhalten."
+    traps-default-cooldown-seconds:
+      label: "Standard-Abklingzeit"
+      description: "10 oder 15 Sekunden für neue Fallen. Bestehende Fallen bleiben unverändert."
+    traps-throw-power:
+      label: "Wurfstärke"
+      description: "Geschwindigkeit der Wurffallen; 0,5 bis 3,0."
+    traps-spike-damage:
+      label: "Stachelschaden"
+      description: "Schadenspunkte je getroffenem Monster; 2 Punkte entsprechen einem Herz."
+    radius:
+      label: "Sortierer-Radius"
+      description: "Suchradius um den Kupferblock in Blöcken"
+    cooldown-ticks:
+      label: "Sortierer-Abklingzeit"
+      description: "Ticks zwischen zwei Auslösungen (20 = 1 s)"
+    include-trapped-chests:
+      label: "Redstone-Truhen"
+      description: "Auch Redstone-Truhen einsortieren"
+    messages-show-when-nothing-moved:
+      label: "Sortierer: Leer-Meldung"
+      description: "Meldung, wenn nichts einsortiert wurde"
+    vacuum-radius:
+      label: "Vakuum-Radius"
+      description: "Einsaugradius in Blöcken"
+    vacuum-cooldown-ticks:
+      label: "Vakuum-Abklingzeit"
+      description: "Ticks zwischen zwei Auslösungen"
+    vacuum-messages-show-when-nothing-moved:
+      label: "Vakuum: Leer-Meldung"
+      description: "Meldung, wenn nichts eingesaugt wurde"
+    launcher-velocity:
+      label: "Launcher-Stärke"
+      description: "Abschussgeschwindigkeit des Schleimblocks"
+    launcher-minimum-upward-velocity:
+      label: "Launcher: Mindesthöhe"
+      description: "Minimale Aufwärtsgeschwindigkeit"
+    launcher-cooldown-ticks:
+      label: "Launcher-Abklingzeit"
+      description: "Ticks zwischen zwei Starts"
+    launcher-play-sound:
+      label: "Launcher-Sound"
+      description: "Raketenton beim Start"
+    booster-velocity:
+      label: "Booster-Stärke"
+      description: "Horizontale Beschleunigung auf Eis"
+    booster-cooldown-ticks:
+      label: "Booster-Abklingzeit"
+      description: "Ticks zwischen zwei Schüben"
+    booster-play-sound:
+      label: "Booster-Sound"
+      description: "Ton beim Schub"
+    booster-prevent-ice-melting:
+      label: "Booster-Eis schützen"
+      description: "Eis auf Redstone schmilzt nicht"
+    float-launcher-velocity:
+      label: "Float-Lift-Stärke"
+      description: "Senkrechte Startgeschwindigkeit"
+    float-launcher-levitation-duration-ticks:
+      label: "Float-Lift: Schwebedauer"
+      description: "Ticks Schwebekraft (20 = 1 s)"
+    float-launcher-levitation-amplifier:
+      label: "Float-Lift: Verstärker"
+      description: "0 = Schwebekraft I"
+    float-launcher-cooldown-ticks:
+      label: "Float-Lift-Abklingzeit"
+      description: "Ticks zwischen zwei Starts"
+    float-launcher-play-sound:
+      label: "Float-Lift-Sound"
+      description: "Ton beim Start"
+    combos-enabled:
+      label: "Kombo-Upgrades aktiv"
+      description: "Upgrade-Menüs und Heilblock der Blockkombinationen"
+    combos-upgrades-maximum-level:
+      label: "Maximale Stufe"
+      description: "Höchste Upgrade-Stufe je Pfad"
+    combos-scaling-cooldown-reduction-per-level:
+      label: "Abklingzeit je Stufe"
+      description: "Anteilige Verkürzung pro Stufe (0,05 = 5 %)"
+    combos-scaling-minimum-cooldown-ticks:
+      label: "Minimale Abklingzeit"
+      description: "Untergrenze in Ticks"
+    combos-heal-amount:
+      label: "Heilung je Puls"
+      description: "Heilpunkte (2 = ein Herz)"
+    combos-heal-aura-radius:
+      label: "Heil-Aura"
+      description: "Radius in Blöcken"
+    combos-heal-pulse-cooldown-ticks:
+      label: "Heilintervall"
+      description: "Ticks zwischen zwei Heilpulsen"
+    combos-heal-damage-cooldown-ticks:
+      label: "Pause nach Schaden"
+      description: "Ticks ohne Heilung nach erhaltenem Schaden"
+    combos-heal-minimum-distance:
+      label: "Heilblock-Abstand"
+      description: "Mindestabstand zwischen Heilblöcken"
+    combos-heal-play-particles:
+      label: "Heil-Partikel"
+      description: "Partikel beim Heilen"
+    combos-heal-play-sound:
+      label: "Heil-Sound"
+      description: "Ton beim Heilen"
+    combos-warp-pad-enabled:
+      label: "Warp-Felder"
+      description: "Leitstein auf weinendem Obsidian teleportiert zwischen Feldern"
+    combos-warp-pad-base-distance:
+      label: "Warp-Reichweite"
+      description: "Blöcke, die ein Feld auf Stufe 0 erreicht"
+    combos-warp-pad-distance-per-level:
+      label: "Warp-Reichweite pro Stufe"
+      description: "Zusätzliche Blöcke pro Distanz-Upgrade"
+    combos-warp-pad-cooldown-ticks:
+      label: "Warp-Abklingzeit"
+      description: "Ticks zwischen zwei Warps eines Spielers"
+    combos-warp-pad-max-per-player:
+      label: "Warp-Felder pro Spieler"
+      description: "0 = unbegrenzt; Admins ausgenommen"
+    combos-warp-pad-play-particles:
+      label: "Warp-Partikel"
+      description: "Portal-Partikel beim Warpen"
+    combos-xp-collector-enabled:
+      label: "XP-Sammler"
+      description: "Zaubertisch auf Lapis sammelt Erfahrungskugeln"
+    combos-xp-collector-radius:
+      label: "XP-Sammler-Radius"
+      description: "Blöcke auf Stufe 0"
+    combos-xp-collector-capacity:
+      label: "XP-Sammler-Kapazität"
+      description: "Speicherbare XP-Punkte auf Stufe 0"
+    combos-xp-collector-capacity-per-level:
+      label: "Kapazität pro Stufe"
+      description: "Zusätzliche XP-Punkte pro Kapazitäts-Upgrade"
+    combos-xp-collector-player-safe-radius:
+      label: "Kugeln für Spieler lassen"
+      description: "Kugeln so nah an einem Spieler bleiben für den Spieler"
+    combos-xp-collector-play-particles:
+      label: "XP-Sammler-Partikel"
+      description: "Partikel, wenn Kugeln eingesaugt werden"
+    towers-enabled:
+      label: "Türme aktiv"
+      description: "Angriffstürme erkennen und angreifen lassen"
+    towers-upgrades-maximum-level:
+      label: "Maximale Stufe"
+      description: "Höchste Stufe für Schaden, Reichweite und Tempo"
+    towers-max-per-player:
+      label: "Türme je Spieler"
+      description: "0 = unbegrenzt; Admins ausgenommen"
+    towers-attack-task-period-ticks:
+      label: "Angriffstakt"
+      description: "Ticks zwischen zwei Zielprüfungen"
+    towers-pause-when-loot-full:
+      label: "Angriffe bei voller Lootkiste pausieren"
+      description: "Startet keine neuen Angriffe, wenn jeder Loot-Slot bis zum Stack-Limit belegt ist; fliegende Geschosse können weiter Beute erzeugen"
+    towers-experience-require-nearby-player:
+      label: "Kill-XP nur mit Spieler"
+      description: "XP nur, wenn Besitzer oder Stadtmitglied in der Nähe ist"
+    towers-experience-player-radius:
+      label: "Spieler-Radius für XP"
+      description: "Blöcke"
+    towers-experience-spawner-mobs:
+      label: "XP von Spawner-Mobs"
+      description: "Mobs aus Spawnern geben Türmen XP"
+    towers-targeting-line-of-sight:
+      label: "Sichtlinie nötig"
+      description: "Nicht durch Wände schießen"
+    towers-targeting-ignore-named-mobs:
+      label: "Benannte Mobs ignorieren"
+      description: "Haustiere und Eventmobs verschonen"
+    towers-loot-capture-nearby-plugin-drops:
+      label: "Plugin-Drops erfassen"
+      description: "Auch von Mob-Plugins erzeugte Drops einsammeln"
+    towers-loot-drop-contents-when-broken:
+      label: "Loot beim Abbau droppen"
+      description: "Eingelagerte Items und XP bleiben erhalten"
+    furnaces-enabled:
+      label: "Ofen-Upgrades aktiv"
+      description: "Besitz, Upgrades und Skill-XP der Öfen"
+    furnaces-upgrades-maximum-level:
+      label: "Maximale Stufe"
+      description: "Höchste Stufe der Hauptpfade"
+    furnaces-speed-multiplier-per-level:
+      label: "Tempo je Stufe"
+      description: "Zusätzliches Schmelztempo (0,12 = +12 %)"
+    furnaces-fuel-efficiency-per-level:
+      label: "Brenndauer je Stufe"
+      description: "Zusätzliche Brenndauer (0,10 = +10 %)"
+    furnaces-bonus-yield-chance-per-level:
+      label: "Bonusertrag je Stufe"
+      description: "Chance auf Zusatzergebnis (0,025 = 2,5 %)"
+    furnaces-xp-boost-per-level:
+      label: "XP-Boost je Stufe"
+      description: "Mehr Ofen- und Skill-XP (0,20 = +20 %)"
+
+web:
+  module:
+    title: "Blöcke & Türme"
+    description: "Deine Türme, Öfen und Blockkombos: Upgrades, Beute und Bauanleitungen"
+  button:
+    label: "🌐 Im Web öffnen"
+    tooltip: "Die Seite „Blöcke & Türme“ im Browser oder im Overlay öffnen"
+  unavailable: "<yellow>Die Webseite ist auf diesem Server gerade nicht verfügbar."
+  error:
+    unknown: "Diese Struktur gibt es nicht mehr."
+    not-yours: "Diese Struktur gehört dir nicht."
+    offline: "Dafür musst du im Spiel sein."
+    not-loaded: "Der Bereich dieser Struktur ist gerade nicht geladen. Geh in die Nähe und versuch es erneut."
+    bad-request: "Ungültige Anfrage."
+    loot-changed: "Die Beutekiste hat sich inzwischen geändert. Die Liste wurde neu geladen."
+    inventory-full: "Dein Inventar ist voll."
+    loot-empty: "Es gibt nichts zu nehmen."
+  loot:
+    offline: "Zum Herausnehmen musst du im Spiel sein. Ansehen geht trotzdem."
+    not-loaded: "Der Turm ist nicht geladen oder unvollständig, die Beute kann nur angesehen werden."
+    too-far: "Herausnehmen geht nur im Umkreis von {range} Blöcken um den Turm (wie der Beute-Knopf im Chat). Ansehen geht trotzdem."
+    taken: "{moved} Items in dein Inventar gelegt."
+    taken-partly: "{moved} Items in dein Inventar gelegt, jetzt ist es voll."
+  guide:
+    view:
+      side: "Seitenansicht (von oben nach unten)"
+      foundation: "Fundamentebene von oben"
+      slime-field: "Optionales 3×3-Schleimfeld von oben"
+    any-ice: "Eis, Packeis oder Blaues Eis"
+    tower:
+      style:
+        precision: "Einzelziel: schießt auf das nächste feindliche Monster."
+        area: "Explosive Schüsse: treffen auch feindliche Monster um das Ziel (65 % Schaden)."
+        fire: "Feuerschüsse: setzen das Ziel zusätzlich in Brand."
+      xp-rule: "Kill-XP gibt es nur, solange der Besitzer oder ein Stadtmitglied höchstens {radius} Blöcke entfernt ist."
+      limit: "Jeder Spieler kann höchstens {max} Türme besitzen."
+    combo:
+      sorter: "Auf die Platte springen: Items aus deinem Hauptinventar wandern in Kisten in der Nähe, die schon dasselbe Item enthalten."
+      vacuum: "Auf die Platte springen: herumliegende Items in der Nähe wandern in passende Kisten, ohne Kiste in dein Inventar."
+      launcher: "Auf den Schleimblock springen und in Blickrichtung geschleudert werden."
+      booster: "Über das Eis sprinten und einen Geschwindigkeitsschub bekommen."
+      float-launcher: "Auf der Terrakotta landen und mit Schwebe nach oben gleiten."
+      heal: "Heilt Spieler in seiner Aura langsam, wenn sie eine Weile keinen Schaden genommen haben."
+      harvester: "Erntet reifen Weizen, Karotten, Kartoffeln, Rote Bete, Netherwarzen, Kakao, Melonen, Kürbisse, Zuckerrohr und Bambus in der Umgebung, pflanzt neu und füllt eine angrenzende Truhe. Ist sie voll, wartet er."
+      warp-pad: "Draufstellen und schleichen: eines deiner anderen Felder (oder ein von Freunden geteiltes) in derselben Welt wählen und dorthin teleportieren."
+      xp-collector: "Saugt Erfahrungskugeln in der Umgebung in den Block, bis er voll ist. Der Besitzer entnimmt die XP in seinem Menü."
+    furnace:
+      speed: "Kürzere Schmelzzeit."
+      fuel: "Jeder Brennstoff brennt länger."
+      yield: "Chance auf ein zusätzliches Ergebnis-Item."
+      multismelt: "Verarbeitet zusätzliche Items im selben Schmelzvorgang."
+      xp-boost: "Mehr gespeicherte Vanilla-XP und mehr Schmelz-/Koch-Skill-XP."
+  ui:
+    tab-mine: "Meine Strukturen"
+    tab-guide: "Bauanleitung"
+    tab-admin: "Alle Strukturen"
+    loading: "Wird geladen …"
+    refresh: "Aktualisieren"
+    error: "Laden fehlgeschlagen: {message}"
+    offline-note: "Du bist nicht im Spiel. Upgrades und das Herausnehmen von Beute gehen nur online."
+    unloaded-note: "Strukturen in nicht geladenen Bereichen zeigen ihre zuletzt bekannten Werte und lassen sich erst wieder aufwerten, wenn der Bereich geladen ist."
+    empty: "Du besitzt noch keine Türme, Öfen oder Blockkombos. Die Bauanleitung zeigt, wie man sie baut."
+    towers: "Angriffstürme"
+    furnaces: "Öfen"
+    combos: "Blockkombos"
+    state-active: "Aktiv"
+    state-incomplete: "Unvollständig"
+    state-unloaded: "Nicht geladen"
+    location: "{world} · {x} {y} {z}"
+    owner: "Besitzer: {owner}"
+    no-owner: "kein Besitzer"
+    tower-xp: "Gespeicherte Kill-XP: {xp}"
+    furnace-xp: "Gespeicherte XP: {xp}"
+    tower-stats: "Schaden {damage} · Reichweite {range} Blöcke · greift alle {ticks} Ticks an"
+    level: "Stufe {level}/{max}"
+    value-next: "{value} → {next}"
+    upgrade-button: "Aufwerten ({cost} XP)"
+    upgrading: "Wird aufgewertet …"
+    maxed: "Maximum"
+    blocked-offline: "Zum Aufwerten musst du im Spiel sein."
+    blocked-state: "Nur möglich, solange die Struktur vollständig und ihr Bereich geladen ist."
+    starter: "Startturm: keine Upgrades."
+    tower-limit: "Türme: {owned} von {max}"
+    loot-show: "Beutekiste ({stacks} Stapel)"
+    loot-hide: "Beutekiste ausblenden"
+    loot-empty: "Die Beutekiste ist leer."
+    loot-take: "Nehmen"
+    loot-take-all: "Alles nehmen"
+    loot-view-only: "Nur ansehen: {hint}"
+    loot-count: "{amount}× {name}"
+    truncated: "Es werden nur die ersten {limit} gezeigt."
+    in-game-hint: "Schleichen + Rechtsklick auf eine Struktur im Spiel öffnet alle Optionen (XP abheben, Beutekiste)."
+    focus: "Aus dem Spiel geöffnet"
+    guide-intro: "So baust du jede Struktur, das macht sie und das kosten die Upgrades. Alle Werte folgen den Einstellungen dieses Servers."
+    guide-base: "Grundwerte: {damage} Schaden · {range} Blöcke · alle {ticks} Ticks"
+    guide-no-upgrades: "Keine Upgrades (günstiger Startturm)."
+    guide-blocks: "Blöcke"
+    guide-upgrades: "Upgrade-Tabelle"
+    guide-level: "Stufe"
+    guide-value: "Wirkung"
+    guide-cost: "Kosten der nächsten Stufe"
+    guide-build: "Bau: {structure}"
+    guide-furnace-build: "Stell einen Ofen, Schmelzofen oder Räucherofen auf. Du wirst sein fester Besitzer; Schleichen + Rechtsklick öffnet die Upgrades."
+    guide-empty-cell: "beliebiger Block oder Luft"
+    admin-filter: "Nach Besitzer, Name, Typ oder Welt filtern"
+    admin-kind-all: "Alle Arten"
+    admin-search: "Suchen"
+    admin-totals: "{shown} von {total}"
+    admin-hint: "Admins können hier jede Struktur aufwerten; die Kosten zahlst du mit deinen eigenen XP, genau wie im Spiel."
+    settings-link: "Server-Einstellungen von BlockIntegrations"
+admin:
+  title: "BlockIntegrations"
+  status: "Status"
+  towers-all: "Alle Türme"
+  towers-of: "Türme eines Spielers"
+  towers-near: "Türme in meiner Nähe"
+  tower-remove: "Anvisierten Turm entfernen"
+  reload: "Neu laden"
+
+client:
+  tower-marker: "{name}"
+  tower-marker-xp: "{name} · {xp} XP"
+  loot-full-title: "Turm-Lootkiste voll"
+  loot-full-text: "{name}: Angriffe pausieren; fliegende Geschosse können noch Überlauf erzeugen"
+  loot-open: "Beute öffnen"
+  tooltip-title: "Tragbar: {name}"
+  tooltip-tower: "Auf dem passenden Bauwerk setzen – die Upgrades werden übernommen"
+  tooltip-combo: "Im passenden Aufbau setzen – die Upgrades werden übernommen"
+  tooltip-furnace: "Setzen – die Ofen-Upgrades werden übernommen"
+diagnostics:
+  storage-readonly: "Der Speicher ist unlesbar; Speichern ist zum Schutz der Originaldatei gesperrt."
+  storage-failed: "Der letzte Speicherversuch ist fehlgeschlagen; Änderungen liegen möglicherweise nur im Arbeitsspeicher."
+  storage-active: "Der Speicher ist lesbar; kein Speicherfehler ist vermerkt."
+
+tower-controls:
+  status: "Ziele: {profile}; Steuerung: {mode}. Separater Redstone-Eingang: {x}, {y}, {z} (3 Blöcke östlich vom Kopf)."
+  change-profile: "Nächstes Zielprofil"
+  change-redstone: "Nächster Redstone-Modus"
+  share: "Persönliche Freigaben verwalten"
+  share-help: "Bis zu 32 UUIDs. Jede Taste schaltet ein Recht um. Zum Öffnen des Turmmenüs auch Benutzung freigeben. Bestehende Stadt- und Adminrechte bleiben; persönliche Freigaben erlauben keinen Abriss oder Besitzerwechsel."
+  member: "Name eines Online-Spielers oder UUID"
+  toggle-right: "Umschalten: {right}"
+  revoke: "Alle persönlichen Rechte entfernen"
+  invalid-member: "Online-Namen oder gültige UUID eingeben; höchstens 32 Mitglieder sind möglich."
+  right:
+    use: "Benutzen / Menü öffnen"
+    loot: "Loot und gespeicherte XP abholen"
+    upgrade: "Upgrades kaufen"
+  profile:
+    all: "Alle erlaubten feindlichen Mobs"
+    undead: "Nur Untote"
+    arthropods: "Nur Gliederfüßer"
+    raiders: "Nur Überfall-Mobs"
+    none: "Keine Ziele"
+  redstone:
+    always: "Immer an"
+    powered: "Bei Signal an"
+    unpowered: "Ohne Signal an"
+    disabled: "Aus"
+
+workstation:
+  potion-description: "Zusatzwirkung: 5 Stufen, je 1% Chance auf einen zufälligen positiven Effekt (I, 30s). Stärke: 10 Stufen, je 10% Chance auf +1 Effektstufe. Wirkdauer: 10 Stufen, je +25s, nicht für Soforteffekte. Ein Wurf pro Flasche; Weiterbrauen würfelt nicht erneut."
+  brew-use: "Braustand benutzen"
+  brew-upgrade: "Braustand verbessern"
+  name:
+    brewing_stand: "Braustand"
+    campfire: "Lagerfeuer"
+    soul_campfire: "Seelenlagerfeuer"
+  upgrade:
+    extra: "Zufälliger Zusatzeffekt"
+    strength: "Trankstärke"
+    duration: "Wirkdauer"
+    speed: "Verarbeitungstempo"
+    fuel: "Braubrennstoff-Effizienz"
+    yield: "Zusätzliches Kochergebnis"
+  description: "Je Stufe: +12% Tempo; Braubrennstoff +10%; Lagerfeuer-Bonuschance +2,5%. Normale Zutaten und Rezepte gelten weiterhin."
+  level: "{upgrade}: Stufe {level}/{max}"
+  guide-title: "Braustände & Lagerfeuer"
+  guide:
+    - "Schleichen + Rechtsklick auf Braustand oder Lagerfeuer öffnet die Upgrades. Besitzerlose vorhandene Blöcke werden dabei übernommen."
+    - "Braustand: schneller brauen und mehr Brauvorgänge pro Lohenstaub. Lagerfeuer: schneller kochen und Chance auf ein zusätzliches Ergebnis."
+    - "Bis zu 10 Stufen: 2,2-faches Tempo, doppelter Braubrennstoff und 25% zusätzliche Lagerfeuer-Ausbeute. Standardpreis: 100 × neue Stufe zum Quadrat in XP-Punkten."
+    - "Nur Besitzer oder berechtigte Admins dürfen in höchstens 8 Blöcken Entfernung aufwerten. Die normale Benutzung bleibt für andere Spieler offen."
+    - "Besitzer und Upgrades bleiben am gedroppten Werkstationsblock. Lagerfeuer brauchen Behutsamkeit; Kohle-/Holzkohledrops können keine Upgrades tragen."
+    - "Tempo-Upgrades gelten für neu gestartete Vorgänge. Keine Zutatenrückerstattung und keine Änderung an Trankrezepten."
+  unavailable: "Werkstation nicht verfügbar, deaktiviert, zu weit entfernt oder nicht speicherbar."
+  not-owner: "Diese Werkstation gehört einem anderen Spieler."
+  denied: "Du darfst diese Werkstation nicht aufwerten."
+  changed: "Das Upgrade-Angebot hat sich geändert. Öffne das Werkstationsmenü erneut."
+  need-xp: "Du hast nicht genügend XP-Punkte für dieses Upgrade."
+  upgraded: "Werkstation aufgewertet."
+trap:
+  wait-remove: "Vor dem Abmelden bitte den laufenden Cooldown abwarten."
+  title: "Fallen"
+  status: "{type} · {mode} · Abklingzeit {seconds} Sekunden"
+  auto: "Automatik an"
+  manual: "Nur Knopf"
+  toggle: "Automatik umschalten"
+  change-cooldown: "10 / 15 Sekunden umschalten"
+  remove: "Falle abmelden"
+  limit: "Maximal 32 Fallen pro Spieler, 2048 pro Server; bei Speicherfehlern keine neue Registrierung."
+  denied: "Diese Falle gehört jemand anderem oder liegt in einem geschützten Gebiet."
+  registered: "Falle registriert: {mode}, {seconds} Sekunden Cooldown. Shift + Rechtsklick auf den Knopf öffnet die Einstellungen."
+  cooldown: "Falle bereit in {seconds} Sekunden."
+  no-target: "Kein angreifbares Monster im Wirkbereich."
+  guide:
+    - "3×3 bauen: acht Obsidianblöcke als Rahmen, in der Mitte ein Kolben (Werfen), Eisenblock (Stacheln) oder Honigblock (Verlangsamen)."
+    - "Schleuderfalle: Schleimblock im Obsidianrahmen, genau ein Knopf vorne am Rahmen. Boden/Decke schleudern vom Knopf weg; Wände nach vorne und oben."
+    - "Der Kolben zeigt in Wurfrichtung. Rahmen und Fallen funktionieren am Boden, an Wänden und an der Decke."
+    - "Einen Knopf auf der Vorderseite eines Obsidian-Rahmenblocks anbringen. Der erste Rechtsklick registriert die Falle; Automatik ist zunächst an."
+    - "Knopf: manuell auslösen. Shift + Rechtsklick auf den Knopf: Automatik und 10/15 Sekunden Cooldown einstellen. Beide Auslösearten teilen denselben Cooldown."
+    - "Wirkbereich: 3×3 breit, 3 Blöcke vor der Fläche, mit freier Sicht. Nur feindliche Monster; keine Spieler oder Haustiere."
+    - "Stacheln verursachen standardmäßig 6 Schaden, Teer verlangsamt 5 Sekunden. Auto und Knopf benötigen ein gültiges Ziel."
+    - "Rahmen oder Knopf entfernen pausiert die Falle; Kern entfernen meldet sie nach Ablauf des Cooldowns ab. Ungeladene Chunks werden nicht geladen."
+  type:
+    sling: "Schleuderfalle"
+    throw: "Wurffalle"
+    spikes: "Stachelfalle"
+    tar: "Teerfalle"
+
+anvil:
+  title: "Amboss"
+  use: "Amboss benutzen"
+  upgrade: "Amboss verbessern"
+  description: "Effizienz: 5% weniger XP-Level pro Stufe (max. 50%). Verzauberungen: +1 zum normalen Maximum pro Stufe (max. +5), ohne Zu-teuer-Grenze. Haltbarkeit: kein Verschleiss beim Benutzen. Upgrades kosten XP-Punkte."
+  denied: "Du darfst diesen Amboss nicht verbessern."
+  unavailable: "Amboss nicht verfügbar oder Upgrade konnte nicht gespeichert werden."
+  changed: "Angebot geändert. Bitte erneut öffnen."
+  need-xp: "Du hast nicht genug XP-Punkte."
+  upgraded: "Amboss verbessert."
+  path:
+    efficiency: "XP-Kostenreduktion"
+    enchantments: "Verzauberungsgrenze"
+    durability: "Unbegrenzte Haltbarkeit"
+
+# /blockintegrations (/bi) über Vystorm Core: Beschreibung, Hilfe und Tab-Vervollständigung je Spieler. "aliases" unter
+# commands.blockintegrations sind zusätzliche Hauptbefehle (serverweit, der Admin wählt die Sprachen: Core-Konfig
+# commands.localized-aliases); "name" und "aliases" eines Unterbefehls werden in jeder Sprache verstanden, Englisch geht immer.
+commands:
+  blockintegrations:
+    description: "Block-Kombos, Türme, Öfen und Werkstationen: Anleitungen, Menü, Warp-Felder, Truhensortierung und Status"
+    aliases: [blockkombos]
+    values:
+      guide: anleitung
+    sub:
+      menu:
+        name: menue
+        aliases: [menü]
+        description: "Das Block-Anleitungsmenü öffnen"
+      web:
+        name: web
+        aliases: []
+        description: "Die Webseite von BlockIntegrations öffnen (anleitung: die Bauanleitung)"
+        args:
+          page: "anleitung"
+      status:
+        name: status
+        aliases: []
+        description: "Türme, Angriffe, Kombos und Upgrade-Grenzen dieses Servers"
+      combos:
+        name: kombos
+        aliases: []
+        description: "So baust du die Block-Kombos"
+        sub:
+          mine:
+            name: meine
+            aliases: []
+            description: "Deine eigenen Block-Kombos mit Position und Entfernung, nächste zuerst"
+      traps:
+        name: fallen
+        aliases: []
+        description: "So baust und benutzt du Monsterfallen"
+      towers:
+        name: tuerme
+        aliases: [türme]
+        description: "So baust du Angriffstürme"
+        sub:
+          list:
+            name: liste
+            aliases: []
+            description: "Deine Türme auflisten (Admins: alle oder die eines Spielers)"
+            args:
+              player: SPIELER
+          near:
+            name: nahe
+            aliases: [umgebung]
+            description: "Türme im Umkreis von 48 Blöcken, die nächsten zuerst"
+          remove:
+            name: entfernen
+            aliases: []
+            description: "Den Turm entfernen, den du ansiehst"
+      furnaces:
+        name: oefen
+        aliases: [ofen, öfen]
+        description: "So funktionieren aufwertbare Öfen"
+      workstations:
+        name: werkstationen
+        aliases: []
+        description: "Upgrades für Braustände und Lagerfeuer"
+      warppads:
+        name: warpfelder
+        aliases: []
+        description: "Deine Warp-Felder und die Spieler, mit denen du sie teilst"
+        sub:
+          list:
+            name: liste
+            aliases: []
+            description: "Deine Warp-Felder und Gäste auflisten"
+          share:
+            name: teilen
+            aliases: []
+            description: "Einen Spieler alle deine Warp-Felder benutzen lassen"
+            args:
+              player: SPIELER
+          unshare:
+            name: entziehen
+            aliases: [nichtteilen]
+            description: "Einem Spieler den Zugang zu deinen Warp-Feldern wieder nehmen"
+            args:
+              player: SPIELER
+      sortlock:
+        name: sortiersperre
+        aliases: []
+        description: "Inventarplätze (9–35) oder Gegenstandstypen vor dem Sortierer schützen"
+        args:
+          slot: PLATZ
+        sub:
+          list:
+            name: liste
+            aliases: []
+            description: "Deine gesperrten Plätze zeigen"
+          clear:
+            name: leeren
+            aliases: []
+            description: "Alle Plätze freigeben"
+          item:
+            name: gegenstand
+            aliases: []
+            description: "Den gehaltenen Gegenstandstyp in allen Slots sperren oder freigeben"
+          items:
+            name: gegenstaende
+            aliases: []
+            description: "Deine gesperrten Gegenstandstypen anzeigen"
+          clearitems:
+            name: gegenstaendeleeren
+            aliases: []
+            description: "Alle Gegenstandstypen freigeben"
+      chestpriority:
+        name: truhenvorrang
+        aliases: []
+        description: "Truhen, die der Sortierer zuerst füllt, und eine Überlauftruhe"
+        sub:
+          add:
+            name: hinzufuegen
+            aliases: [hinzufügen]
+            description: "Die angesehene Truhe zuerst füllen"
+          overflow:
+            name: ueberlauf
+            aliases: [überlauf]
+            description: "Die angesehene Truhe für Reste benutzen"
+          remove:
+            name: entfernen
+            aliases: []
+            description: "Die angesehene Truhe aus deiner Liste nehmen"
+          list:
+            name: liste
+            aliases: []
+            description: "Deine bevorzugten Truhen und die Überlauftruhe zeigen"
+          clear:
+            name: leeren
+            aliases: []
+            description: "Alle Truhen-Vorlieben vergessen"
+      reload:
+        name: neuladen
+        aliases: []
+        description: "Konfiguration und Sprachdateien neu laden"
+
+      dashboard:
+        name: "übersicht"
+        aliases: []
+        description: "Maschinenübersicht"
+harvest-profile:
+  title: "Ernteprofile"
+  open: "Ernteprofil wählen"
+  current: "Aktuelles Profil: {profile}"
+  help: "Wähle, was diese Maschine erntet. Änderungen gelten ab dem nächsten geplanten Durchlauf. Nur Besitzer und Admins können das Profil ändern. Die Auswahl bleibt nach Neustarts erhalten; Abbau und erneutes Platzieren des Komposters setzt sie auf Alle Pflanzen zurück."
+  unavailable: "Du kannst diese Erntemaschine gerade nicht einstellen. Sie muss vollständig, aktiviert und dein Eigentum sein (oder du musst Admin sein)."
+  changed: "Ernteprofil: {profile}"
+  names:
+    all: "Alle Pflanzen"
+    replanted: "Nachgepflanzte Feldfrüchte"
+    fruit: "Melonen und Kürbisse"
+    stalks: "Zuckerrohr und Bambus"
+    paused: "Pausiert"
+  details:
+    all: "Alle unterstützten Pflanzen ernten."
+    replanted: "Weizen, Karotten, Kartoffeln, Rote Bete, Netherwarzen und Kakao; wie gewohnt nachpflanzen."
+    fruit: "Nur an Stängeln gewachsene Melonen und Kürbisse."
+    stalks: "Nur obere Zuckerrohr- und Bambusabschnitte; die Basis bleibt stehen."
+    paused: "Alle Pflanzen stehen lassen, bis du ein anderes Profil auswählst."
+
+groups:
+  button: "⚙ Gruppen ({count})"
+  title: "Maschinen-Gruppen"
+  intro: "Deine Maschinen-Gruppen (bis zu {max}). Wähle eine, um alle Maschinen auf einmal zu sehen, Erntemaschinen zu pausieren oder Warnungen zu schalten."
+  intro-empty: "Fasse Maschinen zusammen, die zusammengehören – eine Farm, eine Schmelze, die Basisverteidigung – und sieh ihren Zustand auf einen Blick. Lege eine Gruppe an und füge Maschinen über ihre Detailseite hinzu."
+  row: "{group} ({count})"
+  empty-group: "noch keine Maschinen"
+  count: "{count}× {state}"
+  new: "＋ Neue Gruppe"
+  new-title: "Neue Maschinen-Gruppe"
+  rename-title: "Gruppe umbenennen"
+  name-hint: "Ein kurzer Name, höchstens {max} Zeichen."
+  name: "Name"
+  save: "Speichern"
+  detail: "{group}: {count} Maschine(n)"
+  how-to-add: "Öffne eine Maschine im Dashboard und nutze „Zu … hinzufügen“."
+  pause: "⏸ Erntemaschinen pausieren"
+  resume: "▶ Erntemaschinen fortsetzen"
+  paused: "{count} Erntemaschine(n) pausiert."
+  resumed: "{count} Erntemaschine(n) mit ihrem vorherigen Profil fortgesetzt."
+  watch-all: "🔔 Warnungen für alle"
+  unwatch-all: "🔕 Keine Warnungen"
+  watched: "Warnungen an für {count} Maschine(n)."
+  unwatched: "Warnungen aus für {count} Maschine(n)."
+  rename: "✎ Umbenennen"
+  delete: "🗑 Gruppe löschen"
+  deleted: "Gruppe {group} gelöscht (die Maschinen bleiben, wie sie sind)."
+  add-to: "Zu {group} hinzufügen"
+  remove-from: "Aus {group} entfernen"
+  error-name: "Gib einen Namen ein."
+  error-exists: "Du hast schon eine Gruppe mit diesem Namen."
+  error-limit: "Du kannst höchstens {max} Gruppen haben."
+  error-unknown: "Diese Gruppe gibt es nicht mehr."
+  error-full: "Eine Gruppe fasst höchstens {max} Maschinen."
+dashboard:
+  title: "Maschinenübersicht"
+  intro: "{count} eigene Maschinen. Seite {page}. Wähle eine Maschine für Engpässe und freiwillige Meldungen."
+  row: "{name} ({x}, {y}, {z}): {state}"
+  detail: "{name} in {world} ({x}, {y}, {z}): {state}"
+  alert: "Maschinenmeldung: {name} ({x}, {y}, {z}) — {state}"
+  furnace: "Ofen"
+  previous: "Zurück"
+  next: "Weiter"
+  refresh: "Aktualisieren"
+  back: "Zurück"
+  watch: "Meldungen für diese Maschine an"
+  unwatch: "Meldungen für diese Maschine aus"
+  limit: "Du kannst höchstens {count} Maschinen beobachten."
+  state-unloaded: "Chunk ungeladen"
+  state-incomplete: "Struktur unvollständig"
+  state-paused: "Pausiert"
+  state-output: "Ausgabe voll"
+  state-ready: "Bereit"
+  state-idle: "Keine Eingabe"
+  state-running: "In Betrieb"
+  state-fuel: "Kein Brennstoff"
+  state-waiting: "Wartet auf Fortschritt"
+  hint-unloaded: "Besuche den Bereich; die Übersicht lädt keine Chunks."
+  hint-incomplete: "Repariere den ursprünglichen Maschinenaufbau."
+  hint-paused: "Prüfe Ernteprofil oder Redstone- und Zielsteuerung des Turms."
+  hint-output: "Leere den Ausgabecontainer oder Ergebnisplatz."
+  hint-ready: "Die Struktur ist bereit; Aktivierung oder ein passendes Ziel kann noch nötig sein."
+  hint-idle: "Lege einen passenden Gegenstand ein."
+  hint-running: "Die Verarbeitung läuft."
+  hint-fuel: "Füge passenden Brennstoff hinzu."
+  hint-waiting: "Prüfe Rezept, passenden Brennstoff und freien Ausgabeplatz."
+
+blueprint:
+  save: "📋 Als Bauplan speichern"
+  save-hover: "Diese Ausbaustufen merken, um sie auf andere Maschinen derselben Art zu übertragen"
+  saved: "<green>📋 Bauplan gespeichert. Öffne eine andere Maschine derselben Art und wähle „Bauplan anwenden“."
+  apply: "📋 Bauplan anwenden ({steps} Ausbauten, {cost} XP)"
+  apply-hover: "Die fehlenden Ausbauten deines Bauplans zum normalen Preis kaufen; nichts wird gesenkt"
+  applied: "<green>📋 Bauplan angewendet: {steps} Ausbauten für {cost} XP."
+  partial: "<yellow>📋 Bauplan nach {steps} Ausbauten ({cost} XP) angehalten: der nächste braucht {need} XP."
+  stopped: "<yellow>📋 Bauplan nach {steps} Ausbauten ({cost} XP) angehalten."

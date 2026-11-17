@@ -1,0 +1,1114 @@
+# BlockIntegrations – 简体中文文本（MiniMessage；{占位符} 由插件自动填充）。
+# 此文件永远不会被覆盖。缺失的键会回退到 jar 中自带的版本。
+# 如需添加语言，请将此文件复制到同一文件夹，例如 fr.yml，翻译后执行 /bi reload。
+
+general:
+  no-permission: "<red>你没有权限执行此操作。"
+  reloaded: "<green>BlockIntegrations 已重新加载。"
+  players-only: "<red>此命令只能由玩家使用。"
+  settings-unavailable: "<red>这些设置不可用。"
+
+menu:
+  title: "方块与升级"
+  description: "方块组合、攻击塔和可升级熔炉"
+
+guide:
+  title: "方块与升级"
+  body:
+    - "熔炉、攻击塔和方块组合都直接在结构本身上管理。"
+    - "潜行并右键对应的方块即可打开它的升级。"
+    - "方块组合：潜行并右键顶部的功能方块。"
+    - "攻击塔：潜行并右键塔顶。"
+    - "可升级熔炉：潜行并右键熔炉。"
+  combos:
+    label: "方块组合"
+    tooltip: "结构、升级路线和治疗方块"
+  towers:
+    label: "攻击塔"
+    tooltip: "塔的搭建、升级和战利品箱"
+  furnaces:
+    label: "可升级熔炉"
+    tooltip: "所有权、技能经验和升级路线"
+  settings:
+    label: "⚙ 服务器设置"
+    tooltip: "半径、弹射器、组合、攻击塔和熔炉（管理员）"
+
+status:
+  line: "<green>BlockIntegrations <gray>- 攻击塔：<white>{towers} <gray>| 攻击：<white>{attacks} <gray>| 周期：<white>{cycles} <gray>| 塔上限：<white>{tower_max} <gray>| 熔炉上限：<white>{furnace_max} <gray>| 组合：<white>{combos} <gray>| 组合上限：<white>{combo_max} <gray>| 整理器/吸取器/弹射器/加速器/飘浮升降台/治疗方块/熔炉已启用"
+  next: "<gray>下一步："
+  furnaces: "<gray>服务器上的升级熔炉：<white>{furnaces}"
+  towers-button: "攻击塔"
+  towers-hover: "点击：列出所有攻击塔及其位置"
+  settings-button: "服务器设置"
+  settings-hover: "点击：打开设置"
+
+chat:
+  upgrades: "升级"
+  upgrades-hover: "点击：打开升级"
+  location: " <gray>位置："
+  too-far:
+    combo: "<yellow>你离这个方块组合太远了。"
+    tower: "<yellow>你离这座攻击塔太远了。"
+    furnace: "<yellow>你离这个熔炉太远了。"
+
+sorter:
+  success: "<green>已将 {moved} 个物品整理进 {chests} 个箱子。"
+  nothing: "<gray>附近没有找到匹配的预分类箱子。"
+
+sort-locks:
+  hold-item: "<gray>请先在主手中拿着一个物品。"
+  item-locked: "<gray>整理器将保留此类型的所有物品："
+  item-unlocked: "<gray>整理器现在可以再次存放此类型的物品："
+  items-empty: "<gray>你尚未锁定任何物品类型。"
+  items-title: "<gray>整理器保留的物品类型（所有变体，所有槽位）："
+  items-cleared: "<gray>已清除你的所有物品类型整理锁定。"
+  usage: "<yellow>用法：/bi sortlock list|clear|slot|item|items|clearitems（槽位编号为主物品栏的内部槽位 9–35）。"
+  invalid: "<red>请选择 9 到 35 之间的主物品栏内部槽位，或使用 list/clear。"
+  list-empty: "<gray>没有锁定的主物品栏槽位。槽位编号使用 Minecraft 内部的 9–35 编号。"
+  list: "<gray>已锁定的主物品栏槽位（Minecraft 内部编号 9–35）：<white>{slots}"
+  locked: "<green>主物品栏槽位 {slot} 现在不会被整理。"
+  unlocked: "<green>主物品栏槽位 {slot} 已解除整理锁定。"
+  cleared: "<green>你的所有个人整理槽位锁定已清除。"
+
+chest-priority:
+  usage: "<yellow>用法：/bi chestpriority add|overflow|remove|list|clear。使用 add/overflow/remove 时，请看向 6 格内一个已加载的箱子。"
+  look-at-chest: "<red>请先看向 6 格内一个已加载的箱子。"
+  limit: "<red>你最多可以保存 8 个优先箱子位置和 1 个溢出位置。"
+  add: "<green>已添加优先箱子：{chest}"
+  overflow: "<green>已设置溢出箱子：{chest}"
+  remove: "<green>已移除箱子偏好：{chest}"
+  cleared: "<green>已清除你的个人箱子优先级。"
+  list-empty: "<gray>你没有个人箱子优先级。"
+  list: "<gray>优先箱子（按顺序）：<white>{chests}<gray> | 溢出（最后，仅匹配的物品）：<white>{overflow}"
+
+vacuum:
+  chests: "<green>已将 {moved} 个掉落物吸入 {chests} 个箱子。"
+  inventory: "<green>已将 {moved} 个掉落物吸入你的物品栏。"
+  nothing: "<gray>没有吸取到匹配的掉落物。"
+
+upgrade:
+  maxed: "<yellow>这条升级路线已满级。"
+  offer-changed: "<yellow>升级选项已变更。"
+  need-xp: "<red>此升级需要 {cost} 点经验值。"
+  done: "<green>{upgrade}已升至 {level} 级。<gray>花费：{cost} 经验值"
+  line: "{upgrade}：{level}/{max} | {value} -> {next} | {cost} 经验值"
+  line-max: "{upgrade}：{level}/{max} | {value} -> MAX | MAX"
+  button: "{upgrade}（{next}，{cost} 经验值）"
+
+machine-diagnostic:
+  header: "<gold>{machine}<gray> 结构检查报告："
+  unloaded: "<yellow>{machine}：部分方块位于未加载的区块中，暂时无法检查。"
+  finding: "<gray>• {part}：应为 <white>{expected}<gray>，实际为 <white>{actual}<gray>，位置 <white>{x}, {y}, {z}<gray>。"
+  part:
+    control: "控制方块"
+    base: "底座"
+    lower-base: "下层底座"
+    pedestal: "基座"
+    foundation: "地基"
+    ring: "环"
+
+combo:
+  mine:
+    header: "<gold>你的方块组合 <gray>（{count}）："
+    empty: "<gray>你还没有搭建任何方块组合。/bi 组合 可查看搭建方法。"
+    entry-here: "<gray>• {name} <gray>| {x} {y} {z} | 距离 {blocks} 米"
+    entry-elsewhere: "<gray>• {name} <gray>| {world} {x} {y} {z}"
+    more: "<gray>……还有 {count} 个。"
+    hint: "<dark_gray>2.20.0 之前搭建的组合在你使用过之后才会显示在这里。"
+  sorter:
+    name: "物品栏整理器"
+    structure: "任意完整铜质建筑方块上放一块轻质测重压力板（金）"
+  vacuum:
+    name: "物品吸取器"
+    structure: "任意完整铜质建筑方块上放一块重质测重压力板（铁）"
+  launcher:
+    name: "定向弹射器"
+    structure: "红石块上放一个黏液块；可选在中心周围铺 3×3 黏液区"
+  booster:
+    name: "疾跑加速器"
+    structure: "红石块上放冰、浮冰或蓝冰"
+  float-launcher:
+    name: "飘浮升降台"
+    structure: "红石块上放铜质建筑方块，再在其上放白色陶瓦"
+  heal:
+    name: "治疗方块"
+    structure: "红石块上放蜂蜜块"
+  harvester:
+    name: "收割机"
+    structure: "干草块上放堆肥桶"
+  warp-pad:
+    name: "传送台"
+    structure: "哭泣的黑曜石上放磁石"
+    unnamed: "传送台 {x} {y} {z}"
+    limit: "<red>你拥有的传送台已达上限 <white>{max}</white> 个。<gray>请先拆掉一个你的传送台。"
+    disabled: "<red>此服务器已关闭传送台。"
+    no-access: "<red>你无权使用这个传送台。<gray>它的主人可以与你共享。"
+    no-destinations: "<yellow>此世界 <white>{blocks}</white> 格内没有其他你可以使用的传送台。<gray>再建一个传送台，或请朋友共享他们的传送台。"
+    gone: "<red>该传送台已不存在或不完整。"
+    stand-on-pad: "<yellow>站在传送台上才能传送。"
+    too-far: "<red>该传送台超出范围（<white>{blocks}</white> 格）。<gray>请升级此传送台的距离。"
+    cooldown: "<yellow>传送正在充能：<white>{seconds}</white> 秒。"
+    blocked: "<red>{name} 被阻挡：<gray>其上方的两格必须为空。"
+    arrived: "<light_purple>已传送到 <white>{name}</white>。"
+    not-yours: "<red>只有此传送台的主人才能这样做。"
+    usage: "<yellow>用法：/bi warppads list | share NAME | unshare NAME"
+    dialog:
+      name: "<gray>名称：<white>{name}"
+      use: "<gray>站在传送台上潜行即可传送。已与 <white>{guests}</white> 名玩家共享。"
+      rename: "重命名"
+      rename-tooltip: "为此传送台命名，用于传送菜单（仅限主人）"
+    rename:
+      title: "重命名传送台"
+      question: "新名称（字母、数字、空格）："
+      invalid: "<red>名称为空或无效。<gray>最多使用 {max} 个字母、数字和空格。"
+      done: "<green>传送台已重命名为 <white>{name}</white>。"
+    travel:
+      title: "传送台"
+      body: "<gray>从 <white>{name}</white> 出发 <gray>| 范围 <white>{blocks}</white> 格。选择目的地："
+      button: "{name}（{distance} 米）"
+      tooltip: "{owner} | {x} {y} {z}"
+      own: "你的传送台"
+      shared: "由 {owner} 共享"
+    state:
+      active: "运行中"
+      incomplete: "不完整"
+      unloaded: "未加载"
+    list:
+      header: "<light_purple>你的传送台 <gray>（{count}/{max}）："
+      empty: "<gray>还没有。建造方法：哭泣的黑曜石上放磁石。"
+      entry: "<gray>• <white>{name}</white> <gray>| 范围 {blocks} 格 | {state}"
+      guests: "<gray>已共享给：<white>{players}"
+      no-guests: "<gray>未与任何人共享。"
+      hint: "<gray>与玩家共享：潜行并右键该玩家 → 传送台，或使用 /bi warppads share NAME。"
+    share:
+      added: "<green>{player} 现在可以使用你所有的传送台。"
+      removed: "<yellow>{player} 不能再使用你的传送台。"
+      unchanged: "<gray>{player} 的权限没有变化。"
+      full: "<red>你已与 {max} 名玩家共享传送台。"
+      self: "<red>你自己的传送台始终归你所有。"
+      unknown: "<red>没有名为 {player} 的玩家在这里玩过。"
+    menu:
+      shared: "<light_purple>传送台：已共享"
+      not-shared: "<gray>传送台：未共享"
+      lore-shared: "<gray>{player} 可以使用你的 {pads} 个传送台。\n<yellow>点击：收回权限"
+      lore-not-shared: "<gray>允许 {player} 使用你的 {pads} 个传送台。\n<yellow>点击：共享"
+  xp-collector:
+    name: "经验收集器"
+    structure: "青金石块上放附魔台"
+    owner-only: "<red>只有此经验收集器的主人才能取出经验。"
+    empty: "<gray>经验收集器是空的。"
+    taken: "<green>你取出了 <white>{points}</white> 点经验值。<gray>收集器中剩余：{left}。"
+    dialog:
+      stored: "<gray>已储存：<white>{stored}</white> / {capacity} 点经验值"
+      take-level: "取出 1 级"
+      take-all: "全部取出（{stored} 经验值）"
+      owner-only: "<gray>只有主人才能取出储存的经验。"
+  slime-field:
+    name: "3×3 黏液区"
+    info: "九个黏液块共享升级。中心方块被破坏时会保留升级。"
+  guide:
+    header: "<gold><bold>方块组合</bold></gold> <gray>- 升级"
+    open: "<gray>潜行并右键顶部的功能方块即可打开升级菜单。"
+    structure: "{name}<gray>：{structure}"
+    paths: "<gray>根据结构不同，范围、力度、效果持续时间和冷却时间最高可升级到 <white>{max}<gray> 级。"
+    float: "<gray>飘浮升降台在 0 级时就提供五秒的飘浮 I。"
+    heal: "<gray>治疗方块会缓慢治疗其光环内的玩家。受到伤害后需等待 {seconds} 秒；最小间距：<white>{distance} 格<gray>。"
+    warp: "<gray>传送台：站在磁石上潜行即可选择目的地。可通过玩家菜单或 /bi warppads 与朋友共享你的传送台。"
+    xp: "<gray>经验收集器：收集附近没有玩家的经验球；在其菜单中取出经验。破坏它会洒出储存的经验。"
+  heal-too-close: "<red>最近的治疗方块太近了。<gray>最小间距：<white>{distance} 格<gray>。"
+  claimed: "<gray>这个方块组合之前没有主人，现在归你所有（已列在你的网页上）。"
+  claim-denied: "<gray>这个方块组合还没有主人。只有可以在此建造的玩家才能接管它；在此之前只有管理员可以取出经验或重命名。"
+  recognized: "<green>已识别{name}。<gray>潜行并右键顶部方块即可打开升级。"
+  no-use: "<red>你无权使用方块组合。"
+  no-upgrade: "<red>你无权升级方块组合。"
+  incomplete: "<red>该方块组合已不完整。"
+  dialog:
+    title: "{name}升级"
+    header: "{name} | 最高等级 {max}"
+    line: "{upgrade}：{level}/{max} | {value} | {cost} 经验值"
+    line-max: "{upgrade}：{level}/{max} | {value} | MAX"
+    button: "{upgrade}（{cost} 经验值）"
+  value:
+    aura: "{blocks} 格光环"
+    hearts: "每次脉冲 {hearts} 颗心"
+    heal-cooldown: "{pulse} 秒脉冲 / 受伤后 {damage} 秒"
+    blocks: "{blocks} 格"
+    velocity: "{value} 速度"
+    seconds: "{value} 秒"
+    xp: "{points} 点经验值"
+
+combo-upgrade:
+  range: "范围"
+  power: "力度"
+  duration: "效果持续时间"
+  cooldown: "冷却时间"
+  distance: "距离"
+  capacity: "容量"
+
+tower:
+  zombie-starter:
+    name: "僵尸瞭望塔"
+  player-starter:
+    name: "新兵塔"
+  archer:
+    name: "弓箭塔"
+  cannon:
+    name: "火炮塔"
+  flame:
+    name: "火焰塔"
+  piglin:
+    name: "猪灵黄金塔"
+  dragon:
+    name: "龙之塔"
+  any-copper: "任意完整铜方块"
+  guide:
+    header: "<gold><bold>BlockIntegrations 攻击塔"
+    intro: "<gray>建造以下任一结构，最后放置塔顶。潜行并右键塔顶即可打开升级。"
+    structure: "{name}<gray>：{foundation} 上放 {pedestal}，再放 {core}，周围呈十字摆放 4× {ring}{upgrades}"
+    upgradeable: "<dark_gray> [战斗最高 10 级，抢夺最高 3 级]"
+    starter: "<green> [廉价入门塔，无升级]"
+    levels: "<gray>五种常规攻击塔可将伤害、范围和攻击速度升级到 <white>{max} <gray>级，抢夺升级到 <white>{looting}<gray> 级。两种廉价入门塔无法升级。"
+    loot: "<gray>攻击塔菜单中有一个存放生物掉落物的战利品箱，以及一个提取累计击杀经验的按钮。多余的掉落物会丢失。"
+    ring: "<gray>环由地基高度的四个方块组成：北、南、东、西。"
+  built: "<green>攻击塔已建成并归你所有。<gray>潜行并右键塔顶即可打开。"
+  open-hover: "点击：打开攻击塔"
+  incomplete-structure: "<red>未识别到完整的攻击塔结构。"
+  no-use: "<red>你无权使用攻击塔。"
+  no-build: "<red>你无权建造攻击塔。"
+  no-upgrade-permission: "<red>你无权升级攻击塔。"
+  not-complete: "<red>该攻击塔已不完整。"
+  starter-no-upgrades: "<yellow>这座廉价入门塔没有升级。"
+  owned-by: "<red>这座攻击塔属于 {owner}。"
+  nobody: "无人"
+  claimed: "<gray>这座攻击塔之前没有主人，现在归你所有。"
+  limit: "<red>你已拥有 {owned} 座攻击塔（上限 {max}）。"
+  my-towers: "我的攻击塔"
+  my-towers-hover: "点击：列出你的攻击塔及其位置"
+  loot-full: "<yellow>你的{name}的战利品箱已没有空间存放掉落物。启用时新的攻击会暂停；已在飞行中的弹射物仍可能使其溢出。"
+  loot-button: "战利品箱"
+  loot-hover: "点击：打开战利品箱"
+  loot-title: "{name}<dark_gray> | 战利品"
+  no-xp: "<yellow>这座攻击塔还没有收集到任何击杀经验。"
+  withdrawn: "<green>你从攻击塔提取了 <yellow>{xp} 点经验值<green>。"
+  list:
+    header: "<gold>攻击塔：<white>{count}"
+    near-header: "<gold>48 格内的攻击塔：<white>{count}<gray>（显示最近的 {shown} 座）"
+    entry: "<gray> · {name} <dark_gray>@ <white>{location}{details}"
+    details: " <dark_gray>| <gray>{owner} <dark_gray>| <gray>伤{damage} 距{range} 速{speed} 抢{looting} <dark_gray>| {state} <dark_gray>| <gray>经验 {xp}"
+  state:
+    unloaded: "<dark_gray>未加载"
+    active: "<green>运行中"
+    incomplete: "<red>不完整"
+  remove:
+    look: "<yellow>请看向一座攻击塔的塔顶。"
+    done: "<green>攻击塔已移除；其战利品和经验已在塔顶处掉落。"
+  dialog:
+    title: "{name}升级"
+    header: "{name} | 主人：{owner} | 击杀经验：{xp}"
+    stats: "伤害 {damage} | 范围 {range} 格 | 每 {ticks} 刻攻击一次{xp_rule}"
+    xp-rule: " | 仅当 {radius} 格内有玩家时获得经验"
+    starter: "无升级的廉价入门塔。"
+    loot: "打开战利品箱"
+    withdraw: "提取击杀经验"
+  value:
+    damage: "{value} 伤害"
+    range: "{value} 格"
+    speed: "{ticks} 刻"
+    looting-none: "无额外战利品"
+    looting: "每组掉落物额外 0-{level} 个物品"
+
+tower-upgrade:
+  damage: "伤害"
+  range: "范围"
+  speed: "攻击速度"
+  looting: "抢夺"
+
+furnace:
+  name:
+    furnace: "熔炉"
+    blast-furnace: "高炉"
+    smoker: "烟熏炉"
+  guide:
+    intro:
+      - "<gold><bold>可升级熔炉"
+      - "<gray>支持：<white>熔炉、高炉和烟熏炉<gray>。"
+      - "<gray>放置者会成为其固定主人。已有的熔炉可通过潜行并右键认领。"
+      - "<gray>安装 Vystorm Skills 后，由漏斗供料的自动冶炼会给主人冶炼/烹饪技能经验，并使用主人的冶炼能力。"
+      - "<gray>熔炉运行时收集的原版经验可在熔炉菜单中通过“提取储存的经验”取出。"
+    paths: "<gray>升级路线最高 {max} 级：<white>冶炼速度、燃料效率、额外产出和多重冶炼<gray>。"
+    outro:
+      - "<gray>经验加成最多 <white>5 级<gray>，可提高储存的原版经验以及冶炼/烹饪技能经验（Vystorm Skills）。"
+      - "<gray>每级多重冶炼会在同一冶炼周期内多处理一个物品，并为此给予熔炉经验和技能经验。"
+  placed: "<green>这个{name}现在永久归你所有。<gray>潜行并右键即可打开升级。"
+  no-use: "<red>你无权使用可升级熔炉。"
+  claimed: "<green>熔炉已认领，并永久绑定到你的技能档案。"
+  owned-by: "<red>这个熔炉永久属于 <white>{owner}<red>。"
+  unknown-owner: "未知"
+  gone: "<red>该熔炉已不存在。"
+  no-upgrade-permission: "<red>你无权升级熔炉。"
+  maxed: "<yellow>这条熔炉升级路线已满级。"
+  no-owner: "<red>这个熔炉没有固定主人。"
+  only-owner: "<red>只有固定主人才能提取储存的经验。"
+  no-xp: "<yellow>这个熔炉储存的经验还不足 1 点。"
+  withdraw-failed: "<red>无法提取熔炉经验。"
+  withdrawn: "<green>你从{name}提取了 <yellow>{xp} 点经验值<green>。"
+  dialog:
+    title: "{name}升级"
+    header: "{name} | 主人：{owner}"
+    withdraw: "提取储存的经验（{xp}）"
+  metrics:
+    pending-skill: "<gray>该主人所有熔炉待发放的技能经验：<white>{xp}<gray>。这与熔炉中可领取的普通经验不同。"
+    observed: "<gray>约过去 {seconds} 秒内观测到：<white>完成 {smelts} 次冶炼，消耗 {fuel} 个燃料，处理 {outputs} 个产物；触发 {yield} 个额外产出。"
+    speed-preview: "<gray>此升级后的预计速度倍率：<white>{current}× → {next}×<gray>。"
+    yield-preview: "<gray>此升级后的预计额外产出几率：<white>{current} → {next}<gray>。"
+  value:
+    speed: "{value}× 速度"
+    fuel: "{value}× 燃烧时间"
+    yield: "{value} 额外物品几率"
+    multismelt: "每个冶炼周期 {items} 个物品"
+    xp-boost: "{value}× 熔炉与技能经验"
+
+furnace-upgrade:
+  speed: "冶炼速度"
+  fuel: "燃料效率"
+  yield: "额外产出"
+  multismelt: "多重冶炼"
+  xp-boost: "经验加成"
+
+portable:
+  header: "<gold>BlockIntegrations <gray>– {title}"
+  level: "<gray>{upgrade}：<white>{level}"
+  owner: "<gray>固定主人：<white>{owner}"
+  experience: "<gray>储存的额外经验：<white>{xp}"
+  footer: "<dark_gray>放置时应用升级。"
+
+settings:
+  dialog:
+    title: "BlockIntegrations – 服务器"
+    body: "更改会保存到 config.yml 并立即重新加载。"
+  section:
+    blocks:
+      title: "基础方块"
+      header: "BlockIntegrations：基础方块"
+      description: "整理器、吸取器、弹射器、疾跑加速器和飘浮升降台"
+    combos:
+      title: "方块组合"
+      header: "BlockIntegrations：方块组合"
+      description: "组合升级、治疗方块、传送台和经验收集器"
+    towers:
+      title: "攻击塔"
+      header: "BlockIntegrations：攻击塔"
+      description: "攻击塔、击杀经验和目标选择"
+    furnaces:
+      title: "可升级熔炉"
+      header: "BlockIntegrations：可升级熔炉"
+      description: "熔炉升级及每级加成"
+    anvils:
+      header: "BlockIntegrations：铁砧"
+      title: "铁砧"
+      description: "铁砧升级和价格"
+    traps:
+      title: "陷阱"
+      header: "BlockIntegrations：陷阱"
+      description: "启用陷阱、默认值、投掷力度和伤害"
+  option:
+    workstations-extra-base-xp-cost:
+      label: "药水升级基础价格：额外效果"
+      description: "经验值乘以新等级的平方。"
+    workstations-strength-base-xp-cost:
+      label: "药水升级基础价格：强度"
+      description: "经验值乘以新等级的平方。"
+    workstations-duration-base-xp-cost:
+      label: "药水升级基础价格：持续时间"
+      description: "经验值乘以新等级的平方。"
+    traps-sling-power:
+      label: "弹弓力度"
+      description: "弹弓陷阱的水平速度，0.5 到 3.0。"
+    traps-sling-lift:
+      label: "弹弓上抛"
+      description: "垂直冲量，0.2 到 2.0；天花板陷阱向下。"
+    anvils-enabled:
+      label: "启用铁砧升级"
+      description: "启用菜单和加成。"
+    anvils-base-xp-cost:
+      label: "基础经验值花费"
+      description: "价格乘以新等级的平方。"
+    anvils-unbreakable-xp-cost:
+      label: "无法破坏价格"
+      description: "一次性价格，单位为经验值。"
+    traps-enabled:
+      label: "启用陷阱"
+      description: "启用自动和手动怪物陷阱。"
+    traps-default-automatic:
+      label: "新陷阱默认自动"
+      description: "新陷阱的初始模式；已有设置保持不变。"
+    traps-default-cooldown-seconds:
+      label: "默认冷却时间"
+      description: "新陷阱为 10 或 15 秒。已有陷阱保留其设置。"
+    traps-throw-power:
+      label: "投掷力度"
+      description: "投掷陷阱的速度，0.5 到 3.0。"
+    traps-spike-damage:
+      label: "尖刺伤害"
+      description: "对每只怪物的伤害点数；2 点等于一颗心。"
+    radius:
+      label: "整理器半径"
+      description: "铜方块周围的搜索半径，单位为格"
+    cooldown-ticks:
+      label: "整理器冷却"
+      description: "两次触发之间的刻数（20 = 1 秒）"
+    include-trapped-chests:
+      label: "陷阱箱"
+      description: "也整理到陷阱箱中"
+    messages-show-when-nothing-moved:
+      label: "整理器：空消息"
+      description: "没有整理任何物品时显示消息"
+    vacuum-radius:
+      label: "吸取器半径"
+      description: "拾取半径，单位为格"
+    vacuum-cooldown-ticks:
+      label: "吸取器冷却"
+      description: "两次触发之间的刻数"
+    vacuum-messages-show-when-nothing-moved:
+      label: "吸取器：空消息"
+      description: "没有拾取任何物品时显示消息"
+    launcher-velocity:
+      label: "弹射器力度"
+      description: "黏液块的弹射速度"
+    launcher-minimum-upward-velocity:
+      label: "弹射器：最小上升"
+      description: "最小向上速度"
+    launcher-cooldown-ticks:
+      label: "弹射器冷却"
+      description: "两次弹射之间的刻数"
+    launcher-play-sound:
+      label: "弹射器音效"
+      description: "弹射时播放烟花火箭音效"
+    booster-velocity:
+      label: "加速器力度"
+      description: "冰上的水平加速"
+    booster-cooldown-ticks:
+      label: "加速器冷却"
+      description: "两次加速之间的刻数"
+    booster-play-sound:
+      label: "加速器音效"
+      description: "加速时播放音效"
+    booster-prevent-ice-melting:
+      label: "保护加速器的冰"
+      description: "红石块上的冰不会融化"
+    float-launcher-velocity:
+      label: "飘浮升降台力度"
+      description: "垂直弹射速度"
+    float-launcher-levitation-duration-ticks:
+      label: "飘浮升降台：飘浮时间"
+      description: "飘浮效果的刻数（20 = 1 秒）"
+    float-launcher-levitation-amplifier:
+      label: "飘浮升降台：效果等级"
+      description: "0 = 飘浮 I"
+    float-launcher-cooldown-ticks:
+      label: "飘浮升降台冷却"
+      description: "两次弹射之间的刻数"
+    float-launcher-play-sound:
+      label: "飘浮升降台音效"
+      description: "弹射时播放音效"
+    combos-enabled:
+      label: "启用组合升级"
+      description: "方块组合的升级菜单和治疗方块"
+    combos-upgrades-maximum-level:
+      label: "最高等级"
+      description: "每条路线的最高升级等级"
+    combos-scaling-cooldown-reduction-per-level:
+      label: "每级冷却"
+      description: "每级的相对缩减（0.05 = 5 %）"
+    combos-scaling-minimum-cooldown-ticks:
+      label: "最小冷却"
+      description: "下限，单位为刻"
+    combos-heal-amount:
+      label: "每次脉冲治疗量"
+      description: "生命值（2 = 一颗心）"
+    combos-heal-aura-radius:
+      label: "治疗光环"
+      description: "半径，单位为格"
+    combos-heal-pulse-cooldown-ticks:
+      label: "治疗间隔"
+      description: "两次治疗脉冲之间的刻数"
+    combos-heal-damage-cooldown-ticks:
+      label: "受伤后暂停"
+      description: "受到伤害后不治疗的刻数"
+    combos-heal-minimum-distance:
+      label: "治疗方块间距"
+      description: "治疗方块之间的最小距离"
+    combos-heal-play-particles:
+      label: "治疗粒子"
+      description: "治疗时显示粒子"
+    combos-heal-play-sound:
+      label: "治疗音效"
+      description: "治疗时播放音效"
+    combos-warp-pad-enabled:
+      label: "传送台"
+      description: "哭泣的黑曜石上的磁石可在传送台之间传送"
+    combos-warp-pad-base-distance:
+      label: "传送范围"
+      description: "传送台在 0 级时的范围（格）"
+    combos-warp-pad-distance-per-level:
+      label: "每级传送范围"
+      description: "每次距离升级增加的格数"
+    combos-warp-pad-cooldown-ticks:
+      label: "传送冷却"
+      description: "同一玩家两次传送之间的刻数"
+    combos-warp-pad-max-per-player:
+      label: "每名玩家的传送台数"
+      description: "0 = 无限制；管理员不受限制"
+    combos-warp-pad-play-particles:
+      label: "传送粒子"
+      description: "传送时显示传送门粒子"
+    combos-xp-collector-enabled:
+      label: "经验收集器"
+      description: "青金石块上的附魔台会收集经验球"
+    combos-xp-collector-radius:
+      label: "经验收集器半径"
+      description: "0 级时的格数"
+    combos-xp-collector-capacity:
+      label: "经验收集器容量"
+      description: "0 级时可储存的经验值"
+    combos-xp-collector-capacity-per-level:
+      label: "每级容量"
+      description: "每次容量升级增加的经验值"
+    combos-xp-collector-player-safe-radius:
+      label: "为玩家保留经验球"
+      description: "离玩家这么近的经验球会留给玩家"
+    combos-xp-collector-play-particles:
+      label: "经验收集器粒子"
+      description: "吸入经验球时显示粒子"
+    towers-enabled:
+      label: "启用攻击塔"
+      description: "识别攻击塔并让它们攻击"
+    towers-upgrades-maximum-level:
+      label: "最高等级"
+      description: "伤害、范围和速度的最高等级"
+    towers-max-per-player:
+      label: "每名玩家的攻击塔数"
+      description: "0 = 无限制；管理员不受限制"
+    towers-attack-task-period-ticks:
+      label: "攻击间隔"
+      description: "两次目标检查之间的刻数"
+    towers-pause-when-loot-full:
+      label: "战利品箱满时暂停攻击"
+      description: "当所有战利品槽位都达到堆叠上限时不再发起新攻击；已在飞行中的弹射物仍可能产生掉落物"
+    towers-experience-require-nearby-player:
+      label: "仅在有玩家时获得击杀经验"
+      description: "仅当主人或城镇成员在附近时获得经验"
+    towers-experience-player-radius:
+      label: "获得经验的玩家半径"
+      description: "格"
+    towers-experience-spawner-mobs:
+      label: "刷怪笼生物的经验"
+      description: "刷怪笼生成的生物为攻击塔提供经验"
+    towers-targeting-line-of-sight:
+      label: "需要视线"
+      description: "不穿墙射击"
+    towers-targeting-ignore-named-mobs:
+      label: "忽略已命名生物"
+      description: "放过宠物和活动生物"
+    towers-loot-capture-nearby-plugin-drops:
+      label: "收集插件掉落物"
+      description: "也收集生物插件产生的掉落物"
+    towers-loot-drop-contents-when-broken:
+      label: "破坏时掉落战利品"
+      description: "储存的物品和经验不会丢失"
+    furnaces-enabled:
+      label: "启用熔炉升级"
+      description: "熔炉的所有权、升级和技能经验"
+    furnaces-upgrades-maximum-level:
+      label: "最高等级"
+      description: "主要路线的最高等级"
+    furnaces-speed-multiplier-per-level:
+      label: "每级速度"
+      description: "额外冶炼速度（0.12 = +12 %）"
+    furnaces-fuel-efficiency-per-level:
+      label: "每级燃烧时间"
+      description: "额外燃烧时间（0.10 = +10 %）"
+    furnaces-bonus-yield-chance-per-level:
+      label: "每级额外产出"
+      description: "额外产物的几率（0.025 = 2.5 %）"
+    furnaces-xp-boost-per-level:
+      label: "每级经验加成"
+      description: "更多熔炉经验和技能经验（0.20 = +20 %）"
+
+web:
+  module:
+    title: "方块与攻击塔"
+    description: "你的攻击塔、熔炉和方块组合：升级、战利品和建造指南"
+  button:
+    label: "🌐 在网页中打开"
+    tooltip: "在浏览器或游戏内浮层中打开方块与攻击塔页面"
+  unavailable: "<yellow>此服务器的网页当前不可用。"
+  error:
+    unknown: "该结构已不存在。"
+    not-yours: "该结构不属于你。"
+    offline: "请进入游戏后再执行此操作。"
+    not-loaded: "该结构所在区域当前未加载。请靠近它后再试。"
+    bad-request: "无效请求。"
+    loot-changed: "战利品箱在此期间已发生变化。列表已重新加载。"
+    inventory-full: "你的物品栏已满。"
+    loot-empty: "没有可取出的东西。"
+  loot:
+    offline: "进入游戏后才能取出物品。你仍然可以查看战利品。"
+    not-loaded: "该攻击塔未加载或不完整，因此你只能查看战利品。"
+    too-far: "只能在攻击塔 {range} 格内取出物品（与聊天中的战利品按钮相同）。你仍然可以查看战利品。"
+    taken: "已将 {moved} 个物品移入你的物品栏。"
+    taken-partly: "已将 {moved} 个物品移入你的物品栏，物品栏现已满。"
+  guide:
+    view:
+      side: "侧视图（从上到下）"
+      foundation: "地基层俯视图"
+      slime-field: "可选的 3×3 黏液区俯视图"
+    any-ice: "冰、浮冰或蓝冰"
+    tower:
+      style:
+        precision: "单体目标：射击最近的敌对生物。"
+        area: "爆炸射击：同时击中目标周围的敌对生物（65 % 伤害）。"
+        fire: "火焰射击：同时点燃目标。"
+      xp-rule: "仅当主人或城镇成员在 {radius} 格内时才会收集击杀经验。"
+      limit: "每名玩家最多可拥有 {max} 座攻击塔。"
+    combo:
+      sorter: "跳上压力板：主物品栏中的物品会放入附近已含有相同物品的箱子。"
+      vacuum: "跳上压力板：附近的掉落物会放入匹配的箱子；附近没有箱子时放入你的物品栏。"
+      launcher: "跳上黏液块，即可朝你看的方向弹射出去。"
+      booster: "在冰上疾跑可获得一阵加速。"
+      float-launcher: "落在陶瓦上，即可借助飘浮效果向上飘起。"
+      heal: "玩家一段时间未受伤害后，会缓慢治疗其光环内的玩家。"
+      harvester: "收割周围成熟的小麦、胡萝卜、马铃薯、甜菜根、下界疣、可可豆、西瓜、南瓜、甘蔗和竹子，自动补种并装入相邻的箱子。该箱子满时会等待。"
+      warp-pad: "站在上面潜行：在同一世界中选择你的其他传送台（或朋友与你共享的传送台）并传送过去。"
+      xp-collector: "将周围的经验球吸入方块，直到装满。主人可在其菜单中取出经验。"
+    furnace:
+      speed: "缩短冶炼时间。"
+      fuel: "每个燃料燃烧更久。"
+      yield: "有几率多得一个产物。"
+      multismelt: "在同一冶炼周期内处理更多物品。"
+      xp-boost: "更多储存的原版经验和更多冶炼/烹饪技能经验。"
+  ui:
+    tab-mine: "我的结构"
+    tab-guide: "建造指南"
+    tab-admin: "所有结构"
+    loading: "加载中…"
+    refresh: "刷新"
+    error: "无法加载：{message}"
+    offline-note: "你不在游戏中。升级和取出战利品需要你在线。"
+    unloaded-note: "未加载区域中的结构显示最后已知的数值，在该区域重新加载前无法升级。"
+    empty: "你还没有任何攻击塔、熔炉或方块组合。建造指南会告诉你如何建造它们。"
+    towers: "攻击塔"
+    furnaces: "熔炉"
+    combos: "方块组合"
+    state-active: "运行中"
+    state-incomplete: "不完整"
+    state-unloaded: "未加载"
+    location: "{world} · {x} {y} {z}"
+    owner: "主人：{owner}"
+    no-owner: "无主人"
+    tower-xp: "已储存击杀经验：{xp}"
+    furnace-xp: "已储存经验：{xp}"
+    tower-stats: "伤害 {damage} · 范围 {range} 格 · 每 {ticks} 刻攻击一次"
+    level: "等级 {level}/{max}"
+    value-next: "{value} → {next}"
+    upgrade-button: "升级（{cost} 经验值）"
+    upgrading: "升级中…"
+    maxed: "已满级"
+    blocked-offline: "进入游戏后才能升级。"
+    blocked-state: "仅当结构完整且所在区域已加载时才可进行。"
+    starter: "入门塔：无升级。"
+    tower-limit: "攻击塔：{owned} / {max}"
+    loot-show: "战利品箱（{stacks} 组）"
+    loot-hide: "隐藏战利品箱"
+    loot-empty: "战利品箱是空的。"
+    loot-take: "取出"
+    loot-take-all: "全部取出"
+    loot-view-only: "仅可查看：{hint}"
+    loot-count: "{amount}× {name}"
+    truncated: "仅列出前 {limit} 项。"
+    in-game-hint: "在游戏中潜行并右键结构可使用全部选项（提取经验、战利品箱）。"
+    focus: "从游戏中打开"
+    guide-intro: "每种结构的建造方法、作用以及升级费用。所有数值均遵循本服务器的设置。"
+    guide-base: "基础数值：{damage} 伤害 · {range} 格 · 每 {ticks} 刻"
+    guide-no-upgrades: "无升级（廉价入门塔）。"
+    guide-blocks: "方块"
+    guide-upgrades: "升级表"
+    guide-level: "等级"
+    guide-value: "效果"
+    guide-cost: "下一级费用"
+    guide-build: "建造：{structure}"
+    guide-furnace-build: "放置熔炉、高炉或烟熏炉。你会成为其固定主人；潜行并右键它即可打开升级。"
+    guide-empty-cell: "任意方块或空气"
+    admin-filter: "按主人、名称、类型或世界筛选"
+    admin-kind-all: "所有种类"
+    admin-search: "搜索"
+    admin-totals: "{shown} / {total}"
+    admin-hint: "管理员可以在这里升级任何结构；费用与游戏内一样，用你自己的经验支付。"
+    settings-link: "BlockIntegrations 的服务器设置"
+admin:
+  title: "BlockIntegrations"
+  status: "状态"
+  towers-all: "所有攻击塔"
+  towers-of: "某玩家的攻击塔"
+  towers-near: "我附近的攻击塔"
+  tower-remove: "移除我看向的攻击塔"
+  reload: "重新加载"
+
+client:
+  tower-marker: "{name}"
+  tower-marker-xp: "{name} · {xp} 经验"
+  loot-full-title: "攻击塔战利品箱已满"
+  loot-full-text: "{name}：攻击暂停；飞行中的弹射物仍可能溢出"
+  loot-open: "打开战利品"
+  tooltip-title: "可携带：{name}"
+  tooltip-tower: "将其放在对应的结构上——升级会保留"
+  tooltip-combo: "将其放入对应的布置中——升级会保留"
+  tooltip-furnace: "放置它——熔炉升级会保留"
+diagnostics:
+  storage-readonly: "存储无法读取；已禁用保存以保护原始文件。"
+  storage-failed: "上次保存失败；当前更改可能只存在于内存中。"
+  storage-active: "存储可读取；没有记录到保存失败。"
+
+tower-controls:
+  status: "目标：{profile}；控制：{mode}。独立红石输入：{x}, {y}, {z}（塔顶以东 3 格）。"
+  change-profile: "下一个目标配置"
+  change-redstone: "下一个红石模式"
+  share: "管理个人权限"
+  share-help: "最多 32 个 UUID。每个按钮切换一项权限。如需打开攻击塔菜单，还需授予“使用”。已有的城镇和管理员权限保持不变；个人权限永远不会授予拆除或变更所有权的权限。"
+  member: "在线玩家名称或 UUID"
+  toggle-right: "切换：{right}"
+  revoke: "移除所有个人权限"
+  invalid-member: "请输入在线玩家名称或有效的 UUID；最多可存储 32 名成员。"
+  right:
+    use: "使用 / 打开菜单"
+    loot: "收取战利品和储存的经验"
+    upgrade: "购买升级"
+  profile:
+    all: "所有允许的敌对生物"
+    undead: "仅亡灵生物"
+    arthropods: "仅节肢生物"
+    raiders: "仅袭击生物"
+    none: "无目标"
+  redstone:
+    always: "始终开启"
+    powered: "有信号时开启"
+    unpowered: "无信号时开启"
+    disabled: "关闭"
+
+workstation:
+  potion-description: "额外效果：5 级，每级 +1% 几率获得一个随机正面效果（I，30 秒）。强度：10 级，每级 +10% 几率使效果等级 +1。持续时间：10 级，每级 +25 秒，不含瞬间效果。每瓶仅判定一次；继续酿造不能重新判定。"
+  brew-use: "使用酿造台"
+  brew-upgrade: "升级酿造台"
+  name:
+    brewing_stand: "酿造台"
+    campfire: "营火"
+    soul_campfire: "灵魂营火"
+  upgrade:
+    extra: "随机额外效果"
+    strength: "药水强度"
+    duration: "效果持续时间"
+    speed: "处理速度"
+    fuel: "酿造燃料效率"
+    yield: "额外烹饪产物"
+  description: "每级：+12% 速度；酿造燃料 +10%；营火额外产出几率 +2.5%。普通材料和配方依然适用。"
+  level: "{upgrade}：等级 {level}/{max}"
+  guide-title: "酿造台与营火"
+  guide:
+    - "潜行并右键酿造台或任意营火即可打开其升级。已有的无主方块会在首次使用时被认领。"
+    - "酿造台：酿造更快，每份烈焰粉可酿造更多次。营火：烹饪更快，并有几率多得一个产物。"
+    - "最多 10 级：2.2 倍速度、2 倍酿造燃料和 25% 营火额外产出。默认每级花费 100 × 新等级的平方 点经验值。"
+    - "只有主人或获准的管理员可以在 8 格内升级。其他玩家仍可正常使用。"
+    - "所有权和升级会保留在掉落的工作站物品上。营火需要精准采集；普通的煤炭/木炭掉落物无法携带升级。"
+    - "升级只作用于新开始的操作。它们不会返还材料，也不会改变药水配方。"
+  unavailable: "该工作站不可用、已禁用、距离太远或无法保存。"
+  not-owner: "该工作站属于其他玩家。"
+  denied: "你无法升级该工作站。"
+  changed: "此升级选项已变更。请重新打开工作站菜单。"
+  need-xp: "你的经验值不足以进行此升级。"
+  upgraded: "工作站已升级。"
+trap:
+  wait-remove: "请等待当前冷却结束后再注销。"
+  title: "陷阱"
+  status: "{type} · {mode} · 冷却 {seconds} 秒"
+  auto: "自动"
+  manual: "仅按钮"
+  toggle: "切换自动触发"
+  change-cooldown: "切换 10 / 15 秒"
+  remove: "注销陷阱"
+  limit: "每名玩家最多 32 个陷阱，每个服务器最多 2048 个；存储读取失败后将禁止新注册。"
+  denied: "该陷阱属于其他人或位于受保护区域。"
+  registered: "陷阱已注册：{mode}，{seconds} 秒冷却。潜行并右键按钮可打开设置。"
+  cooldown: "陷阱将在 {seconds} 秒后就绪。"
+  no-target: "范围内没有符合条件的怪物。"
+  guide:
+    - "用黑曜石在活塞（投掷）、铁块（尖刺）或蜂蜜块（减速）周围搭建 3×3 框架（八个方块）。"
+    - "弹弓陷阱：黑曜石框架中放黏液块，且正面恰好有一个按钮。地面/天花板上会朝远离按钮的方向弹飞；墙上会向前上方弹飞。"
+    - "让活塞朝向弹射方向。可安装在地面、墙壁或天花板上。"
+    - "在黑曜石框架方块的正面安装一个按钮。第一次右键会注册陷阱并启用自动触发。"
+    - "按钮：手动触发。潜行并右键按钮：选择自动模式和 10/15 秒冷却。两种模式共用同一冷却。"
+    - "范围：3×3 宽，向前延伸 3 格，需要视线。仅限敌对怪物；不影响玩家或宠物。"
+    - "尖刺默认造成 6 点伤害；焦油减速 5 秒。两种模式都需要符合条件的目标。"
+    - "缺少框架/按钮时陷阱暂停。移除核心方块会在冷却后注销陷阱。未加载的区块保持未加载。"
+  type:
+    sling: "弹弓陷阱"
+    throw: "投掷陷阱"
+    spikes: "尖刺陷阱"
+    tar: "焦油陷阱"
+
+anvil:
+  title: "铁砧"
+  use: "使用铁砧"
+  upgrade: "升级铁砧"
+  description: "效率：每级减少 5% 经验等级花费（最多 50%）。附魔：每级使普通上限 +1（最多 +5），并移除“过于昂贵！”。耐久：使用不会损耗。升级需要花费经验值。"
+  denied: "你无法升级这个铁砧。"
+  unavailable: "铁砧不可用或升级无法保存。"
+  changed: "选项已变更。请重新打开。"
+  need-xp: "你需要更多经验值。"
+  upgraded: "铁砧已升级。"
+  path:
+    efficiency: "经验花费减免"
+    enchantments: "附魔上限"
+    durability: "无限耐久"
+
+# 通过 Vystorm Core 提供的 /blockintegrations (/bi)：每位玩家看到自己语言的说明、帮助和 Tab 补全。
+# commands.blockintegrations 下的 "aliases" 是额外的主命令（全服生效，由管理员在 Core 配置 commands.localized-aliases 中选择语言）；
+# 子命令的 "name" 和 "aliases" 在所有语言中都可使用，英文始终有效。
+commands:
+  blockintegrations:
+    description: "方块组合、防御塔、熔炉和工作站：指南、菜单、传送垫、箱子整理和状态"
+    aliases: [方块组合]
+    values:
+      guide: 指南
+    sub:
+      menu:
+        name: 菜单
+        aliases: []
+        description: "打开方块指南菜单"
+      web:
+        name: 网页
+        aliases: []
+        description: "打开 BlockIntegrations 网页（指南：建造指南）"
+        args:
+          page: "指南"
+      status:
+        name: 状态
+        aliases: []
+        description: "本服务器的防御塔、攻击次数、组合和升级上限"
+      combos:
+        name: 组合
+        aliases: []
+        description: "如何搭建方块组合"
+        sub:
+          mine:
+            name: 我的
+            aliases: []
+            description: "你自己的方块组合及其位置和距离，最近的在前"
+      traps:
+        name: 陷阱
+        aliases: []
+        description: "如何搭建和使用怪物陷阱"
+      towers:
+        name: 防御塔
+        aliases: [塔]
+        description: "如何搭建防御塔"
+        sub:
+          list:
+            name: 列表
+            aliases: []
+            description: "列出你的防御塔（管理员：全部或某位玩家的）"
+            args:
+              player: 玩家
+          near:
+            name: 附近
+            aliases: []
+            description: "48 格内的防御塔，最近的在前"
+          remove:
+            name: 移除
+            aliases: []
+            description: "移除你正看着的防御塔"
+      furnaces:
+        name: 熔炉
+        aliases: []
+        description: "可升级熔炉的说明"
+      workstations:
+        name: 工作站
+        aliases: []
+        description: "酿造台和营火的升级"
+      warppads:
+        name: 传送垫
+        aliases: []
+        description: "你的传送垫以及与你共享的玩家"
+        sub:
+          list:
+            name: 列表
+            aliases: []
+            description: "列出你的传送垫和访客"
+          share:
+            name: 共享
+            aliases: []
+            description: "允许一位玩家使用你所有的传送垫"
+            args:
+              player: 玩家
+          unshare:
+            name: 取消共享
+            aliases: []
+            description: "收回一位玩家使用你传送垫的权限"
+            args:
+              player: 玩家
+      sortlock:
+        name: 锁定槽位
+        aliases: []
+        description: "为整理器锁定或解锁背包槽位（9–35）或物品类型"
+        args:
+          slot: 槽位
+        sub:
+          list:
+            name: 列表
+            aliases: []
+            description: "显示你锁定的槽位"
+          clear:
+            name: 清除
+            aliases: []
+            description: "解锁所有槽位"
+          item:
+            name: 物品
+            aliases: []
+            description: "锁定或解锁手持物品类型，适用于所有槽位"
+          items:
+            name: 物品列表
+            aliases: []
+            description: "列出已锁定的物品类型"
+          clearitems:
+            name: 清除物品
+            aliases: []
+            description: "解锁所有物品类型"
+      chestpriority:
+        name: 箱子优先
+        aliases: []
+        description: "整理器优先填充的箱子和一个溢出箱"
+        sub:
+          add:
+            name: 添加
+            aliases: []
+            description: "优先填充你正看着的箱子"
+          overflow:
+            name: 溢出
+            aliases: []
+            description: "把你正看着的箱子用于存放剩余物品"
+          remove:
+            name: 移除
+            aliases: []
+            description: "把你正看着的箱子从列表中移除"
+          list:
+            name: 列表
+            aliases: []
+            description: "显示你的优先箱子和溢出箱"
+          clear:
+            name: 清除
+            aliases: []
+            description: "清除所有箱子偏好"
+      reload:
+        name: 重载
+        aliases: []
+        description: "重新加载配置和语言文件"
+
+      dashboard:
+        name: "机器"
+        aliases: []
+        description: "机器面板"
+harvest-profile:
+  title: "收割配置"
+  open: "选择收割配置"
+  current: "当前配置：{profile}"
+  help: "选择此机器收割的植物。更改将在下一次计划收割时生效。仅所有者或管理员可以更改。选择在重启后保留；破坏并重新放置堆肥桶会重置为所有植物。"
+  unavailable: "目前无法更改此收割机。结构必须完整、已启用且属于你（或你是管理员）。"
+  changed: "收割配置：{profile}"
+  names:
+    all: "所有植物"
+    replanted: "可重新种植的作物"
+    fruit: "西瓜和南瓜"
+    stalks: "甘蔗和竹子"
+    paused: "已暂停"
+  details:
+    all: "收割所有支持的植物。"
+    replanted: "小麦、胡萝卜、马铃薯、甜菜根、下界疣和可可豆；照常重新种植。"
+    fruit: "仅收割由茎长出的西瓜和南瓜。"
+    stalks: "仅收割甘蔗和竹子的上部，保留底部。"
+    paused: "保留所有植物，直到选择其他配置。"
+
+groups:
+  button: "⚙ 分组（{count}）"
+  title: "机器分组"
+  intro: "你的机器分组（最多 {max} 个）。选择一个分组即可一次查看所有机器、暂停收割机或切换提醒。"
+  intro-empty: "把属于一起的机器归为一组——农场、冶炼厂、基地防御——一眼看清它们的状态。先创建分组，再在机器详情页把机器加入。"
+  row: "{group}（{count}）"
+  empty-group: "还没有机器"
+  count: "{count}× {state}"
+  new: "＋ 新建分组"
+  new-title: "新建机器分组"
+  rename-title: "重命名分组"
+  name-hint: "简短名称，最多 {max} 个字符。"
+  name: "名称"
+  save: "保存"
+  detail: "{group}：{count} 台机器"
+  how-to-add: "在面板中打开一台机器，使用“加入 …”。"
+  pause: "⏸ 暂停收割机"
+  resume: "▶ 恢复收割机"
+  paused: "已暂停 {count} 台收割机。"
+  resumed: "已按之前的配置恢复 {count} 台收割机。"
+  watch-all: "🔔 全部提醒"
+  unwatch-all: "🔕 关闭提醒"
+  watched: "已为 {count} 台机器开启提醒。"
+  unwatched: "已为 {count} 台机器关闭提醒。"
+  rename: "✎ 重命名"
+  delete: "🗑 删除分组"
+  deleted: "已删除分组 {group}（机器保持原样）。"
+  add-to: "加入 {group}"
+  remove-from: "从 {group} 移除"
+  error-name: "请输入名称。"
+  error-exists: "你已有同名分组。"
+  error-limit: "最多只能有 {max} 个分组。"
+  error-unknown: "该分组已不存在。"
+  error-full: "一个分组最多容纳 {max} 台机器。"
+dashboard:
+  title: "机器面板"
+  intro: "你拥有 {count} 台机器。第 {page} 页。选择机器查看障碍并自行启用通知。"
+  row: "{name}（{x}, {y}, {z}）：{state}"
+  detail: "{world} 的 {name}（{x}, {y}, {z}）：{state}"
+  alert: "机器通知：{name}（{x}, {y}, {z}）— {state}"
+  furnace: "熔炉"
+  previous: "上一页"
+  next: "下一页"
+  refresh: "刷新"
+  back: "返回"
+  watch: "启用此机器的通知"
+  unwatch: "停用此机器的通知"
+  limit: "最多可关注 {count} 台机器。"
+  state-unloaded: "区块未加载"
+  state-incomplete: "结构不完整"
+  state-paused: "已暂停"
+  state-output: "输出已满"
+  state-ready: "就绪"
+  state-idle: "没有输入"
+  state-running: "运行中"
+  state-fuel: "缺少燃料"
+  state-waiting: "等待进度"
+  hint-unloaded: "请前往该区域；面板不会加载区块。"
+  hint-incomplete: "请修复原有机器结构。"
+  hint-paused: "检查收获模式或塔的红石与目标设置。"
+  hint-output: "清空输出容器或结果槽。"
+  hint-ready: "结构已就绪；可能仍需激活或匹配的目标。"
+  hint-idle: "放入兼容的输入物品。"
+  hint-running: "处理正在进行。"
+  hint-fuel: "加入适当燃料。"
+  hint-waiting: "检查配方、燃料兼容性和输出空间。"
+
+blueprint:
+  save: "📋 保存为蓝图"
+  save-hover: "记住这些升级等级，以复制到同类机器上"
+  saved: "<green>📋 蓝图已保存。打开另一台同类机器并选择“应用蓝图”。"
+  apply: "📋 应用蓝图（{steps} 次升级，{cost} 经验）"
+  apply-hover: "按正常价格购买蓝图中缺少的升级；不会降低任何等级"
+  applied: "<green>📋 蓝图已应用：{steps} 次升级，花费 {cost} 经验。"
+  partial: "<yellow>📋 蓝图在 {steps} 次升级（{cost} 经验）后停止：下一次需要 {need} 经验。"
+  stopped: "<yellow>📋 蓝图在 {steps} 次升级（{cost} 经验）后停止。"

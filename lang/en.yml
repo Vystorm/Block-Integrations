@@ -1,0 +1,1114 @@
+# BlockIntegrations – English texts (MiniMessage; {placeholders} are filled in by the plugin).
+# This file is never overwritten. Missing keys fall back to the version bundled in the jar.
+# To add a language, copy this file to e.g. fr.yml in the same folder, translate it and run /bi reload.
+
+general:
+  no-permission: "<red>You don't have permission to do that."
+  reloaded: "<green>BlockIntegrations has been reloaded."
+  players-only: "<red>This command can only be used by players."
+  settings-unavailable: "<red>These settings are not available."
+
+menu:
+  title: "Blocks & Upgrades"
+  description: "Block combos, attack towers and upgradable furnaces"
+
+guide:
+  title: "Blocks & Upgrades"
+  body:
+    - "Furnaces, towers and block combos are managed directly at the structure itself."
+    - "Sneak and right-click the matching block to open its upgrades."
+    - "Block combos: sneak + right-click the top function block."
+    - "Attack towers: sneak + right-click the tower head."
+    - "Upgradable furnaces: sneak + right-click the furnace."
+  combos:
+    label: "Block combos"
+    tooltip: "Structures, upgrade paths and heal block"
+  towers:
+    label: "Attack towers"
+    tooltip: "Tower builds, upgrades and loot chest"
+  furnaces:
+    label: "Upgradable furnaces"
+    tooltip: "Ownership, skill XP and upgrade paths"
+  settings:
+    label: "⚙ Server settings"
+    tooltip: "Radii, launchers, combos, towers and furnaces (admin)"
+
+status:
+  line: "<green>BlockIntegrations <gray>- Towers: <white>{towers} <gray>| Attacks: <white>{attacks} <gray>| Cycles: <white>{cycles} <gray>| Tower max: <white>{tower_max} <gray>| Furnace max: <white>{furnace_max} <gray>| Combos: <white>{combos} <gray>| Combo max: <white>{combo_max} <gray>| Sorter/vacuum/launcher/booster/float lift/heal block/furnaces active"
+  next: "<gray>Next: "
+  furnaces: "<gray>Upgraded furnaces on the server: <white>{furnaces}"
+  towers-button: "Towers"
+  towers-hover: "Click: list all towers with their location"
+  settings-button: "Server settings"
+  settings-hover: "Click: open the settings"
+
+chat:
+  upgrades: "Upgrades"
+  upgrades-hover: "Click: open the upgrades"
+  location: " <gray>Location: "
+  too-far:
+    combo: "<yellow>You are too far away from this block combo."
+    tower: "<yellow>You are too far away from this tower."
+    furnace: "<yellow>You are too far away from this furnace."
+
+sorter:
+  success: "<green>Sorted {moved} items into {chests} chest(s)."
+  nothing: "<gray>No matching pre-sorted chest found nearby."
+
+sort-locks:
+  hold-item: "<gray>Hold an item in your main hand first."
+  item-locked: "<gray>The sorter now keeps every item of this type: "
+  item-unlocked: "<gray>The sorter can move this item type again: "
+  items-empty: "<gray>You have no item types locked from sorting."
+  items-title: "<gray>Item types kept by the sorter (all variants, in every slot):"
+  items-cleared: "<gray>All your sorter item-type locks were cleared."
+  usage: "<yellow>Usage: /bi sortlock list|clear|slot|item|items|clearitems (slot numbers are the internal main-inventory slots 9–35)."
+  invalid: "<red>Choose an internal main-inventory slot from 9 to 35, or use list/clear."
+  list-empty: "<gray>No main-inventory slots are locked. Slot numbers use Minecraft's internal 9–35 numbering."
+  list: "<gray>Locked main-inventory slots (internal Minecraft numbering 9–35): <white>{slots}"
+  locked: "<green>Main-inventory slot {slot} is now locked from sorting."
+  unlocked: "<green>Main-inventory slot {slot} is no longer locked from sorting."
+  cleared: "<green>All your personal sorter slot locks were cleared."
+
+chest-priority:
+  usage: "<yellow>Usage: /bi chestpriority add|overflow|remove|list|clear. For add/overflow/remove, look at a loaded chest within 6 blocks."
+  look-at-chest: "<red>Look at a loaded chest within 6 blocks first."
+  limit: "<red>You can save at most 8 preferred chest positions and 1 overflow position."
+  add: "<green>Added preferred chest: {chest}"
+  overflow: "<green>Set the overflow chest: {chest}"
+  remove: "<green>Removed chest preference: {chest}"
+  cleared: "<green>Cleared your personal chest priorities."
+  list-empty: "<gray>You have no personal chest priorities."
+  list: "<gray>Preferred chests (in order): <white>{chests}<gray> | Overflow (last, matching items only): <white>{overflow}"
+
+vacuum:
+  chests: "<green>Vacuumed {moved} dropped items into {chests} chest(s)."
+  inventory: "<green>Vacuumed {moved} dropped items into your inventory."
+  nothing: "<gray>No matching dropped items vacuumed."
+
+upgrade:
+  maxed: "<yellow>This upgrade path is already maxed out."
+  offer-changed: "<yellow>The upgrade offer has changed."
+  need-xp: "<red>You need {cost} XP points for this upgrade."
+  done: "<green>{upgrade} upgraded to level {level}. <gray>Cost: {cost} XP"
+  line: "{upgrade}: {level}/{max} | {value} -> {next} | {cost} XP"
+  line-max: "{upgrade}: {level}/{max} | {value} -> MAX | MAX"
+  button: "{upgrade} ({next}, {cost} XP)"
+
+machine-diagnostic:
+  header: "<gold>{machine}<gray> construction report:"
+  unloaded: "<yellow>{machine}: parts in an unloaded chunk cannot be inspected yet."
+  finding: "<gray>• {part}: expected <white>{expected}<gray>, found <white>{actual}<gray> at <white>{x}, {y}, {z}<gray>."
+  part:
+    control: "control block"
+    base: "base"
+    lower-base: "lower base"
+    pedestal: "pedestal"
+    foundation: "foundation"
+    ring: "ring"
+
+combo:
+  mine:
+    header: "<gold>Your block combos <gray>({count}):"
+    empty: "<gray>You have not built any block combos yet. /bi combos shows how."
+    entry-here: "<gray>• {name} <gray>| {x} {y} {z} | {blocks} m away"
+    entry-elsewhere: "<gray>• {name} <gray>| {world} {x} {y} {z}"
+    more: "<gray>… and {count} more."
+    hint: "<dark_gray>Combos built before 2.20.0 show up here once you have used them."
+  sorter:
+    name: "Inventory Sorter"
+    structure: "light weighted (gold) pressure plate on any full copper building block"
+  vacuum:
+    name: "Item Vacuum"
+    structure: "heavy weighted (iron) pressure plate on any full copper building block"
+  launcher:
+    name: "Directional Launcher"
+    structure: "slime block on a redstone block; optionally a 3×3 slime field around the centre"
+  booster:
+    name: "Sprint Booster"
+    structure: "ice, packed ice or blue ice on a redstone block"
+  float-launcher:
+    name: "Float Lift"
+    structure: "white terracotta on a copper building block on a redstone block"
+  heal:
+    name: "Heal Block"
+    structure: "honey block on a redstone block"
+  harvester:
+    name: "Harvester"
+    structure: "composter on a hay bale"
+  warp-pad:
+    name: "Warp Pad"
+    structure: "lodestone on crying obsidian"
+    unnamed: "Pad {x} {y} {z}"
+    limit: "<red>You already own the maximum of <white>{max}</white> warp pads. <gray>Break one of yours first."
+    disabled: "<red>Warp pads are switched off on this server."
+    no-access: "<red>You are not allowed to use this warp pad. <gray>Its owner can share it with you."
+    no-destinations: "<yellow>No other warp pad you may use is within <white>{blocks}</white> blocks in this world. <gray>Build a second pad or ask a friend to share theirs."
+    gone: "<red>That warp pad is gone or incomplete."
+    stand-on-pad: "<yellow>Stand on the warp pad to travel."
+    too-far: "<red>That pad is out of reach (<white>{blocks}</white> blocks). <gray>Upgrade the distance of this pad."
+    cooldown: "<yellow>Your warp is recharging: <white>{seconds}</white> s."
+    blocked: "<red>{name} is blocked: <gray>the two blocks above it must be free."
+    arrived: "<light_purple>Warped to <white>{name}</white>."
+    not-yours: "<red>Only the owner of this warp pad can do that."
+    usage: "<yellow>Usage: /bi warppads list | share NAME | unshare NAME"
+    dialog:
+      name: "<gray>Name: <white>{name}"
+      use: "<gray>Stand on the pad and sneak to travel. Shared with <white>{guests}</white> player(s)."
+      rename: "Rename"
+      rename-tooltip: "Give this pad a name for the travel menu (owner only)"
+    rename:
+      title: "Rename warp pad"
+      question: "New name (letters, digits, spaces):"
+      invalid: "<red>That name is empty or invalid. <gray>Use up to {max} letters, digits and spaces."
+      done: "<green>Warp pad renamed to <white>{name}</white>."
+    travel:
+      title: "Warp Pad"
+      body: "<gray>From <white>{name}</white> <gray>| reach <white>{blocks}</white> blocks. Pick your destination:"
+      button: "{name} ({distance} m)"
+      tooltip: "{owner} | {x} {y} {z}"
+      own: "Your pad"
+      shared: "Shared by {owner}"
+    state:
+      active: "active"
+      incomplete: "incomplete"
+      unloaded: "not loaded"
+    list:
+      header: "<light_purple>Your warp pads <gray>({count}/{max}):"
+      empty: "<gray>None yet. Build one: lodestone on crying obsidian."
+      entry: "<gray>• <white>{name}</white> <gray>| reach {blocks} blocks | {state}"
+      guests: "<gray>Shared with: <white>{players}"
+      no-guests: "<gray>Not shared with anybody."
+      hint: "<gray>Share with a player: sneak + right-click them → Warp pads, or /bi warppads share NAME."
+    share:
+      added: "<green>{player} may now use all your warp pads."
+      removed: "<yellow>{player} can no longer use your warp pads."
+      unchanged: "<gray>Nothing changed for {player}."
+      full: "<red>You already share your pads with {max} players."
+      self: "<red>Your own pads are always yours."
+      unknown: "<red>No player named {player} has played here."
+    menu:
+      shared: "<light_purple>Warp pads: shared"
+      not-shared: "<gray>Warp pads: not shared"
+      lore-shared: "<gray>{player} may travel on your {pads} warp pad(s).\n<yellow>Click: take the access back"
+      lore-not-shared: "<gray>Let {player} travel on your {pads} warp pad(s).\n<yellow>Click: share"
+  xp-collector:
+    name: "XP Collector"
+    structure: "enchanting table on a lapis block"
+    owner-only: "<red>Only the owner of this XP collector can take its XP."
+    empty: "<gray>The XP collector is empty."
+    taken: "<green>You took <white>{points}</white> XP points. <gray>Left in the collector: {left}."
+    dialog:
+      stored: "<gray>Stored: <white>{stored}</white> / {capacity} XP points"
+      take-level: "Take 1 level"
+      take-all: "Take all ({stored} XP)"
+      owner-only: "<gray>Only the owner can take the stored XP."
+  slime-field:
+    name: "Slime Field 3×3"
+    info: "Shared upgrades for all nine slime blocks. The centre block keeps the upgrades when it is broken."
+  guide:
+    header: "<gold><bold>Block combos</bold></gold> <gray>- Upgrades"
+    open: "<gray>Sneak + right-click the top function block to open the upgrade menu."
+    structure: "{name}<gray>: {structure}"
+    paths: "<gray>Depending on the structure, range, power, effect duration and cooldown can be upgraded up to level <white>{max}<gray>."
+    float: "<gray>The float lift already gives five seconds of Levitation I at level 0."
+    heal: "<gray>The heal block slowly heals players inside its aura. After taking damage it waits {seconds} seconds; minimum distance: <white>{distance} blocks<gray>."
+    warp: "<gray>Warp pad: stand on the lodestone and sneak to pick a destination. Share your pads with friends through the player menu or /bi warppads."
+    xp: "<gray>XP collector: collects orbs that no player is standing next to; take the XP in its menu. Breaking it spills the stored XP."
+  heal-too-close: "<red>The next heal block is too close. <gray>Minimum distance: <white>{distance} blocks<gray>."
+  claimed: "<gray>This block combo had no owner yet and now belongs to you (it is listed on your web page)."
+  claim-denied: "<gray>This block combo has no owner yet. Only someone who may build here can take it over; until then only admins can take XP out or rename it."
+  recognized: "<green>{name} recognized. <gray>Sneak + right-click the top block to open the upgrades. "
+  no-use: "<red>You are not allowed to use block combos."
+  no-upgrade: "<red>You are not allowed to upgrade block combos."
+  incomplete: "<red>The block combo is no longer complete."
+  dialog:
+    title: "{name} Upgrades"
+    header: "{name} | maximum level {max}"
+    line: "{upgrade}: {level}/{max} | {value} | {cost} XP"
+    line-max: "{upgrade}: {level}/{max} | {value} | MAX"
+    button: "{upgrade} ({cost} XP)"
+  value:
+    aura: "{blocks} blocks aura"
+    hearts: "{hearts} hearts per pulse"
+    heal-cooldown: "{pulse} s pulse / {damage} s after damage"
+    blocks: "{blocks} blocks"
+    velocity: "{value} velocity"
+    seconds: "{value} seconds"
+    xp: "{points} XP points"
+
+combo-upgrade:
+  range: "Range"
+  power: "Power"
+  duration: "Effect duration"
+  cooldown: "Cooldown"
+  distance: "Distance"
+  capacity: "Capacity"
+
+tower:
+  zombie-starter:
+    name: "Zombie Watchtower"
+  player-starter:
+    name: "Recruit Tower"
+  archer:
+    name: "Archer Tower"
+  cannon:
+    name: "Cannon Tower"
+  flame:
+    name: "Flame Tower"
+  piglin:
+    name: "Piglin Gold Tower"
+  dragon:
+    name: "Dragon Tower"
+  any-copper: "any full copper block"
+  guide:
+    header: "<gold><bold>BlockIntegrations towers"
+    intro: "<gray>Build one of these structures and place the head last. Sneak + right-click the head to open the upgrades."
+    structure: "{name}<gray>: {core} on {pedestal} on {foundation}, with 4× {ring} in a cross around it{upgrades}"
+    upgradeable: "<dark_gray> [combat up to 10, looting up to 3]"
+    starter: "<green> [cheap starter tower, no upgrades]"
+    levels: "<gray>The five regular towers can upgrade damage, range and attack speed up to level <white>{max} <gray>and looting up to level <white>{looting}<gray>. The two cheap starter towers cannot be upgraded."
+    loot: "<gray>The tower menu has a loot chest for mob drops and a button to withdraw the collected kill XP. Excess drops are lost."
+    ring: "<gray>The ring consists of four blocks at foundation height: north, south, east and west."
+  built: "<green>Attack tower built and assigned to you. <gray>Sneak + right-click the head to open it. "
+  open-hover: "Click: open the tower"
+  incomplete-structure: "<red>No complete tower structure recognized."
+  no-use: "<red>You are not allowed to use attack towers."
+  no-build: "<red>You are not allowed to build attack towers."
+  no-upgrade-permission: "<red>You are not allowed to upgrade towers."
+  not-complete: "<red>The tower is no longer complete."
+  starter-no-upgrades: "<yellow>This cheap starter tower has no upgrades."
+  owned-by: "<red>This tower belongs to {owner}."
+  nobody: "nobody"
+  claimed: "<gray>This tower had no owner yet and now belongs to you."
+  limit: "<red>You already own {owned} towers (maximum {max}). "
+  my-towers: "My towers"
+  my-towers-hover: "Click: list your towers with their location"
+  loot-full: "<yellow>Your {name} loot chest has no room for drops. New attacks pause when enabled; projectiles already in flight can still overflow it. "
+  loot-button: "Loot chest"
+  loot-hover: "Click: open the loot chest"
+  loot-title: "{name}<dark_gray> | Loot"
+  no-xp: "<yellow>This tower has not collected any kill XP yet."
+  withdrawn: "<green>You withdrew <yellow>{xp} XP points <green>from the tower."
+  list:
+    header: "<gold>Towers: <white>{count}"
+    near-header: "<gold>Towers within 48 blocks: <white>{count}<gray> (showing nearest {shown})"
+    entry: "<gray> · {name} <dark_gray>@ <white>{location}{details}"
+    details: " <dark_gray>| <gray>{owner} <dark_gray>| <gray>D{damage} R{range} S{speed} L{looting} <dark_gray>| {state} <dark_gray>| <gray>XP {xp}"
+  state:
+    unloaded: "<dark_gray>not loaded"
+    active: "<green>active"
+    incomplete: "<red>incomplete"
+  remove:
+    look: "<yellow>Look at the head of a tower."
+    done: "<green>Tower removed; its loot and XP were dropped at the head."
+  dialog:
+    title: "{name} Upgrades"
+    header: "{name} | Owner: {owner} | Kill XP: {xp}"
+    stats: "Damage {damage} | Range {range} blocks | Attacks every {ticks} ticks{xp_rule}"
+    xp-rule: " | XP only with a player within {radius} blocks"
+    starter: "Cheap starter tower without upgrades."
+    loot: "Open loot chest"
+    withdraw: "Withdraw kill XP"
+  value:
+    damage: "{value} damage"
+    range: "{value} blocks"
+    speed: "{ticks} ticks"
+    looting-none: "No bonus loot"
+    looting: "0-{level} bonus items per drop stack"
+
+tower-upgrade:
+  damage: "Damage"
+  range: "Range"
+  speed: "Attack speed"
+  looting: "Looting"
+
+furnace:
+  name:
+    furnace: "Furnace"
+    blast-furnace: "Blast Furnace"
+    smoker: "Smoker"
+  guide:
+    intro:
+      - "<gold><bold>Upgradable furnaces"
+      - "<gray>Supported: <white>furnace, blast furnace and smoker<gray>."
+      - "<gray>The player who places one becomes its fixed owner. Existing furnaces are claimed with sneak + right-click."
+      - "<gray>With Vystorm Skills installed, hopper-fed automatic smelting gives the owner smelting/cooking skill XP and uses the owner's smelting abilities."
+      - "<gray>Vanilla XP collected while the furnace runs can be withdrawn in the furnace menu with \"Withdraw stored XP\"."
+    paths: "<gray>Upgrade paths up to level {max}: <white>smelting speed, fuel efficiency, bonus yield and multismelt<gray>."
+    outro:
+      - "<gray>The XP boost has at most <white>5 levels <gray>and increases the stored vanilla XP as well as smelting/cooking skill XP (Vystorm Skills)."
+      - "<gray>Each multismelt level processes one additional item in the same smelting cycle and grants furnace and skill XP for it."
+  placed: "<green>This {name} now permanently belongs to you. <gray>Sneak + right-click to open the upgrades. "
+  no-use: "<red>You are not allowed to use upgradable furnaces."
+  claimed: "<green>Furnace claimed and permanently linked to your skill profile."
+  owned-by: "<red>This furnace permanently belongs to <white>{owner}<red>."
+  unknown-owner: "Unknown"
+  gone: "<red>The furnace no longer exists."
+  no-upgrade-permission: "<red>You are not allowed to upgrade furnaces."
+  maxed: "<yellow>This furnace upgrade path is already maxed out."
+  no-owner: "<red>This furnace has no fixed owner."
+  only-owner: "<red>Only the fixed owner can withdraw the stored XP."
+  no-xp: "<yellow>This furnace has not stored a full XP point yet."
+  withdraw-failed: "<red>The furnace XP could not be withdrawn."
+  withdrawn: "<green>You withdrew <yellow>{xp} XP points <green>from the {name}."
+  dialog:
+    title: "{name} Upgrades"
+    header: "{name} | Owner: {owner}"
+    withdraw: "Withdraw stored XP ({xp})"
+  metrics:
+    pending-skill: "<gray>Queued furnace skill XP for this owner (all furnaces): <white>{xp}<gray>. Separate from the furnace's withdrawable XP."
+    observed: "<gray>Observed over about the last {seconds}s: <white>{smelts} completed smelts, {fuel} fuel items consumed, {outputs} output items processed; {yield} yield bonus items triggered."
+    speed-preview: "<gray>Expected speed multiplier with this upgrade: <white>{current}× → {next}×<gray>."
+    yield-preview: "<gray>Expected yield-bonus chance with this upgrade: <white>{current} → {next}<gray>."
+  value:
+    speed: "{value}× speed"
+    fuel: "{value}× burn time"
+    yield: "{value} bonus item chance"
+    multismelt: "{items} items per smelting cycle"
+    xp-boost: "{value}× furnace & skill XP"
+
+furnace-upgrade:
+  speed: "Smelting speed"
+  fuel: "Fuel efficiency"
+  yield: "Bonus yield"
+  multismelt: "Multismelt"
+  xp-boost: "XP boost"
+
+portable:
+  header: "<gold>BlockIntegrations <gray>– {title}"
+  level: "<gray>{upgrade}: <white>{level}"
+  owner: "<gray>Fixed owner: <white>{owner}"
+  experience: "<gray>Stored bonus XP: <white>{xp}"
+  footer: "<dark_gray>Upgrades are applied when placed."
+
+settings:
+  dialog:
+    title: "BlockIntegrations – Server"
+    body: "Changes are saved to config.yml and reloaded immediately."
+  section:
+    blocks:
+      title: "Basic blocks"
+      header: "BlockIntegrations: Basic blocks"
+      description: "Sorter, vacuum, launcher, sprint booster and float lift"
+    combos:
+      title: "Block combos"
+      header: "BlockIntegrations: Block combos"
+      description: "Combo upgrades, heal block, warp pads and XP collector"
+    towers:
+      title: "Attack towers"
+      header: "BlockIntegrations: Attack towers"
+      description: "Towers, kill XP and targeting"
+    furnaces:
+      title: "Upgradable furnaces"
+      header: "BlockIntegrations: Upgradable furnaces"
+      description: "Furnace upgrades and bonuses per level"
+    anvils:
+      header: "BlockIntegrations: Anvils"
+      title: "Anvils"
+      description: "Anvil upgrades and prices"
+    traps:
+      title: "Traps"
+      header: "BlockIntegrations: Traps"
+      description: "Enable traps, defaults, throw power and damage"
+  option:
+    workstations-extra-base-xp-cost:
+      label: "Potion upgrade base price: extra"
+      description: "XP points multiplied by new rank squared."
+    workstations-strength-base-xp-cost:
+      label: "Potion upgrade base price: strength"
+      description: "XP points multiplied by new rank squared."
+    workstations-duration-base-xp-cost:
+      label: "Potion upgrade base price: duration"
+      description: "XP points multiplied by new rank squared."
+    traps-sling-power:
+      label: "Sling power"
+      description: "Horizontal sling-trap velocity from 0.5 to 3.0."
+    traps-sling-lift:
+      label: "Sling lift"
+      description: "Vertical impulse from 0.2 to 2.0; downward for ceiling traps."
+    anvils-enabled:
+      label: "Enable anvil upgrades"
+      description: "Enable the menu and bonuses."
+    anvils-base-xp-cost:
+      label: "Base XP point cost"
+      description: "Price multiplied by the new rank squared."
+    anvils-unbreakable-xp-cost:
+      label: "Unbreakable price"
+      description: "One-time price in XP points."
+    traps-enabled:
+      label: "Enable traps"
+      description: "Enables automatic and manual monster traps."
+    traps-default-automatic:
+      label: "New traps automatic"
+      description: "Initial mode for new traps; existing settings are preserved."
+    traps-default-cooldown-seconds:
+      label: "Default cooldown"
+      description: "10 or 15 seconds for new traps. Existing traps keep their settings."
+    traps-throw-power:
+      label: "Throw power"
+      description: "Throw-trap velocity, from 0.5 to 3.0."
+    traps-spike-damage:
+      label: "Spike damage"
+      description: "Damage points per monster; 2 points equal one heart."
+    radius:
+      label: "Sorter radius"
+      description: "Search radius around the copper block, in blocks"
+    cooldown-ticks:
+      label: "Sorter cooldown"
+      description: "Ticks between two activations (20 = 1 s)"
+    include-trapped-chests:
+      label: "Trapped chests"
+      description: "Also sort into trapped chests"
+    messages-show-when-nothing-moved:
+      label: "Sorter: empty message"
+      description: "Message when nothing was sorted"
+    vacuum-radius:
+      label: "Vacuum radius"
+      description: "Pickup radius in blocks"
+    vacuum-cooldown-ticks:
+      label: "Vacuum cooldown"
+      description: "Ticks between two activations"
+    vacuum-messages-show-when-nothing-moved:
+      label: "Vacuum: empty message"
+      description: "Message when nothing was picked up"
+    launcher-velocity:
+      label: "Launcher power"
+      description: "Launch velocity of the slime block"
+    launcher-minimum-upward-velocity:
+      label: "Launcher: minimum lift"
+      description: "Minimum upward velocity"
+    launcher-cooldown-ticks:
+      label: "Launcher cooldown"
+      description: "Ticks between two launches"
+    launcher-play-sound:
+      label: "Launcher sound"
+      description: "Rocket sound on launch"
+    booster-velocity:
+      label: "Booster power"
+      description: "Horizontal boost on ice"
+    booster-cooldown-ticks:
+      label: "Booster cooldown"
+      description: "Ticks between two boosts"
+    booster-play-sound:
+      label: "Booster sound"
+      description: "Sound on boost"
+    booster-prevent-ice-melting:
+      label: "Protect booster ice"
+      description: "Ice on redstone does not melt"
+    float-launcher-velocity:
+      label: "Float lift power"
+      description: "Vertical launch velocity"
+    float-launcher-levitation-duration-ticks:
+      label: "Float lift: levitation time"
+      description: "Ticks of Levitation (20 = 1 s)"
+    float-launcher-levitation-amplifier:
+      label: "Float lift: amplifier"
+      description: "0 = Levitation I"
+    float-launcher-cooldown-ticks:
+      label: "Float lift cooldown"
+      description: "Ticks between two launches"
+    float-launcher-play-sound:
+      label: "Float lift sound"
+      description: "Sound on launch"
+    combos-enabled:
+      label: "Combo upgrades enabled"
+      description: "Upgrade menus and heal block of the block combos"
+    combos-upgrades-maximum-level:
+      label: "Maximum level"
+      description: "Highest upgrade level per path"
+    combos-scaling-cooldown-reduction-per-level:
+      label: "Cooldown per level"
+      description: "Relative reduction per level (0.05 = 5 %)"
+    combos-scaling-minimum-cooldown-ticks:
+      label: "Minimum cooldown"
+      description: "Lower limit in ticks"
+    combos-heal-amount:
+      label: "Healing per pulse"
+      description: "Health points (2 = one heart)"
+    combos-heal-aura-radius:
+      label: "Heal aura"
+      description: "Radius in blocks"
+    combos-heal-pulse-cooldown-ticks:
+      label: "Heal interval"
+      description: "Ticks between two heal pulses"
+    combos-heal-damage-cooldown-ticks:
+      label: "Pause after damage"
+      description: "Ticks without healing after taking damage"
+    combos-heal-minimum-distance:
+      label: "Heal block distance"
+      description: "Minimum distance between heal blocks"
+    combos-heal-play-particles:
+      label: "Heal particles"
+      description: "Particles when healing"
+    combos-heal-play-sound:
+      label: "Heal sound"
+      description: "Sound when healing"
+    combos-warp-pad-enabled:
+      label: "Warp pads"
+      description: "Lodestone on crying obsidian teleports between pads"
+    combos-warp-pad-base-distance:
+      label: "Warp reach"
+      description: "Blocks a pad reaches at level 0"
+    combos-warp-pad-distance-per-level:
+      label: "Warp reach per level"
+      description: "Extra blocks per distance upgrade"
+    combos-warp-pad-cooldown-ticks:
+      label: "Warp cooldown"
+      description: "Ticks between two warps of a player"
+    combos-warp-pad-max-per-player:
+      label: "Warp pads per player"
+      description: "0 = unlimited; admins are exempt"
+    combos-warp-pad-play-particles:
+      label: "Warp particles"
+      description: "Portal particles when warping"
+    combos-xp-collector-enabled:
+      label: "XP collectors"
+      description: "Enchanting table on lapis collects XP orbs"
+    combos-xp-collector-radius:
+      label: "XP collector radius"
+      description: "Blocks at level 0"
+    combos-xp-collector-capacity:
+      label: "XP collector capacity"
+      description: "Stored XP points at level 0"
+    combos-xp-collector-capacity-per-level:
+      label: "Capacity per level"
+      description: "Extra XP points per capacity upgrade"
+    combos-xp-collector-player-safe-radius:
+      label: "Leave orbs for players"
+      description: "Orbs this close to a player stay for the player"
+    combos-xp-collector-play-particles:
+      label: "XP collector particles"
+      description: "Particles when orbs are pulled in"
+    towers-enabled:
+      label: "Towers enabled"
+      description: "Recognize attack towers and let them attack"
+    towers-upgrades-maximum-level:
+      label: "Maximum level"
+      description: "Highest level for damage, range and speed"
+    towers-max-per-player:
+      label: "Towers per player"
+      description: "0 = unlimited; admins are exempt"
+    towers-attack-task-period-ticks:
+      label: "Attack interval"
+      description: "Ticks between two target checks"
+    towers-pause-when-loot-full:
+      label: "Pause attacks at full loot chest"
+      description: "Do not start new attacks when every loot slot is at its stack limit; projectiles already in flight can still create drops"
+    towers-experience-require-nearby-player:
+      label: "Kill XP only with a player"
+      description: "XP only when the owner or a town member is nearby"
+    towers-experience-player-radius:
+      label: "Player radius for XP"
+      description: "Blocks"
+    towers-experience-spawner-mobs:
+      label: "XP from spawner mobs"
+      description: "Mobs from spawners give towers XP"
+    towers-targeting-line-of-sight:
+      label: "Line of sight required"
+      description: "Do not shoot through walls"
+    towers-targeting-ignore-named-mobs:
+      label: "Ignore named mobs"
+      description: "Spare pets and event mobs"
+    towers-loot-capture-nearby-plugin-drops:
+      label: "Capture plugin drops"
+      description: "Also collect drops created by mob plugins"
+    towers-loot-drop-contents-when-broken:
+      label: "Drop loot when broken"
+      description: "Stored items and XP are not lost"
+    furnaces-enabled:
+      label: "Furnace upgrades enabled"
+      description: "Ownership, upgrades and skill XP of furnaces"
+    furnaces-upgrades-maximum-level:
+      label: "Maximum level"
+      description: "Highest level of the main paths"
+    furnaces-speed-multiplier-per-level:
+      label: "Speed per level"
+      description: "Additional smelting speed (0.12 = +12 %)"
+    furnaces-fuel-efficiency-per-level:
+      label: "Burn time per level"
+      description: "Additional burn time (0.10 = +10 %)"
+    furnaces-bonus-yield-chance-per-level:
+      label: "Bonus yield per level"
+      description: "Chance of an extra result (0.025 = 2.5 %)"
+    furnaces-xp-boost-per-level:
+      label: "XP boost per level"
+      description: "More furnace and skill XP (0.20 = +20 %)"
+
+web:
+  module:
+    title: "Blocks & Towers"
+    description: "Your towers, furnaces and block combos: upgrades, loot and building guides"
+  button:
+    label: "🌐 Open in web"
+    tooltip: "Open the Blocks & Towers page in the browser or the in-game overlay"
+  unavailable: "<yellow>The web page is not available on this server right now."
+  error:
+    unknown: "This structure no longer exists."
+    not-yours: "This structure does not belong to you."
+    offline: "Join the game to do this."
+    not-loaded: "The area of this structure is not loaded right now. Go near it and try again."
+    bad-request: "Invalid request."
+    loot-changed: "The loot chest has changed in the meantime. The list was reloaded."
+    inventory-full: "Your inventory is full."
+    loot-empty: "There is nothing to take."
+  loot:
+    offline: "Join the game to take items. You can still look at the loot."
+    not-loaded: "The tower is not loaded or incomplete, so you can only look at the loot."
+    too-far: "Taking items works within {range} blocks of the tower (like the loot button in chat). You can still look at the loot."
+    taken: "{moved} items moved to your inventory."
+    taken-partly: "{moved} items moved to your inventory, which is now full."
+  guide:
+    view:
+      side: "Side view (top to bottom)"
+      foundation: "Foundation layer from above"
+      slime-field: "Optional 3×3 slime field from above"
+    any-ice: "ice, packed ice or blue ice"
+    tower:
+      style:
+        precision: "Single target: shoots the nearest hostile mob."
+        area: "Explosive shots: also hit hostile mobs around the target (65 % damage)."
+        fire: "Fire shots: also set the target on fire."
+      xp-rule: "Kill XP is only collected while the owner or a town member is within {radius} blocks."
+      limit: "Each player can own at most {max} towers."
+    combo:
+      sorter: "Jump onto the plate: items from your main inventory go into nearby chests that already contain the same item."
+      vacuum: "Jump onto the plate: dropped items nearby go into matching chests, or into your inventory when no chest is near."
+      launcher: "Jump on the slime block to be launched in the direction you are looking."
+      booster: "Sprint over the ice for a burst of speed."
+      float-launcher: "Land on the terracotta to float upwards with Levitation."
+      heal: "Slowly heals players inside its aura after they have not taken damage for a while."
+      harvester: "Harvests ripe wheat, carrots, potatoes, beetroot, nether wart, cocoa, melons, pumpkins, sugar cane and bamboo around it, replants and fills a touching chest. Waits while that chest is full."
+      warp-pad: "Stand on it and sneak: pick one of your other pads (or a pad a friend shared with you) in the same world and teleport there."
+      xp-collector: "Pulls experience orbs around it into the block until it is full. The owner takes the XP out in its menu."
+    furnace:
+      speed: "Shorter smelting time."
+      fuel: "Each fuel item burns longer."
+      yield: "Chance for one extra result item."
+      multismelt: "Processes additional items in the same smelting cycle."
+      xp-boost: "More stored vanilla XP and more smelting/cooking skill XP."
+  ui:
+    tab-mine: "My structures"
+    tab-guide: "Building guide"
+    tab-admin: "All structures"
+    loading: "Loading…"
+    refresh: "Refresh"
+    error: "Could not load: {message}"
+    offline-note: "You are not in the game. Upgrades and taking loot need you online."
+    unloaded-note: "Structures in areas that are not loaded show their last known values and cannot be upgraded until the area is loaded again."
+    empty: "You don't own any towers, furnaces or block combos yet. The building guide shows how to build them."
+    towers: "Attack towers"
+    furnaces: "Furnaces"
+    combos: "Block combos"
+    state-active: "Active"
+    state-incomplete: "Incomplete"
+    state-unloaded: "Not loaded"
+    location: "{world} · {x} {y} {z}"
+    owner: "Owner: {owner}"
+    no-owner: "no owner"
+    tower-xp: "Kill XP stored: {xp}"
+    furnace-xp: "Stored XP: {xp}"
+    tower-stats: "Damage {damage} · Range {range} blocks · attacks every {ticks} ticks"
+    level: "Level {level}/{max}"
+    value-next: "{value} → {next}"
+    upgrade-button: "Upgrade ({cost} XP)"
+    upgrading: "Upgrading…"
+    maxed: "Maximum"
+    blocked-offline: "Join the game to upgrade."
+    blocked-state: "Only possible while the structure is complete and its area is loaded."
+    starter: "Starter tower: no upgrades."
+    tower-limit: "Towers: {owned} of {max}"
+    loot-show: "Loot chest ({stacks} stacks)"
+    loot-hide: "Hide loot chest"
+    loot-empty: "The loot chest is empty."
+    loot-take: "Take"
+    loot-take-all: "Take all"
+    loot-view-only: "View only: {hint}"
+    loot-count: "{amount}× {name}"
+    truncated: "Only the first {limit} are listed."
+    in-game-hint: "Sneak + right-click a structure in game for all options (withdraw XP, loot chest)."
+    focus: "Opened from the game"
+    guide-intro: "How to build every structure, what it does and what the upgrades cost. All values follow this server's settings."
+    guide-base: "Base values: {damage} damage · {range} blocks · every {ticks} ticks"
+    guide-no-upgrades: "No upgrades (cheap starter tower)."
+    guide-blocks: "Blocks"
+    guide-upgrades: "Upgrade table"
+    guide-level: "Level"
+    guide-value: "Effect"
+    guide-cost: "Cost of the next level"
+    guide-build: "Build: {structure}"
+    guide-furnace-build: "Place a furnace, blast furnace or smoker. You become its fixed owner; sneak + right-click it to open the upgrades."
+    guide-empty-cell: "any block or air"
+    admin-filter: "Filter by owner, name, type or world"
+    admin-kind-all: "All kinds"
+    admin-search: "Search"
+    admin-totals: "{shown} of {total}"
+    admin-hint: "Admins can upgrade any structure here; costs are paid with your own XP, exactly as in game."
+    settings-link: "Server settings of BlockIntegrations"
+admin:
+  title: "BlockIntegrations"
+  status: "Status"
+  towers-all: "All towers"
+  towers-of: "Towers of a player"
+  towers-near: "Towers near me"
+  tower-remove: "Remove the tower I look at"
+  reload: "Reload"
+
+client:
+  tower-marker: "{name}"
+  tower-marker-xp: "{name} · {xp} XP"
+  loot-full-title: "Tower loot chest full"
+  loot-full-text: "{name}: attacks pause; projectiles in flight can still overflow"
+  loot-open: "Open loot"
+  tooltip-title: "Portable: {name}"
+  tooltip-tower: "Place it on the matching structure – the upgrades carry over"
+  tooltip-combo: "Place it in the matching setup – the upgrades carry over"
+  tooltip-furnace: "Place it – the furnace upgrades carry over"
+diagnostics:
+  storage-readonly: "Storage is unreadable; saving is disabled to preserve the original file."
+  storage-failed: "The last save failed; current changes may only exist in memory."
+  storage-active: "Storage is readable; no save failure is recorded."
+
+tower-controls:
+  status: "Targets: {profile}; control: {mode}. Separate redstone input: {x}, {y}, {z} (3 blocks east of the head)."
+  change-profile: "Next target profile"
+  change-redstone: "Next redstone mode"
+  share: "Manage personal access"
+  share-help: "Up to 32 UUIDs. Each button toggles one right. Grant Use as well to open the tower menu. Existing city and admin access remains; personal rights never grant demolition or ownership changes."
+  member: "Online player name or UUID"
+  toggle-right: "Toggle: {right}"
+  revoke: "Remove all personal rights"
+  invalid-member: "Enter an online name or valid UUID; at most 32 members can be stored."
+  right:
+    use: "Use / open menu"
+    loot: "Collect loot and stored XP"
+    upgrade: "Buy upgrades"
+  profile:
+    all: "All allowed hostile mobs"
+    undead: "Undead only"
+    arthropods: "Arthropods only"
+    raiders: "Raid mobs only"
+    none: "No targets"
+  redstone:
+    always: "Always on"
+    powered: "On with signal"
+    unpowered: "On without signal"
+    disabled: "Off"
+
+workstation:
+  potion-description: "Extra effect: 5 ranks, +1% chance each for a random positive effect (I, 30s). Strength: 10 ranks, +10% chance each for +1 effect level. Duration: 10 ranks, +25s each, excludes instant effects. One roll per bottle; further brewing cannot reroll."
+  brew-use: "Use brewing stand"
+  brew-upgrade: "Upgrade brewing stand"
+  name:
+    brewing_stand: "Brewing stand"
+    campfire: "Campfire"
+    soul_campfire: "Soul campfire"
+  upgrade:
+    extra: "Random extra effect"
+    strength: "Potion strength"
+    duration: "Effect duration"
+    speed: "Processing speed"
+    fuel: "Brewing fuel efficiency"
+    yield: "Extra cooked result"
+  description: "Each level: +12% speed; brewing fuel +10%; campfire bonus chance +2.5%. Normal ingredients and recipes still apply."
+  level: "{upgrade}: level {level}/{max}"
+  guide-title: "Brewing stands & campfires"
+  guide:
+    - "Sneak-right-click a brewing stand or either campfire to open its upgrades. Existing unowned blocks are claimed on first use."
+    - "Brewing stands: faster brewing and more brewing operations per blaze powder. Campfires: faster cooking and a chance for one extra result."
+    - "Up to 10 levels: 2.2x speed, 2x brewing fuel and 25% extra campfire yield. Each level costs 100 × new level squared XP points by default."
+    - "Only the owner or a permitted admin can upgrade, within 8 blocks. Normal use remains available to other players."
+    - "Ownership and upgrades stay on the dropped workstation item. Campfires require Silk Touch; ordinary coal/charcoal drops cannot carry upgrades."
+    - "Upgrades apply to newly started operations. They do not add ingredient refunds or change potion recipes."
+  unavailable: "The workstation is unavailable, disabled, too far away, or could not be saved."
+  not-owner: "This workstation belongs to another player."
+  denied: "You cannot upgrade this workstation."
+  changed: "This upgrade offer changed. Reopen the workstation menu."
+  need-xp: "You do not have enough XP points for this upgrade."
+  upgraded: "Workstation upgraded."
+trap:
+  wait-remove: "Wait for the current cooldown before unregistering."
+  title: "Traps"
+  status: "{type} · {mode} · Cooldown {seconds} seconds"
+  auto: "Automatic"
+  manual: "Button only"
+  toggle: "Toggle automatic triggering"
+  change-cooldown: "Switch 10 / 15 seconds"
+  remove: "Unregister trap"
+  limit: "Maximum 32 traps per player, 2048 per server; new registration is disabled after a storage read failure."
+  denied: "This trap belongs to someone else or is in a protected region."
+  registered: "Trap registered: {mode}, {seconds} second cooldown. Sneak-right-click the button for settings."
+  cooldown: "Trap ready in {seconds} seconds."
+  no-target: "No eligible monster in range."
+  guide:
+    - "Build a 3×3 obsidian frame (eight blocks) around a piston (throw), iron block (spikes) or honey block (slow)."
+    - "Sling trap: slime block in the obsidian frame with exactly one front button. Floors/ceilings fling away from the button; walls fling forward and upward."
+    - "Point the piston toward the launch direction. Mount on floors, walls or ceilings."
+    - "Attach a button to the front of an obsidian frame block. First right-click registers the trap with automatic triggering enabled."
+    - "Button: fire manually. Sneak-right-click button: choose automatic mode and a 10/15 second cooldown. Both modes share the same cooldown."
+    - "Area: 3×3 wide, extending 3 blocks forward, with line of sight. Only hostile monsters; no players or pets."
+    - "Spikes deal 6 damage by default; tar slows for 5 seconds. Both modes require an eligible target."
+    - "Missing frame/button pauses the trap. Removing the core unregisters it after cooldown. Unloaded chunks stay unloaded."
+  type:
+    sling: "Sling trap"
+    throw: "Throw trap"
+    spikes: "Spike trap"
+    tar: "Tar trap"
+
+anvil:
+  title: "Anvil"
+  use: "Use anvil"
+  upgrade: "Upgrade anvil"
+  description: "Efficiency: 5% fewer XP levels per rank (max. 50%). Enchantments: +1 to normal caps per rank (max. +5), removes Too Expensive. Durability: no wear from use. Upgrades cost XP points."
+  denied: "You cannot upgrade this anvil."
+  unavailable: "Anvil unavailable or upgrade could not be saved."
+  changed: "Offer changed. Please reopen."
+  need-xp: "You need more XP points."
+  upgraded: "Anvil upgraded."
+  path:
+    efficiency: "XP cost reduction"
+    enchantments: "Enchantment cap"
+    durability: "Unlimited durability"
+
+# /blockintegrations (/bi) through Vystorm Core: description, help and tab completion per player. "aliases" under
+# commands.blockintegrations are extra root commands (server-wide, the admin chooses which languages: Core config
+# commands.localized-aliases); "name" and "aliases" of a subcommand are accepted in every language, English always works.
+commands:
+  blockintegrations:
+    description: "Block combos, towers, furnaces and workstations: guides, menu, warp pads, chest sorting and status"
+    aliases: []
+    values:
+      guide: guide
+    sub:
+      menu:
+        name: menu
+        aliases: []
+        description: "Open the block guide menu"
+      web:
+        name: web
+        aliases: []
+        description: "Open the BlockIntegrations web page (guide: the building guide)"
+        args:
+          page: "guide"
+      status:
+        name: status
+        aliases: []
+        description: "Towers, attacks, combos and upgrade limits of this server"
+      combos:
+        name: combos
+        aliases: []
+        description: "How to build the block combos"
+        sub:
+          mine:
+            name: mine
+            aliases: []
+            description: "Your own block combos with position and distance, nearest first"
+      traps:
+        name: traps
+        aliases: []
+        description: "How to build and use monster traps"
+      towers:
+        name: towers
+        aliases: []
+        description: "How to build attack towers"
+        sub:
+          list:
+            name: list
+            aliases: []
+            description: "List your towers (admins: all, or one player's)"
+            args:
+              player: PLAYER
+          near:
+            name: near
+            aliases: []
+            description: "Towers within 48 blocks, nearest first"
+          remove:
+            name: remove
+            aliases: []
+            description: "Remove the tower you are looking at"
+      furnaces:
+        name: furnaces
+        aliases: []
+        description: "How upgradable furnaces work"
+      workstations:
+        name: workstations
+        aliases: []
+        description: "Brewing stand and campfire upgrades"
+      warppads:
+        name: warppads
+        aliases: []
+        description: "Your warp pads and the players you share them with"
+        sub:
+          list:
+            name: list
+            aliases: []
+            description: "List your warp pads and guests"
+          share:
+            name: share
+            aliases: []
+            description: "Let a player use all your warp pads"
+            args:
+              player: PLAYER
+          unshare:
+            name: unshare
+            aliases: []
+            description: "Take a player's access to your warp pads back"
+            args:
+              player: PLAYER
+      sortlock:
+        name: sortlock
+        aliases: []
+        description: "Protect inventory slots (9–35) or item types from the sorter"
+        args:
+          slot: SLOT
+        sub:
+          list:
+            name: list
+            aliases: []
+            description: "Show your locked slots"
+          clear:
+            name: clear
+            aliases: []
+            description: "Unlock all slots"
+          item:
+            name: item
+            aliases: []
+            description: "Keep or release the held item type in every slot"
+          items:
+            name: items
+            aliases: []
+            description: "List your locked item types"
+          clearitems:
+            name: clearitems
+            aliases: []
+            description: "Unlock all item types"
+      chestpriority:
+        name: chestpriority
+        aliases: []
+        description: "Chests the sorter fills first, and an overflow chest"
+        sub:
+          add:
+            name: add
+            aliases: []
+            description: "Fill the chest you look at first"
+          overflow:
+            name: overflow
+            aliases: []
+            description: "Use the chest you look at for leftovers"
+          remove:
+            name: remove
+            aliases: []
+            description: "Remove the chest you look at from your list"
+          list:
+            name: list
+            aliases: []
+            description: "Show your preferred and overflow chests"
+          clear:
+            name: clear
+            aliases: []
+            description: "Forget all chest preferences"
+      reload:
+        name: reload
+        aliases: []
+        description: "Reload config and language files"
+
+      dashboard:
+        name: "dashboard"
+        aliases: []
+        description: "Machine dashboard"
+harvest-profile:
+  title: "Harvester profiles"
+  open: "Choose harvest profile"
+  current: "Current profile: {profile}"
+  help: "Select what this machine harvests. Changes apply on its next scheduled pass. Only the owner or an admin can change the profile. The selection survives restarts; breaking and replacing the composter resets it to All plants."
+  unavailable: "You cannot change this harvester now. It must be complete, enabled and owned by you (or you must be an admin)."
+  changed: "Harvest profile: {profile}"
+  names:
+    all: "All plants"
+    replanted: "Replanted crops"
+    fruit: "Melons and pumpkins"
+    stalks: "Sugar cane and bamboo"
+    paused: "Paused"
+  details:
+    all: "Harvest all supported plants."
+    replanted: "Wheat, carrots, potatoes, beetroot, nether wart and cocoa; replant as usual."
+    fruit: "Only stem-grown melons and pumpkins."
+    stalks: "Only upper sugar cane and bamboo segments; keep the base."
+    paused: "Leave all plants untouched until you select another profile."
+
+groups:
+  button: "⚙ Groups ({count})"
+  title: "Machine groups"
+  intro: "Your machine groups (up to {max}). Choose one to see all its machines at once, pause harvesters or switch alerts."
+  intro-empty: "Group machines that belong together – a farm, a smeltery, the base defence – and see their state at a glance. Create a group, then add machines from their detail page."
+  row: "{group} ({count})"
+  empty-group: "no machines yet"
+  count: "{count}× {state}"
+  new: "＋ New group"
+  new-title: "New machine group"
+  rename-title: "Rename group"
+  name-hint: "A short name, at most {max} characters."
+  name: "Name"
+  save: "Save"
+  detail: "{group}: {count} machine(s)"
+  how-to-add: "Open a machine in the dashboard and use \"Add to …\"."
+  pause: "⏸ Pause harvesters"
+  resume: "▶ Resume harvesters"
+  paused: "{count} harvester(s) paused."
+  resumed: "{count} harvester(s) resumed with their previous profile."
+  watch-all: "🔔 Alerts for all"
+  unwatch-all: "🔕 No alerts"
+  watched: "Alerts on for {count} machine(s)."
+  unwatched: "Alerts off for {count} machine(s)."
+  rename: "✎ Rename"
+  delete: "🗑 Delete group"
+  deleted: "Group {group} deleted (the machines stay as they are)."
+  add-to: "Add to {group}"
+  remove-from: "Remove from {group}"
+  error-name: "Enter a name."
+  error-exists: "You already have a group with that name."
+  error-limit: "You can have at most {max} groups."
+  error-unknown: "That group does not exist any more."
+  error-full: "A group holds at most {max} machines."
+dashboard:
+  title: "Machine dashboard"
+  intro: "{count} owned machines. Page {page}. Choose a machine for its bottleneck and optional alerts."
+  row: "{name} ({x}, {y}, {z}): {state}"
+  detail: "{name} in {world} ({x}, {y}, {z}): {state}"
+  alert: "Machine update: {name} ({x}, {y}, {z}) — {state}"
+  furnace: "Furnace"
+  previous: "Previous"
+  next: "Next"
+  refresh: "Refresh"
+  back: "Back"
+  watch: "Enable alerts for this machine"
+  unwatch: "Disable alerts for this machine"
+  limit: "You can watch at most {count} machines."
+  state-unloaded: "Chunk unloaded"
+  state-incomplete: "Structure incomplete"
+  state-paused: "Paused"
+  state-output: "Output full"
+  state-ready: "Ready"
+  state-idle: "No input"
+  state-running: "Running"
+  state-fuel: "No fuel"
+  state-waiting: "Waiting for progress"
+  hint-unloaded: "Visit the area; the dashboard never loads chunks."
+  hint-incomplete: "Repair the original machine structure."
+  hint-paused: "Check the harvest profile or tower redstone/target controls."
+  hint-output: "Empty the output container or result slot."
+  hint-ready: "The structure is ready; activation or a matching target may still be required."
+  hint-idle: "Add a compatible input item."
+  hint-running: "Processing is advancing."
+  hint-fuel: "Add appropriate fuel."
+  hint-waiting: "Check the recipe, fuel compatibility and available output space."
+
+blueprint:
+  save: "📋 Save as blueprint"
+  save-hover: "Remember these upgrade levels to copy them onto other machines of the same type"
+  saved: "<green>📋 Blueprint saved. Open another machine of the same type and choose \"Apply blueprint\"."
+  apply: "📋 Apply blueprint ({steps} upgrades, {cost} XP)"
+  apply-hover: "Buy the missing upgrades of your blueprint at the normal price; nothing is lowered"
+  applied: "<green>📋 Blueprint applied: {steps} upgrades for {cost} XP."
+  partial: "<yellow>📋 Blueprint stopped after {steps} upgrades ({cost} XP): the next one needs {need} XP."
+  stopped: "<yellow>📋 Blueprint stopped after {steps} upgrades ({cost} XP)."

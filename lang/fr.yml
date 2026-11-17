@@ -1,0 +1,1153 @@
+# Français — UTF-8. Keep keys, placeholders and formatting tokens unchanged.
+general:
+  no-permission: <red>Tu n'as pas la permission de faire ça.
+  reloaded: <green>BlockIntegrations a été rechargé.
+  players-only: <red>Cette commande ne peut être utilisée que par les joueurs.
+  settings-unavailable: <red>Ces paramètres ne sont pas disponibles.
+menu:
+  title: Blocs et mises à jour
+  description: Combos de blocs, tours d'attaque et fours reclassables
+guide:
+  title: Blocs et mises à jour
+  body:
+  - Les fours, tours et combos sont gérés directement à la structure elle-même.
+  - Faites un clic droit sur le bloc correspondant pour ouvrir ses mises à niveau.
+  - 'Combos de bloc: sneak + clic droit sur le bloc de fonction supérieur.'
+  - 'Tours d''attaque: sneak + clic droit sur la tête de tour.'
+  - 'Fours reclassables : sneak + clic droit sur le four.'
+  combos:
+    label: Combos bloc
+    tooltip: Structures, chemins de mise à niveau et bloc de guérison
+  towers:
+    label: Tours d'attaque
+    tooltip: Constructions de tours, améliorations et coffre à butin
+  furnaces:
+    label: Fours à haut rendement
+    tooltip: Propriété, compétences XP et chemins de mise à niveau
+  settings:
+    label: ⚙ Paramètres du serveur
+    tooltip: Radis, lanceurs, combos, tours et fours (admin)
+status:
+  line: '<green>BlockIntegrations <gray>- Tours : <white>{towers} <gray>Attaques : <white>{attacks} <gray>Cycles: <white>{cycles}
+    <gray>Tour max: <white>{tower_max} <gray>Foyer max.: <white>{furnace_max} <gray>Combos : <white>{combos} <gray>Combo max.
+    <white>{combo_max} <gray>Sorter/vacuum/launcher/booster/lifting à flot/bloc sanitaire/fournaises actives'
+  next: '<gray>Suivant : '
+  furnaces: '<gray>Fours améliorés sur le serveur : <white>{furnaces}'
+  towers-button: Tours
+  towers-hover: 'Cliquez sur: liste toutes les tours avec leur emplacement'
+  settings-button: Paramètres du serveur
+  settings-hover: 'Cliquez sur : ouvrir les paramètres'
+chat:
+  upgrades: Améliorations
+  upgrades-hover: 'Cliquez sur : ouvrir les mises à jour'
+  location: ' <gray>Lieu: '
+  too-far:
+    combo: <yellow>Tu es trop loin de ce combo.
+    tower: <yellow>Vous êtes trop loin de cette tour.
+    furnace: <yellow>Vous êtes trop loin de cette fournaise.
+sorter:
+  success: <green>Trié {moved} articles en {chests} poitrine(s).
+  nothing: <gray>Il n'y a pas de poitrine pré-triée à proximité.
+sort-locks:
+  hold-item: <gray>Tenez d'abord un objet dans votre main principale.
+  item-locked: '<gray>Le trieur conserve maintenant chaque article de ce type : '
+  item-unlocked: '<gray>Le trieur peut déplacer ce type d''article à nouveau: '
+  items-empty: <gray>Vous n'avez aucun type d'article verrouillé lors du tri.
+  items-title: '<gray>Types d''articles conservés par le trieur (toutes les variantes, dans chaque emplacement):'
+  items-cleared: <gray>Toutes vos serrures de type article de tri ont été effacées.
+  usage: '<yellow>Utilisation: /bi sortlock list|clear|slot|item|items|clearitems (les numéros de fente sont les fentes internes
+    de l''inventaire principal 9–35).'
+  invalid: <red>Choisissez un emplacement intérieur de l'inventaire principal de 9 à 35, ou utilisez list/clear.
+  list-empty: <gray>Aucun emplacement principal n'est verrouillé. Les numéros de fente utilisent la numérotation interne de
+    Minecraft 9–35.
+  list: '<gray>Slots d''inventaire principal verrouillés (numéroté interne Minecraft 9–35): <white>{slots}'
+  locked: <green>La fente principale de l'inventaire {slot} est maintenant verrouillée du tri.
+  unlocked: <green>La fente principale de l'inventaire {slot} n'est plus verrouillée lors du tri.
+  cleared: <green>Toutes vos serrures à fente de trieur ont été nettoyées.
+chest-priority:
+  usage: '<yellow>Utilisation: /bi chestpriority add|overflow|remove|list|clear. Pour add/overflow/remove, Regardez une poitrine
+    chargée dans 6 blocks.'
+  look-at-chest: <red>Regardez d'abord une poitrine chargée dans 6 blocs.
+  limit: <red>Vous pouvez économiser au plus 8 positions de poitrine préférées et 1 position de débordement.
+  add: '<green>Ajouté poitrine préférée: {chest}'
+  overflow: '<green>Réglez le coffre à débordement : {chest}'
+  remove: '<green>Préférence thoracique retirée: {chest}'
+  cleared: <green>J'ai effacé vos priorités.
+  list-empty: <gray>Vous n'avez pas de priorités.
+  list: '<gray>Poitrines préférées (dans l''ordre): <white>{chests}<gray> Dépassement (dernier, éléments correspondants seulement):
+    <white>{overflow}'
+vacuum:
+  chests: <green>Aspiré {moved} articles lâchés dans {chests} poitrine(s).
+  inventory: <green>Aspiré {moved} articles déposés dans votre inventaire.
+  nothing: <gray>Aucun élément correspondant laissé sous vide.
+upgrade:
+  maxed: <yellow>Ce chemin de mise à niveau est déjà dépassé.
+  offer-changed: <yellow>L'offre de mise à niveau a changé.
+  need-xp: <red>Vous avez besoin de {cost} XP points pour cette mise à jour.
+  done: '<green>{upgrade} reclassés au niveau {level}. <gray>Coût : {cost} XP'
+  line: '{upgrade}: {level}/{max} | {value} -> {next} | {cost} XP'
+  line-max: '{upgrade}: {level}/{max} | {value} -> MAX | MAX'
+  button: '{upgrade} ({next}, {cost} XP)'
+machine-diagnostic:
+  header: '<gold>{machine}<gray> Rapport de construction:'
+  unloaded: '<yellow>{machine}: les pièces d''un morceau déchargé ne peuvent pas encore être inspectées.'
+  finding: '<gray>• {part}: prévisions <white>{expected}<gray>, trouvé <white>{actual}<gray> à <white>{x}, {y}, {z}<gray>.'
+  part:
+    control: bloc de contrôle
+    base: base
+    lower-base: base inférieure
+    pedestal: piédestal
+    foundation: Fondation
+    ring: anneau
+combo:
+  mine:
+    header: '<gold>Vos combos de blocs <gray>({count}):'
+    empty: <gray>Vous n'avez pas encore construit de combos de blocs. /bi combos montre comment.
+    entry-here: <gray>• {name} <gray>| {x} {y} {z} | {blocks} m loin
+    entry-elsewhere: <gray>• {name} <gray>| {world} {x} {y} {z}
+    more: <gray>... et {count} de plus.
+    hint: <dark_gray>Les comdos construits avant 2.20.0 apparaissent ici une fois que vous les avez utilisés.
+  sorter:
+    name: Trieur d'inventaire
+    structure: Plaque de pression légère (or) sur tout bloc de construction en cuivre
+  vacuum:
+    name: Poste sous vide
+    structure: plaque de pression (fer) lourde sur tout bloc de construction en cuivre
+  launcher:
+    name: Lanceur directionnel
+    structure: bloc slime sur un bloc de pierre rouge; optionnellement un 3×3 champ de boue autour du centre
+  booster:
+    name: Booster Sprint
+    structure: glace, banquise ou glace bleue sur un bloc de pierre rouge
+  float-launcher:
+    name: Soulève-fuite
+    structure: terre cuite blanche sur un bloc de construction en cuivre sur un bloc de pierre rouge
+  heal:
+    name: Bloc de guérison
+    structure: Bloc de miel sur un bloc de pierre rouge
+  harvester:
+    name: Harvester
+    structure: composteur sur une balle de foin
+  warp-pad:
+    name: Plaque de distorsion
+    structure: lodestone sur les pleurs obsidiens
+    unnamed: Pad {x} {y} {z}
+    limit: <red>Vous possédez déjà le maximum de <white>{max}</white> Des plaquettes de distorsion. <gray>D'abord casse un
+      des tiens.
+    disabled: <red>Les tampons de distorsion sont désactivés sur ce serveur.
+    no-access: <red>Vous n'êtes pas autorisé à utiliser ce tapis de distorsion. <gray>Son propriétaire peut le partager avec
+      vous.
+    no-destinations: <yellow>Aucun autre tampon de distorsion que vous pouvez utiliser ne se trouve dans <white>{blocks}</white>
+      Des blocs dans ce monde. <gray>Construisez un deuxième pad ou demandez à un ami de partager le leur.
+    gone: <red>Ce tapis de distorsion est parti ou incomplet.
+    stand-on-pad: <yellow>Tenez-vous sur le tapis de distorsion pour voyager.
+    too-far: <red>Ce tampon est hors de portée (<white>{blocks}</white> les blocs). <gray>Améliorez la distance de ce tampon.
+    cooldown: '<yellow>Votre chaîne se recharge : <white>{seconds}</white> Par.'
+    blocked: '<red>{name} est bloqué: <gray>les deux blocs au-dessus doivent être libres.'
+    arrived: <light_purple>Détruites <white>{name}</white>.
+    not-yours: <red>Seul le propriétaire de cette chaîne peut le faire.
+    usage: '<yellow>Utilisation: /bi warppads list | share NAME | unshare NAME'
+    dialog:
+      name: '<gray>Nom: <white>{name}'
+      use: <gray>Tenez-vous sur le tapis et fauchez-vous pour voyager. Partager avec <white>{guests}</white> joueur(s).
+      rename: Renommer
+      rename-tooltip: Donnez à ce pad un nom pour le menu Voyage (propriétaire seulement)
+    rename:
+      title: Renommer le tapis de distorsion
+      question: 'Nouveau nom (lettres, chiffres, espaces):'
+      invalid: <red>Ce nom est vide ou invalide. <gray>Utilisez jusqu'à {max} lettres, chiffres et espaces.
+      done: <green>Plaque de distorsion rebaptisée <white>{name}</white>.
+    travel:
+      title: Plaque de distorsion
+      body: '<gray>de <white>{name}</white> <gray>Portée <white>{blocks}</white> Des blocs. Choisissez votre destination:'
+      button: '{name} ({distance} m)'
+      tooltip: '{owner} | {x} {y} {z}'
+      own: Votre pad
+      shared: Partagé par {owner}
+    state:
+      active: actif
+      incomplete: incomplète
+      unloaded: non chargé
+    list:
+      header: '<light_purple>Vos tapis de distorsion <gray>({count}/{max}):'
+      empty: '<gray>Pas encore. Construire un: lodestone sur pleurer obsidian.'
+      entry: <gray>• <white>{name}</white> <gray>Portée {blocks} blocs {state}
+      guests: '<gray>Partager avec : <white>{players}'
+      no-guests: <gray>Pas partagé avec personne.
+      hint: '<gray>Partager avec un joueur: sneak + droit-cliquez dessus → les coussinets de chaîne, ou /bi warppads share
+        NAME.'
+    share:
+      added: <green>{player} peut maintenant utiliser tous vos tampons de chaîne.
+      removed: <yellow>{player} ne peut plus utiliser vos tampons de chaîne.
+      unchanged: <gray>Rien n'a changé pour {player}.
+      full: <red>Vous partagez déjà vos pads avec {max} joueurs.
+      self: <red>Tes propres coussinets sont toujours à toi.
+      unknown: <red>Aucun joueur nommé {player} n'a joué ici.
+    menu:
+      shared: '<light_purple>Plaquettes de distorsion: partagées'
+      not-shared: '<gray>Plaquettes de distorsion: non partagées'
+      lore-shared: |-
+        <gray>{player} peuvent voyager sur votre ou vos tapis de chaîne {pads}.
+        <yellow>Cliquez sur : récupérer l'accès
+      lore-not-shared: |-
+        <gray>Laissez {player} voyager sur votre tapis de chaîne {pads}.
+        <yellow>Cliquez sur: partager
+  xp-collector:
+    name: XP Collecteur
+    structure: table enchanteresse sur un bloc de lapis
+    owner-only: <red>Seul le propriétaire de ce collecteur XP peut prendre son XP.
+    empty: <gray>Le collecteur XP est vide.
+    taken: '<green>Vous avez pris <white>{points}</white> XP points. <gray>Gauche dans le collecteur: {left}.'
+    dialog:
+      stored: '<gray>A conserver: <white>{stored}</white> {capacity} XP points'
+      take-level: Prenez le niveau 1
+      take-all: Tout prendre ({stored} XP)
+      owner-only: <gray>Seul le propriétaire peut prendre le XP stocké.
+  slime-field:
+    name: Champ de slim 3×3
+    info: Mises à niveau partagées pour les neuf blocs slime. Le bloc central maintient les améliorations lorsqu'il est cassé.
+  guide:
+    header: <gold><bold>Combos bloc</bold></gold> <gray>- Améliorations
+    open: <gray>Faites un clic droit sur le bloc de fonction supérieur pour ouvrir le menu de mise à niveau.
+    structure: '{name}<gray>: {structure}'
+    paths: <gray>Selon la structure, la portée, la puissance, la durée de l'effet et le temps de récupération peuvent être
+      mis à niveau <white>{max}<gray>.
+    float: <gray>L'ascenseur de flotteur donne déjà cinq secondes de Levitation I au niveau 0.
+    heal: '<gray>Le bloc de guérison guérit lentement les joueurs à l''intérieur de son aura. Après avoir pris des dommages
+      il attend {seconds} secondes; distance minimale: <white>{distance} blocs<gray>.'
+    warp: '<gray>Plaque de distorsion: se tenir sur le lodestone et se faufiler pour choisir une destination. Partagez vos
+      pads avec des amis via le menu joueur ou /bi warppads.'
+    xp: '<gray>XP collector: collectionne des orbes qu''aucun joueur n''est à côté; prenez le XP dans son menu. La briser
+      déverse le XP stocké.'
+  heal-too-close: '<red>Le prochain bloc de guérison est trop proche. <gray>Distance minimale: <white>{distance} blocs<gray>.'
+  claimed: <gray>Ce bloc combo n'avait pas encore de propriétaire et vous appartient maintenant (il est listé sur votre page
+    web).
+  claim-denied: <gray>Cette combinaison de blocs n'a pas encore de propriétaire. Seul quelqu'un qui peut construire ici peut
+    le prendre en charge ; jusqu'à ce que les administrateurs puissent prendre XP ou le renommer.
+  recognized: '<green>{name} reconnus. <gray>Faites un clic droit sur le bloc supérieur pour ouvrir les mises à niveau. '
+  no-use: <red>Vous n'êtes pas autorisé à utiliser des combos de blocs.
+  no-upgrade: <red>Vous n'êtes pas autorisé à mettre à niveau les combos de bloc.
+  incomplete: <red>La combinaison de blocs n'est plus complète.
+  dialog:
+    title: '{name} Améliorations'
+    header: '{name} Niveau maximal {max}'
+    line: '{upgrade}: {level}/{max} | {value} | {cost} XP'
+    line-max: '{upgrade}: {level}/{max} | {value} | MAX'
+    button: '{upgrade} ({cost} XP)'
+  value:
+    aura: '{blocks} blocs aura'
+    hearts: '{hearts} coeurs par pouls'
+    heal-cooldown: '{pulse} s impulsion / {damage} s après endommagement'
+    blocks: '{blocks} blocs'
+    velocity: Vitesse {value}
+    seconds: '{value} secondes'
+    xp: '{points} XP points'
+combo-upgrade:
+  range: Portée
+  power: Puissance
+  duration: Durée de l'effet
+  cooldown: Délai de récupération
+  distance: Distance
+  capacity: Capacité
+tower:
+  zombie-starter:
+    name: La Tour de Garde des zombies
+  player-starter:
+    name: Tour des recrues
+  archer:
+    name: Tour Archer
+  cannon:
+    name: Tour des canons
+  flame:
+    name: Tour de flamme
+  piglin:
+    name: Tour en or de Piglin
+  dragon:
+    name: Tour Dragon
+  any-copper: tout bloc de cuivre complet
+  guide:
+    header: <gold><bold>BlockIntegrations tours
+    intro: <gray>Construire une de ces structures et placer la tête en dernier. Faites un clic droit sur la tête pour ouvrir
+      les mises à niveau.
+    structure: '{name}<gray>: {core} sur {pedestal} sur {foundation}, avec 4× {ring} dans une croix autour de lui{upgrades}'
+    upgradeable: <dark_gray> [combat up to 10, looting up to 3]
+    starter: <green> [cheap starter tower, no upgrades]
+    levels: <gray>Les cinq tours régulières peuvent améliorer les dommages, la portée et la vitesse d'attaque jusqu'au niveau
+      <white>{max} <gray>et pillage jusqu ' au niveau <white>{looting}<gray>. Les deux tours de départ bon marché ne peuvent
+      pas être améliorées.
+    loot: <gray>Le menu de la tour a un coffre à butin pour les gouttes de créatures et un bouton pour retirer le kill collecté
+      XP. Des gouttes excessives sont perdues.
+    ring: '<gray>L''anneau se compose de quatre blocs à hauteur de fondation : nord, sud, est et ouest.'
+  built: '<green>Tour d''attaque construite et assignée à vous. <gray>Faites un clic droit sur la tête pour l''ouvrir. '
+  open-hover: 'Cliquez sur : ouvrir la tour'
+  incomplete-structure: <red>Aucune structure de tour complète reconnue.
+  no-use: <red>Vous n'êtes pas autorisé à utiliser des tours d'attaque.
+  no-build: <red>Vous n'êtes pas autorisé à construire des tours d'attaque.
+  no-upgrade-permission: <red>Vous n'êtes pas autorisé à améliorer les tours.
+  not-complete: <red>La tour n'est plus complète.
+  starter-no-upgrades: <yellow>Cette tour de démarrage bon marché n'a pas de mises à niveau.
+  owned-by: <red>Cette tour appartient à {owner}.
+  nobody: Personne
+  claimed: <gray>Cette tour n'avait pas encore de propriétaire et vous appartient maintenant.
+  limit: '<red>Vous possédez déjà {owned} tours (maximum {max}). '
+  my-towers: Mes tours
+  my-towers-hover: 'Cliquez sur : listez vos tours avec leur emplacement'
+  loot-full: '<yellow>Votre coffre de {name} n''a pas de place pour les gouttes. De nouvelles attaques s''arrêtent lorsqu''elles
+    sont activées; les projectiles déjà en vol peuvent encore déborder. '
+  loot-button: Poitrine
+  loot-hover: 'Cliquez sur : ouvrir le coffre à butin'
+  loot-title: '{name}<dark_gray> Détachement'
+  no-xp: <yellow>Cette tour n'a pas encore collecté de tuer XP.
+  withdrawn: <green>Vous vous êtes retiré <yellow>{xp} XP points <green>De la tour.
+  list:
+    header: '<gold>Tours : <white>{count}'
+    near-header: '<gold>Tours dans les 48 blocs: <white>{count}<gray> (montrant le plus proche {shown})'
+    entry: <gray> · {name} <dark_gray>@ <white>{location}{details}
+    details: ' <dark_gray>| <gray>{owner} <dark_gray>| <gray>D{damage} R{range} S{speed} L{looting} <dark_gray>| {state} <dark_gray>|
+      <gray>XP {xp}'
+  state:
+    unloaded: <dark_gray>non chargé
+    active: <green>actif
+    incomplete: <red>incomplète
+  remove:
+    look: <yellow>Regardez la tête d'une tour.
+    done: <green>Tour enlevée; son butin et XP ont été largués à la tête.
+  dialog:
+    title: '{name} Améliorations'
+    header: '{name} Propriétaire : {owner} Tuer XP: {xp}'
+    stats: Dégâts {damage} Gamme {range} blocs d'attaques chaque {ticks} tiques{xp_rule}
+    xp-rule: ' XP seulement avec un joueur dans les blocs {radius}'
+    starter: Tour de démarrage bon marché sans mises à niveau.
+    loot: Poitrine ouverte
+    withdraw: Retirez la mort de XP
+  value:
+    damage: '{value} dommages'
+    range: '{value} blocs'
+    speed: '{ticks} tiques'
+    looting-none: Pas de butin bonus
+    looting: 0-{level} articles bonus par pile de chute
+tower-upgrade:
+  damage: Dégâts
+  range: Portée
+  speed: Vitesse d'attaque
+  looting: Le pillage
+furnace:
+  name:
+    furnace: Fourneau
+    blast-furnace: Four à éclats
+    smoker: Fumer
+  guide:
+    intro:
+    - <gold><bold>Fours à haut rendement
+    - '<gray>Appui : <white>four, haut fourneau et fumeur<gray>.'
+    - <gray>Le joueur qui le place devient son propriétaire fixe. Les fours existants sont réclamés avec sneak + clic droit.
+    - <gray>Avec Vystorm Compétences installées, la fusion automatique alimentée par trémie donne au propriétaire des compétences
+      de fusion/cuisson XP et utilise les capacités de fusion du propriétaire.
+    - <gray>Vanille XP collectée pendant que le four fonctionne peut être retirée dans le menu du four avec "Retirer stocké
+      XP".
+    paths: '<gray>Améliorer les chemins jusqu''au niveau {max}: <white>vitesse de fusion, efficacité énergétique, rendement
+      bonus et fusion multiple<gray>.'
+    outro:
+    - <gray>Le XP boost a au maximum <white>5 niveaux <gray>et augmente la vanille entreposée XP ainsi que les compétences
+      de fusion/cuisson XP (Vystorm Compétences).
+    - <gray>Chaque niveau multismelt traite un élément supplémentaire dans le même cycle de fusion et lui accorde le four
+      et la compétence XP.
+  placed: '<green>Ce {name} vous appartient maintenant de façon permanente. <gray>Sneak + clic droit pour ouvrir les mises
+    à niveau. '
+  no-use: <red>Vous n'êtes pas autorisé à utiliser des fours graduables.
+  claimed: <green>Furnace a revendiqué et lié en permanence à votre profil de compétence.
+  owned-by: <red>Ce four appartient en permanence à <white>{owner}<red>.
+  unknown-owner: Inconnu
+  gone: <red>Le four n'existe plus.
+  no-upgrade-permission: <red>Vous n'êtes pas autorisé à améliorer les fours.
+  maxed: <yellow>Ce chemin de mise à niveau du four est déjà dépassé.
+  no-owner: <red>Ce four n'a pas de propriétaire fixe.
+  only-owner: <red>Seul le propriétaire fixe peut retirer le XP stocké.
+  no-xp: <yellow>Ce four n'a pas encore enregistré un point complet de XP.
+  withdraw-failed: <red>Le four XP n'a pas pu être retiré.
+  withdrawn: <green>Vous vous êtes retiré <yellow>{xp} XP points <green>des {name}.
+  dialog:
+    title: '{name} Améliorations'
+    header: '{name} Propriétaire : {owner}'
+    withdraw: Retrait entreposé XP ({xp})
+  metrics:
+    pending-skill: '<gray>Compétence de four en file XP pour ce propriétaire (tous les fours): <white>{xp}<gray>. Séparer
+      du four de XP.'
+    observed: '<gray>Observé sur environ les {seconds} derniers: <white>{smelts} fonderies achevées, {fuel} articles de carburant
+      consommés, {outputs} articles de sortie traités; {yield} articles de bonus de rendement déclenchés.'
+    speed-preview: '<gray>Multiplicateur de vitesse prévu avec cette mise à niveau: <white>{current}× → {next}×<gray>.'
+    yield-preview: '<gray>Possibilité de rendement-bonus prévue avec cette mise à niveau: <white>{current} → {next}<gray>.'
+  value:
+    speed: '{value}× vitesse'
+    fuel: '{value}× temps de gravure'
+    yield: '{value} possibilité d''article bonus'
+    multismelt: '{items} articles par cycle de fusion'
+    xp-boost: '{value}× four et compétences XP'
+furnace-upgrade:
+  speed: Vitesse de fusion
+  fuel: Efficacité énergétique
+  yield: Rendement en bonus
+  multismelt: Mélangeur
+  xp-boost: XP coup de pouce
+portable:
+  header: <gold>BlockIntegrations <gray>– {title}
+  level: '<gray>{upgrade}: <white>{level}'
+  owner: '<gray>Propriétaire fixe: <white>{owner}'
+  experience: '<gray>Bonus stocké XP: <white>{xp}'
+  footer: <dark_gray>Des mises à niveau sont appliquées lorsqu'elles sont placées.
+settings:
+  dialog:
+    title: BlockIntegrations – Serveur
+    body: Les modifications sont enregistrées à config.yml et rechargées immédiatement.
+  section:
+    blocks:
+      title: Blocs de base
+      header: 'BlockIntegrations: Blocs de base'
+      description: Sorter, vide, lanceur, amplificateur de sprint et lift
+    combos:
+      title: Combos bloc
+      header: 'BlockIntegrations: Combos de blocs'
+      description: Améliorations Combo, bloc de guérison, plaquettes de distorsion et collecteur XP
+    towers:
+      title: Tours d'attaque
+      header: 'BlockIntegrations: Tours d''attaque'
+      description: Tours, tuer XP et cibler
+    furnaces:
+      title: Fours à haut rendement
+      header: 'BlockIntegrations: Fours reclassables'
+      description: Mises à niveau de la fournaise et primes par niveau
+    anvils:
+      header: 'BlockIntegrations: Enclumes'
+      title: Enclumes
+      description: Améliorations et prix de l'enclume
+    traps:
+      title: Pièges
+      header: 'BlockIntegrations: Pièges'
+      description: Activer les pièges, les défauts, lancer la puissance et les dommages
+  option:
+    workstations-extra-base-xp-cost:
+      label: 'Prix de base de la mise à niveau de potion: extra'
+      description: XP points multipliés par un nouveau rang carré.
+    workstations-strength-base-xp-cost:
+      label: 'Prix de base de la mise à niveau de la potion: force'
+      description: XP points multipliés par un nouveau rang carré.
+    workstations-duration-base-xp-cost:
+      label: 'Prix de base de la mise à niveau de la potion: durée'
+      description: XP points multipliés par un nouveau rang carré.
+    traps-sling-power:
+      label: Puissance d'élingue
+      description: Vitesse horizontale d'élingue de 0.5 à 3.0.
+    traps-sling-lift:
+      label: Élévateur
+      description: Pulsion verticale de 0.2 à 2.0; vers le bas pour les pièges au plafond.
+    anvils-enabled:
+      label: Activer les mises à jour envil
+      description: Activer le menu et les bonus.
+    anvils-base-xp-cost:
+      label: Coût de base XP
+      description: Prix multiplié par le nouveau rang au carré.
+    anvils-unbreakable-xp-cost:
+      label: Prix incassable
+      description: Prix unique en XP points.
+    traps-enabled:
+      label: Activer les pièges
+      description: Active les pièges monstres automatiques et manuels.
+    traps-default-automatic:
+      label: Nouveaux pièges automatiques
+      description: Mode initial pour les nouveaux pièges; les réglages existants sont conservés.
+    traps-default-cooldown-seconds:
+      label: Temps de récupération par défaut
+      description: 10 ou 15 secondes pour les nouveaux pièges. Les pièges existants gardent leurs paramètres.
+    traps-throw-power:
+      label: Puissance de lancer
+      description: Vitesse de lancement, de 0.5 à 3.0.
+    traps-spike-damage:
+      label: Dommages causés par les araignées
+      description: points de dommage par monstre; 2 points égale un cœur.
+    radius:
+      label: Rayon du trieur
+      description: Rayon de recherche autour du bloc de cuivre, en blocs
+    cooldown-ticks:
+      label: Temps de récupération du trieur
+      description: Coches entre deux activations (20 = 1 s)
+    include-trapped-chests:
+      label: Poitrines piégées
+      description: Aussi trier dans les poitrines piégées
+    messages-show-when-nothing-moved:
+      label: 'Sorter : message vide'
+      description: Message quand rien n'a été trié
+    vacuum-radius:
+      label: Rayon sous vide
+      description: Rayon de ramassage en blocs
+    vacuum-cooldown-ticks:
+      label: Temps de récupération sous vide
+      description: Clique entre deux activations
+    vacuum-messages-show-when-nothing-moved:
+      label: 'Aspirateur : message vide'
+      description: Message quand rien n'a été ramassé
+    launcher-velocity:
+      label: Puissance du lanceur
+      description: Vitesse de lancement du bloc slime
+    launcher-minimum-upward-velocity:
+      label: 'Lanceur: ascenseur minimal'
+      description: Vitesse minimale vers le haut
+    launcher-cooldown-ticks:
+      label: Temps de récupération du lanceur
+      description: Clics entre deux lancements
+    launcher-play-sound:
+      label: Son du lanceur
+      description: Rocket son au lancement
+    booster-velocity:
+      label: Puissance du booster
+      description: Boost horizontal sur glace
+    booster-cooldown-ticks:
+      label: Temps de récupération du booster
+      description: Coupe entre deux boosts
+    booster-play-sound:
+      label: Son du booster
+      description: Son sur boost
+    booster-prevent-ice-melting:
+      label: Protéger la glace de rappel
+      description: La glace sur la pierre rouge ne fond pas
+    float-launcher-velocity:
+      label: Puissance de levage flottante
+      description: Vitesse de lancement verticale
+    float-launcher-levitation-duration-ticks:
+      label: 'Lift flottant: temps de lévitation'
+      description: Les tiques de Levitation (20 = 1 s)
+    float-launcher-levitation-amplifier:
+      label: 'Lifting flottant: amplificateur'
+      description: 0 = Lévitation I
+    float-launcher-cooldown-ticks:
+      label: Temps de récupération du lift flottant
+      description: Clics entre deux lancements
+    float-launcher-play-sound:
+      label: Son de levage flottant
+      description: Son au lancement
+    combos-enabled:
+      label: Mises à niveau Combo activées
+      description: Mettre à niveau les menus et guérir le bloc des combos de blocs
+    combos-upgrades-maximum-level:
+      label: Niveau maximal
+      description: Niveau de mise à niveau le plus élevé par chemin
+    combos-scaling-cooldown-reduction-per-level:
+      label: temps de récupération par niveau
+      description: Réduction relative par niveau (0.05 = 5 %)
+    combos-scaling-minimum-cooldown-ticks:
+      label: Durée minimale de récupération
+      description: Limite inférieure des tiques
+    combos-heal-amount:
+      label: Guérison par pouls
+      description: Points de santé (2 = un cœur)
+    combos-heal-aura-radius:
+      label: Heures de guérison
+      description: Radius en blocs
+    combos-heal-pulse-cooldown-ticks:
+      label: Intervalle de guérison
+      description: Coches entre deux impulsions de guérison
+    combos-heal-damage-cooldown-ticks:
+      label: Pause après dommages
+      description: Ciques sans cicatrisation après avoir pris des dommages
+    combos-heal-minimum-distance:
+      label: Distance du bloc de guérison
+      description: Distance minimale entre les blocs de guérison
+    combos-heal-play-particles:
+      label: Particules de sang
+      description: Particules lors de la guérison
+    combos-heal-play-sound:
+      label: Son de guérison
+      description: Son en guérison
+    combos-warp-pad-enabled:
+      label: Plaquettes de distorsion
+      description: Lodestone sur les téléportations obsidiennes en pleurs entre les coussinets
+    combos-warp-pad-base-distance:
+      label: Portée de la chaîne
+      description: Blocs un pad atteint au niveau 0
+    combos-warp-pad-distance-per-level:
+      label: Portée de la chaîne par niveau
+      description: Blocs supplémentaires par mise à niveau de distance
+    combos-warp-pad-cooldown-ticks:
+      label: Temps de récupération de la chaîne
+      description: Clics entre deux guêpes d'un joueur
+    combos-warp-pad-max-per-player:
+      label: Plaquettes de distorsion par joueur
+      description: 0 = illimité; les administrateurs sont exemptés
+    combos-warp-pad-play-particles:
+      label: Particules de distorsion
+      description: Particules du portail en cas de déroutement
+    combos-xp-collector-enabled:
+      label: XP collecteurs
+      description: Enchanteur table sur lapis collecte XP orbes
+    combos-xp-collector-radius:
+      label: XP rayon collecteur
+      description: Blocs au niveau 0
+    combos-xp-collector-capacity:
+      label: XP capacité collecteur
+      description: Entreposé XP points au niveau 0
+    combos-xp-collector-capacity-per-level:
+      label: Capacité par niveau
+      description: XP points supplémentaires par mise à niveau de capacité
+    combos-xp-collector-player-safe-radius:
+      label: Laisser des orbes pour les joueurs
+      description: Orbe ce proche d'un joueur rester pour le joueur
+    combos-xp-collector-play-particles:
+      label: XP particules de collecteur
+      description: Particules lorsqu'on tire des orbes
+    towers-enabled:
+      label: Tours activées
+      description: Reconnaître les tours d'attaque et les laisser attaquer
+    towers-upgrades-maximum-level:
+      label: Niveau maximal
+      description: Niveau le plus élevé pour les dommages, la portée et la vitesse
+    towers-max-per-player:
+      label: Tours par joueur
+      description: 0 = illimité; les administrateurs sont exemptés
+    towers-attack-task-period-ticks:
+      label: Intervalle d'attaque
+      description: Cocher entre deux vérifications ciblées
+    towers-pause-when-loot-full:
+      label: Attaques à la poitrine pleine de butin
+      description: Ne commencez pas de nouvelles attaques quand chaque fente de butin est à sa limite de pile; projectiles
+        déjà en vol peuvent encore créer des gouttes
+    towers-experience-require-nearby-player:
+      label: Tuer XP seulement avec un joueur
+      description: XP seulement lorsque le propriétaire ou un membre de la ville est à proximité
+    towers-experience-player-radius:
+      label: Rayon du joueur pour XP
+      description: Blocs
+    towers-experience-spawner-mobs:
+      label: XP de créatures géniteurs
+      description: des créatures de géniteurs donnent des tours XP
+    towers-targeting-line-of-sight:
+      label: Ligne de visibilité requise
+      description: Ne pas tirer à travers les murs
+    towers-targeting-ignore-named-mobs:
+      label: Ignorer les créatures nommées
+      description: Animaux de compagnie et créatures d'événements
+    towers-loot-capture-nearby-plugin-drops:
+      label: Capturer les gouttes du plugin
+      description: Collectez également les gouttes créées par les plugins créatures
+    towers-loot-drop-contents-when-broken:
+      label: Laisser tomber le butin quand il est cassé
+      description: Les articles stockés et XP ne sont pas perdus
+    furnaces-enabled:
+      label: Mise à niveau de la fournaise activée
+      description: Propriété, modernisation et compétences XP de fours
+    furnaces-upgrades-maximum-level:
+      label: Niveau maximal
+      description: Niveau le plus élevé des chemins principaux
+    furnaces-speed-multiplier-per-level:
+      label: Vitesse par niveau
+      description: Vitesse de fusion supplémentaire (0.12 = +12 %)
+    furnaces-fuel-efficiency-per-level:
+      label: Temps de combustion par niveau
+      description: Temps de combustion supplémentaire (0.10 = +10 %)
+    furnaces-bonus-yield-chance-per-level:
+      label: Rendement en bonus par niveau
+      description: Possibilité de résultat supplémentaire (0.025 = 2.5 %)
+    furnaces-xp-boost-per-level:
+      label: XP boost par niveau
+      description: Plus de fours et de compétences XP (0.20 = +20 %)
+web:
+  module:
+    title: Blocs et tours
+    description: 'Vos tours, fours et combos à blocs : mises à niveau, guides de pillage et de construction'
+  button:
+    label: Ouvrir dans le web
+    tooltip: Ouvrez la page Blocks & Towers dans le navigateur ou la superposition dans le jeu
+  unavailable: <yellow>La page web n'est pas disponible sur ce serveur en ce moment.
+  error:
+    unknown: Cette structure n'existe plus.
+    not-yours: Cette structure ne vous appartient pas.
+    offline: Rejoignez le jeu pour le faire.
+    not-loaded: La zone de cette structure n'est pas chargée en ce moment. Approchez-vous et essayez encore.
+    bad-request: Demande non valable.
+    loot-changed: La poitrine à butin a changé entre-temps. La liste a été rechargée.
+    inventory-full: Votre inventaire est complet.
+    loot-empty: Il n'y a rien à prendre.
+  loot:
+    offline: Rejoignez le jeu pour prendre des objets. Tu peux encore regarder le butin.
+    not-loaded: La tour n'est pas chargée ou incomplète, donc vous pouvez seulement regarder le butin.
+    too-far: Prendre des objets fonctionne dans {range} blocs de la tour (comme le bouton de butin dans le chat). Tu peux
+      encore regarder le butin.
+    taken: '{moved} articles transférés à votre inventaire.'
+    taken-partly: '{moved} articles transférés à votre inventaire, qui est maintenant complet.'
+  guide:
+    view:
+      side: Vue latérale (du haut au bas)
+      foundation: Couche de fondation d'en haut
+      slime-field: Facultatif 3×3 champ de boue d'en haut
+    any-ice: glace, glace emballée ou glace bleue
+    tower:
+      style:
+        precision: 'Cible unique : tire sur la créature hostile la plus proche.'
+        area: 'Tirs explosifs : ont également frappé des créatures hostiles autour de la cible (65 % dégâts).'
+        fire: 'Coups de feu: également mettre la cible en feu.'
+      xp-rule: Kill XP n'est collecté que lorsque le propriétaire ou un membre de la ville se trouve à moins de {radius} blocs.
+      limit: Chaque joueur peut posséder au plus {max} tours.
+    combo:
+      sorter: 'Sautez sur l''assiette : les articles de votre inventaire principal entrent dans les coffres voisins qui contiennent
+        déjà le même article.'
+      vacuum: 'Sautez sur l''assiette : les articles déposés à proximité entrent dans les coffres correspondants, ou dans
+        votre inventaire quand aucune poitrine n''est proche.'
+      launcher: Sautez sur le bloc slime pour être lancé dans la direction que vous cherchez.
+      booster: Sprinter sur la glace pour une explosion de vitesse.
+      float-launcher: Atterrir sur la terre cuite pour flotter vers le haut avec la Levitation.
+      heal: Lentement guérit les joueurs à l'intérieur de son aura après qu'ils n'ont pas pris de dommages pendant un certain
+        temps.
+      harvester: Récolte du blé mûr, des carottes, des pommes de terre, de la betterave, de la verrue, du cacao, des melons,
+        des citrouilles, de la canne à sucre et du bambou autour, replante et remplit une poitrine touchante. Attend tant
+        que la poitrine est pleine.
+      warp-pad: 'Levez-vous et fauchez-vous : choisissez un de vos autres coussinets (ou un coussin qu''un ami partage avec
+        vous) dans le même monde et téléportez-vous là.'
+      xp-collector: Tire l'expérience des orbes autour dans le bloc jusqu'à ce qu'il soit plein. Le propriétaire prend le
+        XP dans son menu.
+    furnace:
+      speed: Temps de fusion plus court.
+      fuel: Chaque élément combustible brûle plus longtemps.
+      yield: Possibilité d'obtenir un résultat supplémentaire.
+      multismelt: Procéde à d'autres éléments dans le même cycle de fusion.
+      xp-boost: Plus de vanille entreposée XP et plus d'habileté à la fusion/cuisson XP.
+  ui:
+    tab-mine: Mes structures
+    tab-guide: Guide du bâtiment
+    tab-admin: Toutes les structures
+    loading: Chargement...
+    refresh: Actualiser
+    error: 'Impossible de charger: {message}'
+    offline-note: Tu n'es pas dans le jeu. Mises à niveau et prise de butin besoin de vous en ligne.
+    unloaded-note: Les structures dans les zones qui ne sont pas chargées montrent leurs dernières valeurs connues et ne peuvent
+      être mises à niveau avant que la zone ne soit à nouveau chargée.
+    empty: Vous n'avez pas encore de tours, de fours ou de combos. Le guide du bâtiment montre comment les construire.
+    towers: Tours d'attaque
+    furnaces: Fours
+    combos: Combos bloc
+    state-active: Activité
+    state-incomplete: Incomplète
+    state-unloaded: Non chargé
+    location: '{world} · {x} {y} {z}'
+    owner: 'Propriétaire: {owner}'
+    no-owner: aucun propriétaire
+    tower-xp: 'Kill XP entreposé: {xp}'
+    furnace-xp: 'Entreposé XP: {xp}'
+    tower-stats: Dommages {damage} · Range {range} blocs · attaque toutes les tiques {ticks}
+    level: Niveau {level}/{max}
+    value-next: '{value} → {next}'
+    upgrade-button: Amélioration ({cost} XP)
+    upgrading: Mise à niveau...
+    maxed: Maximum
+    blocked-offline: Rejoignez le jeu pour mettre à niveau.
+    blocked-state: Seulement possible pendant que la structure est complète et sa zone est chargée.
+    starter: 'Tour de départ : aucune mise à niveau.'
+    tower-limit: 'Tours: {owned} de {max}'
+    loot-show: Poitrine ({stacks} piles)
+    loot-hide: Cacher la poitrine du butin
+    loot-empty: Le coffre est vide.
+    loot-take: Prise
+    loot-take-all: Prenez tout
+    loot-view-only: 'Vue seulement: {hint}'
+    loot-count: '{amount}× {name}'
+    truncated: Seuls les {limit} premiers sont listés.
+    in-game-hint: Sneak + clic droit sur une structure dans le jeu pour toutes les options (tirer XP, coffre à butin).
+    focus: Ouvert depuis le jeu
+    guide-intro: Comment construire chaque structure, ce qu'elle fait et ce que les mises à niveau coûtent. Toutes les valeurs
+      suivent les paramètres de ce serveur.
+    guide-base: 'Valeurs de base : {damage} dégâts · {range} blocs · toutes les {ticks} tiques'
+    guide-no-upgrades: Pas de mises à niveau (tour de démarrage pas cher).
+    guide-blocks: Blocs
+    guide-upgrades: Tableau de mise à jour
+    guide-level: Niveau
+    guide-value: Effet
+    guide-cost: Coût du niveau suivant
+    guide-build: 'Construction : {structure}'
+    guide-furnace-build: Placer un four, un haut fourneau ou un fumeur. Vous devenez son propriétaire fixe ; sneak + droit-cliquez
+      dessus pour ouvrir les mises à niveau.
+    guide-empty-cell: tout bloc ou tout air
+    admin-filter: Filtrer par propriétaire, nom, type ou monde
+    admin-kind-all: Toutes sortes
+    admin-search: Rechercher
+    admin-totals: '{shown} du {total}'
+    admin-hint: Les administrateurs peuvent mettre à niveau n'importe quelle structure ici; les coûts sont payés avec votre
+      propre XP, exactement comme dans le jeu.
+    settings-link: Paramètres du serveur de BlockIntegrations
+admin:
+  title: BlockIntegrations
+  status: État
+  towers-all: Toutes tours
+  towers-of: Tours d'un joueur
+  towers-near: Tours près de moi
+  tower-remove: Enlevez la tour que je regarde
+  reload: Recharger
+client:
+  tower-marker: '{name}'
+  tower-marker-xp: '{name} · {xp} XP'
+  loot-full-title: Poitrine de la tour pleine
+  loot-full-text: '{name}: pause d''attaques; les projectiles en vol peuvent encore déborder'
+  loot-open: Ouvrir le butin
+  tooltip-title: 'Portable: {name}'
+  tooltip-tower: Placez-le sur la structure correspondante – les mises à niveau reportent
+  tooltip-combo: Placez-le dans la configuration correspondante – les mises à niveau reportent
+  tooltip-furnace: Placez-le – la mise à niveau du four porte
+diagnostics:
+  storage-readonly: Le stockage est illisible ; l'enregistrement est désactivé pour préserver le fichier original.
+  storage-failed: La dernière sauvegarde a échoué; les changements actuels ne peuvent exister qu'en mémoire.
+  storage-active: Le stockage est lisible; aucune panne de sauvegarde n'est enregistrée.
+tower-controls:
+  status: 'Cible : {profile}; contrôle : {mode}. Entrée de pierre rouge séparée: {x}, {y}, {z} (3 blocs à l''est de la tête).'
+  change-profile: Profil cible suivant
+  change-redstone: Suivant mode rouge
+  share: Gérer l'accès personnel
+  share-help: Jusqu'à 32 UUID. Chaque bouton bascule à droite. Grant Utilisez aussi pour ouvrir le menu tour. L'accès actuel
+    à la ville et à l'administration demeure; les droits personnels n'accordent jamais de changements de démolition ou de
+    propriété.
+  member: Nom du joueur en ligne ou UUID
+  toggle-right: 'Montant total: {right}'
+  revoke: Supprimer tous les droits personnels
+  invalid-member: Entrez un nom en ligne ou UUID valide; au plus 32 membres peuvent être stockés.
+  right:
+    use: Utiliser / ouvrir le menu
+    loot: Collecte du butin et stockage XP
+    upgrade: Acheter des mises à jour
+  profile:
+    all: Toutes les créatures hostiles autorisées
+    undead: Non mort seulement
+    arthropods: Arthropodes seulement
+    raiders: Créatures Raid seulement
+    none: Aucune cible
+  redstone:
+    always: Toujours allumé
+    powered: Allumage avec signal
+    unpowered: Allumé sans signal
+    disabled: Désactivé
+workstation:
+  potion-description: 'Effet supplémentaire : 5 rangs, +1% chance chacun pour un effet positif aléatoire (I, 30s). Force:
+    10 grades, +10% chance chacun pour +1 niveau d''effet. Durée : 10 grades, +25s chacun, exclut les effets instantanés.
+    Un rouleau par bouteille; une autre brassage ne peut pas rerouler.'
+  brew-use: Utiliser un brasseur
+  brew-upgrade: Moderniser le stand de brassage
+  name:
+    brewing_stand: Support de brassage
+    campfire: Feu de camp
+    soul_campfire: Feu de camp de l'âme
+  upgrade:
+    extra: Effet supplémentaire aléatoire
+    strength: Résistance à la potion
+    duration: Durée de l'effet
+    speed: Vitesse de traitement
+    fuel: Efficacité énergétique de la brasserie
+    yield: Résultats supplémentaires cuits
+  description: 'Chaque niveau : +12% vitesse; combustible brasseur +10%; possibilité de bonus de feu de camp +2.5%. Les ingrédients
+    et recettes normaux s''appliquent toujours.'
+  level: '{upgrade}: niveau {level}/{max}'
+  guide-title: Brewing stands & feux de camp
+  guide:
+  - Faites un clic droit sur un brasseur ou sur un feu de camp pour ouvrir ses améliorations. Les blocs non détenus existants
+    sont réclamés lors de la première utilisation.
+  - 'Brewing stands: brassage plus rapide et plus d''opérations de brassage par poudre d''incendie. Feux de camp: cuisson
+    plus rapide et une chance pour un résultat supplémentaire.'
+  - 'Jusqu''à 10 niveaux: 2.2x vitesse, 2x combustible brasseur et 25% rendement supplémentaire feu de camp. Chaque niveau
+    coûte 100 × nouveau niveau carré XP points par défaut.'
+  - Seul le propriétaire ou un administrateur autorisé peut mettre à niveau, dans 8 blocs. L'utilisation normale reste disponible
+    pour les autres joueurs.
+  - La propriété et les mises à niveau restent sur le poste de travail abandonné. Les feux de camp nécessitent Silk Touch;
+    les gouttes ordinaires de charbon et de charbon ne peuvent pas être améliorées.
+  - Les mises à niveau s'appliquent aux nouvelles opérations. Ils n'ajoutent pas de remboursements d'ingrédients ni de recettes
+    de potion.
+  unavailable: Le poste de travail est indisponible, désactivé, trop loin, ou n'a pas pu être sauvegardé.
+  not-owner: Ce poste de travail appartient à un autre joueur.
+  denied: Vous ne pouvez pas mettre à niveau ce poste de travail.
+  changed: Cette offre de mise à niveau a changé. Réouvrir le menu du poste de travail.
+  need-xp: Vous n'avez pas assez de XP points pour cette mise à niveau.
+  upgraded: Poste de travail amélioré.
+trap:
+  wait-remove: Attendez le temps de récupération actuel avant de vous désinscrire.
+  title: Pièges
+  status: '{type} · {mode} · temps de récupération {seconds} secondes'
+  auto: Automatique
+  manual: Bouton seulement
+  toggle: Basculer le déclenchement automatique
+  change-cooldown: Commutateur 10 / 15 secondes
+  remove: Déregistrer le piège
+  limit: Maximum 32 pièges par lecteur, 2048 par serveur; la nouvelle inscription est désactivée après une panne de lecture
+    de stockage.
+  denied: Ce piège appartient à quelqu'un d'autre ou est dans une région protégée.
+  registered: 'Trap enregistré: {mode}, {seconds} deuxième période de récupération. Cliquez sur le bouton pour les paramètres.'
+  cooldown: Piège prêt en {seconds} secondes.
+  no-target: Pas de monstre à portée.
+  guide:
+  - Construire un 3×3 cadre obsidien (huit blocs) autour d'un piston (jeune), d'un bloc de fer (spikes) ou d'un bloc de miel
+    (lent).
+  - 'Piège à élingues : bloc slime dans le cadre obsidien avec exactement un bouton avant. Planchers/plafonds flottant loin
+    du bouton; murs flottant vers l''avant et vers le haut.'
+  - Pointez le piston vers la direction de lancement. Monter sur les planchers, les murs ou les plafonds.
+  - Joindre un bouton à l'avant d'un bloc obsidien. Premier clic droit enregistre le piège avec déclenchement automatique
+    activé.
+  - 'Bouton : feu manuellement. Appuyez sur le bouton "Sneak-right-click" : choisissez le mode automatique et une seconde
+    récupération 10/15. Les deux modes partagent le même temps de récupération.'
+  - 'Superficie: 3×3 large, prolongeant 3 blocs en avant, avec ligne de vue. Seulement des monstres hostiles; aucun joueur
+    ou animal de compagnie.'
+  - Les araignées infligent 6 dégâts par défaut; le goudron ralentit pendant 5 secondes. Les deux modes exigent une cible
+    admissible.
+  - Le cadre manquant/bouton arrête le piège. L'enlèvement du noyau l'enregistre après le temps de récupération. Les morceaux
+    déchargés restent déchargés.
+  type:
+    sling: Piège à élingues
+    throw: Lancer un piège
+    spikes: Piège à épis
+    tar: Piège à goudron
+anvil:
+  title: Enclume
+  use: Utiliser l'enclume
+  upgrade: Mettre à niveau l'enclume
+  description: 'Efficacité : 5% moins XP niveaux par grade (max. 50%). Enchantements: +1 à des bouchons normaux par rang (max.
+    +5), supprime trop cher. Durabilité: pas d''usure par utilisation. Les améliorations coûtent XP points.'
+  denied: Vous ne pouvez pas mettre à niveau cette enclume.
+  unavailable: Envil indisponible ou mise à niveau ne pouvait pas être sauvegardée.
+  changed: L'offre a changé. Veuillez rouvrir.
+  need-xp: Il vous faut plus de XP points.
+  upgraded: Envil amélioré.
+  path:
+    efficiency: XP réduction des coûts
+    enchantments: Plafond d'enchantement
+    durability: Durabilité illimitée
+commands:
+  blockintegrations:
+    description: 'Combos, tours, fours et postes de travail : guides, menus, plaquettes de chaîne, tri de poitrine et état'
+    aliases: []
+    values:
+      guide: guide
+    sub:
+      menu:
+        name: menu
+        aliases: []
+        description: Ouvrir le menu du guide des blocs
+      web:
+        name: web
+        aliases: []
+        description: 'Ouvrir la page web BlockIntegrations (guide: le guide du bâtiment)'
+        args:
+          page: guide
+      status:
+        name: status
+        aliases: []
+        description: Tours, attaques, combos et limites de mise à niveau de ce serveur
+      combos:
+        name: combos
+        aliases: []
+        description: Comment construire les combos de bloc
+        sub:
+          mine:
+            name: mine
+            aliases: []
+            description: Votre propre combo avec position et distance, le plus proche
+      traps:
+        name: traps
+        aliases: []
+        description: Comment construire et utiliser des pièges monstres
+      towers:
+        name: towers
+        aliases: []
+        description: Comment construire des tours d'attaque
+        sub:
+          list:
+            name: list
+            aliases: []
+            description: 'Listez vos tours (administrateurs : tous ou un joueur)'
+            args:
+              player: PLAYER
+          near:
+            name: near
+            aliases: []
+            description: Tours dans 48 blocs, le plus proche premier
+          remove:
+            name: remove
+            aliases: []
+            description: Enlevez la tour que vous regardez
+      furnaces:
+        name: furnaces
+        aliases: []
+        description: Comment fonctionnent les fours à haut rendement
+      workstations:
+        name: workstations
+        aliases: []
+        description: Amélioration des stands de brassage et des feux de camp
+      warppads:
+        name: warppads
+        aliases: []
+        description: Vos tampons de distorsion et les joueurs avec lesquels vous les partagez
+        sub:
+          list:
+            name: list
+            aliases: []
+            description: Listez vos tapis de chaîne et vos invités
+          share:
+            name: share
+            aliases: []
+            description: Laissez un joueur utiliser tous vos tampons de chaîne
+            args:
+              player: PLAYER
+          unshare:
+            name: unshare
+            aliases: []
+            description: Reprenez l'accès d'un joueur à vos plaquettes de distorsion
+            args:
+              player: PLAYER
+      sortlock:
+        name: sortlock
+        aliases: []
+        description: Protéger les emplacements d'inventaire (9–35) ou les types d'articles du trieur
+        args:
+          slot: SLOT
+        sub:
+          list:
+            name: list
+            aliases: []
+            description: Afficher vos fentes verrouillées
+          clear:
+            name: clear
+            aliases: []
+            description: Débloquer toutes les fentes
+          item:
+            name: item
+            aliases: []
+            description: Conserver ou relâcher le type d'article retenu dans chaque emplacement
+          items:
+            name: items
+            aliases: []
+            description: Listez vos types d'éléments verrouillés
+          clearitems:
+            name: clearitems
+            aliases: []
+            description: Déverrouiller tous les types d'articles
+      chestpriority:
+        name: chestpriority
+        aliases: []
+        description: Le trieur se remplit d'abord, et le coffre déborde
+        sub:
+          add:
+            name: add
+            aliases: []
+            description: Remplissez la poitrine que vous regardez d'abord
+          overflow:
+            name: overflow
+            aliases: []
+            description: Utilisez la poitrine que vous regardez pour les restes
+          remove:
+            name: remove
+            aliases: []
+            description: Enlevez la poitrine que vous regardez de votre liste
+          list:
+            name: list
+            aliases: []
+            description: Montrez vos poitrines préférées et débordez
+          clear:
+            name: clear
+            aliases: []
+            description: Oublie toutes les préférences de poitrine
+      reload:
+        name: reload
+        aliases: []
+        description: Recharger les fichiers de configuration et de langue
+      dashboard:
+        name: dashboard
+        aliases: []
+        description: "Tableau des machines"
+harvest-profile:
+  title: Profils des moissonneuses
+  open: Choisir le profil de récolte
+  current: 'Profil actuel: {profile}'
+  help: Sélectionnez ce que cette machine récolte. Les changements s'appliquent à son prochain laissez-passer. Seul le propriétaire
+    ou un administrateur peut modifier le profil. La sélection survit à un redémarrage; la rupture et le remplacement du composteur
+    le réinitialisent à toutes les plantes.
+  unavailable: Vous ne pouvez pas changer cette moissonneuse maintenant. Il doit être complet, activé et détenu par vous (ou
+    vous devez être un administrateur).
+  changed: 'Profil de récolte: {profile}'
+  names:
+    all: Toutes les plantes
+    replanted: Cultures replantées
+    fruit: Mélons et citrouilles
+    stalks: canne à sucre et bambou
+    paused: En pause
+  details:
+    all: Récolte toutes les plantes soutenues.
+    replanted: Blé, carottes, pommes de terre, betterave, verrue et cacao; replanter comme d'habitude.
+    fruit: Seulement des melons et des citrouilles.
+    stalks: Seulement les segments supérieurs de canne à sucre et de bambou; garder la base.
+    paused: Laissez toutes les plantes intactes jusqu'à ce que vous choisissiez un autre profil.
+
+groups:
+  button: "⚙ Groupes ({count})"
+  title: "Groupes de machines"
+  intro: "Tes groupes de machines (jusqu’à {max}). Choisis-en un pour voir toutes ses machines, mettre les moissonneuses en pause ou gérer les alertes."
+  intro-empty: "Regroupe les machines qui vont ensemble – une ferme, une fonderie, la défense de la base – et vois leur état d’un coup d’œil. Crée un groupe, puis ajoute des machines depuis leur page de détail."
+  row: "{group} ({count})"
+  empty-group: "aucune machine"
+  count: "{count}× {state}"
+  new: "＋ Nouveau groupe"
+  new-title: "Nouveau groupe"
+  rename-title: "Renommer le groupe"
+  name-hint: "Un nom court, {max} caractères au plus."
+  name: "Nom"
+  save: "Enregistrer"
+  detail: "{group} : {count} machine(s)"
+  how-to-add: "Ouvre une machine dans le tableau de bord et utilise « Ajouter à … »."
+  pause: "⏸ Mettre les moissonneuses en pause"
+  resume: "▶ Relancer les moissonneuses"
+  paused: "{count} moissonneuse(s) en pause."
+  resumed: "{count} moissonneuse(s) relancée(s) avec leur profil précédent."
+  watch-all: "🔔 Alertes pour toutes"
+  unwatch-all: "🔕 Aucune alerte"
+  watched: "Alertes activées pour {count} machine(s)."
+  unwatched: "Alertes désactivées pour {count} machine(s)."
+  rename: "✎ Renommer"
+  delete: "🗑 Supprimer le groupe"
+  deleted: "Groupe {group} supprimé (les machines restent telles quelles)."
+  add-to: "Ajouter à {group}"
+  remove-from: "Retirer de {group}"
+  error-name: "Entre un nom."
+  error-exists: "Tu as déjà un groupe de ce nom."
+  error-limit: "Tu peux avoir au plus {max} groupes."
+  error-unknown: "Ce groupe n’existe plus."
+  error-full: "Un groupe contient au plus {max} machines."
+dashboard:
+  title: "Tableau des machines"
+  intro: "{count} machines possédées. Page {page}. Choisissez une machine pour voir les blocages et alertes facultatives."
+  row: "{name} ({x}, {y}, {z}) : {state}"
+  detail: "{name} dans {world} ({x}, {y}, {z}) : {state}"
+  alert: "Alerte machine : {name} ({x}, {y}, {z}) — {state}"
+  furnace: "Four"
+  previous: "Précédent"
+  next: "Suivant"
+  refresh: "Actualiser"
+  back: "Retour"
+  watch: "Activer les alertes de cette machine"
+  unwatch: "Désactiver les alertes de cette machine"
+  limit: "Vous pouvez surveiller au maximum {count} machines."
+  state-unloaded: "Chunk déchargé"
+  state-incomplete: "Structure incomplète"
+  state-paused: "En pause"
+  state-output: "Sortie pleine"
+  state-ready: "Prête"
+  state-idle: "Aucune entrée"
+  state-running: "En marche"
+  state-fuel: "Sans combustible"
+  state-waiting: "En attente de progression"
+  hint-unloaded: "Visitez la zone ; le tableau ne charge aucun chunk."
+  hint-incomplete: "Réparez la structure originale."
+  hint-paused: "Vérifiez le profil de récolte ou les réglages de tour."
+  hint-output: "Videz le conteneur de sortie ou la case de résultat."
+  hint-ready: "Structure prête ; activation ou cible adaptée encore nécessaire."
+  hint-idle: "Ajoutez une entrée compatible."
+  hint-running: "Le traitement avance."
+  hint-fuel: "Ajoutez du combustible adapté."
+  hint-waiting: "Vérifiez la recette, le combustible et la place en sortie."
+
+blueprint:
+  save: "📋 Enregistrer comme plan"
+  save-hover: "Retenir ces niveaux pour les copier sur d’autres machines du même type"
+  saved: "<green>📋 Plan enregistré. Ouvre une autre machine du même type et choisis « Appliquer le plan »."
+  apply: "📋 Appliquer le plan ({steps} améliorations, {cost} XP)"
+  apply-hover: "Acheter les améliorations manquantes du plan au prix normal ; rien n’est réduit"
+  applied: "<green>📋 Plan appliqué : {steps} améliorations pour {cost} XP."
+  partial: "<yellow>📋 Plan arrêté après {steps} améliorations ({cost} XP) : la suivante coûte {need} XP."
+  stopped: "<yellow>📋 Plan arrêté après {steps} améliorations ({cost} XP)."

@@ -1,0 +1,164 @@
+# Português (Brasil) — UTF-8. Keep keys, placeholders and formatting tokens unchanged.
+title: BlockIntegrations
+permission: blockintegrations.use
+pages:
+- title: Começando
+  text: |
+    BlockIntegrations constrói funções diretamente fora dos blocos mundiais. Os combos de seis blocos, as torres e os fornos upgradáveis funcionam independentemente um do outro.
+
+    1. Construa a estrutura descrita abaixo completamente.
+    2. Use o bloco de função superior ou o movimento descrito.
+    3. Para estruturas upgradáveis, agachar + clique direito para abrir o menu e pagar por atualizações com real XP points.
+
+    Visão geral no jogo: /vmenu → Construção e tecnologia → Blocos e upgrades (or /bi). Lá você encontra os guias para combos, torres e fornos; em bate-papo você também pode usar /bi combos, /bi towers e /bi furnaces. Cada guia precisa da permissão correspondente.
+
+    Todos os menus de atualização têm os botões "← Voltar" (to the overview) e "⌂ Menu principal".
+
+    Se uma combinação ou torre está incompleta, esgueirar-se + clique direito seu provável bloco de controle (with the matching permission) para ver blocos desaparecidos ou errados e suas coordenadas. O cheque só lê pedaços carregados e nunca repara nada.
+- title: Seletor de inventário
+  permission: blockintegrations.combos
+  text: |
+    O classificador move itens do seu inventário principal para baús próximos que já contêm o mesmo item.
+
+    1. Coloque uma placa de pressão leve ponderada em qualquer bloco de cobre.
+    2. Coloque baú próximo e coloque uma amostra de cada tipo neles.
+    3. Pular para a placa: caça-níqueis 9-35 estão ordenados; barra quente, armadura e fora da mão permanecem intocados.
+    4. Sneak + clique com o botão direito da placa para atualizar o alcance ou tempo de recuperação. O intervalo padrão é de 10 blocos.
+- title: Vazio do item
+  permission: blockintegrations.combos
+  text: |
+    O vácuo puxa itens caídos e prefere dividi-los em baús.
+
+    1. Coloque uma placa de pressão pesada em qualquer bloco de cobre.
+    2. Coloque baús pré-sortidos perto se os itens acabarem lá.
+    3. Pule na placa. Só se não houver nenhum baú na área de busca, os itens vão para o seu inventário principal.
+    4. Sneak + clique com o botão direito da placa para atualizar o alcance ou tempo de recuperação. Padrão: 20 blocos de raio e 20 tiques tempo de recuperação.
+- title: Lançador e campo de lodo
+  permission: blockintegrations.combos
+  text: |
+    O lançador direcional joga você na direção que está olhando.
+
+    1. Coloque um bloco de lodo em um bloco de pedra vermelha e pule nele.
+    2. Para um campo, colocar nove blocos de lodo como um apartamento 3×3 na mesma altura, Redstone só vai sob o bloco central.
+    3. Todos os nove blocos usam energia e tempo de recuperação do centro. Sneak + clique com o botão direito em qualquer bloco de campo para abrir o menu de atualização compartilhada.
+    4. Poder e recuperação podem ser melhorados. A potência padrão 1.70 dá cerca de 15 blocos ao olhar horizontalmente, o tempo de recuperação é 20 tiques.
+- title: Sprint booster
+  permission: blockintegrations.combos
+  text: |
+    O reforço acelera os jogadores correndo na direção em que eles estão realmente correndo.
+
+    1. Coloque gelo, gelo ou gelo azul diretamente em um bloco de pedra vermelha.
+    2. Passe sobre o bloco de gelo.
+    3. Sneak + clique com o botão direito do mouse no bloco de gelo para atualizar a energia ou tempo de recuperação.
+
+    Os padrões são energia 1.15 e um tempo de recuperação de 10 carrapatos. Por padrão, o gelo não derrete.
+- title: Levante e cure bloco
+  permission: blockintegrations.combos
+  text: |
+    O elevador alegórico e o bloco de cura são estruturas de suporte estacionárias.
+
+    1. Elevador flutuante: coloque terracota branca em um bloco de cobre em Redstone, pule e toque na terracota. Ele lança você direto e dá Levitation.
+    2. Aumentar a potência, o tempo de levitação ou o tempo de recuperação com sneatch + botão direito. Base: 5 segundos de Levitação, 60 tiques tempo de recuperação.
+    3. Bloco de cura: coloque um bloco de mel diretamente em Redstone.
+    4. Cura jogadores em sua aura a cada 3 segundos. Depois de sofrer danos, a cura pára por pelo menos 5 segundos. Alcance, quantidade de cura e tempo de recuperação podem ser atualizados.
+- title: Combo upgrades e movimento
+  permission: blockintegrations.combos.upgrade
+  text: |
+    Cada combinação só tem seus caminhos de atualização correspondentes: intervalo de classificação/vacuo e tempo de recuperação; potência do lançador/booster e tempo de recuperação; potência do elevador flutuante, duração e tempo de recuperação; alcance do bloco de cura, quantidade de cura e tempo de recuperação.
+
+    1. Sneak + clique com o botão direito no bloco de função.
+    2. Escolha o caminho no menu, o preço XP é mostrado no botão.
+    3. Há até 10 níveis. A faixa cresce em 1 blocos por nível, a duração da flutuação em 0.5 segundos, e os tempos de recuperação diminuem em 5 % por nível, mas nunca abaixo de 5 carrapatos.
+    4. Quebre o bloco de função: o item abandonado mantém suas atualizações e as aplica quando colocado novamente.
+- title: 'Torres: como são construídas'
+  permission: blockintegrations.towers
+  text: |
+    De cima para baixo, cada torre consiste em uma cabeça, um bloco de trabalho e uma fundação. Na altura da fundação, quatro blocos de anel ficam em uma cruz para o norte, sul, leste e oeste. O chefe é o ponto de ataque, o menu de atualização e acesso ao saque.
+
+    1. Construa um dos tipos exatos abaixo.
+    2. Sneak + clique com o botão direito da cabeça para abrir saques ou upgrades.
+    3. Torres só atacam criaturas hostis em pedaços carregados.
+    4. criatura cai e matar XP da torre que atingiu o último ir para sua caixa de saque virtual.
+- title: 'Torres: tipo iniciante'
+  permission: blockintegrations.towers
+  text: |
+    Estas torres baratas não têm upgrades.
+
+    1. Torrente zumbi: cabeça de zumbi → Mesa de artesanato → Paralelepípedo; quatro tábuas de carvalho em uma cruz na altura da fundação. Ataque de precisão: 2 danos, 8 blocos alcance, 30 carrapatos.
+    2. Torre de Recrutamento: cabeça de jogador → barril → Quatro blocos de pedra em uma cruz na altura da fundação. Ataque de precisão: 3 danos, 9 blocos alcance, 26 carrapatos.
+    3. Sneak + clique com o botão direito da cabeça para esvaziar o baú.
+- title: 'Torres: arqueiro e canhão'
+  permission: blockintegrations.towers
+  text: |
+    1. Torre Archer: crânio esqueleto → Mesa saltitante → Qualquer bloco de cobre completo, quatro tijolos de pedra em uma cruz na altura da fundação. Ataques precisos, base 4 danos, alcance 14, 20 carrapatos.
+    2. Torre de canhão: cabeça rastejante → dispensador → Quatro blocos obsidianas em uma cruz na altura da fundação. Dano de área sem destruir blocos, base 8 danos, alcance 11, 40 carrapatos.
+    3. Sneak + clique com o botão direito do mouse na cabeça para saque e para danos, alcance, velocidade e upgrades de saque.
+- title: 'Torres: chama, porco, dragão'
+  permission: blockintegrations.towers
+  text: |
+    1. Torre de Chama: crânio de esqueleto seco → bloco de magma → Quatro tijolos de pedra preta polida em uma cruz. Base 5 danos, alcance 10, 24 carrapatos, coloca alvos em chamas por 3 segundos.
+    2. Torre de Ouro Piglin: Cabeça de Piglin → Mesa de ferragem → Bloco de ouro, quatro tijolos de pedra preta polida. Base 6 danos, alcance 12, 16 tiques, torre de precisão rápida.
+    3. Torre de Dragão: cabeça de dragão → âncora de respawn → bloco purpuro; quatro tijolos de pedra final. Base 12 danos, alcance 16, 50 carrapatos, grande área de dano.
+- title: Torre de upgrades e saques
+  permission: blockintegrations.towers.upgrade
+  text: |
+    1. Sneak + clique com o botão direito da torre.
+    2. Compre danos, alcance ou velocidade até o nível 10. Looting tem no máximo 3 níveis e pode adicionar itens extras para gotas empilháveis adequadas.
+    3. "Banheiro de saque aberto" mostra os itens; "Retirar matar XP" paga a coleta XP.
+    4. Quando você quebra a cabeça da torre, a cabeça caída mantém os upgrades, o conteúdo do cofre do saque é retirado para que os itens e XP não sejam perdidos.
+- title: Fornos modernáveis
+  permission: blockintegrations.furnaces
+  text: |
+    Fornos, altos-fornos e fumantes são suportados. Quando você coloca um, você se torna seu dono fixo. Sneak + botão direito reivindica uma fornalha velha sem dono para você.
+
+    1. Coloque um forno apoiado e use-o normalmente para fundição.
+    2. Sneak + clique com o botão direito para o menu de atualização.
+    3. Com Vystorm Skills instalados, até mesmo a fundição de tremonha dá ao proprietário fixo fundição/cozimento XP; XP ganhos enquanto offline são armazenados e entregues no login.
+    4. Só o dono pode manuseá-lo, outros jogadores precisam blockintegrations.furnaces.manage-others.
+- title: Aumentos de forno e movimento
+  permission: blockintegrations.furnaces.upgrade
+  text: |
+    1. Sneak + botão direito para abrir o menu de forno e pagar com XP pontos reais.
+    2. Até o nível 10: velocidade de fusão, eficiência de combustível, rendimento de bônus e multi-feitiço. Cada nível multi-feitiço processa mais um item de entrada por ciclo de fundição, limitado pela entrada e pela saída.
+    3. O impulso XP sobe para o nível 5 e eleva o forno de baunilha armazenado XP e a habilidade de fundição/cozimento XP (Vystorm Habilidades) por 20 % por nível.
+    4. Retire a baunilha XP no menu com "Retirada armazenada XP". Quando quebrado, o item forno mantém suas atualizações, proprietário fixo e bônus armazenado XP.
+- title: Cervejarias e fogueiras
+  permission: blockintegrations.workstations
+  text: |
+    Agache-se e clique com o botão direito em um suporte de poções, fogueira ou fogueira das almas para abrir o menu de melhorias. Quem coloca o bloco se torna seu proprietário. Um bloco antigo sem dono é atribuído no primeiro uso desse menu.
+    Suportes de poções: +12% de velocidade de preparo e +10% de eficiência do combustível por nível. Fogueiras: +12% de velocidade de cozimento e +2.5 pontos percentuais de chance de obter um alimento cozido extra por nível.
+    Padrão: até o nível 10. O próximo nível custa 100 vezes o quadrado de seu número em pontos XP. Fique a até oito blocos de distância. Apenas proprietários e administradores podem comprar melhorias; o uso normal continua disponível para todos.
+    Os bônus se aplicam às operações iniciadas depois. Os blocos recuperados mantêm o proprietário e as melhorias; fogueiras exigem Toque Suave. Guia no chat: /bi workstations.
+- title: Animações da Torre
+  permission: blockintegrations.towers
+  text: |
+    Cada torre tem seu próprio efeito focinho e curta trilha animada. Os canhões disparam ao longo de um arco. Os sucessos mostram partículas, canhões e chamas também se expandem em anéis.
+    Tempo de ataque e danos permanecem inalterados. Administradores podem desativar os cosméticos com towers.visual-effects em config.yml.
+- title: Armadilhas de monstros
+  permission: blockintegrations.traps
+  text: |
+    Construir um 3×3 Obsidiana (eight blocks). Núcleo: pistão para atirar, bloco de ferro para picos, bloco de mel para diminuir.
+    Coloque um botão na frente de um bloco. Pistão e botão na direção do efeito. Pisos, paredes e tetos funcionam.
+    O primeiro clique direito registra a armadilha. Sneak-right-click para o modo automático e 10/15 segunda recuperação. Os padrões do servidor só se aplicam a novas armadilhas.
+    Botão e gatilho automático compartilham um tempo de recuperação persistente. Área: 3×3 estendendo três quarteirões para frente, com linha de visão. Apenas monstros hostis, sem jogadores ou animais de estimação.
+    Configurações do servidor: /vsettings server → BlockIntegrations → Armadilhas. Guia completo: /bi traps.
+- title: Armadilhas
+  permission: blockintegrations.traps
+  text: |
+    Armadilha: bloco de lodo na moldura obsidiana com exatamente um botão frontal. Pisos e tetos se afastam do botão, paredes se movem para frente e para cima.
+    Aperte o botão para disparar, clique para o modo automático e 10/15 segundos de recuperação. Os administradores configuram a força da funda e levantam as armadilhas.
+- title: Aumente a bigorna
+  permission: blockintegrations.anvils
+  text: |
+    Clique com o botão direito da bigorna para abrir o menu. Baixo esquerdo: atualizar bigorna. Centro: use bigorna.
+    Eficiência: 5% menos XP níveis por posto (máx. 50%). Encantos: +1 para tampas normais por patente (máximo +5), remove muito caro. Durabilidade: sem desgaste. Atualizações custam XP pontos.
+    Preço padrão: 100 vezes nova classificação ao quadrado. Durabilidade custa 2500 XP pontos uma vez. Propriedade e melhorias sobrevivem à mineração e queda.
+- title: Menu de cervejaria
+  permission: blockintegrations.workstations
+  text: |
+    O botão direito abre o menu da cervejaria. Baixo-esquerdo: atualização do carrinho de cerveja; centro: use o carrinho de cerveja. Shift + botão direito ainda abre upgrades diretamente. Velocidade e eficiência de combustível têm até 10 fileiras, o preço padrão é 100 vezes a nova classificação ao quadrado em XP pontos.
+- title: Bônus de poção
+  permission: blockintegrations.workstations
+  text: |
+    Efeito extra: 5 postos em 1% cada, máximo 5%. Força: 10 postos em 10% chance cada para +1 nível de efeito, máximo 100%. Duração: 10 fileiras a 25s cada, no máximo +250s; efeitos instantâneos permanecem instantâneos.
+    Preços base vezes nova classificação ao quadrado: extra 5000, força 10000, duração 1000 XP pontos. Um rolo por garrafa acabada, incluindo rolos fracassados. Extra: nível positivo aleatório I efeito por 30s mais bônus de duração.

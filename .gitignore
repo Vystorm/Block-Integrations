@@ -1,0 +1,11 @@
+.gradle/
+build/
+.idea/
+*.iml
+libs/
+*.log
+*-private.properties
+.env
+.env.*
+!.env.example
+graphify-out/

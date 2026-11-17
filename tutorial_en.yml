@@ -1,0 +1,169 @@
+title: 'BlockIntegrations'
+permission: blockintegrations.use
+pages:
+  - title: 'Getting started'
+    text: |
+      BlockIntegrations builds functions directly out of world blocks. The six block combos, the towers and the upgradable furnaces work independently of each other.
+
+      1. Build the structure described below completely.
+      2. Use the top function block or the described movement.
+      3. For upgradable structures, sneak + right-click to open the menu and pay for upgrades with real XP points.
+
+      Overview in game: /vmenu → Building & Tech → Blocks & Upgrades (or /bi). There you find the guides for combos, towers and furnaces; in chat you can also use /bi combos, /bi towers and /bi furnaces. Each guide needs the matching permission.
+
+      All upgrade menus have the buttons "← Back" (to the overview) and "⌂ Main menu".
+
+      If a combo or tower is incomplete, sneak + right-click its likely control block (with the matching permission) to see missing or wrong blocks and their coordinates. The check only reads loaded chunks and never repairs anything.
+  - title: 'Inventory sorter'
+    permission: blockintegrations.combos
+    text: |
+      The sorter moves items from your main inventory into nearby chests that already contain the same item.
+
+      1. Place a light weighted (gold) pressure plate on any full copper building block.
+      2. Put chests nearby and place one sample item of each kind in them.
+      3. Jump onto the plate: slots 9–35 are sorted; hotbar, armour and off hand stay untouched.
+      4. Sneak + right-click the plate to upgrade range or cooldown. The default range is 10 blocks.
+  - title: 'Item vacuum'
+    permission: blockintegrations.combos
+    text: |
+      The vacuum pulls in dropped items and prefers to sort them into chests.
+
+      1. Place a heavy weighted (iron) pressure plate on any full copper building block.
+      2. Put pre-sorted chests nearby if the items should end up there.
+      3. Jump onto the plate. Only if there is no chest at all in the search area, the items go into your main inventory.
+      4. Sneak + right-click the plate to upgrade range or cooldown. Default: 20 blocks radius and 20 ticks cooldown.
+  - title: 'Launcher and slime field'
+    permission: blockintegrations.combos
+    text: |
+      The directional launcher throws you in the direction you are looking.
+
+      1. Place a slime block on a redstone block and jump on it.
+      2. For a field, lay nine slime blocks as a flat 3×3 at the same height; redstone only goes under the centre block.
+      3. All nine blocks use power and cooldown of the centre. Sneak + right-click any field block to open the shared upgrade menu.
+      4. Power and cooldown can be upgraded. The default power 1.70 gives about 15 blocks when looking horizontally; the cooldown is 20 ticks.
+  - title: 'Sprint booster'
+    permission: blockintegrations.combos
+    text: |
+      The booster accelerates sprinting players in the direction they are actually running.
+
+      1. Place ice, packed ice or blue ice directly on a redstone block.
+      2. Sprint over the ice block.
+      3. Sneak + right-click the ice block to upgrade power or cooldown.
+
+      Defaults are power 1.15 and a 10 tick cooldown. By default, booster ice does not melt.
+  - title: 'Float lift and heal block'
+    permission: blockintegrations.combos
+    text: |
+      The float lift and the heal block are stationary support structures.
+
+      1. Float lift: place white terracotta on a full copper building block on redstone, jump and touch the terracotta. It launches you straight up and gives Levitation.
+      2. Upgrade power, levitation time or cooldown with sneak + right-click. Base: 5 seconds of Levitation, 60 ticks cooldown.
+      3. Heal block: place a honey block directly on redstone.
+      4. It heals players in its aura every 3 seconds. After taking damage, healing pauses for at least 5 seconds. Range, healing amount and cooldown can be upgraded.
+  - title: 'Combo upgrades and moving'
+    permission: blockintegrations.combos.upgrade
+    text: |
+      Each combo only has its matching upgrade paths: sorter/vacuum range and cooldown; launcher/booster power and cooldown; float lift power, duration and cooldown; heal block range, healing amount and cooldown.
+
+      1. Sneak + right-click the function block.
+      2. Choose the path in the menu; the XP price is shown on the button.
+      3. There are up to 10 levels. Range grows by 1 block per level, float duration by 0.5 seconds, and cooldowns shrink by 5 % per level, but never below 5 ticks.
+      4. Break the function block: the dropped item keeps its upgrades and applies them when placed again.
+  - title: 'Towers: how they are built'
+    permission: blockintegrations.towers
+    text: |
+      From top to bottom, every tower consists of a head, a work block and a foundation. At foundation height, four ring blocks stand in a cross to the north, south, east and west. The head is the attack point, upgrade menu and loot access.
+
+      1. Build one of the exact types below.
+      2. Sneak + right-click the head to open loot or upgrades.
+      3. Towers only attack hostile mobs in loaded chunks.
+      4. Mob drops and kill XP of the tower that hit last go into its virtual loot chest.
+  - title: 'Towers: starter types'
+    permission: blockintegrations.towers
+    text: |
+      These cheap towers have no upgrades.
+
+      1. Zombie Watchtower: zombie head → crafting table → cobblestone; four oak planks in a cross at foundation height. Precision attack: 2 damage, 8 blocks range, 30 ticks.
+      2. Recruit Tower: player head → barrel → stone; four cobblestone blocks in a cross at foundation height. Precision attack: 3 damage, 9 blocks range, 26 ticks.
+      3. Sneak + right-click the head to empty the loot chest.
+  - title: 'Towers: archer and cannon'
+    permission: blockintegrations.towers
+    text: |
+      1. Archer Tower: skeleton skull → fletching table → any full copper building block; four stone bricks in a cross at foundation height. Precise attacks, base 4 damage, 14 range, 20 ticks.
+      2. Cannon Tower: creeper head → dispenser → blast furnace; four obsidian blocks in a cross at foundation height. Area damage without destroying blocks, base 8 damage, 11 range, 40 ticks.
+      3. Sneak + right-click the head for loot and for damage, range, speed and looting upgrades.
+  - title: 'Towers: flame, piglin, dragon'
+    permission: blockintegrations.towers
+    text: |
+      1. Flame Tower: wither skeleton skull → magma block → nether bricks; four polished blackstone bricks in a cross. Base 5 damage, 10 range, 24 ticks; sets targets on fire for 3 seconds.
+      2. Piglin Gold Tower: piglin head → smithing table → gold block; four polished blackstone bricks. Base 6 damage, 12 range, 16 ticks; fast precision tower.
+      3. Dragon Tower: dragon head → respawn anchor → purpur block; four end stone bricks. Base 12 damage, 16 range, 50 ticks; large area damage.
+  - title: 'Tower upgrades and loot'
+    permission: blockintegrations.towers.upgrade
+    text: |
+      1. Sneak + right-click the tower head.
+      2. Buy damage, range or speed up to level 10. Looting has at most 3 levels and can add extra items to suitable stackable drops.
+      3. "Open loot chest" shows the items; "Withdraw kill XP" pays out the collected XP.
+      4. When you break the tower head, the dropped head keeps the upgrades; the loot chest contents are dropped so that items and XP are not lost.
+  - title: 'Upgradable furnaces'
+    permission: blockintegrations.furnaces
+    text: |
+      Furnaces, blast furnaces and smokers are supported. When you place one, you become its fixed owner. Sneak + right-click claims an old furnace without an owner for you.
+
+      1. Place a supported furnace and use it normally for smelting.
+      2. Sneak + right-click it for the upgrade menu.
+      3. With Vystorm Skills installed, even hopper-fed smelting gives the fixed owner smelting/cooking XP; XP earned while offline is stored and delivered on login.
+      4. Only the owner can manage it; other players' furnaces need blockintegrations.furnaces.manage-others.
+  - title: 'Furnace upgrades and moving'
+    permission: blockintegrations.furnaces.upgrade
+    text: |
+      1. Sneak + right-click to open the furnace menu and pay with real XP points.
+      2. Up to level 10: smelting speed, fuel efficiency, bonus yield and multismelt. Each multismelt level processes one more input item per smelting cycle, limited by the input and the output slot.
+      3. The XP boost goes up to level 5 and raises stored vanilla furnace XP and smelting/cooking skill XP (Vystorm Skills) by 20 % per level.
+      4. Take out collected vanilla XP in the menu with "Withdraw stored XP". When broken, the furnace item keeps its upgrades, fixed owner and stored bonus XP.
+
+  - title: 'Brewing stands and campfires'
+    permission: blockintegrations.workstations
+    text: |
+      Sneak + right-click a brewing stand, campfire or soul campfire to open its upgrade menu. The placing player owns it; an old unowned block is claimed on first upgrade-menu use.
+      Brewing stands: +12% brewing speed and +10% fuel power per level. Campfires: +12% cooking speed and +2.5 percentage points chance of an extra cooked item per level.
+      Defaults: up to level 10; the next level costs 100 times its level squared in XP points. Stay within eight blocks. Only owners or administrators can buy upgrades. Ordinary use stays available to everyone.
+      Bonuses apply to newly started operations. Matching block drops keep ownership and upgrades; campfires require Silk Touch. Chat guide: /bi workstations.
+  - title: 'Tower animations'
+    permission: blockintegrations.towers
+    text: |
+      Each tower has its own muzzle effect and short animated trail. Cannons fire along an arc. Successful hits show particles; cannon and flame hits also expand into rings.
+      Attack timing and damage stay unchanged. Administrators can disable the cosmetics with towers.visual-effects in config.yml.
+
+  - title: "Monster traps"
+    permission: blockintegrations.traps
+    text: |
+      Build a 3×3 obsidian frame (eight blocks). Core: piston to throw, iron block for spikes, honey block to slow.
+      Attach a button to the front of a frame block. Piston and button point in the effect direction. Floors, walls and ceilings work.
+      First right-click registers the trap. Sneak-right-click for automatic mode and 10/15 second cooldown. Server defaults apply to new traps only.
+      Button and automatic triggering share a persisted cooldown. Area: 3×3 extending three blocks forward, with line of sight. Hostile monsters only; no players or pets.
+      Server settings: /vsettings server → BlockIntegrations → Traps. Full guide: /bi traps.
+
+  - title: "Sling traps"
+    permission: blockintegrations.traps
+    text: |
+      Sling trap: slime block in the obsidian frame with exactly one front button. Floors/ceilings fling away from the button; walls fling forward and upward.
+      Press the button to fire; sneak-right-click for automatic mode and 10/15 seconds cooldown. Admins configure sling power and lift in Traps settings.
+
+  - title: "Upgrade anvil"
+    permission: blockintegrations.anvils
+    text: |
+      Right-click the anvil to open its menu. Bottom left: upgrade anvil. Center: use anvil.
+      Efficiency: 5% fewer XP levels per rank (max. 50%). Enchantments: +1 to normal caps per rank (max. +5), removes Too Expensive. Durability: no wear from use. Upgrades cost XP points.
+      Default price: 100 times new rank squared. Durability costs 2500 XP points once. Ownership and upgrades survive mining and falling.
+
+  - title: "Brewing stand menu"
+    permission: blockintegrations.workstations
+    text: |
+      Right-click opens the brewing stand menu. Bottom left: upgrade brewing stand; center: use brewing stand. Shift + right-click still opens upgrades directly. Speed and fuel efficiency have up to 10 ranks; the default price is 100 times the new rank squared in XP points.
+
+  - title: "Potion bonuses"
+    permission: blockintegrations.workstations
+    text: |
+      Extra effect: 5 ranks at 1% each, maximum 5%. Strength: 10 ranks at 10% chance each for +1 effect level, maximum 100%. Duration: 10 ranks at 25s each, maximum +250s; instant effects stay instant.
+      Base prices times new rank squared: extra 5000, strength 10000, duration 1000 XP points. One roll per finished bottle, including failed rolls. Extra: random positive level I effect for 30s plus duration bonus.

@@ -1,0 +1,13 @@
+# Compatibility - 2.37.0 (2026-11-07)
+
+Requires **Vystorm Core 0.64.0+**. Paper 1.20.6 through 26.x remains the existing target; this release adds **Spigot and CraftBukkit 26.3**. The jar uses Java 21 bytecode; run the Java version required by the server. The `-26.2` filename suffix is retained and is not a minimum-version declaration. Folia and older Spigot/CraftBukkit versions have not been verified.
+
+Core supplies portable messages, dialogs, profiles and entity operations. Paper-only anvil events live in an optional adapter. Bukkit uses the actual server's furnace recipe cache and snapshot XP ledger, merged experience-orb count, Enderman anger state and location-bound anvil menu. Anvil damage protection restores only a completed take's vanilla damage transition; cancelled takes, explicit replacement, break and explosion events invalidate restoration.
+
+Official BuildTools Spigot 26.3 and CraftBukkit 26.3 were started with this release and Core 0.51.0. Native acceptance checks exercise plugin startup, merged and partially collected XP, persistent death-orb markers, Enderman state, real fuel-powered smelting, the cached recipe and clearing the XP ledger without losing output. A connected protocol client checks location-bound anvil opening and the native repair-cost limit. The damage-restoration probe uses a real inventory view with a controlled completed-use/block transition; unit tests separately check cancellation. These are targeted checks, not a claim that every machine interaction has been replayed on both servers.
+
+Reproducible probe sources are in `integration/src/local/blockintegrations/acceptance/BukkitAcceptance.java` and `BukkitAnvilAcceptance.java`. They are destructive test fixtures for disposable worlds only. Package with `integrationJar`, selecting the corresponding main class in the probe plugin descriptor.
+
+`check` includes the normal unit suite, `compat1206` compilation against the actual offline Paper 1.20.6 API, and `test1206` adapter/linkage tests without the modern API on the runtime classpath. Configure `-Ppaper1206Libraries=...` and `-PvystormCoreJar=...` as needed. On 1.20.6, Core dialogs use clickable chat, anvil cost operations use the older API and brewing uses total brew time. The native enchantment-restriction bypass is unavailable on Paper 1.20.6 and on Spigot/CraftBukkit, so enchantment upgrades require a valid vanilla result on those platforms. No complete machine feature is disabled.
+
+Historical Paper/Purpur acceptance is retained; a new full Paper machine replay was not performed for this release. The seven existing locale bundles remain available through Core; this compatibility release adds no new player-facing translation keys.
