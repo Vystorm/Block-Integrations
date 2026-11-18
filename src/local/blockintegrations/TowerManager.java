@@ -416,7 +416,7 @@ final class TowerManager implements Listener {
 
     private void loadSettings() {
         FileConfiguration config = plugin.getConfig();
-        enabled = config.getBoolean("towers.enabled", true);
+        enabled = BlockIntegrations.enabled(plugin, Feature.TOWERS);
         pauseWhenLootFull = config.getBoolean("towers.pause-when-loot-full", true);
         maximumUpgradeLevel = Math.max(1, Math.min(10,
                 config.getInt("towers.upgrades.maximum-level", 10)));

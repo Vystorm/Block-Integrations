@@ -64,7 +64,9 @@ final class TowerClient implements Listener {
         dirty.clear();
     }
 
-    private boolean markersEnabled() { return plugin.getConfig().getBoolean("client.tower-markers", true); }
+    private boolean markersEnabled() {
+        return plugin.getConfig().getBoolean("client.tower-markers", true) && BlockIntegrations.enabled(plugin, Feature.TOWER_MARKERS);
+    }
 
     /** A tower of {@code owner} was built, moved, upgraded or removed: refresh that player's markers next tick. */
     void changed(UUID owner) {
@@ -136,7 +138,7 @@ final class TowerClient implements Listener {
     }
 
     private void sendTooltips(Player player) {
-        if (!plugin.getConfig().getBoolean("client.portable-tooltips", true)) return;
+        if (!plugin.getConfig().getBoolean("client.portable-tooltips", true) || !BlockIntegrations.enabled(plugin, Feature.PORTABLE_TOOLTIPS)) return;
         Lang lang = plugin.lang();
         String language = lang.language(player);
         boolean levels = ui.available(player, ClientServices.CAP_UI_EXTENSIONS);

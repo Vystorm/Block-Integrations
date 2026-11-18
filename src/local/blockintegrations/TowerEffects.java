@@ -108,7 +108,9 @@ final class TowerEffects {
         }
     }
 
-    private boolean enabled() { return plugin.isEnabled() && plugin.getConfig().getBoolean("towers.visual-effects", true); }
+    private boolean enabled() {
+        return plugin.isEnabled() && plugin.getConfig().getBoolean("towers.visual-effects", true) && BlockIntegrations.enabled(plugin, Feature.TOWER_EFFECTS);
+    }
     private static boolean loaded(Location location) {
         return location.getWorld() != null && location.getWorld().isChunkLoaded(location.getBlockX() >> 4, location.getBlockZ() >> 4);
     }

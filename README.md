@@ -96,15 +96,15 @@ Break the main block (combo top, tower head, furnace) and it keeps its upgrade l
 
 - With the Vystorm client mod you get waypoints over your towers, a toast when a loot chest is full, and tooltips on carried upgrade blocks.
 - With Vystorm Core's web platform there is a "Blocks & Towers" page (`/bi web`) listing your structures, with upgrades, tower loot and a building guide.
-- English, German and Simplified Chinese, per player.
+- Seven languages (English, German, French, Italian, Brazilian Portuguese, Russian, Simplified Chinese), per player.
 
 ## Installation
 
-Use **Vystorm Core 0.64.0 or newer**. The optional client mod has separate version requirements.
+Use **Vystorm Core 0.65.0 or newer** (placeholders). The optional client mod has separate version requirements.
 
 
 - **Paper 1.20.6 through 26.x; Spigot and CraftBukkit 26.3**, Java **21 or newer** (use the Java version required by your server release). See [compatibility checks](COMPATIBILITY.md).
-- [Vystorm Core](https://github.com/Vystorm/VystormCore) 0.64.0 or newer, including its portable dialogs and compatibility helpers.
+- [Vystorm Core](https://github.com/Vystorm/VystormCore) 0.65.0 or newer, including its portable dialogs and compatibility helpers.
 - Optional: Vystorm Skills (furnace skill XP), VystormCityClaim (sorter and vacuum respect its chest permissions)
 
 Drop the jar into `plugins/` and start the server.
@@ -149,6 +149,32 @@ Admins can edit the whole `config.yml` in game with `/vadmin config BlockIntegra
 No database is needed. Data is stored as local JSON files in the plugin folder plus block and item data. Old YAML data files from before 2.20.2 are not imported automatically. Don't downgrade the plugin after towers were saved in the newer format.
 
 `language: auto` follows each player's Minecraft language. Texts are in `plugins/BlockIntegrations/lang/`; copy `en.yml` to e.g. `fr.yml` to add a language and run `/bi reload`.
+
+## Switches
+
+Every feature has an on/off switch in `config.yml`, all on by default, listed in Core's `/vadmin features` with a
+one-line description. They apply at once, except `tutorial.enabled` (restart). A switched-off feature answers "This
+feature is switched off on this server.", its subcommands disappear from help and tab completion and its placeholders
+are empty. Machines, upgrade levels, stored XP and loot stay saved.
+
+- The whole plugin: `blocks.enabled`.
+- Combos: `sorter.enabled`, `sort-locks.enabled`, `vacuum.enabled`, `launcher.enabled`, `booster.enabled`,
+  `float-launcher.enabled`, `combos.heal.enabled`, `combos.harvester.enabled`, `combos.warp-pad.enabled`,
+  `combos.xp-collector.enabled`, and `combos.enabled` for the combo upgrades only. A config from 2.43.0 or older with
+  `combos.enabled: false` keeps the heal block, harvester, warp pads and XP collector off.
+- Machines: `towers.enabled`, `towers.visual-effects`, `traps.enabled`, `furnaces.enabled`,
+  `workstations.brewing-stands`, `workstations.campfires`, `anvils.enabled`, `machine-blueprints.enabled`.
+- Around them: `dashboard.enabled`, `menu.enabled`, `web.enabled`, `client.tower-markers`, `client.portable-tooltips`,
+  `tutorial.enabled`.
+
+Portable upgrades (a broken machine keeps its levels on the item) and the admin commands have no switch: turning the
+first off would lose the levels of every machine broken meanwhile, and the second is needed to turn things back on.
+
+## Placeholders
+
+Namespace `blocks`, listed by `/vadmin placeholders blocks`: `%vystorm_blocks_combos_owned%`, `warp_pads_owned`,
+`warp_pads_max` (`-1` = no limit), `warp_pads_shared`, `towers_owned`, `furnaces_owned`, `combos_total`, `towers_total`,
+`furnaces_total`. Short form in Vystorm texts: `{blocks:towers_owned}`.
 
 ## For developers
 

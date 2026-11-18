@@ -101,6 +101,19 @@ final class BlockConfigEditor {
     static String descriptionKey(String path) { return "settings.option." + path.replace('.', '-') + ".description"; }
 
     /** {@code reload} is the same path as {@code /blockintegrations reload}: re-read config.yml, apply to all managers. */
+    /**
+     * Every switch in /vadmin features with its one-line description ({@code switches.<id>}); include-trapped-chests is
+     * an option of the sorter, not a feature row.
+     */
+    static void declareSwitches(ConfigEditorInterface config, Plugin plugin, Lang lang) {
+        for (Feature feature : Feature.values()) {
+            config.feature(plugin, feature.path, null, lang.ref(feature.description()));
+            if (feature.needsRestart())
+                config.activation(plugin, feature.path, Vystorm.vystorm_core._uiMethods.settings.SettingPolicy.Activation.RESTART);
+        }
+        config.notFeature(plugin, "include-trapped-chests");
+    }
+
     static void register(ConfigEditorInterface config, Plugin plugin, Lang lang, Runnable reload) {
         config.register(plugin, "config.yml", reload);
         for (Entry entry : ENTRIES) {

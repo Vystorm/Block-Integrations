@@ -59,7 +59,12 @@ final class ComboManager implements Listener {
     private final Map<UUID, Long> lastDamageTick = new HashMap<>();
     private final Map<UUID, Long> lastHealTick = new HashMap<>();
 
+    /** combos.enabled: the upgrade menus and the effect of bought upgrades (stored levels stay). */
     private boolean enabled;
+    /** blocks.enabled: combos are recognised, tracked and keep their levels on the item when broken. */
+    private boolean tracking = true;
+    private boolean healEnabled = true;
+    private boolean harvesterEnabled = true;
     private int maximumLevel;
     private int rangeBlocksPerLevel;
     private int durationTicksPerLevel;
@@ -141,13 +146,33 @@ final class ComboManager implements Listener {
         startXpTask();
     }
 
-    /** Warp pads and XP collectors have their own switch; the other combos follow {@code combos.enabled} only. */
+    /** Warp pads and XP collectors are not registered while their switch is off (as before 2.44.0). */
     boolean typeEnabled(ComboType type) {
         return switch (type) {
             case WARP_PAD -> warpPadsEnabled;
             case XP_COLLECTOR -> xpCollectorsEnabled;
             default -> true;
         };
+    }
+
+    /** The feature switch of a combo type (each combo has its own since 2.44.0). */
+    boolean featureOn(ComboType type) {
+        return switch (type) {
+            case SORTER -> BlockIntegrations.enabled(plugin, Feature.SORTER);
+            case VACUUM -> BlockIntegrations.enabled(plugin, Feature.VACUUM);
+            case LAUNCHER -> BlockIntegrations.enabled(plugin, Feature.LAUNCHER);
+            case BOOSTER -> BlockIntegrations.enabled(plugin, Feature.BOOSTER);
+            case FLOAT_LAUNCHER -> BlockIntegrations.enabled(plugin, Feature.FLOAT_LIFT);
+            case HEAL -> healEnabled;
+            case HARVESTER -> harvesterEnabled;
+            case WARP_PAD -> warpPadsEnabled;
+            case XP_COLLECTOR -> xpCollectorsEnabled;
+        };
+    }
+
+    /** Combos whose menu holds more than upgrades (profiles, rename, stored XP): it opens without combos.enabled too. */
+    static boolean ownMenu(ComboType type) {
+        return type == ComboType.HARVESTER || type == ComboType.WARP_PAD || type == ComboType.XP_COLLECTOR;
     }
 
     int maximumLevel() {
@@ -260,7 +285,7 @@ final class ComboManager implements Listener {
     /** Stage ADJUST, registered in {@link #handleBlockEvents}. */
     public void onHealBlockPlace(BlockPlaceEvent event) {
         if (event instanceof BuildProbeEvent) return; // test placement, nothing was placed
-        if (!enabled) {
+        if (!healEnabled) {
             return;
         }
         Block control = completedHealControl(event.getBlockPlaced());
@@ -274,7 +299,7 @@ final class ComboManager implements Listener {
     /** Stage OBSERVE, registered in {@link #handleBlockEvents}. */
     public void onBlockPlace(BlockPlaceEvent event) {
         if (event instanceof BuildProbeEvent) return; // test placement, nothing was placed
-        if (!enabled || event.isCancelled() || !event.canBuild()) {
+        if (!tracking || event.isCancelled() || !event.canBuild()) {
             return;
         }
         ItemStack placedItem = event.getItemInHand().clone();
@@ -317,7 +342,8 @@ final class ComboManager implements Listener {
                     queueSave();
                     plugin.structuresChanged(playerId);
                 }
-                if (created && player != null) {
+                // announced only while the combo works and its menu has something to offer
+                if (created && player != null && featureOn(detected) && (enabled || ownMenu(detected))) {
                     Lang lang = plugin.lang();
                     plugin.core().compat().platform().sendMessage(player, lang.component(player, "combo.recognized",
                                     "name", lang.plain(player, detected.nameKey()))
@@ -332,7 +358,7 @@ final class ComboManager implements Listener {
 
     /** Stage OBSERVE, registered in {@link #handleBlockEvents}. */
     public void onBlockBreak(BlockBreakEvent event) {
-        if (!enabled || event.isCancelled()) return;
+        if (!tracking || event.isCancelled()) return;
         BlockKey key = BlockKey.of(event.getBlock());
         Combo broken = combos.get(key);
         if (broken == null) return;
@@ -347,7 +373,7 @@ final class ComboManager implements Listener {
 
     @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
     public void onBlockDrop(BlockDropItemEvent event) {
-        if (!enabled || event.isCancelled()) return;
+        if (!tracking || event.isCancelled()) return;
         BlockKey key = BlockKey.of(event.getBlock());
         Combo combo = combos.get(key);
         if (combo == null || !combo.type.isControl(event.getBlockState().getType())) return;
@@ -373,11 +399,11 @@ final class ComboManager implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onControlPhysics(BlockPhysicsEvent event) {
         // Block physics fires constantly: leave before building a key unless it can be a sorter/vacuum plate (2.41.2).
-        if (!enabled || combos.isEmpty()) return;
+        if (!tracking || combos.isEmpty()) return;
         Material type = event.getBlock().getType();
         if (!ComboType.SORTER.isControl(type) && !ComboType.VACUUM.isControl(type)) return;
         Combo combo = combos.get(BlockKey.of(event.getBlock()));
-        if (enabled && combo != null && (combo.type == ComboType.SORTER || combo.type == ComboType.VACUUM)
+        if (tracking && combo != null && (combo.type == ComboType.SORTER || combo.type == ComboType.VACUUM)
                 && combo.type.isControl(event.getBlock().getType()) && !combo.type.matches(event.getBlock())) {
             // Keep the main pressure plate when its support is removed; the incomplete combo is inactive.
             event.setCancelled(true);
@@ -401,7 +427,7 @@ final class ComboManager implements Listener {
 
     /* Stage OBSERVE, registered in handleSharedEvents */
     public void onPlayerDamaged(EntityDamageEvent event) {
-        if (enabled && event.getEntity() instanceof Player player && event.getFinalDamage() > 0.0D) {
+        if (healEnabled && event.getEntity() instanceof Player player && event.getFinalDamage() > 0.0D) {
             lastDamageTick.put(player.getUniqueId(), player.getWorld().getGameTime());
         }
     }
@@ -417,7 +443,7 @@ final class ComboManager implements Listener {
 
     /* Stage ACT, registered in handleSharedEvents */
     public void onComboInteract(PlayerInteractEvent event) {
-        if (!enabled || event.getHand() != EquipmentSlot.HAND
+        if (!tracking || event.getHand() != EquipmentSlot.HAND
                 || event.getAction() != Action.RIGHT_CLICK_BLOCK
                 || !event.getPlayer().isSneaking() || event.getClickedBlock() == null) {
             return;
@@ -441,6 +467,8 @@ final class ComboManager implements Listener {
             }
         }
         if (detected == null || !typeEnabled(detected)) return;
+        // its own switch off, or combos.enabled off and the menu would only hold upgrades: the click stays vanilla
+        if (!featureOn(detected) || !enabled && !ownMenu(detected)) return;
         if (!player.hasPermission("blockintegrations.combos")) {
             if (registered != null || detected != ComboType.BOOSTER && !commonControl(detected)) {
                 event.setCancelled(true);
@@ -602,6 +630,7 @@ final class ComboManager implements Listener {
             plugin.lang().send(player, "combo.incomplete");
             return;
         }
+        if (!featureOn(combo.type) || !enabled && !ownMenu(combo.type)) { plugin.lang().send(player, "feature-off"); return; }
         if (ChatLinks.near(plugin, player, key, "chat.too-far.combo")) openMenu(player, combo);
     }
 
@@ -614,7 +643,7 @@ final class ComboManager implements Listener {
         List<DialogBody> body = new ArrayList<>();
         body.add(DialogBody.plainMessage(lang.component(player, "combo.dialog.header", "name", title, "max", maximumLevel)));
         if (slimeField) body.add(DialogBody.plainMessage(lang.component(player, "combo.slime-field.info")));
-        for (ComboUpgrade upgrade : ComboUpgrade.values()) if (combo.type.supports(upgrade)) {
+        if (enabled) for (ComboUpgrade upgrade : ComboUpgrade.values()) if (combo.type.supports(upgrade)) { // combos.enabled: upgrades
             int shown = combo.level(upgrade); int cost = shown >= maximumLevel ? 0 : upgradeCost(upgrade, shown);
             String upgradeName = lang.plain(player, combo.type.upgradeNameKey(upgrade));
             String value = upgradeValue(player, combo.type, upgrade, shown);
@@ -624,7 +653,7 @@ final class ComboManager implements Listener {
             if (shown < maximumLevel) buttons.add(new DialogButton(lang.component(player, "combo.dialog.button",
                     "upgrade", upgradeName, "cost", cost), (p, r) -> upgradeCombo(p, key, upgrade, shown, cost)));
         }
-        if (plugin.getConfig().getBoolean("machine-blueprints.enabled", true) && player.hasPermission("blockintegrations.combos.upgrade")) {
+        if (enabled && BlockIntegrations.enabled(plugin, Feature.BLUEPRINTS) && player.hasPermission("blockintegrations.combos.upgrade")) {
             ComboPrint mine = blueprintOf(combo);
             buttons.add(new DialogButton(lang.component(player, "blueprint.save"), lang.component(player, "blueprint.save-hover"),
                     (p, r) -> { blueprints.put(p.getUniqueId(), mine); lang.send(p, "blueprint.saved"); }));
@@ -675,7 +704,7 @@ final class ComboManager implements Listener {
     }
 
     private boolean canEditHarvestProfile(Player player, Combo combo) {
-        return enabled && typeEnabled(ComboType.HARVESTER) && player.isOnline()
+        return harvesterEnabled && player.isOnline()
                 && player.hasPermission("blockintegrations.combos") && combo.type == ComboType.HARVESTER
                 && validCombo(combo.key) == combo && mayManage(player, combo);
     }
@@ -836,7 +865,10 @@ final class ComboManager implements Listener {
 
     private void loadSettings() {
         FileConfiguration config = plugin.getConfig();
-        enabled = config.getBoolean("combos.enabled", true);
+        enabled = BlockIntegrations.enabled(plugin, Feature.COMBO_UPGRADES);
+        tracking = BlockIntegrations.enabled(plugin, Feature.BLOCKS);
+        healEnabled = BlockIntegrations.enabled(plugin, Feature.HEAL);
+        harvesterEnabled = BlockIntegrations.enabled(plugin, Feature.HARVESTER);
         maximumLevel = Math.max(1, Math.min(10,
                 config.getInt("combos.upgrades.maximum-level", 10)));
         rangeBlocksPerLevel = Math.max(0, Math.min(5,
@@ -871,12 +903,12 @@ final class ComboManager implements Listener {
         healParticles = config.getBoolean("combos.heal.play-particles", true);
         healSound = config.getBoolean("combos.heal.play-sound", true);
 
-        warpPadsEnabled = config.getBoolean("combos.warp-pad.enabled", true);
+        warpPadsEnabled = BlockIntegrations.enabled(plugin, Feature.WARP_PADS);
         warpBaseDistance = Math.max(8, Math.min(100_000, config.getInt("combos.warp-pad.base-distance", 256)));
         warpDistancePerLevel = Math.max(0, Math.min(10_000, config.getInt("combos.warp-pad.distance-per-level", 128)));
         warpMaxPerPlayer = Math.max(0, Math.min(1000, config.getInt("combos.warp-pad.max-per-player", 10)));
         warpParticles = config.getBoolean("combos.warp-pad.play-particles", true);
-        xpCollectorsEnabled = config.getBoolean("combos.xp-collector.enabled", true);
+        xpCollectorsEnabled = BlockIntegrations.enabled(plugin, Feature.XP_COLLECTOR);
         xpBaseCapacity = Math.max(10, Math.min(1_000_000, config.getInt("combos.xp-collector.capacity", 1500)));
         xpCapacityPerLevel = Math.max(0, Math.min(1_000_000, config.getInt("combos.xp-collector.capacity-per-level", 1500)));
         xpPlayerSafeRadius = bounded(config.getDouble("combos.xp-collector.player-safe-radius", 3.0D), 0.0D, 16.0D);
@@ -899,7 +931,7 @@ final class ComboManager implements Listener {
             harvestTask = null;
         }
         nextHarvest.clear();
-        if (enabled) harvestTask = tasks.timer(40L, 20L, this::harvestCrops);
+        if (harvesterEnabled) harvestTask = tasks.timer(40L, 20L, this::harvestCrops);
     }
 
     /** Composter harvesters: one pass per combo whenever its (upgradable) cooldown has passed. */
@@ -923,7 +955,7 @@ final class ComboManager implements Listener {
             healTask.cancel();
             healTask = null;
         }
-        if (enabled) {
+        if (healEnabled) {
             healTask = tasks.timer(healTaskPeriodTicks, healTaskPeriodTicks, this::healPlayers);
         }
     }
@@ -1227,7 +1259,7 @@ final class ComboManager implements Listener {
             xpTask.cancel();
             xpTask = null;
         }
-        if (enabled && xpCollectorsEnabled) xpTask = tasks.timer(30L, 10L, this::collectXp);
+        if (xpCollectorsEnabled) xpTask = tasks.timer(30L, 10L, this::collectXp);
     }
 
     /** Every half second: each complete, loaded collector pulls the orbs around it. */
@@ -1305,6 +1337,11 @@ final class ComboManager implements Listener {
     // ---------------------------------------------------------------------------------------------
     // Warp pads
 
+    /** The warp pad limit of a player, -1 for none (admins, or max-per-player 0). */
+    int warpPadLimit(Player player) {
+        return warpMaxPerPlayer <= 0 || player.hasPermission(BlockIntegrations.ADMIN_PERMISSION) ? -1 : warpMaxPerPlayer;
+    }
+
     private boolean warpLimitReached(Player player) {
         if (warpMaxPerPlayer <= 0 || player.hasPermission(BlockIntegrations.ADMIN_PERMISSION)) return false;
         UUID id = player.getUniqueId();
@@ -1346,7 +1383,7 @@ final class ComboManager implements Listener {
     /** Sneaking on top of a warp pad opens the travel dialog. */
     @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     public void onWarpSneak(PlayerToggleSneakEvent event) {
-        if (!enabled || !warpPadsEnabled || !event.isSneaking()) return;
+        if (!warpPadsEnabled || !event.isSneaking()) return;
         Player player = event.getPlayer();
         if (player.isInsideVehicle() || player.isFlying() || !player.hasPermission(WARP_PERMISSION)) return;
         Block below = player.getLocation().getBlock().getRelative(0, -1, 0);
@@ -1517,7 +1554,7 @@ final class ComboManager implements Listener {
     static final String WARP_PERMISSION = "blockintegrations.warppads";
 
     boolean warpPadsEnabled() {
-        return enabled && warpPadsEnabled;
+        return warpPadsEnabled;
     }
 
     List<Combo> warpPadsOwnedBy(UUID owner) {
@@ -1541,7 +1578,7 @@ final class ComboManager implements Listener {
     void warpCommand(Player player, String[] args) {
         Lang lang = plugin.lang();
         if (!warpPadsEnabled()) {
-            lang.send(player, "combo.warp-pad.disabled");
+            lang.send(player, "feature-off");
             return;
         }
         String action = args.length > 1 ? args[1].toLowerCase(Locale.ROOT) : "list";

@@ -133,8 +133,33 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
     private StructureWeb web;
     private MachineDashboard dashboard;
 
-    /** The managers on the Core hub require Core 0.64.0. */
-    static final String MIN_CORE_VERSION = "0.64.0";
+    /** Placeholders through api.placeholders() require Core 0.65.0. */
+    static final String MIN_CORE_VERSION = "0.65.0";
+
+    /** Every feature switch as read in loadSettings; null (= all on) until then and in tests that mock the plugin. */
+    private volatile Feature.Switches switches;
+    /** The switches online players last got their command list for (null before the first registration). */
+    private Feature.Switches commandSwitches;
+
+    /** Whether a feature (and blocks.enabled) is on; static so managers holding a mocked plugin read the real field. */
+    static boolean enabled(BlockIntegrations plugin, Feature feature) {
+        Feature.Switches current = plugin == null ? null : plugin.switches;
+        return current == null || current.on(feature);
+    }
+
+    boolean on(Feature feature) { return enabled(this, feature); }
+
+    /** True (and the shared message sent) when the feature is off; names the needed switch when only that one is off. */
+    boolean off(CommandSender sender, Feature feature) {
+        if (on(feature)) return false;
+        Feature.Switches current = switches;
+        Feature missing = null;
+        if (current != null && !current.off().contains(feature))
+            missing = feature != Feature.BLOCKS && current.off().contains(Feature.BLOCKS) ? Feature.BLOCKS : feature.needs;
+        if (missing != null) lang.send(sender, "feature-needs", "switch", missing.path);
+        else lang.send(sender, "feature-off");
+        return true;
+    }
 
     @Override
     public void onEnable() {
@@ -149,14 +174,16 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
         if (!core.compat().server().hasClass("org.bukkit.inventory.view.AnvilView"))
             getLogger().info("Native anvil enchantment bypass unavailable; enchantment upgrades require a valid vanilla result.");
         saveDefaultConfig();
-        getConfig().options().copyDefaults(true);
-        saveConfig();
+        // Missing keys are added with their comments by Core's config editor (registered below); a config from before
+        // 2.44.0 with combos.enabled: false keeps the heal block, harvester, warp pads and XP collector off.
+        if (Feature.migrateComboGate(getConfig())) saveConfig();
         sortItemLocks = new SortItemLocks(new NamespacedKey(this, "sort-locked-items"));
         sortSlotLocks = new SortSlotLocks(new NamespacedKey(this, "sort-locked-slots"));
         chestPreferences = new ChestPreferences(new NamespacedKey(this, "chest-preferences"));
         lang = core.lang().register(this);
         lang.setLanguage(getConfig().getString("language", "auto"));
-        core.registerTutorial(this);
+        // tutorial.enabled is read once: Core lists tutorials when a plugin starts
+        if (getConfig().getBoolean(Feature.TUTORIAL.path, true)) core.registerTutorial(this);
         loadSettings();
         portableBlocks = new PortableBlockData(this, lang);
         getServer().getPluginManager().registerEvents(this, this);
@@ -184,16 +211,19 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
         dashboard = new MachineDashboard(this);
         dashboard.start();
         core.gui().registerMenu(this, "blocks", lang.ref("menu.title"), Material.ANVIL,
-                this::mayOpenGuide, this::openBlockGuideMenu, MenuCategory.BUILDING.group(),
+                p -> on(Feature.MENU) && mayOpenGuide(p), this::openBlockGuideMenu, MenuCategory.BUILDING.group(),
                 lang.ref("menu.description"));
         registerSettings();
-        core.command().register(this, lang, BlockCommands.spec(this));
+        try { registerPlaceholders(core.placeholders()); }
+        catch (RuntimeException failure) { getLogger().log(java.util.logging.Level.WARNING, "Placeholders not registered", failure); }
+        registerCommands();
         try {
             BlockConfigEditor.register(core.settings().config(), this, lang, this::reloadAll);
+            BlockConfigEditor.declareSwitches(core.settings().config(), this, lang);
         } catch (RuntimeException failure) {
             DebugMessages.high("[BlockIntegrations] Config editor registration failed: " + failure);
         }
-        registerWeb();
+        if (on(Feature.WEB)) registerWeb();
         registerAdminModule();
         comboManager.registerStorageDiagnostics();
         towerManager.registerStorageDiagnostics();
@@ -263,7 +293,7 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
         return Objects.requireNonNull(core, "Vystorm Core API is not bound");
     }
 
-    void dashboardCommand(Player player) { dashboard.open(player, 0); }
+    void dashboardCommand(Player player) { if (!off(player, Feature.DASHBOARD)) dashboard.open(player, 0); }
 
     /** Language bundle ({@code lang/<code>.yml}); {@code null} only in unit tests without a server. */
     public Lang lang() {
@@ -552,8 +582,8 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
     /** Re-reads config.yml and applies it to all managers (used by /bi reload and the settings dialogs). */
     void reloadAll() {
         reloadConfig();
-        getConfig().options().copyDefaults(true);
-        saveConfig();
+        // a pasted config from before 2.44.0 with combos.enabled: false keeps the four combos it switched off
+        if (Feature.migrateComboGate(getConfig())) saveConfig();
         if (lang != null) {
             lang.reload();
             lang.setLanguage(getConfig().getString("language", "auto"));
@@ -565,6 +595,38 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
         if (furnaceManager != null) furnaceManager.reloadSettings();
         if (workstationManager != null) workstationManager.reloadSettings();
         if (comboManager != null) comboManager.reloadSettings();
+        applySwitches();
+    }
+
+    /**
+     * After a reload: when a switch changed, online players get their command list again (the /bi tree asks the
+     * switches at every completion, so it is not registered again); the web page is registered or removed.
+     */
+    private void applySwitches() {
+        if (commandSwitches != null && !commandSwitches.equals(switches)) {
+            commandSwitches = switches;
+            try { core.command().refresh(); }
+            catch (RuntimeException failure) { DebugMessages.high("[BlockIntegrations] command lists could not be sent again: " + failure); }
+        }
+        if (commandSwitches == null) return;
+        if (on(Feature.WEB) && web == null) registerWeb();
+        else if (!on(Feature.WEB) && web != null) { web.shutdown(); web = null; }
+    }
+
+    /** Registers /blockintegrations; the subcommands of switched-off features are hidden from help and tab completion. */
+    private void registerCommands() {
+        commandSwitches = switches == null ? Feature.Switches.without() : switches;
+        core.command().register(this, lang, BlockCommands.spec(this));
+    }
+
+    /** The namespace {@code blocks}: combos, warp pads, towers and furnaces (server thread; empty while switched off). */
+    void registerPlaceholders(Vystorm.vystorm_core._advancedMethods.placeholderHandler.PlaceholderInterface registry) {
+        BlocksPlaceholders.register(registry, this, new BlocksPlaceholders.Source() {
+            @Override public boolean on(Feature feature) { return BlockIntegrations.this.on(feature); }
+            @Override public ComboManager combos() { return comboManager; }
+            @Override public TowerManager towers() { return towerManager; }
+            @Override public FurnaceManager furnaces() { return furnaceManager; }
+        }, key -> lang == null ? key : lang.ref(key));
     }
 
     static boolean normalMenuClick(org.bukkit.event.inventory.InventoryClickEvent event, Player player) {
@@ -582,11 +644,13 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
     }
 
     void menuCommand(Player player) {
+        if (off(player, Feature.MENU)) return;
         if (mayOpenGuide(player)) openBlockGuideMenu(player);
         else lang.send(player, "general.no-permission");
     }
 
     void webCommand(Player player, boolean guide) {
+        if (off(player, Feature.WEB)) return;
         openWeb(player, guide ? "guide" : "");
     }
 
@@ -616,32 +680,39 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
     }
 
     void trapsCommand(CommandSender sender) {
+        if (off(sender, Feature.TRAPS)) return;
         lang.lines(sender, "trap.guide").forEach(line -> core.compat().platform().sendMessage(sender, line));
     }
 
     void myCombosCommand(Player player) {
+        if (off(player, Feature.BLOCKS)) return;
         if (comboManager != null) comboManager.sendOwnCombos(player);
     }
 
     void combosCommand(CommandSender sender) {
+        if (off(sender, Feature.BLOCKS)) return;
         if (comboManager != null) comboManager.sendGuide(sender);
     }
 
     /** {@code args} as the old executor saw them: {@code towers [list [player]|near|remove]}. */
     void towersCommand(CommandSender sender, String[] args) {
+        if (off(sender, Feature.TOWERS)) return;
         if (towerManager != null && !towerManager.towerCommand(sender, args)) towerManager.sendTowerGuide(sender);
     }
 
     /** {@code args}: {@code warppads [list|share PLAYER|unshare PLAYER]}. */
     void warpPadsCommand(Player player, String[] args) {
+        if (off(player, Feature.WARP_PADS)) return;
         if (comboManager != null) comboManager.warpCommand(player, args);
     }
 
     void workstationsCommand(CommandSender sender) {
+        if (!on(Feature.BREWING) && off(sender, Feature.CAMPFIRES)) return;
         lang.lines(sender, "workstation.guide").forEach(line -> core.compat().platform().sendMessage(sender, line));
     }
 
     void furnacesCommand(CommandSender sender) {
+        if (off(sender, Feature.FURNACES)) return;
         if (furnaceManager != null) furnaceManager.sendGuide(sender);
     }
 
@@ -652,6 +723,7 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
 
 
     private void loadSettings() {
+        switches = Feature.Switches.read(getConfig());
         sortRadius = boundedRadius(getConfig().getInt("radius", 10));
         cooldownTicks = Math.max(0L, getConfig().getLong("cooldown-ticks", 20L));
         includeTrappedChests = getConfig().getBoolean("include-trapped-chests", true);
@@ -698,17 +770,17 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
             boolean firstAirborneMove = airbornePlayers.add(playerId);
             if (firstAirborneMove && event.getTo() != null
                     && event.getTo().getY() > event.getFrom().getY() + 0.01D) {
-                tryLaunch(player, event.getFrom());
+                if (on(Feature.LAUNCHER)) tryLaunch(player, event.getFrom());
             }
             return;
         }
 
-        tryGroundBooster(event);
+        if (on(Feature.BOOSTER)) tryGroundBooster(event);
 
         // Walking over the plate does not count. A player must have been in the air.
         if (!airbornePlayers.remove(playerId)) return;
         if (!player.hasPermission("blockintegrations.use")) return;
-        if (tryFloatLaunch(player)) return;
+        if (on(Feature.FLOAT_LIFT) && tryFloatLaunch(player)) return;
 
         Block pressurePlate = findPressurePlateAtFeet(player.getLocation(), Material.LIGHT_WEIGHTED_PRESSURE_PLATE);
         boolean vacuum = false;
@@ -718,6 +790,7 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
         }
         if (pressurePlate == null) return;
 
+        if (!on(vacuum ? Feature.VACUUM : Feature.SORTER)) return;
         Block copperBlock = pressurePlate.getRelative(0, -1, 0);
         if (!CopperMaterials.isFullBuildingBlock(copperBlock.getType())) return;
 
@@ -830,7 +903,7 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
 
     /* Stage PROTECT, registered in onEnable */
     public void onBlockFade(BlockFadeEvent event) {
-        if (protectBoosterIce && event.getBlock().getType() == Material.ICE
+        if (protectBoosterIce && on(Feature.BOOSTER) && event.getBlock().getType() == Material.ICE
                 && event.getBlock().getRelative(0, -1, 0).getType() == Material.REDSTONE_BLOCK) {
             event.setCancelled(true);
         }
@@ -875,17 +948,24 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
         return null;
     }
 
+    /** The player's chest order, or none while sort-locks.enabled is off. */
+    private ChestPreferences.Preferences chestOrder(Player player) {
+        return on(Feature.SORT_LOCKS) ? chestPreferences.read(player.getPersistentDataContainer()) : new ChestPreferences.Preferences(List.of(), null);
+    }
+
     private void sortInventory(Player player, Block copperBlock, int effectiveRadius) {
         PlayerInventory playerInventory = player.getInventory();
-        Set<Integer> lockedSlots = sortSlotLocks.read(player.getPersistentDataContainer());
-        Set<Material> lockedItems = sortItemLocks.read(player.getPersistentDataContainer());
+        // sort-locks.enabled off: locks and chest order stay stored but are not applied
+        boolean locks = on(Feature.SORT_LOCKS);
+        Set<Integer> lockedSlots = locks ? sortSlotLocks.read(player.getPersistentDataContainer()) : Set.of();
+        Set<Material> lockedItems = locks ? sortItemLocks.read(player.getPersistentDataContainer()) : Set.of();
         if (!hasItemsToSort(playerInventory, lockedSlots, lockedItems)) {
             sendNothingMessage(player);
             return;
         }
 
         List<ChestTarget> targets = orderChestTargets(findNearbyChests(player, copperBlock, effectiveRadius),
-                chestPreferences.read(player.getPersistentDataContainer()));
+                chestOrder(player));
         if (targets.isEmpty()) {
             sendNothingMessage(player);
             return;
@@ -945,7 +1025,7 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
         }
 
         List<ChestTarget> targets = orderChestTargets(findNearbyChests(player, copperBlock, effectiveRadius),
-                chestPreferences.read(player.getPersistentDataContainer()));
+                chestOrder(player));
         boolean usePlayerInventory = targets.isEmpty();
         int movedItems = 0;
         Set<String> usedChests = new HashSet<>();
@@ -1028,6 +1108,7 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
     }
 
     void sortLockCommand(Player player, String[] args) {
+        if (off(player, Feature.SORT_LOCKS)) return;
         if (args.length == 2 && args[1].equalsIgnoreCase("item")) {
             ItemStack held = player.getInventory().getItemInMainHand();
             if (isEmpty(held)) {
@@ -1093,6 +1174,7 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
     }
 
     void chestPriorityCommand(Player player, String[] args) {
+        if (off(player, Feature.SORT_LOCKS)) return;
         if (args.length == 2 && args[1].equalsIgnoreCase("list")) {
             ChestPreferences.Preferences prefs = chestPreferences.read(player.getPersistentDataContainer());
             String preferred = prefs.preferred().stream().map(ChestPreferences.Position::key)

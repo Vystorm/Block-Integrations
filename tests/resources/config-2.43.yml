@@ -1,0 +1,340 @@
+# Language of player messages and menus: auto = follow Vystorm Core (each player's
+# client language, or Core's fixed language.default); or a fixed code such as en or de.
+# Texts live in plugins/BlockIntegrations/lang/<code>.yml.
+language: auto
+
+# Inventory sorter (light weighted / gold pressure plate on a full copper block):
+# spherical search radius around the copper block (maximum 32).
+radius: 10
+
+# Prevents repeated triggering when hopping on the plate quickly.
+cooldown-ticks: 20
+
+# Also use trapped chests, not only normal chests.
+include-trapped-chests: true
+
+# The message texts themselves are in lang/<code>.yml (sorter.* and vacuum.*).
+messages:
+  show-when-nothing-moved: true
+
+# Heavy weighted (iron) pressure plate on a full copper block:
+# pulls in dropped items. If chests are nearby, only chests that already contain
+# a matching item are filled. Without any chest, main inventory slots 9-35 are
+# used; hotbar, armour and off hand stay untouched.
+vacuum:
+  radius: 20
+  cooldown-ticks: 20
+  messages:
+    show-when-nothing-moved: true
+
+# Slime block on a redstone block (directional launcher):
+# optional: horizontal 3x3 slime field with redstone only under the centre.
+# All nine blocks share power and cooldown of the centre; the same costs apply.
+# 1.70 gives about 15 blocks of distance when looking horizontally.
+launcher:
+  velocity: 1.70
+  minimum-upward-velocity: 0.65
+  cooldown-ticks: 20
+  play-sound: true
+
+# Ice, packed ice or blue ice directly on a redstone block (sprint booster):
+# accelerates sprinting players horizontally in their actual running direction.
+booster:
+  velocity: 1.15
+  cooldown-ticks: 10
+  play-sound: false
+  prevent-ice-melting: true
+
+# White terracotta on any full copper building block on redstone (float lift):
+# touching the terracotta after a jump launches the player straight up and then
+# gives Levitation. The amplifier is zero-based as usual in Bukkit: 0 = Levitation I.
+float-launcher:
+  velocity: 1.25
+  levitation-duration-ticks: 100
+  levitation-amplifier: 0
+  cooldown-ticks: 60
+  play-sound: true
+
+# Permanent upgrades for all six block combos. The menu opens with sneak +
+# right-click on the pressure plate, slime block, ice block, white terracotta or
+# honey block. Upgrades are paid with real XP points.
+combos:
+  enabled: true
+  upgrades:
+    maximum-level: 10
+    range-costs: [50, 75, 110, 150, 200, 275, 375, 500, 650, 850]
+    power-costs: [75, 110, 160, 225, 300, 400, 525, 675, 850, 1050]
+    duration-costs: [60, 90, 130, 180, 250, 335, 440, 570, 725, 900]
+    cooldown-costs: [50, 80, 120, 170, 230, 310, 410, 530, 675, 850]
+  scaling:
+    range-blocks-per-level: 1
+    # Float lift: +0.5 seconds of Levitation per level; the base stays 5 seconds.
+    duration-ticks-per-level: 10
+    # Each level shortens the base cooldown by 5 %.
+    cooldown-reduction-per-level: 0.05
+    minimum-cooldown-ticks: 5
+    power-per-level:
+      launcher: 0.08
+      booster: 0.05
+      float-launcher: 0.08
+      # Health points per pulse; 2 health points = one heart.
+      heal: 0.50
+
+  # Honey block directly on a redstone block (heal block). Heals players in its aura.
+  # Healing pauses for the given time right after a player takes damage.
+  # Base: 0.5 hearts every 3 seconds, at the earliest 5 seconds after damage.
+  heal:
+    amount: 1.0
+    aura-radius: 3
+    pulse-cooldown-ticks: 60
+    damage-cooldown-ticks: 100
+    minimum-distance: 10
+    task-period-ticks: 5
+    play-particles: true
+    play-sound: true
+
+  # Composter directly on a hay bale (harvester). Harvests ripe crops (wheat, carrots, potatoes,
+  # beetroot, nether wart, cocoa pods), stem-grown melons/pumpkins and upper sugar cane/bamboo within the radius,
+  # from one block above to two below the composter. Crops are replanted with a seed from the harvest
+  # or from the container; the yield goes into a chest/barrel touching the composter or hay bale
+  # (otherwise it drops on top). At most 64 blocks per pass; never outside the composter's city.
+  # RANGE adds blocks per level, COOLDOWN shortens the time between passes.
+  harvester:
+    radius: 4
+    cooldown-ticks: 200
+    play-particles: true
+    # Skip passes while the touching container has no free slot, so ripe crops wait on the field
+    # instead of piling up as dropped items. Without a container the yield still drops on top.
+    pause-when-full: true
+
+  # Lodestone directly on crying obsidian (warp pad). Stand on it and sneak: a menu lists your other
+  # pads (and pads shared with you) in the same world within reach; click one to teleport on top of it.
+  # Share all your pads with a player through Core's player menu or /bi warppads share NAME.
+  # RANGE adds distance-per-level blocks of reach, COOLDOWN shortens the wait between two warps.
+  warp-pad:
+    enabled: true
+    base-distance: 256
+    distance-per-level: 128
+    cooldown-ticks: 100
+    # Warp pads per player (0 = unlimited; admins are exempt).
+    max-per-player: 10
+    play-particles: true
+
+  # Enchanting table directly on a lapis block (XP collector). Pulls experience orbs within the radius
+  # into the block until it is full; the owner takes the XP out in its menu (sneak + right-click).
+  # Orbs close to a player stay for that player, orbs in another city stay where they are.
+  # Breaking the table spills the stored XP. RANGE adds blocks, POWER adds capacity.
+  xp-collector:
+    enabled: true
+    radius: 6
+    # Stored XP points at level 0 and per capacity level (1500 points are roughly 30 levels from zero).
+    capacity: 1500
+    capacity-per-level: 1500
+    # Orbs within this many blocks of a player are left for the player (0 = collect everything).
+    player-safe-radius: 3.0
+    play-particles: true
+
+# Automatic attack towers. The head is always the attack point and the block
+# that opens the upgrade menu with sneak + right-click.
+# Towers only attack hostile mobs in already loaded chunks.
+towers:
+  # Cosmetic shot trails and hit effects, rendered through Vystorm Core.
+  visual-effects: true
+  enabled: true
+  attack-task-period-ticks: 2
+  # Stop starting attacks when every loot slot is occupied at its item stack limit.
+  # Projectiles already in flight can still create drops that overflow the chest.
+  pause-when-loot-full: true
+  # Towers belong to their builder; inside a town (Vystorm Core region of kind "city")
+  # town members may use them too. Maximum towers per player (0 = unlimited; admins exempt).
+  max-per-player: 8
+  # Save batched after this delay (ticks) instead of after every kill.
+  save-delay-ticks: 100
+  experience:
+    # Kill XP only if the owner or a town member is within this radius (no AFK farms).
+    require-nearby-player: true
+    player-radius: 48.0
+    # Mobs from spawners give towers no XP.
+    spawner-mobs: false
+  targeting:
+    # Only shoot with a clear line of sight (not through walls).
+    line-of-sight: true
+    # Do not attack named mobs (pets, bosses, event mobs).
+    ignore-named-mobs: true
+
+  # Every tower has a virtual loot chest. Mob drops and kill XP go to the tower that
+  # last hit the target within this time window. Drops that no longer fit are destroyed.
+  loot:
+    inventory-rows: 6
+    kill-credit-duration-ticks: 200
+    # Also collects drops that mob plugins spawn directly at the death position.
+    capture-nearby-plugin-drops: true
+    nearby-plugin-drop-radius: 2.0
+    # Breaking a tower drops its stored items and XP instead of deleting them.
+    drop-contents-when-broken: true
+
+  # Four independent upgrade paths, similar to a tower defense game. Costs are
+  # real XP points.
+  upgrades:
+    maximum-level: 10
+    damage-costs: [100, 175, 275, 400, 550, 750, 1000, 1300, 1650, 2050]
+    range-costs: [75, 125, 200, 300, 425, 575, 775, 1000, 1300, 1650]
+    speed-costs: [125, 200, 300, 425, 600, 825, 1100, 1450, 1850, 2300]
+    # Looting has at most three levels, independent of the combat paths.
+    # Each suitable stackable drop gets 0 up to <level> random bonus items.
+    looting-costs: [500, 1250, 2500]
+
+  types:
+    # Cheap starter tower without upgrades:
+    # zombie head -> crafting table -> cobblestone; four oak planks in a cross.
+    zombie-starter:
+      base-damage: 2.0
+      damage-per-level: 0.0
+      base-range: 8.0
+      range-per-level: 0.0
+      base-cooldown-ticks: 30
+      speed-multiplier-per-level: 1.0
+      area-radius: 2.0
+      fire-ticks: 0
+
+    # Cheap starter tower without upgrades:
+    # player head -> barrel -> stone; four cobblestone blocks in a cross.
+    player-starter:
+      base-damage: 3.0
+      damage-per-level: 0.0
+      base-range: 9.0
+      range-per-level: 0.0
+      base-cooldown-ticks: 26
+      speed-multiplier-per-level: 1.0
+      area-radius: 2.0
+      fire-ticks: 0
+
+    # Skeleton skull -> fletching table -> any full copper building block;
+    # four stone bricks in a cross at foundation height. Oxidation, wax and shape
+    # of the full copper block do not matter. Precise single-target damage.
+    archer:
+      base-damage: 4.0
+      damage-per-level: 2.0
+      base-range: 14.0
+      range-per-level: 1.5
+      base-cooldown-ticks: 20
+      speed-multiplier-per-level: 0.86
+      area-radius: 3.0
+      fire-ticks: 0
+
+    # Creeper head -> dispenser -> blast furnace; four obsidian blocks in a cross
+    # at foundation height. Slow area damage without block damage.
+    cannon:
+      base-damage: 8.0
+      damage-per-level: 3.0
+      base-range: 11.0
+      range-per-level: 1.25
+      base-cooldown-ticks: 40
+      speed-multiplier-per-level: 0.86
+      area-radius: 3.0
+      fire-ticks: 0
+
+    # Wither skeleton skull -> magma block -> nether bricks; four polished
+    # blackstone bricks in a cross at foundation height. Sets the target on fire.
+    flame:
+      base-damage: 5.0
+      damage-per-level: 1.5
+      base-range: 10.0
+      range-per-level: 1.5
+      base-cooldown-ticks: 24
+      speed-multiplier-per-level: 0.86
+      area-radius: 3.0
+      fire-ticks: 60
+
+    # Piglin head -> smithing table -> gold block; four polished blackstone
+    # bricks in a cross. Very fast precision tower.
+    piglin:
+      base-damage: 6.0
+      damage-per-level: 2.25
+      base-range: 12.0
+      range-per-level: 1.25
+      base-cooldown-ticks: 16
+      speed-multiplier-per-level: 0.90
+      area-radius: 3.0
+      fire-ticks: 0
+
+    # Dragon head -> respawn anchor -> purpur block; four end stone bricks in a
+    # cross. Expensive, slow area tower with long range.
+    dragon:
+      base-damage: 12.0
+      damage-per-level: 4.0
+      base-range: 16.0
+      range-per-level: 2.0
+      base-cooldown-ticks: 50
+      speed-multiplier-per-level: 0.88
+      area-radius: 4.5
+      fire-ticks: 0
+
+# Upgradable furnaces with a fixed owner: furnace, blast furnace and smoker.
+# The owner is set when the furnace is placed; existing furnaces without an owner
+# are claimed with the first sneak + right-click.
+# Optional Vystorm Skills integration: hopper-fed furnaces give the owner smelting
+# or cooking skill XP (per smelted item). If the owner is offline, the XP is stored
+# and delivered on the next login. Without Vystorm Skills this part does nothing.
+furnaces:
+  enabled: true
+  upgrades:
+    maximum-level: 10
+    speed-costs: [100, 175, 275, 400, 550, 750, 1000, 1300, 1650, 2050]
+    fuel-costs: [75, 125, 200, 300, 425, 575, 775, 1000, 1300, 1650]
+    yield-costs: [150, 250, 375, 525, 700, 900, 1150, 1450, 1800, 2200]
+    # Deliberately more expensive: each level smelts one more input item in the
+    # same smelting cycle, so level 10 processes up to 11 items.
+    multismelt-costs: [300, 500, 750, 1100, 1500, 2000, 2600, 3300, 4100, 5000]
+    # The furnace XP boost has at most five levels.
+    xp-boost-costs: [250, 600, 1100, 1800, 2700]
+  # Level 10: 2.2x smelting speed, double burn time, 25 % chance of an extra
+  # result and up to 11 items per smelting cycle. Multismelt is limited by the
+  # available input and free space in the output slot.
+  speed-multiplier-per-level: 0.12
+  fuel-efficiency-per-level: 0.10
+  bonus-yield-chance-per-level: 0.025
+  # +20 % stored vanilla furnace XP and skill XP (smelting/cooking) per level;
+  # level 5 doubles both. Also applies to all multismelt items.
+  xp-boost-per-level: 0.20
+
+# Vystorm client mod (players with the mod only; everybody else keeps chat messages and item lore).
+client:
+  # Markers over your own towers in your world (nearest 16, up to 512 blocks; withdrawable XP in the label).
+  tower-markers: true
+  # Tooltip lines for portable towers, combo blocks and upgraded furnaces in the viewer's language.
+  portable-tooltips: true
+
+# Sneak-right-click a brewing stand or campfire for XP upgrades.
+# Speed: +12% per level. Brewing fuel power: +10% per level.
+# Campfire bonus output chance: +2.5 percentage points per level (one extra item).
+workstations:
+  extra-base-xp-cost: 5000
+  strength-base-xp-cost: 10000
+  duration-base-xp-cost: 1000
+  brewing-stands: true
+  campfires: true
+  maximum-level: 10
+  # Price for level N: base-xp-cost * N * N. Creative upgrades are free.
+  base-xp-cost: 100
+
+# 3x3 obsidian-frame monster traps. Per-trap mode and 10/15s cooldown are set on the button.
+traps:
+  enabled: true
+  default-automatic: true
+  default-cooldown-seconds: 15
+  throw-power: 2.0
+  sling-power: 2.0
+  sling-lift: 1.1
+  spike-damage: 6.0
+
+anvils:
+  enabled: true
+  base-xp-cost: 100
+  unbreakable-xp-cost: 2500
+
+# Machine blueprints: in a furnace or combo menu, "Save as blueprint" remembers its upgrade levels (and a harvester's
+# profile); "Apply blueprint" on another machine of the same type buys the missing upgrades one by one at the normal
+# price. Nothing is ever lowered. Blueprints last until the server restarts.
+machine-blueprints:
+  enabled: true

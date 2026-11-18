@@ -3,6 +3,15 @@
 # Texts live in plugins/BlockIntegrations/lang/<code>.yml.
 language: auto
 
+# Every feature has an on/off switch (all on by default). They are listed in Vystorm Core's /vadmin features and apply
+# at once without a restart, except tutorial.enabled. A switched-off feature does nothing, its commands answer "This
+# feature is switched off on this server." and its placeholders are empty. Machines, their upgrade levels, stored XP
+# and loot stay saved and work again when the switch is back on.
+
+# The whole plugin. Off: no block combo, tower, trap, furnace, workstation or anvil reacts; /bi status and reload stay.
+blocks:
+  enabled: true
+
 # Inventory sorter (light weighted / gold pressure plate on a full copper block):
 # spherical search radius around the copper block (maximum 32).
 radius: 10
@@ -13,6 +22,15 @@ cooldown-ticks: 20
 # Also use trapped chests, not only normal chests.
 include-trapped-chests: true
 
+# The inventory sorter itself (light weighted pressure plate on copper). Off: jumping on the plate does nothing.
+sorter:
+  enabled: true
+
+# Sort locks and chest order (/bi sortlock, /bi chestpriority). Off: the commands are switched off and the sorter and
+# the vacuum ignore the players' locks and chest order; both stay saved.
+sort-locks:
+  enabled: true
+
 # The message texts themselves are in lang/<code>.yml (sorter.* and vacuum.*).
 messages:
   show-when-nothing-moved: true
@@ -22,6 +40,8 @@ messages:
 # a matching item are filled. Without any chest, main inventory slots 9-35 are
 # used; hotbar, armour and off hand stay untouched.
 vacuum:
+  # The item vacuum. Off: the heavy plate does nothing.
+  enabled: true
   radius: 20
   cooldown-ticks: 20
   messages:
@@ -32,6 +52,8 @@ vacuum:
 # All nine blocks share power and cooldown of the centre; the same costs apply.
 # 1.70 gives about 15 blocks of distance when looking horizontally.
 launcher:
+  # The directional launcher. Off: the slime block bounces as in vanilla.
+  enabled: true
   velocity: 1.70
   minimum-upward-velocity: 0.65
   cooldown-ticks: 20
@@ -40,6 +62,8 @@ launcher:
 # Ice, packed ice or blue ice directly on a redstone block (sprint booster):
 # accelerates sprinting players horizontally in their actual running direction.
 booster:
+  # The sprint booster. Off: no boost, and the ice may melt again.
+  enabled: true
   velocity: 1.15
   cooldown-ticks: 10
   play-sound: false
@@ -49,13 +73,16 @@ booster:
 # touching the terracotta after a jump launches the player straight up and then
 # gives Levitation. The amplifier is zero-based as usual in Bukkit: 0 = Levitation I.
 float-launcher:
+  # The float lift. Off: no launch and no Levitation.
+  enabled: true
   velocity: 1.25
   levitation-duration-ticks: 100
   levitation-amplifier: 0
   cooldown-ticks: 60
   play-sound: true
 
-# Permanent upgrades for all six block combos. The menu opens with sneak +
+# Permanent upgrades for all block combos (combos.enabled; since 2.44.0 it switches only the upgrades, every combo has
+# its own switch). Off: no upgrade menu, and bought levels have no effect but stay saved. The menu opens with sneak +
 # right-click on the pressure plate, slime block, ice block, white terracotta or
 # honey block. Upgrades are paid with real XP points.
 combos:
@@ -84,6 +111,8 @@ combos:
   # Healing pauses for the given time right after a player takes damage.
   # Base: 0.5 hearts every 3 seconds, at the earliest 5 seconds after damage.
   heal:
+    # The heal block. Off: no healing.
+    enabled: true
     amount: 1.0
     aura-radius: 3
     pulse-cooldown-ticks: 60
@@ -100,6 +129,8 @@ combos:
   # (otherwise it drops on top). At most 64 blocks per pass; never outside the composter's city.
   # RANGE adds blocks per level, COOLDOWN shortens the time between passes.
   harvester:
+    # The harvester. Off: no harvest passes; profiles stay saved.
+    enabled: true
     radius: 4
     cooldown-ticks: 200
     play-particles: true
@@ -270,7 +301,8 @@ towers:
       area-radius: 4.5
       fire-ticks: 0
 
-# Upgradable furnaces with a fixed owner: furnace, blast furnace and smoker.
+# Upgradable furnaces with a fixed owner: furnace, blast furnace and smoker. Off (furnaces.enabled): they work as
+# vanilla furnaces; upgrades and stored XP stay saved.
 # The owner is set when the furnace is placed; existing furnaces without an owner
 # are claimed with the first sneak + right-click.
 # Optional Vystorm Skills integration: hopper-fed furnaces give the owner smelting
@@ -328,6 +360,7 @@ traps:
   sling-lift: 1.1
   spike-damage: 6.0
 
+# Upgradeable anvils: cheaper use, higher enchantment caps, no wear. Off: anvils work as in vanilla; upgrades stay saved.
 anvils:
   enabled: true
   base-xp-cost: 100
@@ -337,4 +370,22 @@ anvils:
 # profile); "Apply blueprint" on another machine of the same type buys the missing upgrades one by one at the normal
 # price. Nothing is ever lowered. Blueprints last until the server restarts.
 machine-blueprints:
+  enabled: true
+
+# Dashboard (/bi dashboard): live list of your machines, alerts on state changes and groups. Off: the command and the
+# alerts are switched off; groups stay saved.
+dashboard:
+  enabled: true
+
+# The overview menu (/bi, /bi menu, Core main menu entry) with the building guides. Off: the menu is switched off;
+# the other commands keep working.
+menu:
+  enabled: true
+
+# The "Blocks & Towers" web page (/bi web; needs Core's web platform). Off: the page is removed from Core's web server.
+web:
+  enabled: true
+
+# Tutorial in the Vystorm Core main menu (/vmenu -> Tutorials). Needs a server restart to apply.
+tutorial:
   enabled: true

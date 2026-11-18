@@ -51,7 +51,7 @@ final class WorkstationManager implements Listener {
 
     void shutdown() {
         for (Player player : Bukkit.getOnlinePlayers())
-            if (plugin.core().compat().inventory().top(player.getOpenInventory()).getHolder() instanceof BrewingMenu) player.closeInventory();
+            if (plugin.core().compat().inventory().menuHolder(plugin.core().compat().inventory().top(player.getOpenInventory())) instanceof BrewingMenu) player.closeInventory();
         tasks.close();
     }
 
@@ -77,20 +77,20 @@ final class WorkstationManager implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void menuClick(org.bukkit.event.inventory.InventoryClickEvent event) {
-        if (!(plugin.core().compat().inventory().top(event.getView()).getHolder() instanceof BrewingMenu menu)) return;
+        if (!(plugin.core().compat().inventory().menuHolder(plugin.core().compat().inventory().top(event.getView())) instanceof BrewingMenu menu)) return;
         event.setCancelled(true);
         if (!(event.getWhoClicked() instanceof Player player)) return;
         int slot = event.getRawSlot();
         if (slot != BREW_USE_SLOT && slot != BREW_UPGRADE_SLOT) return;
         tasks.now(() -> {
-            if (plugin.core().compat().inventory().top(player.getOpenInventory()).getHolder() == menu)
+            if (plugin.core().compat().inventory().menuHolder(plugin.core().compat().inventory().top(player.getOpenInventory())) == menu)
                 selectBrewing(player, menu.key, menu.identity, slot);
         });
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void menuDrag(org.bukkit.event.inventory.InventoryDragEvent event) {
-        if (plugin.core().compat().inventory().top(event.getView()).getHolder() instanceof BrewingMenu) event.setCancelled(true);
+        if (plugin.core().compat().inventory().menuHolder(plugin.core().compat().inventory().top(event.getView())) instanceof BrewingMenu) event.setCancelled(true);
     }
 
     void selectBrewing(Player player, BlockKey key, String expectedIdentity, int slot) {
@@ -110,8 +110,8 @@ final class WorkstationManager implements Listener {
         for (String path : List.of("extra", "strength", "duration"))
             potionCosts.put(path, Math.clamp(plugin.getConfig().getInt("workstations." + path + "-base-xp-cost",
                     path.equals("strength") ? 10000 : path.equals("extra") ? 5000 : 1000), 1, 100000));
-        brewing = plugin.getConfig().getBoolean("workstations.brewing-stands", true);
-        campfires = plugin.getConfig().getBoolean("workstations.campfires", true);
+        brewing = BlockIntegrations.enabled(plugin, Feature.BREWING);
+        campfires = BlockIntegrations.enabled(plugin, Feature.CAMPFIRES);
         maxLevel = Math.clamp(plugin.getConfig().getInt("workstations.maximum-level", 10), 1, 10);
         baseCost = Math.clamp(plugin.getConfig().getInt("workstations.base-xp-cost", 100), 1, 100_000);
     }

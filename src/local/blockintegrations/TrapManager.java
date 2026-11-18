@@ -58,7 +58,7 @@ final class TrapManager {
     }
 
     void reloadSettings() {
-        enabled = plugin.getConfig().getBoolean("traps.enabled", true);
+        enabled = BlockIntegrations.enabled(plugin, Feature.TRAPS);
         defaultAutomatic = plugin.getConfig().getBoolean("traps.default-automatic", true);
         defaultCooldown = plugin.getConfig().getInt("traps.default-cooldown-seconds", 15) == 10 ? 10 : 15;
         power = bounded(plugin.getConfig().getDouble("traps.throw-power", 2.0), .5, 3.0, 2);

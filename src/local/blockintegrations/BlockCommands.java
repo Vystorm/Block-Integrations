@@ -30,16 +30,16 @@ final class BlockCommands {
                 .permission(USE)
                 .aliases("blockint", "bi")
                 .executes(ctx -> p.rootCommand(ctx.sender()))
-                .sub("menu", s -> s.playerOnly().executes(ctx -> p.menuCommand(ctx.player())))
-                .sub("dashboard", s -> s.playerOnly().executes(ctx -> p.dashboardCommand(ctx.player())))
-                .sub("web", s -> s.playerOnly()
+                .sub("menu", s -> gate(s, p, Feature.MENU).playerOnly().executes(ctx -> p.menuCommand(ctx.player())))
+                .sub("dashboard", s -> gate(s, p, Feature.DASHBOARD).playerOnly().executes(ctx -> p.dashboardCommand(ctx.player())))
+                .sub("web", s -> gate(s, p, Feature.WEB).playerOnly()
                         .arg(Arg.word("page").optional().suggests((ctx, prefix) -> List.of(ctx.valueName("guide"))))
                         .executes(ctx -> p.webCommand(ctx.player(), ctx.keyword(ctx.get("page"), "guide") != null)))
                 .sub("status", s -> s.permission(ADMIN).executes(ctx -> p.statusCommand(ctx.sender())))
-                .sub("combos", s -> s.permission(COMBOS).executes(ctx -> p.combosCommand(ctx.sender()))
+                .sub("combos", s -> gate(s, p, Feature.BLOCKS).permission(COMBOS).executes(ctx -> p.combosCommand(ctx.sender()))
                         .sub("mine", t -> t.playerOnly().executes(ctx -> p.myCombosCommand(ctx.player()))))
-                .sub("traps", s -> s.permission(TrapManager.PERMISSION).executes(ctx -> p.trapsCommand(ctx.sender())))
-                .sub("towers", s -> s.permission(TOWERS)
+                .sub("traps", s -> gate(s, p, Feature.TRAPS).permission(TrapManager.PERMISSION).executes(ctx -> p.trapsCommand(ctx.sender())))
+                .sub("towers", s -> gate(s, p, Feature.TOWERS).permission(TOWERS)
                         .executes(ctx -> p.towersCommand(ctx.sender(), args("towers")))
                         .sub("list", t -> t.arg(Arg.playerName("player").optional().suggests((ctx, prefix) ->
                                         ctx.sender().hasPermission(ADMIN) ? onlinePlayers() : List.of()))
@@ -47,16 +47,16 @@ final class BlockCommands {
                         .sub("near", t -> t.playerOnly().executes(ctx -> p.towersCommand(ctx.sender(), args("towers", "near"))))
                         .sub("remove", t -> t.permission(ADMIN).playerOnly()
                                 .executes(ctx -> p.towersCommand(ctx.sender(), args("towers", "remove")))))
-                .sub("furnaces", s -> s.permission(FURNACES).executes(ctx -> p.furnacesCommand(ctx.sender())))
-                .sub("workstations", s -> s.permission(WORKSTATIONS).executes(ctx -> p.workstationsCommand(ctx.sender())))
-                .sub("warppads", s -> s.permission(ComboManager.WARP_PERMISSION).playerOnly()
+                .sub("furnaces", s -> gate(s, p, Feature.FURNACES).permission(FURNACES).executes(ctx -> p.furnacesCommand(ctx.sender())))
+                .sub("workstations", s -> (p == null ? s : s.visibleWhen(() -> BlockIntegrations.enabled(p, Feature.BREWING) || BlockIntegrations.enabled(p, Feature.CAMPFIRES))).permission(WORKSTATIONS).executes(ctx -> p.workstationsCommand(ctx.sender())))
+                .sub("warppads", s -> gate(s, p, Feature.WARP_PADS).permission(ComboManager.WARP_PERMISSION).playerOnly()
                         .executes(ctx -> p.warpPadsCommand(ctx.player(), args("warppads")))
                         .sub("list", t -> t.executes(ctx -> p.warpPadsCommand(ctx.player(), args("warppads", "list"))))
                         .sub("share", t -> t.arg(Arg.playerName("player"))
                                 .executes(ctx -> p.warpPadsCommand(ctx.player(), args("warppads", "share", ctx.get("player")))))
                         .sub("unshare", t -> t.arg(Arg.playerName("player"))
                                 .executes(ctx -> p.warpPadsCommand(ctx.player(), args("warppads", "unshare", ctx.get("player"))))))
-                .sub("sortlock", s -> s.playerOnly()
+                .sub("sortlock", s -> gate(s, p, Feature.SORT_LOCKS).playerOnly()
                         .arg(Arg.word("slot").optional().suggests((ctx, prefix) -> slots()))
                         .executes(ctx -> p.sortLockCommand(ctx.player(), args("sortlock", ctx.get("slot"))))
                         .sub("list", t -> t.executes(ctx -> p.sortLockCommand(ctx.player(), args("sortlock", "list"))))
@@ -64,7 +64,7 @@ final class BlockCommands {
                         .sub("item", t -> t.executes(ctx -> p.sortLockCommand(ctx.player(), args("sortlock", "item"))))
                         .sub("items", t -> t.executes(ctx -> p.sortLockCommand(ctx.player(), args("sortlock", "items"))))
                         .sub("clearitems", t -> t.executes(ctx -> p.sortLockCommand(ctx.player(), args("sortlock", "clearitems")))))
-                .sub("chestpriority", s -> s.playerOnly()
+                .sub("chestpriority", s -> gate(s, p, Feature.SORT_LOCKS).playerOnly()
                         .executes(ctx -> p.chestPriorityCommand(ctx.player(), args("chestpriority")))
                         .sub("add", t -> chest(t, p, "add"))
                         .sub("overflow", t -> chest(t, p, "overflow"))
@@ -73,6 +73,14 @@ final class BlockCommands {
                         .sub("clear", t -> chest(t, p, "clear")))
                 .sub("reload", s -> s.permission(ADMIN).executes(ctx -> p.reloadCommand(ctx.sender())))
                 .build();
+    }
+
+    /**
+     * Lists a subcommand in help and tab completion only while its switch (and blocks.enabled) is on, asked at every
+     * completion so a switch applies at once; while off it still answers the off message.
+     */
+    static CommandSpec.Builder gate(CommandSpec.Builder sub, BlockIntegrations p, Feature feature) {
+        return p == null ? sub : sub.visibleWhen(() -> BlockIntegrations.enabled(p, feature));
     }
 
     private static void chest(CommandSpec.Builder node, BlockIntegrations p, String action) {

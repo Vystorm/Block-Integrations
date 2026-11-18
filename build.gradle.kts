@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "local.blockintegrations"
-version = "2.43.0-26.2"
+version = "2.44.0-26.2"
 
 val vystormCoreJar = providers.gradleProperty("vystormCoreJar")
     .orElse("libs/Vystorm_Core.jar")
@@ -74,7 +74,7 @@ tasks.register<Jar>("integrationJar") {
 
 tasks.compileJava {
     doFirst {
-        require(file(vystormCoreJar.get()).isFile) { "Vystorm Core jar (0.64.0+) missing: put it at libs/Vystorm_Core.jar or pass -PvystormCoreJar=/path/to/Vystorm_Core.jar" }
+        require(file(vystormCoreJar.get()).isFile) { "Vystorm Core jar (0.65.0+) missing: put it at libs/Vystorm_Core.jar or pass -PvystormCoreJar=/path/to/Vystorm_Core.jar" }
     }
 }
 

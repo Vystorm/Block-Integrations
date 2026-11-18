@@ -1,3 +1,19 @@
+## 2.44.0-26.2 — 2026-11-18
+
+- Requires Vystorm Core 0.65.0 or newer. Update Core before you update this plugin.
+- Every feature can now be switched on and off in `config.yml`. All switches are on by default, so a server that updates keeps working as before; the new keys are added to your existing `config.yml` with their comments. Each switch is listed in Core's `/vadmin features` with a one-line description in seven languages and applies at once, without a restart (only `tutorial.enabled` needs one).
+  - The whole plugin: `blocks.enabled`. Off: no combo, tower, trap, furnace, workstation or anvil reacts; `/bi status` and `/bi reload` still work.
+  - Combos, each on its own: `sorter.enabled`, `sort-locks.enabled` (off: locks and chest order stay saved but are not applied), `vacuum.enabled`, `launcher.enabled`, `booster.enabled`, `float-launcher.enabled`, `combos.heal.enabled`, `combos.harvester.enabled`.
+  - `combos.enabled` now switches only the combo upgrades (menus and the effect of bought levels; levels stay saved). Before, it also switched off the heal block, the harvester, warp pads and the XP collector. A config from 2.43.0 or older with `combos.enabled: false` gets those four switched off once when the server starts, so nothing that was off turns on.
+  - Around the machines: `dashboard.enabled`, `menu.enabled` (the overview menu), `web.enabled` (the web page), `tutorial.enabled` (needs a restart).
+  - Keys that already existed keep their names and are now listed as switches too: `combos.warp-pad.enabled`, `combos.xp-collector.enabled`, `towers.visual-effects`, `workstations.brewing-stands`, `workstations.campfires`, `client.tower-markers`, `client.portable-tooltips`. `include-trapped-chests` is a sorter option and no longer shows as a feature row.
+- A switched-off feature answers one shared message, "This feature is switched off on this server.", its subcommands are hidden from help and tab completion and its menu entries disappear. A feature that needs another switch names it.
+- Tab completion and help follow a switch at once, without registering the command again.
+- New keys are now added to an existing `config.yml` by Vystorm Core with their comments (before, the plugin added the values without comments).
+- Placeholders: the plugin registers its values with Vystorm Core under the namespace `blocks`: combos, warp pads (owned, limit, shared), towers and furnaces of the player, and the totals on the server. Examples: `%vystorm_blocks_towers_owned%` (the player's attack towers) and `{blocks:combos_total}` (all combos on the server). `/vadmin placeholders blocks` lists them. A value of a switched-off feature is empty.
+- Fixed: the brewing stand and anvil menus recognise their own menu through Core's `menuHolder`, without asking the inventory holder of other plugins' inventories.
+- README: seven languages instead of three.
+
 ## 2.43.0-26.2 — 2026-11-17
 
 - Requires Vystorm Core 0.64.0 or newer. Update Core before you update this plugin.

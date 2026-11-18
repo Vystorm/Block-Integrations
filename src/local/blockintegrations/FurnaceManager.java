@@ -447,7 +447,7 @@ final class FurnaceManager implements Listener {
                     "next", next, "cost", cost),
                     (p, response) -> upgradeFurnace(p, key, upgrade, shown, cost)));
         }
-        if (plugin.getConfig().getBoolean("machine-blueprints.enabled", true) && player.hasPermission("blockintegrations.furnaces.upgrade")) {
+        if (BlockIntegrations.enabled(plugin, Feature.BLUEPRINTS) && player.hasPermission("blockintegrations.furnaces.upgrade")) {
             EnumMap<FurnaceUpgrade, Integer> mine = blueprintLevels(furnace);
             buttons.add(new DialogButton(lang.component(player, "blueprint.save"), lang.component(player, "blueprint.save-hover"),
                     (p, response) -> { blueprints.put(p.getUniqueId(), mine); lang.send(p, "blueprint.saved"); }));
@@ -612,7 +612,7 @@ final class FurnaceManager implements Listener {
 
     private void loadSettings() {
         FileConfiguration config = plugin.getConfig();
-        enabled = config.getBoolean("furnaces.enabled", true);
+        enabled = BlockIntegrations.enabled(plugin, Feature.FURNACES);
         maximumLevel = Math.max(1, Math.min(10,
                 config.getInt("furnaces.upgrades.maximum-level", 10)));
         xpBoostPerLevel = bounded(config.getDouble(

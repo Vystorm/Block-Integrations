@@ -74,7 +74,7 @@ final class AnvilManager implements Listener {
         }
     }
     void reloadSettings() {
-        enabled = plugin.getConfig().getBoolean("anvils.enabled", true);
+        enabled = BlockIntegrations.enabled(plugin, Feature.ANVILS);
         baseCost = Math.clamp(plugin.getConfig().getInt("anvils.base-xp-cost", 100), 1, 100000);
         durabilityCost = Math.clamp(plugin.getConfig().getInt("anvils.unbreakable-xp-cost", 2500), 1, 1000000);
     }
@@ -83,7 +83,7 @@ final class AnvilManager implements Listener {
         return store.saveChecked(new State(data));
     }
     void shutdown() {
-        for (Player player : Bukkit.getOnlinePlayers()) if (plugin.core().compat().inventory().top(player.getOpenInventory()).getHolder() instanceof Menu) player.closeInventory();
+        for (Player player : Bukkit.getOnlinePlayers()) if (plugin.core().compat().inventory().menuHolder(plugin.core().compat().inventory().top(player.getOpenInventory())) instanceof Menu) player.closeInventory();
         tasks.close(); prepared.clear(); protectedUses.clear(); save();
     }
     private Block loaded(BlockKey key) {
@@ -123,7 +123,7 @@ final class AnvilManager implements Listener {
     }
     @EventHandler(priority = EventPriority.HIGHEST)
     public void menuClick(InventoryClickEvent event) {
-        if (!(plugin.core().compat().inventory().top(event.getView()).getHolder() instanceof Menu menu)) return;
+        if (!(plugin.core().compat().inventory().menuHolder(plugin.core().compat().inventory().top(event.getView())) instanceof Menu menu)) return;
         event.setCancelled(true);
         if (!(event.getWhoClicked() instanceof Player player) || !enabled || !near(player, menu.key) || loaded(menu.key) == null || !player.hasPermission(PERMISSION)) return;
         int slot = event.getRawSlot();
@@ -142,7 +142,7 @@ final class AnvilManager implements Listener {
         });
     }
     @EventHandler(priority = EventPriority.HIGHEST)
-    public void drag(InventoryDragEvent event) { if (plugin.core().compat().inventory().top(event.getView()).getHolder() instanceof Menu) event.setCancelled(true); }
+    public void drag(InventoryDragEvent event) { if (plugin.core().compat().inventory().menuHolder(plugin.core().compat().inventory().top(event.getView())) instanceof Menu) event.setCancelled(true); }
 
     private void upgrades(Player player, BlockKey key, Anvil anvil) {
         List<DialogBody> body = new ArrayList<>(); List<DialogButton> buttons = new ArrayList<>();

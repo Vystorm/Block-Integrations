@@ -304,6 +304,7 @@ final class MachineDashboard {
         previous.computeIfAbsent(p.getUniqueId(), id -> new HashMap<>()).remove(machine.id());
     }
     void poll() {
+        if (!BlockIntegrations.enabled(plugin, Feature.DASHBOARD)) return; // dashboard.enabled off: no alerts
         Set<UUID> online = new HashSet<>(); long now = System.currentTimeMillis();
         for (Player p : Bukkit.getOnlinePlayers()) {
             online.add(p.getUniqueId());
