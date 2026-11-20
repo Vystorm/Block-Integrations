@@ -33,7 +33,9 @@ guide:
     tooltip: "Radien, Launcher, Kombos, Türme und Öfen (Admin)"
 
 status:
-  line: "<green>BlockIntegrations <gray>- Türme: <white>{towers} <gray>| Angriffe: <white>{attacks} <gray>| Zyklen: <white>{cycles} <gray>| Turm-Max: <white>{tower_max} <gray>| Ofen-Max: <white>{furnace_max} <gray>| Kombos: <white>{combos} <gray>| Kombo-Max: <white>{combo_max} <gray>| Sortierer/Vakuum/Launcher/Booster/Float-Lift/Heilblock/Öfen aktiv"
+  line: "<green>BlockIntegrations <gray>- Türme: <white>{towers} <gray>| Angriffe: <white>{attacks} <gray>| Zyklen: <white>{cycles} <gray>| Turm-Max: <white>{tower_max} <gray>| Ofen-Max: <white>{furnace_max} <gray>| Kombos: <white>{combos} <gray>| Kombo-Max: <white>{combo_max}"
+  switches-on: "<gray>Alle Funktionen sind eingeschaltet."
+  switches-off: "<gray>Ausgeschaltet: <white>{features}"
   next: "<gray>Weiter: "
   furnaces: "<gray>Aufgewertete Öfen auf dem Server: <white>{furnaces}"
   towers-button: "Türme"

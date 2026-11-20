@@ -28,9 +28,9 @@ guide:
     label: ⚙ Paramètres du serveur
     tooltip: Radis, lanceurs, combos, tours et fours (admin)
 status:
-  line: '<green>BlockIntegrations <gray>- Tours : <white>{towers} <gray>Attaques : <white>{attacks} <gray>Cycles: <white>{cycles}
-    <gray>Tour max: <white>{tower_max} <gray>Foyer max.: <white>{furnace_max} <gray>Combos : <white>{combos} <gray>Combo max.
-    <white>{combo_max} <gray>Sorter/vacuum/launcher/booster/lifting à flot/bloc sanitaire/fournaises actives'
+  line: "<green>BlockIntegrations <gray>- Tours : <white>{towers} <gray>| Attaques : <white>{attacks} <gray>| Cycles : <white>{cycles} <gray>| Tour max : <white>{tower_max} <gray>| Four max : <white>{furnace_max} <gray>| Combos : <white>{combos} <gray>| Combo max : <white>{combo_max}"
+  switches-on: "<gray>Toutes les fonctions sont activées."
+  switches-off: "<gray>Désactivé : <white>{features}"
   next: '<gray>Suivant : '
   furnaces: '<gray>Fours améliorés sur le serveur : <white>{furnaces}'
   towers-button: Tours

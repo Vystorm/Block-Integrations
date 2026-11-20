@@ -678,6 +678,12 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
                 "furnace_max", furnaceManager == null ? 0 : furnaceManager.maximumLevel(),
                 "combos", comboManager == null ? 0 : comboManager.comboCount(),
                 "combo_max", comboManager == null ? 0 : comboManager.maximumLevel());
+        // Until 2.44.1 the line above ended in a fixed "Sorter/vacuum/.../furnaces active", whatever the switches said.
+        Feature.Switches current = switches;
+        java.util.Set<Feature> switchedOff = current == null ? java.util.Set.of() : current.off();
+        if (switchedOff.isEmpty()) lang.send(sender, "status.switches-on");
+        else lang.send(sender, "status.switches-off", "features", switchedOff.stream()
+                .map(feature -> lang.plain(sender, feature.label())).collect(java.util.stream.Collectors.joining(", ")));
         if (furnaceManager != null) lang.send(sender, "status.furnaces", "furnaces", furnaceManager.furnaceCount());
         if (sender instanceof Player) core.compat().platform().sendMessage(sender, lang.component(sender, "status.next")
                 .append(core.message().chat().command(lang.plain(sender, "status.towers-button"),

@@ -28,9 +28,9 @@ guide:
     label: ⚙ Настройки сервера
     tooltip: Радий, пусковые установки, комбо, башни и печи (админ)
 status:
-  line: '<green>BlockIntegrations <gray>- Башни: <white>{towers} <gray>Атаки: <white>{attacks} <gray>Циклы: <white>{cycles}
-    <gray>Башня Макс: <white>{tower_max} <gray>Пушка Макс: <white>{furnace_max} <gray>Комбо: <white>{combos} <gray>Комбо макс:
-    <white>{combo_max} <gray>Сортер/вакуум/пусковой механизм/бустер/плавучий подъемник/заживляющий блок/активные печи'
+  line: "<green>BlockIntegrations <gray>- Башни: <white>{towers} <gray>| Атаки: <white>{attacks} <gray>| Циклы: <white>{cycles} <gray>| Башня макс.: <white>{tower_max} <gray>| Печь макс.: <white>{furnace_max} <gray>| Комбо: <white>{combos} <gray>| Комбо макс.: <white>{combo_max}"
+  switches-on: "<gray>Все функции включены."
+  switches-off: "<gray>Выключено: <white>{features}"
   next: '<gray>Следующий: '
   furnaces: '<gray>Улучшенных печей на сервере: <white>{furnaces}'
   towers-button: Башни

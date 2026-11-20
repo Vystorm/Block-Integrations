@@ -34,7 +34,9 @@ guide:
     tooltip: "Radii, launchers, combos, towers and furnaces (admin)"
 
 status:
-  line: "<green>BlockIntegrations <gray>- Towers: <white>{towers} <gray>| Attacks: <white>{attacks} <gray>| Cycles: <white>{cycles} <gray>| Tower max: <white>{tower_max} <gray>| Furnace max: <white>{furnace_max} <gray>| Combos: <white>{combos} <gray>| Combo max: <white>{combo_max} <gray>| Sorter/vacuum/launcher/booster/float lift/heal block/furnaces active"
+  line: "<green>BlockIntegrations <gray>- Towers: <white>{towers} <gray>| Attacks: <white>{attacks} <gray>| Cycles: <white>{cycles} <gray>| Tower max: <white>{tower_max} <gray>| Furnace max: <white>{furnace_max} <gray>| Combos: <white>{combos} <gray>| Combo max: <white>{combo_max}"
+  switches-on: "<gray>Every feature is switched on."
+  switches-off: "<gray>Switched off: <white>{features}"
   next: "<gray>Next: "
   furnaces: "<gray>Upgraded furnaces on the server: <white>{furnaces}"
   towers-button: "Towers"

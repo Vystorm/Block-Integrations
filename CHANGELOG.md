@@ -1,3 +1,8 @@
+## 2.44.2-26.2 — 2026-11-20
+
+- Fixed: `/bi status` ended with "Sorter/vacuum/launcher/booster/float lift/heal block/furnaces active" even when some of them were switched off. The status now has a second line that names every switched-off feature ("Switched off: Sorter, Towers") or says that every feature is switched on.
+- A language file already on your server keeps its own `status.line`, so the old fixed list can still show there above the new line.
+
 ## 2.44.1-26.2 — 2026-11-20
 
 - Fixed: a `config.yml` with a YAML mistake no longer resets the settings on `/bi reload`, and the settings menu no longer saves over it. The file is left as it is, the console and the reload answer name the line and column of the mistake, and the last working settings stay active (at start: the default settings).

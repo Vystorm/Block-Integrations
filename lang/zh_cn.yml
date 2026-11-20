@@ -34,7 +34,9 @@ guide:
     tooltip: "半径、弹射器、组合、攻击塔和熔炉（管理员）"
 
 status:
-  line: "<green>BlockIntegrations <gray>- 攻击塔：<white>{towers} <gray>| 攻击：<white>{attacks} <gray>| 周期：<white>{cycles} <gray>| 塔上限：<white>{tower_max} <gray>| 熔炉上限：<white>{furnace_max} <gray>| 组合：<white>{combos} <gray>| 组合上限：<white>{combo_max} <gray>| 整理器/吸取器/弹射器/加速器/飘浮升降台/治疗方块/熔炉已启用"
+  line: "<green>BlockIntegrations <gray>- 攻击塔：<white>{towers} <gray>| 攻击：<white>{attacks} <gray>| 周期：<white>{cycles} <gray>| 塔上限：<white>{tower_max} <gray>| 熔炉上限：<white>{furnace_max} <gray>| 组合：<white>{combos} <gray>| 组合上限：<white>{combo_max}"
+  switches-on: "<gray>所有功能均已开启。"
+  switches-off: "<gray>已关闭：<white>{features}"
   next: "<gray>下一步："
   furnaces: "<gray>服务器上的升级熔炉：<white>{furnaces}"
   towers-button: "攻击塔"

@@ -28,9 +28,9 @@ guide:
     label: ⚙ Configurações do servidor
     tooltip: Radii, lançadores, combos, torres e fornos
 status:
-  line: '<green>BlockIntegrations <gray>-Torres: <white>{towers} <gray>Ataques: <white>{attacks} <gray>Ciclos: <white>{cycles}
-    <gray>Torre max: <white>{tower_max} <gray>- Furnace max: <white>{furnace_max} <gray>Combos: <white>{combos} <gray>Combo
-    max: <white>{combo_max} <gray>Sorter/vacuum/launcher/booster/float lift/heal block/furnaces ativos'
+  line: "<green>BlockIntegrations <gray>- Torres: <white>{towers} <gray>| Ataques: <white>{attacks} <gray>| Ciclos: <white>{cycles} <gray>| Torre máx.: <white>{tower_max} <gray>| Fornalha máx.: <white>{furnace_max} <gray>| Combos: <white>{combos} <gray>| Combo máx.: <white>{combo_max}"
+  switches-on: "<gray>Todas as funções estão ligadas."
+  switches-off: "<gray>Desligado: <white>{features}"
   next: '<gray>Próximo: '
   furnaces: '<gray>Fornalhas melhoradas no servidor: <white>{furnaces}'
   towers-button: Torres
