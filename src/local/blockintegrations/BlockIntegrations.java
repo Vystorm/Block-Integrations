@@ -156,7 +156,7 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
         Feature missing = null;
         if (current != null && !current.off().contains(feature))
             missing = feature != Feature.BLOCKS && current.off().contains(Feature.BLOCKS) ? Feature.BLOCKS : feature.needs;
-        if (missing != null) lang.send(sender, "feature-needs", "switch", missing.path);
+        if (missing != null) lang.send(sender, "feature-needs", "switch", missing.path, "name", lang.plain(sender, missing.label()));
         else lang.send(sender, "feature-off");
         return true;
     }
@@ -176,7 +176,7 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
         saveDefaultConfig();
         // Missing keys are added with their comments by Core's config editor (registered below); a config from before
         // 2.44.0 with combos.enabled: false keeps the heal block, harvester, warp pads and XP collector off.
-        if (Feature.migrateComboGate(getConfig())) saveConfig();
+        readConfig(this, false);
         sortItemLocks = new SortItemLocks(new NamespacedKey(this, "sort-locked-items"));
         sortSlotLocks = new SortSlotLocks(new NamespacedKey(this, "sort-locked-slots"));
         chestPreferences = new ChestPreferences(new NamespacedKey(this, "chest-preferences"));
@@ -463,7 +463,7 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
 
     /** Settings builder whose labels and descriptions are language references ({@code settings.option.<path>.*}). */
     private final class LocalizedSettings {
-        private final ConfigSettings settings = ConfigSettings.of(BlockIntegrations.this);
+        private final ConfigSettings settings = ConfigSettings.of(BlockIntegrations.this::getConfig, () -> YamlCheck.saveConfig(BlockIntegrations.this));
 
         private String label(String path) { return ref("settings.option." + path.replace('.', '-') + ".label"); }
         private String description(String path) { return ref("settings.option." + path.replace('.', '-') + ".description"); }
@@ -580,10 +580,9 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
     }
 
     /** Re-reads config.yml and applies it to all managers (used by /bi reload and the settings dialogs). */
-    void reloadAll() {
-        reloadConfig();
-        // a pasted config from before 2.44.0 with combos.enabled: false keeps the four combos it switched off
-        if (Feature.migrateComboGate(getConfig())) saveConfig();
+    String reloadAll() {
+        String problem = readConfig(this, true);
+        if (problem != null) return problem;
         if (lang != null) {
             lang.reload();
             lang.setLanguage(getConfig().getString("language", "auto"));
@@ -596,6 +595,18 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
         if (workstationManager != null) workstationManager.reloadSettings();
         if (comboManager != null) comboManager.reloadSettings();
         applySwitches();
+        return null;
+    }
+
+    /**
+     * Start and reload read config.yml through here. A file with a YAML error is never saved over: it is reported and
+     * left as it is (jar defaults at start, the last good settings on a reload). Returns the problem or null.
+     */
+    static String readConfig(org.bukkit.plugin.java.JavaPlugin plugin, boolean reload) {
+        String problem = YamlCheck.readConfig(plugin, reload);
+        // a pasted config from before 2.44.0 with combos.enabled: false keeps the four combos it switched off
+        if (problem == null && Feature.migrateComboGate(plugin.getConfig())) plugin.saveConfig();
+        return problem;
     }
 
     /**
@@ -717,8 +728,9 @@ public final class BlockIntegrations extends JavaPlugin implements Listener {
     }
 
     void reloadCommand(CommandSender sender) {
-        reloadAll();
-        lang.send(sender, "general.reloaded");
+        String problem = reloadAll();
+        if (problem != null) lang.send(sender, "config-error", "problem", problem);
+        else lang.send(sender, "general.reloaded");
     }
 
 

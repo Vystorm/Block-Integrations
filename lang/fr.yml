@@ -525,8 +525,8 @@ settings:
       label: Son de levage flottant
       description: Son au lancement
     combos-enabled:
-      label: Mises à niveau Combo activées
-      description: Mettre à niveau les menus et guérir le bloc des combos de blocs
+      label: "Améliorations des combos"
+      description: "Menus d'amélioration XP des combos de blocs ; bloc de soin, récolteuse, plaques de téléportation et collecteur d'XP ont leurs propres interrupteurs"
     combos-upgrades-maximum-level:
       label: Niveau maximal
       description: Niveau de mise à niveau le plus élevé par chemin
@@ -1152,7 +1152,34 @@ blueprint:
   partial: "<yellow>📋 Plan arrêté après {steps} améliorations ({cost} XP) : la suivante coûte {need} XP."
   stopped: "<yellow>📋 Plan arrêté après {steps} améliorations ({cost} XP)."
 feature-off: "<red>Cette fonctionnalité est désactivée sur ce serveur."
-feature-needs: "<red>Il faut pour cela l'interrupteur {switch}, désactivé sur ce serveur."
+feature-needs: "<red>Cela nécessite « {name} » ({switch}), qui est désactivé sur ce serveur."
+switch-names:
+  blocks: "BlockIntegrations"
+  sorter: "Trieur d'inventaire"
+  sort-locks: "Verrous de tri et ordre des coffres"
+  vacuum: "Aspirateur d'objets"
+  launcher: "Lanceur directionnel"
+  booster: "Accélérateur de sprint"
+  float-lift: "Ascenseur flottant"
+  combo-upgrades: "Améliorations des combos"
+  heal: "Bloc de soin"
+  harvester: "Récolteuse"
+  warp-pads: "Plaques de téléportation"
+  xp-collector: "Collecteur d'XP"
+  towers: "Tours d'attaque"
+  tower-effects: "Effets des tours"
+  traps: "Pièges à monstres"
+  furnaces: "Fourneaux améliorables"
+  brewing: "Améliorations des alambics"
+  campfires: "Améliorations des feux de camp"
+  anvils: "Enclumes améliorables"
+  blueprints: "Plans de machines"
+  dashboard: "Tableau de bord"
+  menu: "Menu d'aperçu"
+  web: "Page web"
+  tower-markers: "Marqueurs de tours"
+  portable-tooltips: "Infobulles des machines portables"
+  tutorial: "Tutoriel"
 switches:
   blocks: "Tout le plugin : combos, tours, pièges, fours, établis et enclumes"
   sorter: "Trieur d'inventaire sur la plaque de pression en or"
@@ -1190,3 +1217,4 @@ placeholder:
   combos_total: "Tous les combos de blocs du serveur"
   towers_total: "Toutes les tours d'attaque du serveur"
   furnaces_total: "Tous les fours améliorés du serveur"
+config-error: "<red>config.yml n'a pas été chargé : erreur YAML à {problem}. Le fichier n'a pas été modifié et les derniers réglages valides restent actifs."

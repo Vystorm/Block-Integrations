@@ -48,6 +48,40 @@ class SwitchesTest {
         }
     }
 
+    /**
+     * 2.44.1: every boolean that Core's {@code /vadmin features} lists for config.yml (keys named {@code enabled},
+     * top-level booleans, declared switches; {@code include-trapped-chests} is taken off) has a readable name and a
+     * description in all seven languages, so the screen never shows a raw key path such as "Combos › Heal".
+     */
+    @Test void givenEveryFeatureCoreListsFromConfigYml_whenDescribed_thenAllSevenLanguagesHaveNameAndDescription() {
+        YamlConfiguration config = YamlConfiguration.loadConfiguration(new File("config.yml"));
+        java.util.Set<String> housekeeping = java.util.Set.of("metrics", "debug", "verbose", "sound", "console-log", "placeholderapi", "update-check", "include-trapped-chests");
+        List<String> declared = java.util.Arrays.stream(Feature.values()).map(f -> f.path).toList();
+        int listed = 0;
+        for (String path : config.getKeys(true)) {
+            if (!config.isBoolean(path)) continue;
+            boolean feature = path.equals("enabled") || path.endsWith(".enabled") || (path.indexOf('.') < 0 && !housekeeping.contains(path));
+            if (!feature && !declared.contains(path)) continue;
+            assertTrue(declared.contains(path), "every listed switch is a Feature with name and description: " + path);
+            listed++;
+        }
+        assertEquals(Feature.values().length, listed);
+        for (String code : LANGUAGES) {
+            YamlConfiguration lang = YamlConfiguration.loadConfiguration(new File("lang/" + code + ".yml"));
+            for (Feature feature : Feature.values()) {
+                assertFalse(lang.getString(feature.label(), "").isBlank(), code + " " + feature.label());
+                assertFalse(lang.getString(feature.description(), "").isBlank(), code + " " + feature.description());
+            }
+            String needs = lang.getString("feature-needs", "");
+            assertTrue(needs.contains("{name}") && needs.contains("{switch}"), code + " " + needs);
+            assertFalse(lang.getString("settings.option.combos-enabled.description", "").isBlank(), code);
+        }
+        YamlConfiguration en = YamlConfiguration.loadConfiguration(new File("lang/en.yml"));
+        assertEquals("Combo upgrades", en.getString("settings.option.combos-enabled.label"));
+        assertEquals("XP upgrade menus of the block combos; heal block, harvester, warp pads and XP collector have their own switches",
+                en.getString("settings.option.combos-enabled.description"), "combos.enabled means only the upgrades since 2.44.0");
+    }
+
     @Test void givenEveryLanguage_whenRead_thenEverySwitchAndPlaceholderHasADescription() {
         for (String code : LANGUAGES) {
             YamlConfiguration lang = YamlConfiguration.loadConfiguration(new File("lang/" + code + ".yml"));
@@ -146,8 +180,9 @@ class SwitchesTest {
         verify(langOf(noWorkstations)).send(player, "feature-off");
         BlockIntegrations master = plugin(Feature.BLOCKS);
         Player other = player();
+        when(langOf(master).plain(other, Feature.BLOCKS.label())).thenReturn("BlockIntegrations");
         master.trapsCommand(other);
-        verify(langOf(master)).send(other, "feature-needs", "switch", "blocks.enabled");
+        verify(langOf(master)).send(other, "feature-needs", "switch", "blocks.enabled", "name", "BlockIntegrations");
     }
 
     @Test void givenEverythingOn_whenTheSwitchesAreAsked_thenNoOffMessage() throws Exception {

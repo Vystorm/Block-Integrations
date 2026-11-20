@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "local.blockintegrations"
-version = "2.44.0-26.2"
+version = "2.44.1-26.2"
 
 val vystormCoreJar = providers.gradleProperty("vystormCoreJar")
     .orElse("libs/Vystorm_Core.jar")

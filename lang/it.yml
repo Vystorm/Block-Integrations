@@ -522,8 +522,8 @@ settings:
       label: Suono di sollevamento Float
       description: Sound on launch
     combos-enabled:
-      label: Aggiornamenti Combo abilitati
-      description: Menu di aggiornamento e blocco di guarigione del blocco combo
+      label: "Potenziamenti delle combo"
+      description: "Menu di potenziamento XP delle combo di blocchi; blocco cura, mietitrice, pedane di teletrasporto e raccoglitore di XP hanno interruttori propri"
     combos-upgrades-maximum-level:
       label: Livello massimo
       description: Livello di aggiornamento più alto per percorso
@@ -1148,7 +1148,34 @@ blueprint:
   partial: "<yellow>📋 Progetto fermato dopo {steps} potenziamenti ({cost} XP): il prossimo costa {need} XP."
   stopped: "<yellow>📋 Progetto fermato dopo {steps} potenziamenti ({cost} XP)."
 feature-off: "<red>Questa funzione è disattivata su questo server."
-feature-needs: "<red>Serve l'interruttore {switch}, che su questo server è spento."
+feature-needs: "<red>Questo richiede «{name}» ({switch}), che è disattivato su questo server."
+switch-names:
+  blocks: "BlockIntegrations"
+  sorter: "Ordinatore dell'inventario"
+  sort-locks: "Blocchi di ordinamento e ordine delle casse"
+  vacuum: "Aspiratore di oggetti"
+  launcher: "Lanciatore direzionale"
+  booster: "Booster di scatto"
+  float-lift: "Ascensore fluttuante"
+  combo-upgrades: "Potenziamenti delle combo"
+  heal: "Blocco cura"
+  harvester: "Mietitrice"
+  warp-pads: "Pedane di teletrasporto"
+  xp-collector: "Raccoglitore di XP"
+  towers: "Torri d'attacco"
+  tower-effects: "Effetti delle torri"
+  traps: "Trappole per mostri"
+  furnaces: "Fornaci potenziabili"
+  brewing: "Potenziamenti dei banchi di distillazione"
+  campfires: "Potenziamenti dei falò"
+  anvils: "Incudini potenziabili"
+  blueprints: "Progetti di macchine"
+  dashboard: "Pannello di controllo"
+  menu: "Menu panoramica"
+  web: "Pagina web"
+  tower-markers: "Indicatori delle torri"
+  portable-tooltips: "Descrizioni delle macchine portatili"
+  tutorial: "Tutorial"
 switches:
   blocks: "Tutto il plugin: combo, torri, trappole, fornaci, postazioni e incudini"
   sorter: "Ordinatore d'inventario sulla piastra a pressione d'oro"
@@ -1186,3 +1213,4 @@ placeholder:
   combos_total: "Tutte le combo di blocchi del server"
   towers_total: "Tutte le torri d'attacco del server"
   furnaces_total: "Tutte le fornaci potenziate del server"
+config-error: "<red>config.yml non è stato caricato: errore YAML in {problem}. Il file non è stato modificato e restano attive le ultime impostazioni valide."

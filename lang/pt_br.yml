@@ -516,8 +516,8 @@ settings:
       label: Som de elevação flutuante
       description: Som no lançamento
     combos-enabled:
-      label: Atualizações combinadas habilitadas
-      description: Atualize os menus e cure o bloco das combinações
+      label: "Melhorias dos combos"
+      description: "Menus de melhoria com XP dos combos de blocos; bloco de cura, colheitadeira, plataformas de teleporte e coletor de XP têm interruptores próprios"
     combos-upgrades-maximum-level:
       label: Nível máximo
       description: Melhor nível de atualização por caminho
@@ -1134,7 +1134,34 @@ blueprint:
   partial: "<yellow>📋 Projeto parado após {steps} melhorias ({cost} XP): a próxima custa {need} XP."
   stopped: "<yellow>📋 Projeto parado após {steps} melhorias ({cost} XP)."
 feature-off: "<red>Este recurso está desligado neste servidor."
-feature-needs: "<red>Isto precisa do interruptor {switch}, que está desligado neste servidor."
+feature-needs: "<red>Isto precisa de “{name}” ({switch}), que está desligado neste servidor."
+switch-names:
+  blocks: "BlockIntegrations"
+  sorter: "Organizador de inventário"
+  sort-locks: "Travas de organização e ordem dos baús"
+  vacuum: "Aspirador de itens"
+  launcher: "Lançador direcional"
+  booster: "Impulso de corrida"
+  float-lift: "Elevador flutuante"
+  combo-upgrades: "Melhorias dos combos"
+  heal: "Bloco de cura"
+  harvester: "Colheitadeira"
+  warp-pads: "Plataformas de teleporte"
+  xp-collector: "Coletor de XP"
+  towers: "Torres de ataque"
+  tower-effects: "Efeitos das torres"
+  traps: "Armadilhas de monstros"
+  furnaces: "Fornalhas melhoráveis"
+  brewing: "Melhorias de suportes de poções"
+  campfires: "Melhorias de fogueiras"
+  anvils: "Bigornas melhoráveis"
+  blueprints: "Projetos de máquinas"
+  dashboard: "Painel"
+  menu: "Menu de visão geral"
+  web: "Página web"
+  tower-markers: "Marcadores de torres"
+  portable-tooltips: "Dicas de máquinas portáteis"
+  tutorial: "Tutorial"
 switches:
   blocks: "O plugin inteiro: combos, torres, armadilhas, fornalhas, estações e bigornas"
   sorter: "Organizador de inventário na placa de pressão de ouro"
@@ -1172,3 +1199,4 @@ placeholder:
   combos_total: "Todos os combos de blocos do servidor"
   towers_total: "Todas as torres de ataque do servidor"
   furnaces_total: "Todas as fornalhas melhoradas do servidor"
+config-error: "<red>O config.yml não foi carregado: erro de YAML em {problem}. O arquivo não foi alterado e as últimas configurações válidas continuam ativas."

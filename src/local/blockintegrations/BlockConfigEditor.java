@@ -107,7 +107,8 @@ final class BlockConfigEditor {
      */
     static void declareSwitches(ConfigEditorInterface config, Plugin plugin, Lang lang) {
         for (Feature feature : Feature.values()) {
-            config.feature(plugin, feature.path, null, lang.ref(feature.description()));
+            // A null label would also drop the label set by register(): every switch gets its own name (2.44.1).
+            config.feature(plugin, feature.path, lang.ref(feature.label()), lang.ref(feature.description()));
             if (feature.needsRestart())
                 config.activation(plugin, feature.path, Vystorm.vystorm_core._uiMethods.settings.SettingPolicy.Activation.RESTART);
         }

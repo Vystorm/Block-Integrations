@@ -1,3 +1,11 @@
+## 2.44.1-26.2 — 2026-11-20
+
+- Fixed: a `config.yml` with a YAML mistake no longer resets the settings on `/bi reload`, and the settings menu no longer saves over it. The file is left as it is, the console and the reload answer name the line and column of the mistake, and the last working settings stay active (at start: the default settings).
+- `/vadmin features` names every switch of the plugin in seven languages ("Heal block", "Warp pads", "Tower effects") instead of the key path ("Combos › Heal"). Switches that had a name in `/vadmin config` had lost it there as well; they show a name again.
+- A feature that needs another switch now names it in full: "This needs “BlockIntegrations” (blocks.enabled), which is switched off on this server." Before, the message only gave the key. A language file already on your server keeps its own text.
+- `combos.enabled` is called "Combo upgrades" everywhere, and its description says what it has switched since 2.44.0: only the XP upgrade menus of the block combos, while the heal block, harvester, warp pads and XP collector have their own switches. Before, it read "Combo upgrades enabled: upgrade menus and heal block".
+- README: the supported servers are written as tested: Paper and Purpur 26.2, Paper 1.20.6 and Spigot 26.2.
+
 ## 2.44.0-26.2 — 2026-11-18
 
 - Requires Vystorm Core 0.65.0 or newer. Update Core before you update this plugin.

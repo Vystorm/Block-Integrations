@@ -103,7 +103,7 @@ Break the main block (combo top, tower head, furnace) and it keeps its upgrade l
 Use **Vystorm Core 0.65.0 or newer** (placeholders). The optional client mod has separate version requirements.
 
 
-- **Paper 1.20.6 through 26.x; Spigot and CraftBukkit 26.3**, Java **21 or newer** (use the Java version required by your server release). See [compatibility checks](COMPATIBILITY.md).
+- **Tested on Paper and Purpur 26.2, Paper 1.20.6 and Spigot 26.2.** Java **21 or newer** (use the Java version required by your server release). See [compatibility checks](COMPATIBILITY.md).
 - [Vystorm Core](https://github.com/Vystorm/VystormCore) 0.65.0 or newer, including its portable dialogs and compatibility helpers.
 - Optional: Vystorm Skills (furnace skill XP), VystormCityClaim (sorter and vacuum respect its chest permissions)
 
